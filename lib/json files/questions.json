@@ -1,0 +1,242 @@
+{
+    "questions": [
+      {
+        "id": 1,
+        "title": "Chose gender",
+        "answers": [
+          {
+            "text": "Woman",
+            "image": "images/female.png"
+          },
+          {
+            "text": "Man",
+            "image": "images/male.png"
+          },
+          {
+            "text": "Non Binary",
+            "image": "images/binary.png"
+          }
+          
+        ]
+      },
+      {
+        "id": 2,
+        "title": "DOB?"
+       
+      },
+  
+      {
+        "id": 3,
+        "title": "Height?"
+      },
+      {
+        "id": 4,
+        "title": "Weight?"
+      },
+      {
+        "id": 5,
+        "title": "Diagnosed to any medical conditions",
+        "answers": [
+          {
+            "text": "High Blood Pressure",
+            "image":"images/blood.png"
+
+          },
+          {
+            "text": "Heart Disease",
+            "image":"images/heart.png"
+          },
+          {
+            "text": "Diabetes",
+            "image":"images/diab.png"
+          },
+          {
+            "text": "Arthritis",
+            "image":"images/arth.png"
+          },
+          {
+            "text": "Celiac disease",
+            "image":"images/celiac.png"
+          },
+          {
+            "text": "None",
+            "image":"images/none.png"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Dietary habits",
+        "answers": [
+          {
+            "text": "Non Vegetarian",
+            "image": "images/nVeg.png"
+          },
+          {
+            "text": "vegetarian",
+            "image": "images/veg.png"
+          },
+          {
+            "text": "Pescetarian",
+            "image": "images/pes.png"
+          },
+          {
+            "text": "I eat all",
+            "image": "images/eAll.png"
+          }
+          
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Pick 3 cuisines",
+        "answers": [
+          {
+            "text": "Chinese",
+            "image":"images/chinese.png"
+
+          },
+          {
+            "text": "South American Veg",
+            "image":"images/sAVeg.png"
+          },
+          {
+            "text": "French",
+            "image":"images/french.png"
+          },
+          {
+            "text": "Italian",
+            "image":"images/italian.png"
+          },
+          {
+            "text": "Greek",
+            "image":"images/greek.png"
+          },
+          {
+            "text": "Spanish",
+            "image":"images/spanish.png"
+          },
+          {
+            "text": "Japanese",
+            "image":"images/japnese.png"
+
+          },
+          {
+            "text": "Lebanese",
+            "image":"images/lebanese.png"
+          },
+          {
+            "text": "Turkish",
+            "image":"images/turkish.png"
+          },
+          {
+            "text": "Thai",
+            "image":"images/thai.png"
+          },
+          {
+            "text": "Indian",
+            "image":"images/indian.png"
+          },
+          {
+            "text": "Pakistani",
+            "image":"images/pakistani.png"
+          },
+          {
+            "text": "Mexican",
+            "image":"images/mexican.png"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Food you don’t like ",
+        "answers": [
+          {
+            "text": "Eggs",
+            "image": "images/egg.png"
+          },
+          {
+            "text": "Bread",
+            "image": "images/bread.png"
+          },
+          {
+            "text": "Diary",
+            "image": "images/diary.png"
+          },
+          {
+            "text": "Peanut",
+            "image": "images/peanut.png"
+          }
+          
+        ]
+      },
+      {
+        "id": 9,
+        "title": "Daily Water Intake ",
+        "answers": [
+          {
+            "text": "More than 8 glasses",
+            "image": "images/water.png"
+          },
+          {
+            "text": "Less than 8 glasses",
+            "image": "images/water.png"
+          },
+          {
+            "text": "Never counted",
+            "image": "images/nc.png"
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "title": "Choose Training Level ",
+        "answers": [
+          {
+            "text": "Beginner",
+            "subtitle": "I want to start training"
+          },
+          {
+            "text": "Irregular training",
+            "subtitle": "I train 1-2 times a week"
+          },
+          {
+            "text": "Medium",
+            "subtitle": "I train 3-5 times a week"
+          },
+          {
+            "text": "Advanced",
+             "subtitle": "I train more than 5 times a week"
+          }
+          
+        ]
+      },
+      {
+        "id": 11,
+        "title": "Choose activities that interest ",
+        "answers": [
+          {
+            "text": "Cardio",
+            "image": "images/cardio.png"
+          },
+          {
+            "text": "Power training",
+            "image": "images/power.png"
+          },
+          {
+            "text": "Stretch",
+            "image": "images/stretch.png"
+          },
+          {
+            "text": "Dancing",
+            "image": "images/dancing.png"
+          },
+          {
+            "text": "Yoga",
+            "image": "images/yoga.png"
+          }
+        ]
+      }
+    ]
+  }
+  

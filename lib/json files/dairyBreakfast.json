@@ -1,0 +1,23 @@
+[
+    {
+      "heading": "Breakfast",
+      "subheading": "500 Cal",
+      "imagePath": "images/dairyBf.png",
+      "details": [
+        "Large Size Egg ",
+        "Chicken Breast",
+        "Blueberries"
+      ],
+      "quanDetails": [
+        " 3 eggs",
+        "100g",
+        "100g"
+      ],
+      "calDetails": [
+        "273 cals",
+        "273 cals",
+        "92 cals"
+      ]
+    }
+  ]
+  

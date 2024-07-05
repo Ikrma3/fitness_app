@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Breakfast",
+        "subtitle": "Fried eggs, Toast",
+        "image": "images/breakfast.png"
+    },
+    {
+        "title": "Lunch",
+        "subtitle": "Grilled Chicken",
+        "image": "images/lunch.png"
+    },
+    {
+        "title": "Snack",
+        "subtitle": "Veggies, Humus",
+        "image": "images/snack.png"
+    },
+    {
+        "title": "Dinner",
+        "subtitle": "Salmon Risotto",
+        "image": "images/dinner.png"
+    }
+]

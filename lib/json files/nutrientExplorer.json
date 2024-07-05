@@ -1,0 +1,32 @@
+[
+    {
+        "date": "2024-07-01",
+        "nutrients": [
+            {"name": "Vitamin A", "total": 49, "goal": 103},
+            {"name": "Vitamin D", "total": 49, "goal": 103},
+            {"name": "Vitamin C", "total": 49, "goal": 103},
+            {"name": "Saturated Fats", "total": 49, "goal": 103},
+            {"name": "Unsaturated Fats", "total": 49, "goal": 103},
+            {"name": "Sodium", "total": 49, "goal": 103},
+            {"name": "Cholesterol", "total": 49, "goal": 103},
+            {"name": "Unsaturated Fats", "total": 49, "goal": 103},
+            {"name": "Sodium", "total": 49, "goal": 103}
+        ]
+    },
+    {
+        "date": "2024-06-30",
+        "nutrients": [
+            {"name": "Vitamin A", "total": 59, "goal": 103},
+            {"name": "Vitamin D", "total": 39, "goal": 103},
+            {"name": "Vitamin C", "total": 29, "goal": 103},
+            {"name": "Saturated Fats", "total": 50, "goal": 103},
+            {"name": "Unsaturated Fats", "total": 19, "goal": 103},
+            {"name": "Sodium", "total": 49, "goal": 103},
+            {"name": "Cholesterol", "total": 70, "goal": 103},
+            {"name": "Unsaturated Fats", "total": 60, "goal": 103},
+            {"name": "Sodium", "total": 32, "goal": 103}
+
+        ]
+    }
+   
+]

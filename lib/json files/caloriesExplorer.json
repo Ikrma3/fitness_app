@@ -1,0 +1,142 @@
+{
+    "dates": [
+        {
+            "date": "2024-07-01",
+            "summary": {
+             
+              "total_calories": 1750,
+              "consumed": 1550,
+              "burned": 50
+            },
+            "meals": [
+              {
+                "name": "Breakfast",
+                "percentage": 22,
+                "calories": 225
+              },
+              {
+                "name": "Dinner",
+                "percentage": 22,
+                "calories": 225
+              },
+              {
+                "name": "Lunch",
+                "percentage": 22,
+                "calories": 225
+              },
+              {
+                "name": "Snacks",
+                "percentage": 22,
+                "calories": 225
+              }
+            ],
+            "foods": [
+              {
+                "name": "Salmon",
+                "calories": 562
+              },
+              {
+                "name": "Tomato soup",
+                "calories": 158
+              },
+              {
+                "name": "Salad",
+                "calories": 50
+              }
+            ]
+          },
+      {
+        "date": "2024-06-30",
+        "summary": {
+         
+          "total_calories": 1750,
+          "consumed": 1650,
+          "burned": 50
+        },
+        "meals": [
+          {
+            "name": "Breakfast",
+            "percentage": 24,
+            "calories": 235
+          },
+          {
+            "name": "Dinner",
+            "percentage": 22,
+            "calories": 225
+          },
+          {
+            "name": "Lunch",
+            "percentage": 22,
+            "calories": 225
+          },
+          {
+            "name": "Snacks",
+            "percentage": 22,
+            "calories": 225
+          }
+        ],
+        "foods": [
+          {
+            "name": "Salmon",
+            "calories": 562
+          },
+          {
+            "name": "Tomato soup",
+            "calories": 158
+          },
+          {
+            "name": "Salad",
+            "calories": 50
+          }
+        ]
+      },
+    
+      {
+        "date": "2024-06-29",
+        "summary": {
+         
+          "total_calories": 1750,
+          "consumed": 1500,
+          "burned": 50
+        },
+        "meals": [
+          {
+            "name": "Breakfast",
+            "percentage": 22,
+            "calories": 225
+          },
+          {
+            "name": "Dinner",
+            "percentage": 20,
+            "calories": 225
+          },
+          {
+            "name": "Lunch",
+            "percentage": 20,
+            "calories": 225
+          },
+          {
+            "name": "Snacks",
+            "percentage": 22,
+            "calories": 225
+          }
+        ],
+        "foods": [
+          {
+            "name": "Salmon",
+            "calories": 562
+          },
+          {
+            "name": "Tomato soup",
+            "calories": 158
+          },
+          {
+            "name": "Salad",
+            "calories": 50
+          }
+        ]
+      }
+    ]
+    
+  }
+  

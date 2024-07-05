@@ -1,0 +1,149 @@
+{
+    "heading": "Find a Plan",
+    "subHeading": "Meal plans, workout plans, and more. Start plan, follow along and reach your goals.",
+    "filters": ["Free", "Meal Plan", "Nutrition", "Walking", "Exercise"],
+    "data": {
+      "General": [
+        {
+          "svgImage": "images/highProtien.png",
+          "heading": "High Protien ",
+          "subHeading": "7 Days",
+         "overview": [
+    {
+      "text": "Lorem ipsum dolor sit amet consectetur. Suspendisse cras felis gravida semper dui enim mauris gravida. Egestas dolor sit ipsum nunc ut cursus imperdiet pulvinar. Curabitur pulvinar enim adipiscing habitant nibh eget morbi duis. Rhoncus massa mi proin integer leo et sed odio purus.",
+      "text":"Lorem ipsum dolor sit amet consectetur. Suspendisse cras felis gravida semper dui enim mauris gravida. Egestas dolor sit ipsum nunc ut cursus imperdiet pulvinar. Curabitur pulvinar enim adipiscing habitant nibh eget morbi duis. Rhoncus massa mi proin integer leo et sed odio purus.  Lorem ipsum dolor sit amet consectetur. Suspendisse cras felis gravida semper dui enim mauris gravida. Egestas dolor sit ipsum nunc ut cursus imperdiet pulvinar."  
+        },
+    {
+      "duration": "14 Days",
+      "timesPerWeek": "Daily",
+      "difficulty": "Beginner"
+    },
+    {
+      "heading": "Choose This Plan If",
+      "text": "You're training for an event like a marathon or triathlon and need guidance from nutrition pros\nYou want to dial in your eating and training schedule to perform your best\nYou've talked to your doctor and understand your nutrition and fitness needs (and any limitations)"
+     
+    },
+   
+    {
+      "heading": "What You Will Do",
+      "text": "Get daily nutrition tips while you're planning for your fitness challenge and apply them throughout your training.\nLearn about eating for pre-workout, post-workout, recovery days, and the day of the event.."
+    },
+    {
+        "heading": "Guidelines",
+        "text": "Nutritional needs during training vary person to person. Please check with your doctor before making any significant dietary changes."
+           }
+  ],
+          "schedule": [
+            {
+              "heading": "Week 1 ",
+              "text": "Lorem ipsum dolor sit amet consectetur. Suspendisse cras felis gravida semper dui enim mauris gravida. Egestas dolor sit ipsum nunc ut cursus imperdiet pulvinar. Curabitur pulvinar enim adipiscing habitant nibh eget morbi duis. Rhoncus massa mi proin integer leo et sed odio purus.."
+            },
+            {
+
+              "heading":"Week 2 ",
+              "text":"Lorem ipsum dolor sit amet consectetur. Suspendisse cras felis gravida semper dui enim mauris gravida. Egestas dolor sit ipsum nunc ut cursus imperdiet pulvinar. Curabitur pulvinar enim adipiscing habitant nibh eget morbi duis. Rhoncus massa mi proin integer leo et sed odio purus."
+            },
+            {
+              "heading":"Week 3",
+              "text":"Lorem ipsum dolor sit amet consectetur. Suspendisse cras felis gravida semper dui enim mauris gravida. Egestas dolor sit ipsum nunc ut cursus imperdiet pulvinar. Curabitur pulvinar enim adipiscing habitant nibh eget morbi duis. Rhoncus massa mi proin integer leo et sed odio purus."
+            }
+            
+          ]
+        },
+        {
+          "svgImage": "images/lowCarbs.png",
+          "heading": "Low Carbs",
+          "subHeading": "7 Days",
+          "overview": [
+            {
+                
+                    "text": "Lorem ipsum dolor sit amet consectetur. Suspendisse cras felis gravida semper dui enim mauris gravida. Egestas dolor sit ipsum nunc ut cursus imperdiet pulvinar. Curabitur pulvinar enim adipiscing habitant nibh eget morbi duis. Rhoncus massa mi proin integer leo et sed odio purus.",
+                    "text":"Lorem ipsum dolor sit amet consectetur. Suspendisse cras felis gravida semper dui enim mauris gravida. Egestas dolor sit ipsum nunc ut cursus imperdiet pulvinar. Curabitur pulvinar enim adipiscing habitant nibh eget morbi duis. Rhoncus massa mi proin integer leo et sed odio purus.  Lorem ipsum dolor sit amet consectetur. Suspendisse cras felis gravida semper dui enim mauris gravida. Egestas dolor sit ipsum nunc ut cursus imperdiet pulvinar."  
+                      
+            },
+            {
+              "duration": "14 Days",
+              "timesPerWeek": "Daily",
+              "difficulty": "Beginner"
+            },
+            {
+                "heading": "Choose This Plan If",
+                "text": "You're training for an event like a marathon or triathlon and need guidance from nutrition pros\nYou want to dial in your eating and training schedule to perform your best\nYou've talked to your doctor and understand your nutrition and fitness needs (and any limitations)"
+               
+              },
+             
+              {
+                "heading": "What You Will Do",
+                "text": "Get daily nutrition tips while you're planning for your fitness challenge and apply them throughout your training.\nLearn about eating for pre-workout, post-workout, recovery days, and the day of the event.."
+              },
+              {
+                  "heading": "Guidelines",
+                  "text": "Nutritional needs during training vary person to person. Please check with your doctor before making any significant dietary changes."
+                     }
+          ],
+          "schedule": [
+            {
+                "heading": "Week 1 ",
+                "text": "Lorem ipsum dolor sit amet consectetur. Suspendisse cras felis gravida semper dui enim mauris gravida. Egestas dolor sit ipsum nunc ut cursus imperdiet pulvinar. Curabitur pulvinar enim adipiscing habitant nibh eget morbi duis. Rhoncus massa mi proin integer leo et sed odio purus.."
+              },
+              {
+  
+                "heading":"Week 2 ",
+                "text":"Lorem ipsum dolor sit amet consectetur. Suspendisse cras felis gravida semper dui enim mauris gravida. Egestas dolor sit ipsum nunc ut cursus imperdiet pulvinar. Curabitur pulvinar enim adipiscing habitant nibh eget morbi duis. Rhoncus massa mi proin integer leo et sed odio purus."
+              },
+              {
+                "heading":"Week 3",
+                "text":"Lorem ipsum dolor sit amet consectetur. Suspendisse cras felis gravida semper dui enim mauris gravida. Egestas dolor sit ipsum nunc ut cursus imperdiet pulvinar. Curabitur pulvinar enim adipiscing habitant nibh eget morbi duis. Rhoncus massa mi proin integer leo et sed odio purus."
+              }
+              
+  
+          ]
+        }
+      ],
+      "Free": [
+        {
+            "svgImage": "images/highProtien.png",
+            "heading": "High Protien",
+            "subHeading": "7 Days",
+            "overview": [
+              {
+                "heading": "Overview 1",
+                "text": "Overview text for General Plan 1."
+              },
+              {
+                "heading": "Overview 2",
+                "text": "Another overview text for General Plan 1."
+              }
+            ],
+            "schedule": [
+              {
+                "heading": "Schedule 1",
+                "text": "Schedule text for General Plan 1."
+              }
+            ]
+          }
+         
+      ],
+      "Meal Plan": [
+        {
+       
+        }
+      ],
+      "Nutrition": [
+        {
+        
+        }
+      ],
+      "Walking": [
+        {
+        
+        }
+      ],
+      "Exercise": [
+        {
+          
+        }
+      ]
+    }
+  }
+  

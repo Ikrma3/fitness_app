@@ -1,0 +1,71 @@
+[
+    {
+      "date": "2024-07-01",
+      "nutrition": {
+        "protein": {
+          "current": 245,
+          "goal": 300
+        },
+        "carbs": {
+          "current": 2,
+          "goal": 200
+        },
+        "fats": {
+          "current": 12,
+          "goal": 20
+        }
+      },
+      "foods": {
+        "highestProtein": [
+          {"name": "Salmon", "value": 562},
+          {"name": "Tomato soup", "value": 158},
+          {"name": "Salad", "value": 50}
+        ],
+        "highestCarbs": [
+          {"name": "Salmon", "value": 562},
+          {"name": "Tomato soup", "value": 158},
+          {"name": "Salad", "value": 50}
+        ],
+        "highestFat": [
+          {"name": "Salmon", "value": 562},
+          {"name": "Tomato soup", "value": 158},
+          {"name": "Salad", "value": 50}
+        ]
+      }
+    },
+    {
+      "date": "2024-06-30",
+      "nutrition": {
+        "protein": {
+          "current": 50,
+          "goal": 80
+        },
+        "carbs": {
+          "current": 100,
+          "goal": 200
+        },
+        "fats": {
+          "current": 15,
+          "goal": 20
+        }
+      },
+      "foods": {
+        "highestProtein": [
+          {"name": "Chicken", "value": 500},
+          {"name": "Beans", "value": 200},
+          {"name": "Broccoli", "value": 50}
+        ],
+        "highestCarbs": [
+          {"name": "Bread", "value": 150},
+          {"name": "Pasta", "value": 120},
+          {"name": "Rice", "value": 100}
+        ],
+        "highestFat": [
+          {"name": "Cheese", "value": 400},
+          {"name": "Nuts", "value": 200},
+          {"name": "Butter", "value": 100}
+        ]
+      }
+    }
+  ]
+  

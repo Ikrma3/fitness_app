@@ -1,0 +1,46 @@
+{
+    "cards": [
+      {
+        "index": 1,
+        "heading": "Calories",
+        "subHeading": "Remaining = Goal - Food + Exercise",
+        "details": [
+          {
+            "title": "Goal",
+            "value": 1500,
+            "image": "images/goals.svg"
+          },
+          {
+            "title": "Food",
+            "value": 500,
+            "image": "images/food.svg"
+          },
+          {
+            "title": "Exercise",
+            "value": 2,
+            "image": "images/exercise.svg"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "heading": "Macros",
+        "subHeading": "Remaining = Protein + Carbs + Fats",
+        "progress": [
+          {
+            "name": "Protein",
+            "value": 245
+          },
+          {
+            "name": "Carbs",
+            "value": 10
+          },
+          {
+            "name": "Fat",
+            "value": 12
+          }
+        ]
+      }
+    ]
+  }
+  

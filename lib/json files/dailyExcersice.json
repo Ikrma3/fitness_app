@@ -1,0 +1,15 @@
+{
+    "heading": "Exercise",
+    "headingIcon": "images/excersice2.png",
+    "details": [
+      {
+        "icon": "images/clock.png",
+        "text": "30 minutes"
+      },
+      {
+        "icon": "images/fire.png",
+        "text": "350 Cals"
+      }
+    ]
+  }
+  

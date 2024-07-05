@@ -1,0 +1,257 @@
+{
+    "titleImage": "images/highProtien.png",
+    "activatedPlans": [
+      {
+        "name": "French",
+        "image":"images/french.png",
+        "subtitle":"Vegetarian",
+        "data": {
+          "2024-07-04": {
+            "Breakfast": [
+              {
+                "image": "images/frenchToast.png",
+                "text": "French Toast",
+               "calories": 401,
+                "protein": 26.5,
+                "carbs": 10.0,
+                "fats": 5.0,
+                "time": "8:00 AM",
+                "dailyGoals": {
+                  "protein": 7.0,
+                  "carbs": 15.0,
+                  "fats": 100.0,
+                  "totalProtein":12.0,
+                  "totalCarb":23.0,
+                  "totalFat":253.0
+              }
+              }
+            ],
+            "Lunch": [
+              {
+                "image": "images/mexican.png",
+                "text": "Greek Salad",
+                "calories": 356,
+                "protein": 26.2,
+                "carbs": 0.7,
+                "fats": 2.9,
+                
+                "totalFat":253,
+                "time": "8:00 AM",
+                "dailyGoals": {
+                  "protein": 0.5,
+                  "carbs": 1.15,
+                  "fats": 11.15,
+                  "totalProtein":12.0,
+                  "totalCarb":23.0,
+                  "totalFat":253.0
+              }
+              },
+              {
+                "image": "images/thai.png",
+                "text": "French Toast",
+               "calories": 401,
+                "protein": 26.5,
+                "carbs": 10.0,
+                "fats": 5.0,
+                "time": "8:00 AM",
+                "dailyGoals": {
+                  "protein": 7.0,
+                  "carbs": 15.0,
+                  "fats": 100.0,
+                  "totalProtein":12.0,
+                  "totalCarb":23.0,
+                  "totalFat":253.0
+              }
+              }
+            ],
+            "Snacks": [
+              {
+                "image": "images/turkish.png",
+                "text": "Greek Salad",
+                "calories": 401,
+                "protein": 26.2,
+                "carbs": 0.7,
+                "fats": 2.9,
+               
+                "totalFat":253,
+                "time": "8:00 AM",
+                "dailyGoals": {
+                  "protein": 0.5,
+                  "carbs": 1.15,
+                  "fats": 11.15,
+                  "totalProtein":12.0,
+                  "totalCarb":23.0,
+                  "totalFat":253.0
+              }
+              }
+            ],
+            "Dinner": [
+              {
+                "image": "images/thai.png",
+                "text": "Greek Salad",
+                "calories": 401,
+                "protein": 26.2,
+                "carbs": 0.7,
+                "fats": 2.9,
+               
+                "totalFat":253,
+                "time": "8:00 AM",
+                "dailyGoals": {
+                  "protein": 0.5,
+                  "carbs": 1.15,
+                  "fats": 11.15,
+                  "totalProtein":12.0,
+                  "totalCarb":23.0,
+                  "totalFat":253.0
+              }
+              }
+            ]
+          },
+          "2024-07-03": {
+            "Breakfast": [
+              {
+                "image": "images/indian.png",
+                "text": "French Toast",
+                "calories": 401,
+                "protein": 26.2,
+                "carbs": 0.7,
+                "fats": 2.9,
+               
+                "totalFat":253,
+                "time": "8:00 AM",
+                "dailyGoals": {
+                  "protein": 0.5,
+                  "carbs": 1.15,
+                  "fats": 11.15,
+                  "totalProtein":12.0,
+                  "totalCarb":23.0,
+                  "totalFat":253.0
+              }
+              }
+            ],
+            "Lunch": [
+              {
+                "image": "images/lebanese.png",
+                "text": "Greek Salad",
+                "calories": 401,
+              "protein": 26.2,
+              "carbs": 0.7,
+              "fats": 2.9,
+             
+              "time": "8:00 AM",
+              "dailyGoals": {
+                  "protein": 0.5,
+                  "carbs": 1.15,
+                  "fats": 11.15,
+                  "totalProtein":12.0,
+                  "totalCarb":23.0,
+                  "totalFat":253.0
+              }
+              },
+              {
+                "image": "images/thai.png",
+                "text": "Yougart and Chese",
+                "calories": 401,
+              "protein": 26.2,
+              "carbs": 0.7,
+              "fats": 2.9,
+              
+              "time": "8:00 AM",
+              "dailyGoals": {
+                  "protein": 0.5,
+                  "carbs": 1.15,
+                  "fats": 11.15,
+                  "totalProtein":12.0,
+                  "totalCarb":23.0,
+                  "totalFat":253.0
+              }
+              }
+            ],
+            "Snacks": [
+              {
+                "image": "images/spanish.png",
+                "text": "Greek Salad",
+                "calories": 401,
+              "protein": 26.2,
+              "carbs": 0.7,
+              "fats": 2.9,
+              "toalCal":2476,
+              "totalProtein":12,
+              "totalCarb":23,
+              "totalFat":253,
+              "time": "8:00 AM",
+              "dailyGoals": {
+                  "protein": 0.5,
+                  "carbs": 1.15,
+                  "fats": 11.15,
+                  "totalProtein":12.0,
+                  "totalCarb":23.0,
+                  "totalFat":253.0
+              }
+              }
+            ]
+           
+          }
+        }
+      }
+    ],
+    "recentPlans": [
+      {
+        "name": "Greek",
+        "image":"images/greek.png",
+        "subtitle":"Vegetarian",
+        "data": {
+          "2024-07-01": {
+            "Breakfast": [
+              {
+                "image": "images/indian.png",
+                "text": "Greek Salad",
+                "calories": 401,
+              "protein": 26.2,
+              "carbs": 0.7,
+              "fats": 2.9,
+              "toalCal":2476,
+              "totalProtein":12,
+              "totalCarb":23,
+              "totalFat":253,
+              "time": "8:00 AM",
+              "dailyGoals": {
+                  "protein": 0.5,
+                  "carbs": 1.15,
+                  "fats": 11.15,
+                  "totalProtein":12.0,
+                  "totalCarb":23.0,
+                  "totalFat":253.0
+              }
+              }
+            ],
+            "Lunch": [
+              {
+                "image": "images/egg.png",
+                "text": "French Toast",
+                "calories": 401,
+              "protein": 26.2,
+              "carbs": 0.7,
+              "fats": 2.9,
+              "toalCal":2476,
+              "totalProtein":12,
+              "totalCarb":23,
+              "totalFat":253,
+              "time": "8:00 AM",
+              "dailyGoals": {
+                  "protein": 0.5,
+                  "carbs": 1.15,
+                  "fats": 11.15,
+                  "totalProtein":12.0,
+                  "totalCarb":23.0,
+                  "totalFat":253.0
+              }
+              }
+            ]
+            
+          }
+        }
+      }
+    ]
+  }
+  

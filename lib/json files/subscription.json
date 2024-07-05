@@ -1,0 +1,30 @@
+{
+    "backgroundImage": "images/onBoard4.png",
+    "heading": "Millions of Users’ Choice",
+    "text": "We believe that our app should inspire you to be the best version of yourself",
+    "benefits": [
+      {
+        "text": "Professional videos with coatches "
+      },
+      {
+        "text": "Over 100 ready-made workouts."
+      },
+      {
+        "text": "Create your personal training plan."
+      },
+      {
+        "text": "Without advertising."
+      }
+    ],
+    "monthlyPlan": {
+      "heading": "Monthly",
+      "price": "4.99",
+      "subtext": "per month"
+    },
+    "yearlyPlan": {
+      "heading": "Yearly",
+      "price": "59.99",
+      "subtext": "per year"
+    }
+  }
+  
