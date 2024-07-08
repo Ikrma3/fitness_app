@@ -14,4 +14,9 @@ class ErrorCheck {
   static bool validatePassword(String password) {
     return password.length >= 8;
   }
+  static bool validatePhone(String password) {
+    return password.length >= 11;
+  }static bool validateName(String password) {
+    return password.isNotEmpty;
+  }
 }

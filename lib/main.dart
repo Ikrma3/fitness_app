@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myfitness/screens/CNMViewScreen.dart';
 import 'package:myfitness/screens/breakFastScreen.dart';
 import 'package:myfitness/screens/diaryScreen.dart';
+import 'package:myfitness/screens/goalScreen.dart';
 import 'package:myfitness/screens/height.dart';
 import 'package:myfitness/screens/home.dart';
 import 'package:myfitness/screens/myPlans.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData.light(), // Default light theme
             darkTheme: ThemeData.dark(), // Default dark theme
             themeMode: ThemeMode.system,
-            home: SettingsScreen());
+            home: GoalScreen());
       },
       // Use the system theme
     );
