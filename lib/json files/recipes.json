@@ -1,0 +1,55 @@
+{
+    "sections": [
+      {
+        "heading": "Immune Support",
+        "recipes": [
+          {
+            "name": "Beef Burger",
+            "calories": 238,
+            "image": "images/burger.png"
+          },
+          {
+            "name": "Dark Chocolate Almond Mousse",
+            "calories": 238,
+            "image": "images/almondMouses.png"
+          },
+          {
+            "name": "Chicken Burger",
+            "calories": 238,
+            "image": "images/burger.png"
+          }
+        ]
+      },
+      {
+        "heading": "Pantry Staples",
+        "recipes": [
+          {
+            "name": "Fruits with Peanut Butter",
+            "calories": 238,
+            "image": "images/fruit.png"
+          },
+          {
+            "name": "Buffalo Chicken Wrap",
+            "calories": 238,
+            "image": "images/wrap.png"
+          },
+          {
+            "name": "Chicken Wrap",
+            "calories": 238,
+            "image": "images/wrap.png"
+          }
+        ]
+      },
+      {
+        "heading": "Pre-Workout",
+        "recipes": [
+          {
+            "name": "Almonds",
+            "calories": 238,
+            "image": "images/fruit.png"
+          }
+        ]
+      }
+    ]
+  }
+  
