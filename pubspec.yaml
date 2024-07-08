@@ -176,6 +176,7 @@ flutter:
      - lib/json files/plans.json
      - lib/json files/myPlans.json
      - lib/json files/profile.json
+     - lib/json files/goal.json
 
      
 
