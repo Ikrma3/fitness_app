@@ -6,6 +6,8 @@ import 'package:myfitness/components/errorCheck.dart';
 import 'package:myfitness/screens/home.dart';
 import 'package:myfitness/screens/signup.dart';
 
+import '../components/socialmediabuttons.dart';
+
 class SignInScreen extends StatefulWidget {
   @override
   _SignInScreenState createState() => _SignInScreenState();
@@ -41,44 +43,41 @@ class _SignInScreenState extends State<SignInScreen> {
     Brightness brightness = Theme.of(context).brightness;
     Color pColor = brightness == Brightness.dark ? Colors.white : Colors.black;
     Color bColor = brightness == Brightness.dark
-        ? Color.fromRGBO(30, 34, 53, 1)
-        : Color.fromRGBO(245, 250, 255, 1);
+        ? const Color.fromRGBO(30, 34, 53, 1)
+        : const Color(0xffF8FAFC);
 
     return Scaffold(
       backgroundColor: bColor,
-      appBar: AppBar(
-        backgroundColor: bColor,
-        automaticallyImplyLeading: false,
-      ),
       body: Center(
         child: Padding(
-          padding: EdgeInsets.all(20.0),
+          padding: EdgeInsets.all(20.0.w),
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                SizedBox(height: 110.h),
                 Text(
                   'Sign In',
                   style: TextStyle(
-                      color: const Color.fromRGBO(21, 109, 149, 1),
-                      fontSize: 34.sp,
-                      fontWeight: FontWeight.bold,
+                      color: const Color(0xff156D95),
+                      fontSize: 27.sp,
+                      fontWeight: FontWeight.w600,
                       fontFamily: 'Inter'),
                 ),
-                SizedBox(height: 20.h),
+                SizedBox(height: 24.h),
                 CustomTextField(
                   labelText: 'Phone/Email',
                   controller: emailController,
                   errorText: emailError,
                 ),
-                SizedBox(height: 20.h),
+                SizedBox(height: 16.h),
                 CustomTextField(
                   labelText: 'Password',
                   obscureText: true,
                   controller: passwordController,
                   errorText: passwordError,
                 ),
-                SizedBox(height: 30.h),
+                SizedBox(height: 24.h),
                 CustomButton(
                   text: 'Sign In',
                   onTap: validateAndSignIn,
@@ -93,53 +92,32 @@ class _SignInScreenState extends State<SignInScreen> {
                     style: TextStyle(
                         color: pColor,
                         fontFamily: 'Inter',
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold),
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w500),
                   ),
                 ),
-                SizedBox(height: 90.h), // Some space
+                SizedBox(height: 80.h), // Some space
                 Text(
                   'Sign in With',
                   style: TextStyle(
                       color: pColor,
-                      fontSize: 22.sp,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 20.sp,
+                      fontWeight: FontWeight.w700,
                       fontFamily: 'Inter'),
                 ),
-                SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    IconButton(
-                      icon: Image.asset('images/logos_apple.png'),
-                      onPressed: () {
-                        // Handle Apple sign-in logic
-                      },
-                    ),
-                    IconButton(
-                      icon: Image.asset('images/logos_fb.png'),
-                      onPressed: () {
-                        // Handle Facebook sign-in logic
-                      },
-                    ),
-                    IconButton(
-                      icon: Image.asset('images/logos_google.png'),
-                      onPressed: () {
-                        // Handle Google sign-in logic
-                      },
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 60.h,
-                ),
+                SizedBox(height: 10.h),
+                const SocialMediaButtons(),
+                SizedBox(height: 50.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       "Don't have an account?",
                       style: TextStyle(
-                          color: pColor, fontSize: 14.sp, fontFamily: 'Inter'),
+                          color: pColor,
+                          fontSize: 14.sp,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w400),
                     ),
                     TextButton(
                       onPressed: () {
@@ -150,15 +128,16 @@ class _SignInScreenState extends State<SignInScreen> {
                         );
                       },
                       child: Text(
-                        'Signup',
+                        'Sign Up',
                         style: TextStyle(
-                            color: Color.fromRGBO(20, 108, 148, 1),
+                            color: const Color.fromRGBO(20, 108, 148, 1),
                             fontSize: 14.sp,
-                            fontFamily: 'Inter'),
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w500),
                       ),
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ),

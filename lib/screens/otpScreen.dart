@@ -44,8 +44,8 @@ class _OTPScreenState extends State<OTPScreen> {
     Brightness brightness = Theme.of(context).brightness;
     Color pColor = brightness == Brightness.dark ? Colors.white : Colors.black;
     Color bColor = brightness == Brightness.dark
-        ? Color.fromRGBO(30, 34, 53, 1)
-        : Color.fromRGBO(245, 250, 255, 1);
+        ? const Color.fromRGBO(30, 34, 53, 1)
+        : const Color.fromRGBO(245, 250, 255, 1);
     void onResend() async {}
 
     void _verifyOtp() {
@@ -62,7 +62,7 @@ class _OTPScreenState extends State<OTPScreen> {
         print("True otp");
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Wrong OTP')),
+          const SnackBar(content: Text('Wrong OTP')),
         );
       }
     }
@@ -92,103 +92,131 @@ class _OTPScreenState extends State<OTPScreen> {
     }
 
     return Scaffold(
-      appBar: AppBar(),
+      backgroundColor: bColor,
       body: SingleChildScrollView(
-        child: Container(
-          color: bColor,
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 88.h, horizontal: 20.w),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    'Email Verification',
-                    style: TextStyle(
-                        fontSize: 34.sp,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Inter'),
-                  ),
-                  SizedBox(height: 20.h),
-                  Text(
-                    email.contains('@')
-                        ? 'We sent a code to your email \n(${_getMaskedInput(email)})'
-                        : 'We sent a code to your number \n(${_getMaskedInput(email)})',
-                    style: TextStyle(fontSize: 16.sp, fontFamily: 'Inter'),
-                    textAlign: TextAlign.center,
-                  ),
-                  TextButton(
-                    onPressed: () => {},
-                    child: Text(
-                      'Change',
+
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            SizedBox(height: 75.h),
+            Center(
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 88.h, horizontal: 20.w),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      'Email Verification',
                       style: TextStyle(
-                          fontSize: 16.sp,
-                          color: Color.fromRGBO(21, 109, 149, 1),
-                          fontFamily: 'Inter'),
+                          fontSize: 27.sp,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: 'Poppins'),
                     ),
-                  ),
-                  SizedBox(height: 20.h),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: List.generate(4, (index) {
-                      return Container(
-                        color: Colors.white,
-                        height: 64.h,
-                        width: 65.w,
-                        child: TextField(
-                          maxLength: 1,
-                          keyboardType: TextInputType.number,
-                          textAlign: TextAlign.center,
-                          controller: otpControllers[index],
-                          onChanged: (_) => _onOtpChanged(index),
+                    SizedBox(height: 20.h),
+                    GestureDetector(
+                      onTap: () {
+                        // Handle change email or number logic here
+                      },
+                      child: RichText(
+                        textAlign: TextAlign.center,
+                        text: TextSpan(
                           style: TextStyle(
-                              fontSize: 40.sp,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Inter'),
-                          cursorColor: Colors.black,
-                          cursorHeight: 32.h,
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            contentPadding: EdgeInsets.symmetric(vertical: 5.h),
-                            counter: SizedBox.shrink(),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Color.fromRGBO(20, 108, 148, 1),
-                                // Change this to the desired color
+                            fontSize: 16.sp,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black, // Default color for other text parts
+                          ),
+                          children: [
+                            TextSpan(
+                              text: email.contains('@')
+                                  ? 'We sent a code to your email \n${_getMaskedInput(email)} '
+                                  : 'We sent a code to your number \n${_getMaskedInput(email)} ',
+                            ),
+                            TextSpan(
+                              text: 'Change',
+                              style: TextStyle(
+
+                                fontSize: 15.sp,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w500,
+                                color: Color(0xff156D95), // Blue color
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+
+
+                    SizedBox(height: 32.h),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: List.generate(4, (index) {
+                        return Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(5), // Adjust the value as needed
+                          ),
+                          height: 55.h,
+                          width: 65.w,
+                          child: TextField(
+                            inputFormatters: [
+                              LengthLimitingTextInputFormatter(1), // Limits input to 1 character
+                            ],
+                            textInputAction: TextInputAction.next,
+                            keyboardType: TextInputType.number,
+                            textAlign: TextAlign.center,
+                            controller: otpControllers[index],
+                            onChanged: (_) => _onOtpChanged(index),
+                            style: TextStyle(
+                                fontSize: 32.sp,
+                                fontWeight: FontWeight.w600,
+                                fontFamily: 'Poppins'),
+                            cursorColor: Colors.black,
+                            cursorHeight: 40.h,
+                            decoration: InputDecoration(
+                              border: const OutlineInputBorder(),
+
+
+                              focusedBorder: const OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color.fromRGBO(20, 108, 148, 1),
+                                  // Change this to the desired color
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      );
-                    }),
-                  ),
-                  // SizedBox(height: 20.h),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 27.w),
-                    child: Row(
-                      children: [
-                        Text(
-                          "Don't receive your code?",
-                          style:
-                              TextStyle(fontSize: 15.sp, fontFamily: 'Inter'),
-                        ),
-                        TextButton(
-                          onPressed: onResend,
-                          child: Text(
-                            'Resend',
-                            style: TextStyle(
-                                color: Color.fromRGBO(21, 109, 149, 1),
-                                fontSize: 15.sp,
-                                fontFamily: 'Inter'),
-                          ),
-                        ),
-                      ],
+                        );
+                      }),
                     ),
-                  ),
-                ],
+                    // SizedBox(height: 20.h),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 27.w,vertical: 20.h),
+                      child: Row(
+                        children: [
+                          Text(
+                            "Don't receive your code?",
+                            style:
+                                TextStyle(fontSize: 15.sp, fontFamily: 'Inter'),
+                          ),
+                          TextButton(
+                            onPressed: onResend,
+                            child: Text(
+                              'Resend',
+                              style: TextStyle(
+                                  color: const Color.fromRGBO(21, 109, 149, 1),
+                                  fontSize: 15.sp,
+                                  fontFamily: 'Inter'),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
+          ],
         ),
       ),
     );
