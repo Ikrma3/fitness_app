@@ -3,6 +3,8 @@
     "currentWeight": "73 Kg",
     "goalWeight": "73 Kg",
     "weeklyGoal": "Maintain Weight",
-    "activityLevel": "Lightly Active"
+    "activityLevel": "Lightly Active",
+    "workout/week":0,
+    "minutes/workout":0
   }
   

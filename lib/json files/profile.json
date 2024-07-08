@@ -1,5 +1,14 @@
 {
-    "name": "Ronald Richards",
-    "profile_image": "images/profile.png"
-  }
-  
+  "name": "Ronald Richards",
+  "profile_image": "images/profile.png",
+  "weight": "55 kg",
+  "height_cm": "167 cm",
+  "age": "26 Years",
+  "height_ft_in": "6 ft 0 in",
+  "sex": "Male",
+  "date_of_birth": "May 20, 2001",
+  "location": "Pakistan",
+  "time_zone": "Karachi",
+  "units": "Kg, ft/In, Km, Cal, Mili",
+  "email": "myfitnessai@gmail.com"
+}
