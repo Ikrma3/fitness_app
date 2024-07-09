@@ -10,17 +10,15 @@ class CustomIconButton extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        width: 32, // Adjust the width and height as needed
-        height: 32,
+        width: 22, // Adjust the width and height as needed
+        height: 25,
         decoration: BoxDecoration(
           color: Color.fromRGBO(21, 109, 149, 1), // Set the background color
           shape: BoxShape.circle, // Make it circular
         ),
-        child: Center(
-          child: Icon(
-            Icons.add,
-            color: Colors.white,
-          ), // Customize the inner icon
+        child: Icon(
+          Icons.add,
+          color: Colors.white,
         ),
       ),
     );
