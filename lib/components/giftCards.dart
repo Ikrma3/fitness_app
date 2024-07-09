@@ -65,8 +65,9 @@ class GridCards extends StatelessWidget {
                     cardsData[index]['heading'],
                     style: TextStyle(
                       fontSize: 19.sp,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w600,
                       fontFamily: 'Inter',
+                      color: Colors.black,
                     ),
                   ),
                   if (hasSubheading) ...[

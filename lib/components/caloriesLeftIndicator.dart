@@ -24,7 +24,7 @@ class CaloriesLeftIndicator extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(top: 10.h),
       child: Container(
-        padding: EdgeInsets.all(10.w.h),
+        padding: EdgeInsets.all(5.w.h),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(12.r),
@@ -33,35 +33,36 @@ class CaloriesLeftIndicator extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
                   heading,
                   style: TextStyle(
-                      fontSize: 21.sp,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w700,
                       fontFamily: 'Inter'),
                 ),
-                Spacer(),
+                const Spacer(),
                 Text(
                   '${percent}%',
-                  style: TextStyle(
-                      fontSize: 21,
-                      fontWeight: FontWeight.bold,
+                  style: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w700,
                       fontFamily: 'Inter'),
                 ),
               ],
             ),
-            SizedBox(height: 10.h),
+            SizedBox(height: 3.h),
             ClipRRect(
               borderRadius: BorderRadius.circular(10.r),
               child: Container(
-                height: 20.h,
+                height: 17.h,
                 child: Stack(
                   children: [
                     Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10.r),
-                        color: Color.fromRGBO(211, 234, 240, 1),
+                        color: const Color.fromRGBO(211, 234, 240, 1),
                       ),
                     ),
                     LayoutBuilder(
@@ -70,7 +71,7 @@ class CaloriesLeftIndicator extends StatelessWidget {
                           width: constraints.maxWidth * percentage.toDouble(),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10.r),
-                            color: Color.fromRGBO(21, 109, 149, 1),
+                            color: const Color.fromRGBO(21, 109, 149, 1),
                           ),
                         );
                       },
@@ -79,50 +80,57 @@ class CaloriesLeftIndicator extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 10.h),
+            SizedBox(height: 4.h),
             Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   '$goal',
                   style: TextStyle(
-                      fontSize: 13.sp,
+                      fontSize: 12.sp,
                       fontFamily: 'Inter',
                       color: Colors.black),
                 ),
-                SizedBox(width: 20.w),
+                SizedBox(width: 15.w),
                 Text('-',
                     style: TextStyle(
                         fontSize: 13.sp,
                         fontFamily: 'Inter',
+                        fontWeight: FontWeight.w400,
                         color: Colors.black)),
-                SizedBox(width: 20.w),
+                SizedBox(width: 22.w),
                 Text(
                   '$food',
                   style: TextStyle(
-                      fontSize: 13.sp,
+                      fontSize: 12.sp,
                       fontFamily: 'Inter',
+                      fontWeight: FontWeight.w400,
                       color: Colors.black),
                 ),
-                SizedBox(width: 25.w),
+                SizedBox(width: 30.w),
                 Text('+',
                     style: TextStyle(
-                        fontSize: 13.sp,
+                        fontSize: 12.sp,
                         fontFamily: 'Inter',
+                        fontWeight: FontWeight.w400,
                         color: Colors.black)),
-                SizedBox(width: 30.w),
+                SizedBox(width: 35.w),
                 Text(
                   '$exercise',
                   style: TextStyle(
-                      fontSize: 13.sp,
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w400,
                       fontFamily: 'Inter',
                       color: Colors.black),
                 ),
-                SizedBox(width: 55.w),
+                SizedBox(width: 50.w),
                 Text(
                   '$remaining',
                   style: TextStyle(
-                      fontSize: 13.sp,
+                      fontSize: 12.sp,
                       fontFamily: 'Inter',
+                      fontWeight: FontWeight.w400,
                       color: Colors.black),
                 ),
               ],
@@ -132,28 +140,32 @@ class CaloriesLeftIndicator extends StatelessWidget {
                 Text(
                   'Goal',
                   style: TextStyle(
-                      fontSize: 13.sp,
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w400,
                       fontFamily: 'Inter',
-                      color: Color.fromRGBO(77, 77, 77, 1)),
+                      color: const Color.fromRGBO(77, 77, 77, 1)),
                 ),
                 SizedBox(width: 46.w),
                 Text('Food',
                     style: TextStyle(
-                        fontSize: 13.sp,
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w400,
                         fontFamily: 'Inter',
-                        color: Color.fromRGBO(77, 77, 77, 1))),
-                SizedBox(width: 52.w),
+                        color: const Color.fromRGBO(77, 77, 77, 1))),
+                SizedBox(width: 60.w),
                 Text('Exercise',
                     style: TextStyle(
-                        fontSize: 13.sp,
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w400,
                         fontFamily: 'Inter',
-                        color: Color.fromRGBO(77, 77, 77, 1))),
+                        color: const Color.fromRGBO(77, 77, 77, 1))),
                 SizedBox(width: 15.w),
                 Text('Remaining',
                     style: TextStyle(
-                        fontSize: 13.sp,
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w400,
                         fontFamily: 'Inter',
-                        color: Color.fromRGBO(77, 77, 77, 1))),
+                        color: const Color.fromRGBO(77, 77, 77, 1))),
               ],
             ),
           ],

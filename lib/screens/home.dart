@@ -84,10 +84,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Brightness brightness = Theme.of(context).brightness;
+    Color pColor = brightness == Brightness.dark ? Colors.white : Colors.black;
+    Color bColor = brightness == Brightness.dark
+        ? const Color.fromRGBO(30, 34, 53, 1)
+        : const Color(0xffF8FAFC);
     return Scaffold(
-        backgroundColor: Color.fromRGBO(235, 244, 247, 1),
+        backgroundColor: bColor,
         appBar: AppBar(
           automaticallyImplyLeading: false,
+          backgroundColor: bColor,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -99,9 +105,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
+                          color: pColor,
                           fontFamily: 'Inter'),
                     ),
-                    Icon(Icons.arrow_drop_down),
+                    const Icon(Icons.arrow_drop_down),
                   ],
                 ),
                 onSelected: (value) {
@@ -110,22 +117,22 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
                 itemBuilder: (BuildContext context) {
                   return [
-                    PopupMenuItem<String>(
+                    const PopupMenuItem<String>(
                       value: 'Option 1',
                       child: Text('Option 1'),
                     ),
-                    PopupMenuItem<String>(
+                    const PopupMenuItem<String>(
                       value: 'Option 2',
                       child: Text('Option 2'),
                     ),
-                    PopupMenuItem<String>(
+                    const PopupMenuItem<String>(
                       value: 'Option 3',
                       child: Text('Option 3'),
                     ),
                   ];
                 },
               ),
-              SizedBox(width: 50.w), // Adjust width as needed
+              SizedBox(width: 82.w), // Adjust width as needed
               Text(
                 'Logo',
                 style: TextStyle(
@@ -137,7 +144,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           actions: [
             IconButton(
-              icon: Icon(Icons.notifications_none),
+              icon: Icon(Icons.notifications_none, size: 20.h.w),
               onPressed: () {
                 // Handle notification icon tap
               },
@@ -145,16 +152,19 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
         body: cardsData.isEmpty || mealData.isEmpty
-            ? Center(child: CircularProgressIndicator())
+            ? const Center(child: CircularProgressIndicator())
             : SingleChildScrollView(
                 child: Padding(
                   padding:
                       EdgeInsets.symmetric(vertical: 5.h, horizontal: 20.w),
                   child: Column(
                     children: [
+                      SizedBox(
+                        height: 10.h,
+                      ),
                       Container(
-                        height: 240.h,
-                        width: 320.w,
+                        height: 230.h,
+                        width: 330.w,
                         child: PageView.builder(
                           itemCount: cardsData.length,
                           onPageChanged: (int index) {
@@ -183,8 +193,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               color: currentPage == index
-                                  ? Color.fromRGBO(21, 109, 149, 1)
-                                  : Color.fromRGBO(183, 198, 202, 1),
+                                  ? const Color.fromRGBO(21, 109, 149, 1)
+                                  : const Color.fromRGBO(183, 198, 202, 1),
                             ),
                           );
                         }),
@@ -253,8 +263,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               color: currentGraphPage == 0
-                                  ? Color.fromRGBO(21, 109, 149, 1)
-                                  : Color.fromRGBO(183, 198, 202, 1),
+                                  ? const Color.fromRGBO(21, 109, 149, 1)
+                                  : const Color.fromRGBO(183, 198, 202, 1),
                             ),
                           ),
                           Container(
@@ -264,8 +274,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               color: currentGraphPage == 1
-                                  ? Color.fromRGBO(21, 109, 149, 1)
-                                  : Color.fromRGBO(183, 198, 202, 1),
+                                  ? const Color.fromRGBO(21, 109, 149, 1)
+                                  : const Color.fromRGBO(183, 198, 202, 1),
                             ),
                           ),
                         ],

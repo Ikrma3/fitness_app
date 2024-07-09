@@ -29,10 +29,10 @@ class HomeCard extends StatelessWidget {
     return Container(
       height: height,
       width: width,
-      margin: EdgeInsets.only(bottom: 5),
+      margin: const EdgeInsets.only(bottom: 5),
       padding: EdgeInsets.all(8.w),
       decoration: BoxDecoration(
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
@@ -40,15 +40,7 @@ class HomeCard extends StatelessWidget {
               Color.fromRGBO(255, 255, 255, 1)
             ]),
         color: Colors.white,
-        borderRadius: BorderRadius.circular(12.r),
-        boxShadow: [
-          BoxShadow(
-            color: Color.fromRGBO(223, 234, 237, 1),
-            spreadRadius: 2.r,
-            blurRadius: 4.r,
-            offset: Offset(0, 3.h),
-          ),
-        ],
+        borderRadius: BorderRadius.circular(19.r),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,8 +48,9 @@ class HomeCard extends StatelessWidget {
           Text(
             cardData['heading'] ?? '',
             style: TextStyle(
-              fontSize: 24.sp,
+              fontSize: 22.sp,
               fontWeight: FontWeight.w700,
+              color: Colors.black,
               fontFamily: 'Inter',
             ),
           ),
@@ -65,7 +58,7 @@ class HomeCard extends StatelessWidget {
           Text(
             cardData['subHeading'] ?? '',
             style: TextStyle(
-              fontSize: 14.sp,
+              fontSize: 12.sp,
               color: Colors.black,
               fontFamily: 'Inter',
             ),
@@ -87,13 +80,15 @@ class HomeCard extends StatelessWidget {
     double remaining = calculateRemaining(goal, food, exercise).toDouble();
 
     return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
           child: Stack(
             alignment: Alignment.center,
             children: [
               CustomPaint(
-                size: Size(136.w, 136.h),
+                size: Size(140.w, 140.h),
                 painter: CircularProgressPainter(
                   progress: remaining / goal,
                   goal: goal,
@@ -107,7 +102,8 @@ class HomeCard extends StatelessWidget {
                     remaining.toString(),
                     style: TextStyle(
                       fontSize: 22.sp,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.black,
                       fontFamily: 'Inter',
                     ),
                   ),
@@ -117,6 +113,7 @@ class HomeCard extends StatelessWidget {
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w700,
                       fontFamily: 'Inter',
+                      color: Colors.black,
                     ),
                   ),
                 ],
@@ -124,7 +121,7 @@ class HomeCard extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(width: 16.w),
+        SizedBox(width: 20.w),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -139,29 +136,31 @@ class HomeCard extends StatelessWidget {
                             detail['image'] != null
                                 ? SvgPicture.asset(
                                     detail['image'],
-                                    height: 24.h,
-                                    width: 24.w,
+                                    height: 26.h,
+                                    width: 25.w,
                                   )
-                                : SizedBox.shrink(),
+                                : const SizedBox.shrink(),
                             SizedBox(width: 15.w),
                             Text(
                               '${detail['title']}',
                               style: TextStyle(
-                                fontSize: 16.sp,
+                                fontSize: 12.sp,
                                 fontFamily: 'Inter',
+                                color: Colors.black,
                               ),
                             ),
                           ],
                         ),
                         Row(
                           children: [
-                            SizedBox(width: 37.w),
+                            SizedBox(width: 40.w),
                             Text(
                               ' ${detail['value']}',
                               style: TextStyle(
-                                fontSize: 15.sp,
+                                fontSize: 12.sp,
                                 fontWeight: FontWeight.w700,
                                 fontFamily: 'Inter',
+                                color: Colors.black,
                               ),
                             ),
                           ],
@@ -180,9 +179,9 @@ class HomeCard extends StatelessWidget {
 
   Widget buildWithoutImages(BuildContext context) {
     List<Color> colors = [
-      Color.fromRGBO(20, 108, 148, 1),
-      Color.fromRGBO(250, 155, 49, 1),
-      Color.fromRGBO(244, 66, 55, 1)
+      const Color.fromRGBO(20, 108, 148, 1),
+      const Color.fromRGBO(250, 155, 49, 1),
+      const Color.fromRGBO(244, 66, 55, 1)
     ];
     List<String> units = ['g', 'g', 'g'];
 
@@ -207,7 +206,7 @@ class HomeCard extends StatelessWidget {
                         strokeCap: StrokeCap.round,
                         valueColor:
                             AlwaysStoppedAnimation<Color>(colors[index]),
-                        backgroundColor: Color.fromRGBO(230, 230, 230, 1),
+                        backgroundColor: const Color.fromRGBO(230, 230, 230, 1),
                       ),
                     ),
                     Column(
@@ -240,7 +239,7 @@ class HomeCard extends StatelessWidget {
                           '${progress['name']}',
                           style: TextStyle(
                               fontSize: 13.sp,
-                              color: Color.fromRGBO(59, 59, 59, 1),
+                              color: const Color.fromRGBO(59, 59, 59, 1),
                               fontFamily: 'Inter'),
                         ),
                       ],
@@ -290,7 +289,7 @@ class CircularProgressPainter extends CustomPainter {
     double radius = (size.width / 2) - strokeWidth;
 
     Paint backgroundPaint = Paint()
-      ..color = Color.fromRGBO(230, 230, 230, 1)
+      ..color = const Color.fromRGBO(230, 230, 230, 1)
       ..strokeWidth = strokeWidth
       ..style = PaintingStyle.stroke;
 
@@ -301,7 +300,7 @@ class CircularProgressPainter extends CustomPainter {
       ..strokeCap = StrokeCap.round;
 
     Paint remainingPaint = Paint()
-      ..shader = LinearGradient(
+      ..shader = const LinearGradient(
         colors: [
           Color.fromRGBO(255, 2, 2, 1),
           Color.fromRGBO(20, 108, 148, 1),

@@ -154,6 +154,10 @@ flutter:
      - images/weight.png
      - images/person.png
      - images/cake.png
+     - images/entry1.png
+     - images/entry2.png
+     - images/weightIcon.png
+     - images/date.png
      - lib/json files/onBoard.json
      - lib/json files/subscription.json
      - lib/json files/questions.json
@@ -180,6 +184,7 @@ flutter:
      - lib/json files/myPlans.json
      - lib/json files/profile.json
      - lib/json files/goal.json
+     - lib/json files/progress.json
 
      
 

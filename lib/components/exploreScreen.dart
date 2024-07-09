@@ -73,12 +73,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
                 onTapCard: navigateBasedOnCardHeading,
               ),
               SizedBox(height: 20.h),
-              selectedCardHeading.isNotEmpty
-                  ? Text(
-                      'Selected Card Heading: $selectedCardHeading',
-                      style: TextStyle(fontSize: 18.sp),
-                    )
-                  : SizedBox.shrink(),
             ],
           );
   }

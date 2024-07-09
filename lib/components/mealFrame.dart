@@ -31,13 +31,14 @@ class MealFrame extends StatelessWidget {
             Image.asset(
               imagePath,
               width: double.infinity,
-              height: 60.h, // Set a fixed height
-              fit: BoxFit.cover,
+              height: 56.h, // Set a fixed height
+              fit: BoxFit.fill,
             ),
 
             // Gradient Overlay
             Container(
-              height: 60.h, // Set a fixed height
+              height: 56.h,
+              width: 320.w, // Set a fixed height
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
@@ -61,19 +62,23 @@ class MealFrame extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      SizedBox(
+                        height: 10.h,
+                      ),
                       Text(
                         title,
                         style: TextStyle(
-                            fontSize: 24.sp,
-                            fontWeight: FontWeight.bold,
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w600,
                             color: Colors.black,
                             fontFamily: 'Inter'),
                       ),
                       Text(
                         subtitle,
                         style: TextStyle(
-                            fontSize: 16.sp,
+                            fontSize: 10.sp,
                             color: Colors.black,
+                            fontWeight: FontWeight.w400,
                             fontFamily: 'Inter'),
                       ),
                     ],
