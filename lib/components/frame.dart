@@ -143,10 +143,6 @@ class _FrameState extends State<Frame> {
                   child: Container(
                     height: 62.h,
                     width: 60.w,
-                    decoration: BoxDecoration(
-                      color: Color.fromRGBO(120, 108, 255, 0.17),
-                      borderRadius: BorderRadius.circular(5.r),
-                    ),
                     child: Image.asset(
                       widget.image!,
                       // Ensure the image fits the container

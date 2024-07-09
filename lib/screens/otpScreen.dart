@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myfitness/components/pageView.dart';
+import 'package:myfitness/screens/gender.dart';
 import 'package:myfitness/screens/questionsScreen.dart';
 
 class OTPScreen extends StatefulWidget {
@@ -54,10 +55,7 @@ class _OTPScreenState extends State<OTPScreen> {
       if (enteredOtp == storedOtp) {
         Navigator.push(
           context,
-          MaterialPageRoute(
-              builder: (context) => QuestionScreen(
-                    initialQuestionId: 1,
-                  )),
+          MaterialPageRoute(builder: (context) => GenderScreen()),
         );
         print("True otp");
       } else {
@@ -94,7 +92,6 @@ class _OTPScreenState extends State<OTPScreen> {
     return Scaffold(
       backgroundColor: bColor,
       body: SingleChildScrollView(
-
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -124,7 +121,8 @@ class _OTPScreenState extends State<OTPScreen> {
                             fontSize: 16.sp,
                             fontFamily: 'Inter',
                             fontWeight: FontWeight.w400,
-                            color: Colors.black, // Default color for other text parts
+                            color: Colors
+                                .black, // Default color for other text parts
                           ),
                           children: [
                             TextSpan(
@@ -135,7 +133,6 @@ class _OTPScreenState extends State<OTPScreen> {
                             TextSpan(
                               text: 'Change',
                               style: TextStyle(
-
                                 fontSize: 15.sp,
                                 fontFamily: 'Inter',
                                 fontWeight: FontWeight.w500,
@@ -147,7 +144,6 @@ class _OTPScreenState extends State<OTPScreen> {
                       ),
                     ),
 
-
                     SizedBox(height: 32.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -155,13 +151,15 @@ class _OTPScreenState extends State<OTPScreen> {
                         return Container(
                           decoration: BoxDecoration(
                             color: Colors.white,
-                            borderRadius: BorderRadius.circular(5), // Adjust the value as needed
+                            borderRadius: BorderRadius.circular(
+                                5), // Adjust the value as needed
                           ),
                           height: 55.h,
                           width: 65.w,
                           child: TextField(
                             inputFormatters: [
-                              LengthLimitingTextInputFormatter(1), // Limits input to 1 character
+                              LengthLimitingTextInputFormatter(
+                                  1), // Limits input to 1 character
                             ],
                             textInputAction: TextInputAction.next,
                             keyboardType: TextInputType.number,
@@ -176,8 +174,6 @@ class _OTPScreenState extends State<OTPScreen> {
                             cursorHeight: 40.h,
                             decoration: InputDecoration(
                               border: const OutlineInputBorder(),
-
-
                               focusedBorder: const OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color.fromRGBO(20, 108, 148, 1),
@@ -191,7 +187,8 @@ class _OTPScreenState extends State<OTPScreen> {
                     ),
                     // SizedBox(height: 20.h),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 27.w,vertical: 20.h),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 27.w, vertical: 20.h),
                       child: Row(
                         children: [
                           Text(

@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'; // Import this package
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myfitness/components/stepIndicator.dart';
-import 'package:myfitness/components/skipButton.dart';
 import 'package:myfitness/components/fragmentComponent.dart';
+import 'package:myfitness/components/skipButton.dart';
+import 'package:myfitness/components/stepIndicator.dart';
 import 'package:myfitness/components/submitButton.dart';
 import 'package:myfitness/screens/weight.dart';
 
 class SelectHeightScreen extends StatefulWidget {
+  final List<String> userData;
+
+  SelectHeightScreen({required this.userData});
+
   @override
   _SelectHeightScreenState createState() => _SelectHeightScreenState();
 }
@@ -20,24 +24,46 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
   int centimeters = 0;
 
   void onSkip() {
-    // Navigate to the next screen
+    // Navigator.push(
+    //   context,
+    //   MaterialPageRoute(
+    //       builder: (context) => SelectWeightScreen(userData: widget.userData)),
+    // );
   }
 
   void onContinue() {
-    if (feet == 0 && inches == 0 && centimeters == 0) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Please enter height')),
-      );
-    } else {
-      setState(() {
+    if (selectedUnit == 'Feet') {
+      if (feet == 0 && inches == 0) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Please enter height')),
+        );
+      } else {
+        List<String> updatedUserData = List.from(widget.userData);
+        updatedUserData.add("Height: $feet ft $inches in");
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => SelectWeightScreen()),
+          MaterialPageRoute(
+              builder: (context) =>
+                  SelectWeightScreen(userData: updatedUserData)),
         );
-      });
+        print(updatedUserData);
+      }
+    } else if (selectedUnit == 'Centimeter') {
+      if (centimeters == 0) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Please enter height')),
+        );
+      } else {
+        List<String> updatedUserData = List.from(widget.userData);
+        updatedUserData.add("Height: $centimeters cm");
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) =>
+                  SelectWeightScreen(userData: updatedUserData)),
+        );
+      }
     }
-
-    // Navigate to the next screen
   }
 
   void onUnitSelected(String unit) {
@@ -57,29 +83,16 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
       backgroundColor: bColor,
       appBar: AppBar(
         backgroundColor: bColor,
-        leading: Padding(
-          padding: EdgeInsets.only(left: 20.w),
-          child: IconButton(
-            icon: Icon(Icons.arrow_back),
-            onPressed: () {
-              setState(() {
-                if (currentStep > 1) {
-                  currentStep--;
-                }
-              });
-              Navigator.pop(context);
-            },
-          ),
+        title: Row(
+          children: [
+            SizedBox(
+              width: 60.w,
+            ),
+            Center(
+              child: StepIndicator(currentStep: currentStep, totalSteps: 11),
+            ),
+          ],
         ),
-        title: Center(
-          child: StepIndicator(currentStep: currentStep, totalSteps: 11),
-        ),
-        actions: [
-          Padding(
-            padding: EdgeInsets.only(right: 20.w),
-            child: SkipButton(onPressed: onSkip),
-          ),
-        ],
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 50.h, horizontal: 20.w),
@@ -94,18 +107,17 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                       'Select Height',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          color: pColor,
-                          fontSize: 34.sp,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Inter'),
+                        color: pColor,
+                        fontSize: 34.sp,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Inter',
+                      ),
                     ),
                     SizedBox(height: 20.h),
                     FragmentComponent(
                       firstOption: 'Feet',
                       secondOption: 'Centimeter',
-                      // thirdOption: 'aysy',
                       onSelected: onUnitSelected,
-                      // options: ['Feet', 'Centimeter'],
                     ),
                     SizedBox(height: 30.h),
                     if (selectedUnit == 'Feet') ...[
@@ -132,9 +144,10 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                                   },
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                      fontSize: 30.sp,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'Inter'),
+                                    fontSize: 30.sp,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Inter',
+                                  ),
                                   cursorColor: Colors.black,
                                   decoration: InputDecoration(
                                     border: OutlineInputBorder(
@@ -143,13 +156,11 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                                     enabledBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10.r),
                                       borderSide: BorderSide(
-                                        color: Color.fromRGBO(211, 234, 240,
-                                            1), // Border color when not focused
+                                        color: Color.fromRGBO(211, 234, 240, 1),
                                       ),
                                     ),
                                     focusedBorder: OutlineInputBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(10.0.r),
+                                      borderRadius: BorderRadius.circular(10.r),
                                       borderSide: BorderSide(
                                         color: Color.fromRGBO(20, 108, 148, 1),
                                       ),
@@ -158,9 +169,7 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                                 ),
                               ),
                             ),
-                            SizedBox(
-                              width: 5.w,
-                            ),
+                            SizedBox(width: 5.w),
                             Text(
                               "ft",
                               style: TextStyle(
@@ -183,25 +192,23 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                                   },
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                      fontSize: 30.sp,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'Inter'),
+                                    fontSize: 30.sp,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Inter',
+                                  ),
                                   cursorColor: Colors.black,
                                   decoration: InputDecoration(
                                     border: OutlineInputBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(10.0.r),
+                                      borderRadius: BorderRadius.circular(10.r),
                                     ),
                                     enabledBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10.r),
                                       borderSide: BorderSide(
-                                        color: Color.fromRGBO(211, 234, 240,
-                                            1), // Border color when not focused
+                                        color: Color.fromRGBO(211, 234, 240, 1),
                                       ),
                                     ),
                                     focusedBorder: OutlineInputBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(10.0.r),
+                                      borderRadius: BorderRadius.circular(10.r),
                                       borderSide: BorderSide(
                                         color: Color.fromRGBO(20, 108, 148, 1),
                                       ),
@@ -210,9 +217,7 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                                 ),
                               ),
                             ),
-                            SizedBox(
-                              width: 5.w,
-                            ),
+                            SizedBox(width: 5.w),
                             Text(
                               "in",
                               style: TextStyle(
@@ -224,9 +229,7 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                     ] else if (selectedUnit == 'Centimeter') ...[
                       Row(
                         children: [
-                          SizedBox(
-                            width: 102.w,
-                          ),
+                          SizedBox(width: 102.w),
                           Container(
                             color: Colors.white,
                             height: 60.h,
@@ -243,23 +246,23 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                               },
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                  fontSize: 30.sp,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'Inter'),
+                                fontSize: 30.sp,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Inter',
+                              ),
                               cursorColor: Colors.black,
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10.0.r),
+                                  borderRadius: BorderRadius.circular(10.r),
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10.r),
                                   borderSide: BorderSide(
-                                    color: Color.fromRGBO(211, 234, 240,
-                                        1), // Border color when not focused
+                                    color: Color.fromRGBO(211, 234, 240, 1),
                                   ),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10.0.r),
+                                  borderRadius: BorderRadius.circular(10.r),
                                   borderSide: BorderSide(
                                     color: Color.fromRGBO(20, 108, 148, 1),
                                   ),
@@ -267,9 +270,7 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                               ),
                             ),
                           ),
-                          SizedBox(
-                            width: 5.w,
-                          ),
+                          SizedBox(width: 5.w),
                           Text(
                             "cm",
                             style:

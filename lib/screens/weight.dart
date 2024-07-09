@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'; // Import this package
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myfitness/components/stepIndicator.dart';
 import 'package:myfitness/components/skipButton.dart';
 import 'package:myfitness/components/fragmentComponent.dart';
 import 'package:myfitness/components/submitButton.dart';
+import 'package:myfitness/screens/diagnosed.dart';
 import 'package:myfitness/screens/questionsScreen.dart';
 
 class SelectWeightScreen extends StatefulWidget {
+  final List<String> userData;
+
+  SelectWeightScreen({required this.userData});
+
   @override
   _SelectWeightScreenState createState() => _SelectWeightScreenState();
 }
@@ -18,24 +23,43 @@ class _SelectWeightScreenState extends State<SelectWeightScreen> {
   double kg = 0;
   double lb = 0;
 
-  void onSkip() {}
+  void onSkip() {
+    // Implement skip functionality if needed
+  }
 
   void onContinue() {
-    if (kg == 0 && lb == 0) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Please enter Weight')),
-      );
-    } else {
-      setState(() {
+    if (selectedUnit == 'Kilogram') {
+      if (kg == 0) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Please enter Weight')),
+        );
+      } else {
+        List<String> updatedUserData = List.from(widget.userData);
+        updatedUserData.add("Weight: $kg kg");
         Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => QuestionScreen(
-                    initialQuestionId: 5,
-                  )),
+              builder: (context) => Diagnosed(userData: updatedUserData)),
         );
-      });
-      // Navigate to the next screen
+        print(updatedUserData);
+      }
+    } else if (selectedUnit == 'Pound') {
+      if (lb == 0) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Please enter Weight')),
+        );
+      } else {
+        // Convert pounds to kilograms for consistency
+        double weightInKg = lb * 0.453592; // 1 lb = 0.453592 kg
+        List<String> updatedUserData = List.from(widget.userData);
+        updatedUserData.add("Weight: ${weightInKg.toStringAsFixed(2)} kg");
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => Diagnosed(userData: updatedUserData)),
+        );
+        print(updatedUserData);
+      }
     }
   }
 
@@ -56,29 +80,16 @@ class _SelectWeightScreenState extends State<SelectWeightScreen> {
       backgroundColor: bColor,
       appBar: AppBar(
         backgroundColor: bColor,
-        leading: Padding(
-          padding: EdgeInsets.only(left: 20.w),
-          child: IconButton(
-            icon: Icon(Icons.arrow_back),
-            onPressed: () {
-              setState(() {
-                if (currentStep > 1) {
-                  currentStep--;
-                }
-              });
-              Navigator.pop(context);
-            },
-          ),
+        title: Row(
+          children: [
+            SizedBox(
+              width: 60.w,
+            ),
+            Center(
+              child: StepIndicator(currentStep: currentStep, totalSteps: 11),
+            ),
+          ],
         ),
-        title: Center(
-          child: StepIndicator(currentStep: currentStep, totalSteps: 11),
-        ),
-        actions: [
-          Padding(
-            padding: EdgeInsets.only(right: 20.w),
-            child: SkipButton(onPressed: onSkip),
-          ),
-        ],
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 50.h, horizontal: 20.w),
@@ -102,7 +113,6 @@ class _SelectWeightScreenState extends State<SelectWeightScreen> {
                       firstOption: 'Kilogram',
                       secondOption: 'Pound',
                       onSelected: onUnitSelected,
-                      // options: ['Kilogram', 'Pound'],
                     ),
                     SizedBox(height: 30.h),
                     if (selectedUnit == 'Kilogram') ...[
@@ -118,7 +128,8 @@ class _SelectWeightScreenState extends State<SelectWeightScreen> {
                             child: TextField(
                               keyboardType: TextInputType.number,
                               inputFormatters: [
-                                FilteringTextInputFormatter.digitsOnly
+                                FilteringTextInputFormatter.allow(
+                                    RegExp(r'^\d+\.?\d{0,2}')),
                               ],
                               onChanged: (value) {
                                 setState(() {
@@ -174,7 +185,8 @@ class _SelectWeightScreenState extends State<SelectWeightScreen> {
                             child: TextField(
                               keyboardType: TextInputType.number,
                               inputFormatters: [
-                                FilteringTextInputFormatter.digitsOnly
+                                FilteringTextInputFormatter.allow(
+                                    RegExp(r'^\d+\.?\d{0,2}')),
                               ],
                               onChanged: (value) {
                                 setState(() {

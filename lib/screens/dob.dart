@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myfitness/components/skipButton.dart';
 import 'package:myfitness/components/stepIndicator.dart';
 import 'package:myfitness/components/submitButton.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myfitness/screens/height.dart';
+import 'package:myfitness/screens/gender.dart';
 import 'package:myfitness/screens/questionsScreen.dart';
-import 'package:myfitness/screens/weight.dart';
+import 'package:myfitness/screens/height.dart';
 
 class DOBScreen extends StatefulWidget {
+  final List<String> userData;
+
+  DOBScreen({required this.userData});
+
   @override
   _DOBScreenState createState() => _DOBScreenState();
 }
@@ -15,6 +19,7 @@ class DOBScreen extends StatefulWidget {
 class _DOBScreenState extends State<DOBScreen> {
   DateTime? selectedDate;
   int currentStep = 2;
+
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
       context: context,
@@ -22,20 +27,18 @@ class _DOBScreenState extends State<DOBScreen> {
       firstDate: DateTime(1900),
       lastDate: DateTime.now(),
     );
-    if (picked != null && picked != selectedDate)
+    if (picked != null && picked != selectedDate) {
       setState(() {
         selectedDate = picked;
       });
+    }
   }
 
   void onSkip() {
-    setState(() {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => SelectHeightScreen()),
-      );
-    });
-    // Navigate to the next screen
+    // Navigator.push(
+    //   context,
+    //   MaterialPageRoute(builder: (context) => SelectHeightScreen(userData: widget.userData)),
+    // );
   }
 
   @override
@@ -49,48 +52,32 @@ class _DOBScreenState extends State<DOBScreen> {
       backgroundColor: bColor,
       appBar: AppBar(
         backgroundColor: bColor,
-        leading: Padding(
-          padding: EdgeInsets.only(left: 20.w),
-          child: IconButton(
-            icon: Icon(Icons.arrow_back),
-            onPressed: () {
-              setState(() {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => QuestionScreen(
-                            initialQuestionId: 1,
-                          )),
-                );
-              });
-            },
-          ),
+        title: Row(
+          children: [
+            SizedBox(
+              width: 60.w,
+            ),
+            Center(
+              child: StepIndicator(currentStep: currentStep, totalSteps: 11),
+            ),
+          ],
         ),
-        title: Center(
-          child: StepIndicator(currentStep: currentStep, totalSteps: 11),
-        ),
-        actions: [
-          Padding(
-            padding: EdgeInsets.only(right: 20.w),
-            child: SkipButton(onPressed: onSkip),
-          ),
-        ],
       ),
       body: Center(
         child: Container(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: Column(
-              // mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(height: 50.h),
                 Text(
                   'Select birth date',
                   style: TextStyle(
-                      color: pColor,
-                      fontSize: 34.sp,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Inter'),
+                    color: pColor,
+                    fontSize: 34.sp,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Inter',
+                  ),
                 ),
                 SizedBox(height: 80.h),
                 InkWell(
@@ -109,21 +96,21 @@ class _DOBScreenState extends State<DOBScreen> {
                     ),
                     child: Row(
                       children: [
-                        SizedBox(
-                          width: 15.w,
-                        ),
+                        SizedBox(width: 15.w),
                         Text(
                           selectedDate != null
                               ? "${selectedDate!.day}/${selectedDate!.month}/${selectedDate!.year}"
                               : 'dd/mm/yyyy',
-                          style:
-                              TextStyle(fontSize: 20.sp, fontFamily: 'Inter'),
+                          style: TextStyle(
+                            fontSize: 20.sp,
+                            fontFamily: 'Inter',
+                          ),
                         ),
                         SizedBox(width: 150.w),
                         Icon(
                           Icons.calendar_today,
                           color: Color.fromRGBO(21, 109, 149, 1),
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -134,10 +121,16 @@ class _DOBScreenState extends State<DOBScreen> {
                   child: CustomButton(
                     text: 'Continue',
                     onTap: () {
+                      List<String> updatedUserData = List.from(widget.userData);
+                      updatedUserData.add(
+                          "DOB: ${selectedDate!.day}/${selectedDate!.month}/${selectedDate!.year}");
+                      print(updatedUserData);
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => SelectHeightScreen()),
+                          builder: (context) =>
+                              SelectHeightScreen(userData: updatedUserData),
+                        ),
                       );
                     },
                   ),
