@@ -33,7 +33,6 @@ class _ProgressScreenState extends State<ProgressScreen> {
         weightData = weightDataJson;
       });
     } catch (e) {
-      // Handle error
       print('Error loading JSON files: $e');
     }
   }
@@ -73,7 +72,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
                       color: Color.fromRGBO(223, 234, 237, 1),
                       spreadRadius: 0,
                       blurRadius: 4,
-                      offset: Offset(0, 4), // changes position of shadow
+                      offset: Offset(0, 4),
                     ),
                   ],
                 ),
@@ -116,7 +115,6 @@ class _ProgressScreenState extends State<ProgressScreen> {
                               print('3 Months');
                             },
                             child: Row(
-                              // mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 SizedBox(
                                   width: 20.w,
