@@ -10,6 +10,7 @@ import 'package:myfitness/screens/height.dart';
 import 'package:myfitness/screens/home.dart';
 import 'package:myfitness/screens/myPlans.dart';
 import 'package:myfitness/screens/notifications.dart';
+import 'package:myfitness/screens/oldNotifications.dart';
 import 'package:myfitness/screens/onBoard.dart';
 import 'package:myfitness/screens/plansScreen.dart';
 import 'package:myfitness/screens/profile.dart';
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData.light(), // Default light theme
             darkTheme: ThemeData.dark(), // Default dark theme
             themeMode: ThemeMode.system,
-            home: ProgressScreen());
+            home: GenderScreen());
       },
       // Use the system theme
     );

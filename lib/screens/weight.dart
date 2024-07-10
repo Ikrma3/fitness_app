@@ -140,6 +140,7 @@ class _SelectWeightScreenState extends State<SelectWeightScreen> {
                               style: TextStyle(
                                   fontSize: 30.sp,
                                   fontWeight: FontWeight.bold,
+                                  color: Colors.black,
                                   fontFamily: 'Inter'),
                               cursorColor: Colors.black,
                               decoration: InputDecoration(
@@ -196,6 +197,7 @@ class _SelectWeightScreenState extends State<SelectWeightScreen> {
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontSize: 30.sp,
+                                  color: Colors.black,
                                   fontWeight: FontWeight.bold,
                                   fontFamily: 'Inter'),
                               cursorColor: Colors.black,

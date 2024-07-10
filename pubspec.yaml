@@ -158,6 +158,7 @@ flutter:
      - images/entry2.png
      - images/weightIcon.png
      - images/date.png
+     - images/oldNotification.png
      - lib/json files/onBoard.json
      - lib/json files/subscription.json
      - lib/json files/questions.json
@@ -185,6 +186,7 @@ flutter:
      - lib/json files/profile.json
      - lib/json files/goal.json
      - lib/json files/progress.json
+     - lib/json files/oldNotifications.json
 
      
 
@@ -214,6 +216,10 @@ flutter:
         - asset: fonts/Mulish-Regular.ttf
         - asset: fonts/Mulish-SemiBold.ttf
         - asset: fonts/Mulish-Italic.ttf
+    - family: OpenSans
+      fonts:
+        - asset: fonts/OpenSans-Regular.ttf
+        - asset: fonts/OpenSans-SemiBold.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

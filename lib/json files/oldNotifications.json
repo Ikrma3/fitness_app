@@ -1,0 +1,29 @@
+{
+    "notifications": {
+      "November, 15 2021": [
+        {
+          "image": "images/oldNotification.png",
+          "title": "Full Body Yoga",
+          "subtitle": "08:30"
+        },
+        {
+          "image": "images/oldNotification.png",
+          "title": "Functional Workout",
+          "subtitle": "17:30"
+        }
+      ],
+      "November, 18 2021": [
+        {
+          "image": "images/oldNotification.png",
+          "title": "French Toast",
+          "subtitle": "302 cal"
+        },
+        {
+          "image": "images/oldNotification.png",
+          "title": "Chicken Breast",
+          "subtitle": "302 cal"
+        }
+      ]
+    }
+  }
+  

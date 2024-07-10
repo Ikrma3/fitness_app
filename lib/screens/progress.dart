@@ -174,7 +174,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
                 children: [
                   Row(
                     children: [
-                      Text('Explore',
+                      Text('Entries',
                           style: TextStyle(
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w600,

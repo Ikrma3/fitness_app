@@ -102,6 +102,7 @@ class _DOBScreenState extends State<DOBScreen> {
                               ? "${selectedDate!.day}/${selectedDate!.month}/${selectedDate!.year}"
                               : 'dd/mm/yyyy',
                           style: TextStyle(
+                            color: Colors.black,
                             fontSize: 20.sp,
                             fontFamily: 'Inter',
                           ),
