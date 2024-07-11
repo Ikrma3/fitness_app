@@ -77,8 +77,12 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
     Brightness brightness = Theme.of(context).brightness;
     Color pColor = brightness == Brightness.dark ? Colors.white : Colors.black;
     Color bColor = brightness == Brightness.dark
-        ? Color.fromRGBO(45, 52, 80, 1)
+        ? Color.fromRGBO(34, 35, 50, 1)
         : Color.fromRGBO(245, 250, 255, 1);
+    Color cColor = brightness == Brightness.dark
+        ? Color.fromRGBO(45, 52, 80, 1)
+        : Colors.white;
+    Color tColor = brightness == Brightness.dark ? Colors.white : Colors.black;
     return Scaffold(
       backgroundColor: bColor,
       appBar: AppBar(
@@ -122,16 +126,18 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                     SizedBox(height: 30.h),
                     if (selectedUnit == 'Feet') ...[
                       Container(
-                        width: 230.w,
+                        width: 320.w,
                         height: 64.h,
-                        child: Row(
-                          children: [
-                            SizedBox(
-                              width: 15.w,
-                            ),
-                            Expanded(
-                              child: Container(
-                                color: Colors.white,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 35.w),
+                          child: Row(
+                            children: [
+                              Container(
+                                height: 64.h,
+                                width: 97.w,
+                                decoration: BoxDecoration(
+                                    color: cColor,
+                                    borderRadius: BorderRadius.circular(10.r)),
                                 child: TextField(
                                   keyboardType: TextInputType.number,
                                   inputFormatters: [
@@ -146,9 +152,10 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                                   style: TextStyle(
                                     fontSize: 30.sp,
                                     fontWeight: FontWeight.bold,
+                                    color: tColor,
                                     fontFamily: 'Inter',
                                   ),
-                                  cursorColor: Colors.black,
+                                  cursorColor: tColor,
                                   decoration: InputDecoration(
                                     border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10.r),
@@ -156,7 +163,7 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                                     enabledBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10.r),
                                       borderSide: BorderSide(
-                                        color: Color.fromRGBO(211, 234, 240, 1),
+                                        color: cColor,
                                       ),
                                     ),
                                     focusedBorder: OutlineInputBorder(
@@ -168,18 +175,19 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                                   ),
                                 ),
                               ),
-                            ),
-                            SizedBox(width: 5.w),
-                            Text(
-                              "ft",
-                              style: TextStyle(
-                                  fontSize: 20.sp, fontFamily: 'Inter'),
-                            ),
-                            SizedBox(width: 20.w),
-                            Expanded(
-                              child: Container(
+                              SizedBox(width: 5.w),
+                              Text(
+                                "ft",
+                                style: TextStyle(
+                                    fontSize: 20.sp, fontFamily: 'Inter'),
+                              ),
+                              SizedBox(width: 10.w),
+                              Container(
                                 height: 64.h,
-                                color: Colors.white,
+                                width: 97.w,
+                                decoration: BoxDecoration(
+                                    color: cColor,
+                                    borderRadius: BorderRadius.circular(10.r)),
                                 child: TextField(
                                   keyboardType: TextInputType.number,
                                   inputFormatters: [
@@ -193,10 +201,11 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontSize: 30.sp,
+                                    color: tColor,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: 'Inter',
                                   ),
-                                  cursorColor: Colors.black,
+                                  cursorColor: tColor,
                                   decoration: InputDecoration(
                                     border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10.r),
@@ -204,7 +213,7 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                                     enabledBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10.r),
                                       borderSide: BorderSide(
-                                        color: Color.fromRGBO(211, 234, 240, 1),
+                                        color: cColor,
                                       ),
                                     ),
                                     focusedBorder: OutlineInputBorder(
@@ -216,14 +225,14 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                                   ),
                                 ),
                               ),
-                            ),
-                            SizedBox(width: 5.w),
-                            Text(
-                              "in",
-                              style: TextStyle(
-                                  fontSize: 20.sp, fontFamily: 'Inter'),
-                            ),
-                          ],
+                              SizedBox(width: 5.w),
+                              Text(
+                                "in",
+                                style: TextStyle(
+                                    fontSize: 20.sp, fontFamily: 'Inter'),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ] else if (selectedUnit == 'Centimeter') ...[
@@ -231,9 +240,11 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                         children: [
                           SizedBox(width: 102.w),
                           Container(
-                            color: Colors.white,
+                            decoration: BoxDecoration(
+                                color: cColor,
+                                borderRadius: BorderRadius.circular(10.r)),
                             height: 60.h,
-                            width: 80.h,
+                            width: 97.w,
                             child: TextField(
                               keyboardType: TextInputType.number,
                               inputFormatters: [
@@ -247,10 +258,11 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontSize: 30.sp,
+                                color: tColor,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Inter',
                               ),
-                              cursorColor: Colors.black,
+                              cursorColor: tColor,
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10.r),
@@ -258,7 +270,7 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10.r),
                                   borderSide: BorderSide(
-                                    color: Color.fromRGBO(211, 234, 240, 1),
+                                    color: cColor,
                                   ),
                                 ),
                                 focusedBorder: OutlineInputBorder(

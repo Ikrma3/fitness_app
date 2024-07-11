@@ -231,23 +231,35 @@ class _HomeScreenState extends State<HomeScreen> {
                             });
                           },
                           children: [
-                            CustomGraph(
-                              heading: weightData['heading'] ?? '',
-                              subHeading: weightData['subHeading'] ?? '',
-                              value: weightData['value'] ?? 0,
-                              date: (weightData['dates'] != null &&
-                                      weightData['dates'].isNotEmpty)
-                                  ? (weightData['dates'].last as String)
-                                  : '',
+                            Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(12.r),
+                                color: Colors.white,
+                              ),
+                              child: CustomGraph(
+                                heading: weightData['heading'] ?? '',
+                                subHeading: weightData['subHeading'] ?? '',
+                                value: weightData['value'] ?? 0,
+                                date: (weightData['dates'] != null &&
+                                        weightData['dates'].isNotEmpty)
+                                    ? (weightData['dates'].last as String)
+                                    : '',
+                              ),
                             ),
-                            CustomGraph(
-                              heading: stepsData['heading'] ?? '',
-                              subHeading: stepsData['subHeading'] ?? '',
-                              value: stepsData['value'] ?? 0,
-                              date: (stepsData['dates'] != null &&
-                                      stepsData['dates'].isNotEmpty)
-                                  ? (stepsData['dates'].last as String)
-                                  : '',
+                            Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(12.r),
+                                color: Colors.white,
+                              ),
+                              child: CustomGraph(
+                                heading: stepsData['heading'] ?? '',
+                                subHeading: stepsData['subHeading'] ?? '',
+                                value: stepsData['value'] ?? 0,
+                                date: (stepsData['dates'] != null &&
+                                        stepsData['dates'].isNotEmpty)
+                                    ? (stepsData['dates'].last as String)
+                                    : '',
+                              ),
                             ),
                           ],
                         ),

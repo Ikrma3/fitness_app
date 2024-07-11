@@ -53,7 +53,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context, designSize: const Size(360, 690), minTextAdapt: true);
+    ScreenUtil.init(context,
+        designSize: const Size(360, 690), minTextAdapt: true);
 
     Brightness brightness = Theme.of(context).brightness;
     Color pColor = brightness == Brightness.dark ? Colors.white : Colors.black;
@@ -78,7 +79,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               fit: BoxFit.fill,
               width: 360.w,
               height: _currentIndex == 0 ? 390.h : 415.h,
-
             ),
           ),
           PageView.builder(
@@ -121,6 +121,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       fontSize: 24.sp,
+                                      color: pColor,
                                       fontWeight: FontWeight.w600,
                                       fontFamily: 'Poppins'),
                                 ),
@@ -135,8 +136,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                   style: TextStyle(
                                       fontSize: 16.sp,
                                       fontWeight: FontWeight.w400,
-                                      color: Color(0xff404B52),
-                                      fontFamily: 'Opens'),
+                                      color: pColor,
+                                      fontFamily: 'OpenSans'),
                                 ),
                               ),
                               SizedBox(height: 35.h),
@@ -152,8 +153,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                       height: 9.h,
                                       decoration: BoxDecoration(
                                         color: index == _currentIndex
-                                            ? const Color.fromRGBO(21, 109, 149, 1)
-                                            : const Color.fromRGBO(211, 234, 240, 1),
+                                            ? const Color.fromRGBO(
+                                                21, 109, 149, 1)
+                                            : const Color.fromRGBO(
+                                                211, 234, 240, 1),
                                         shape: BoxShape.circle,
                                       ),
                                     ),
@@ -171,10 +174,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                     Text(
                                       "Already have an account?",
                                       style: TextStyle(
-                                          color: Color(0xff404B52),
+                                          color: pColor,
                                           fontWeight: FontWeight.w400,
                                           fontSize: 14.sp,
-                                          fontFamily: 'Opens'),
+                                          fontFamily: 'OpenSans'),
                                     ),
                                     TextButton(
                                       onPressed: () {
@@ -188,8 +191,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                       child: Text(
                                         'Signin',
                                         style: TextStyle(
-                                            color:
-                                                const Color(0xff156D95),
+                                            color: const Color(0xff156D95),
                                             fontSize: 16.sp,
                                             fontWeight: FontWeight.w500,
                                             fontFamily: 'Poppins'),

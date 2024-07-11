@@ -65,18 +65,21 @@ class _SignInScreenState extends State<SignInScreen> {
                       fontFamily: 'Inter'),
                 ),
                 SizedBox(height: 24.h),
-                CustomTextField(
+                CustomTextFormField(
                   labelText: 'Phone/Email',
                   controller: emailController,
                   errorText: emailError,
+                  keyboardType: TextInputType.emailAddress,
+                  textInputAction: TextInputAction.next,
                 ),
                 SizedBox(height: 16.h),
-                CustomTextField(
-                  labelText: 'Password',
-                  obscureText: true,
-                  controller: passwordController,
-                  errorText: passwordError,
-                ),
+                CustomTextFormField(
+                    labelText: 'Password',
+                    obscureText: true,
+                    controller: passwordController,
+                    errorText: passwordError,
+                    keyboardType: TextInputType.visiblePassword,
+                    textInputAction: TextInputAction.next),
                 SizedBox(height: 24.h),
                 CustomButton(
                   text: 'Sign In',

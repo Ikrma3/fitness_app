@@ -68,7 +68,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       backgroundColor: bColor,
       body: Center(
         child: Padding(
-          padding:  EdgeInsets.all(20.0.w),
+          padding: EdgeInsets.all(20.0.w),
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -83,29 +83,37 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       fontFamily: 'Poppins'),
                 ),
                 SizedBox(height: 23.h),
-                CustomTextField(
+                CustomTextFormField(
                   labelText: 'Full Name',
                   controller: fullNameController,
                   errorText: nameError,
+                  keyboardType: TextInputType.name,
+                  textInputAction: TextInputAction.next,
                 ),
                 SizedBox(height: 16.h),
-                CustomTextField(
+                CustomTextFormField(
                   labelText: 'Email',
                   controller: emailController,
                   errorText: emailError,
+                  keyboardType: TextInputType.emailAddress,
+                  textInputAction: TextInputAction.next,
                 ),
                 SizedBox(height: 15.h),
-                CustomTextField(
+                CustomTextFormField(
                   labelText: 'Phone',
                   controller: phoneController,
                   errorText: phoneError,
+                  keyboardType: TextInputType.phone,
+                  textInputAction: TextInputAction.next,
                 ),
                 SizedBox(height: 15.h),
-                CustomTextField(
+                CustomTextFormField(
                   labelText: 'Password',
                   obscureText: true,
                   controller: passwordController,
                   errorText: passwordError,
+                  keyboardType: TextInputType.visiblePassword,
+                  textInputAction: TextInputAction.next,
                 ),
                 SizedBox(height: 15.h),
                 const Row(
@@ -131,7 +139,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 SizedBox(height: 10.h),
                 const SocialMediaButtons(),
-            
                 SizedBox(height: 42.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -139,7 +146,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     Text(
                       "Already have an account?",
                       style: TextStyle(
-                          color: pColor, fontSize: 14.sp, fontFamily: 'Inter',fontWeight: FontWeight.w400),
+                          color: pColor,
+                          fontSize: 14.sp,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w400),
                     ),
                     TextButton(
                       onPressed: () {
@@ -150,8 +160,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         style: TextStyle(
                             color: const Color.fromRGBO(20, 108, 148, 1),
                             fontSize: 14.sp,
-                            fontFamily: 'Inter'
-                        ,fontWeight: FontWeight.w500),
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w500),
                       ),
                     ),
                   ],

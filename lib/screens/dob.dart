@@ -46,8 +46,15 @@ class _DOBScreenState extends State<DOBScreen> {
     Brightness brightness = Theme.of(context).brightness;
     Color pColor = brightness == Brightness.dark ? Colors.white : Colors.black;
     Color bColor = brightness == Brightness.dark
-        ? Color.fromRGBO(45, 52, 80, 1)
+        ? Color.fromRGBO(34, 35, 50, 1)
         : Color.fromRGBO(245, 250, 255, 1);
+    Color cColor = brightness == Brightness.dark
+        ? Color.fromRGBO(45, 52, 80, 1)
+        : Colors.white;
+    Color sColor = brightness == Brightness.dark
+        ? Colors.white
+        : Color.fromRGBO(21, 109, 149, 1);
+    Color tColor = brightness == Brightness.dark ? Colors.white : Colors.black;
     return Scaffold(
       backgroundColor: bColor,
       appBar: AppBar(
@@ -74,9 +81,9 @@ class _DOBScreenState extends State<DOBScreen> {
                   'Select birth date',
                   style: TextStyle(
                     color: pColor,
-                    fontSize: 34.sp,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Inter',
+                    fontSize: 27.sp,
+                    fontWeight: FontWeight.w600,
+                    fontFamily: 'Poppin',
                   ),
                 ),
                 SizedBox(height: 80.h),
@@ -89,10 +96,10 @@ class _DOBScreenState extends State<DOBScreen> {
                     height: 34.h,
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: Color.fromRGBO(211, 234, 240, 1),
+                        color: cColor,
                       ),
                       borderRadius: BorderRadius.circular(12.r),
-                      color: Colors.white,
+                      color: cColor,
                     ),
                     child: Row(
                       children: [
@@ -102,6 +109,7 @@ class _DOBScreenState extends State<DOBScreen> {
                               ? "${selectedDate!.day}/${selectedDate!.month}/${selectedDate!.year}"
                               : 'dd/mm/yyyy',
                           style: TextStyle(
+                            color: tColor,
                             fontSize: 20.sp,
                             fontFamily: 'Inter',
                           ),
@@ -115,7 +123,7 @@ class _DOBScreenState extends State<DOBScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 320.h),
+                SizedBox(height: 360.h),
                 Container(
                   width: 350.w,
                   child: CustomButton(

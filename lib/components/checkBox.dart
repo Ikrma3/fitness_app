@@ -13,6 +13,10 @@ class CheckBoxWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Brightness brightness = Theme.of(context).brightness;
+    Color cColor = brightness == Brightness.dark
+        ? Color.fromRGBO(73, 87, 112, 1)
+        : Color.fromRGBO(211, 234, 240, 1);
     return GestureDetector(
       onTap: () {
         onChanged?.call(!value);
@@ -31,8 +35,7 @@ class CheckBoxWidget extends StatelessWidget {
                 )
               : null,
           border: Border.all(
-            color:
-                value ? Colors.transparent : Color.fromRGBO(211, 234, 240, 1),
+            color: value ? Colors.transparent : cColor,
             width: 2.w,
           ),
         ),

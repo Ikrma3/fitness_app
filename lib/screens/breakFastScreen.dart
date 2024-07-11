@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myfitness/components/customAddIcon.dart';
-import 'package:myfitness/components/giftCards.dart';
+import 'package:myfitness/components/foodLogCard.dart';
 
 class BreakFastScreen extends StatefulWidget {
   @override
@@ -169,7 +169,7 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
       return ListView(
         padding: EdgeInsets.all(10.0.w.h),
         children: [
-          GridCards(
+          FoodLogCard(
             cardsData: _cardsData,
             onTapCard: (value) {
               print(value);
@@ -179,10 +179,11 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
           Text(
             'Suggestions',
             style: TextStyle(
-                fontSize: 18.sp,
-                fontWeight: FontWeight.bold,
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w700,
                 fontFamily: 'Inter'),
           ),
+          SizedBox(height: 10.h),
           ..._suggestions
               .map((item) => _buildSuggestionCardForBreakFast(item))
               .toList(),
@@ -198,23 +199,25 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
   }
 
   Widget _buildSuggestionCardForBreakFast(Map<String, String> item) {
-    return Container(
-      height: 100,
+    return Padding(
+      padding: EdgeInsets.only(top: 2.h),
       child: Card(
+        color: Colors.white,
+        elevation: 0,
         child: Column(
           children: [
             ListTile(
               title: Text(
                 item['detail'] ?? '',
                 style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 12.sp,
                     fontWeight: FontWeight.w600,
                     fontFamily: 'Inter'),
               ),
               subtitle: Text(
                 '${item['quantity'] ?? ''}',
                 style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 12.sp,
                     fontWeight: FontWeight.w400,
                     color: Color.fromRGBO(102, 102, 102, 1),
                     fontFamily: 'Inter'),
@@ -225,14 +228,14 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
                   Text(
                     '${item['calories'] ?? ''}',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 12.sp,
                       fontWeight: FontWeight.w600,
                       fontFamily: 'Inter',
                       color: Colors.black,
                     ),
                   ),
                   SizedBox(
-                    width: 10,
+                    width: 30.w,
                   ), // <- Additional text widget
                   CustomIconButton(
                     onPressed: () {},

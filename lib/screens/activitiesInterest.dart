@@ -23,7 +23,7 @@ class _ActivityInterestState extends State<ActivityInterest> {
 
   final List<Map<String, dynamic>> questions = [
     {
-      'title': 'Choose activities that interest',
+      'title': 'Choose activities \n that interest',
       'answers': [
         {'text': 'Cardio', 'image': 'images/cardio.png'},
         {'text': 'Power training', 'image': 'images/power.png'},
@@ -93,8 +93,11 @@ class _ActivityInterestState extends State<ActivityInterest> {
     Brightness brightness = Theme.of(context).brightness;
     Color pColor = brightness == Brightness.dark ? Colors.white : Colors.black;
     Color bColor = brightness == Brightness.dark
-        ? Color.fromRGBO(30, 34, 53, 1)
+        ? Color.fromRGBO(34, 35, 50, 1)
         : Color.fromRGBO(245, 250, 255, 1);
+    Color sColor = brightness == Brightness.dark
+        ? Colors.white
+        : Color.fromRGBO(21, 109, 149, 1);
 
     if (questions.isEmpty) {
       return Scaffold(
@@ -120,7 +123,7 @@ class _ActivityInterestState extends State<ActivityInterest> {
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w500,
                     fontFamily: 'Inter',
-                    color: Color.fromRGBO(21, 109, 149, 1)),
+                    color: sColor),
               ),
             ],
           ),
@@ -141,7 +144,7 @@ class _ActivityInterestState extends State<ActivityInterest> {
                     style: TextStyle(
                         color: pColor,
                         fontSize: 27.sp,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w700,
                         fontFamily: 'Poppin'),
                   ),
                 ),

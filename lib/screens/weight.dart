@@ -74,8 +74,12 @@ class _SelectWeightScreenState extends State<SelectWeightScreen> {
     Brightness brightness = Theme.of(context).brightness;
     Color pColor = brightness == Brightness.dark ? Colors.white : Colors.black;
     Color bColor = brightness == Brightness.dark
-        ? Color.fromRGBO(45, 52, 80, 1)
+        ? Color.fromRGBO(34, 35, 50, 1)
         : Color.fromRGBO(245, 250, 255, 1);
+    Color cColor = brightness == Brightness.dark
+        ? Color.fromRGBO(45, 52, 80, 1)
+        : Colors.white;
+    Color tColor = brightness == Brightness.dark ? Colors.white : Colors.black;
     return Scaffold(
       backgroundColor: bColor,
       appBar: AppBar(
@@ -123,8 +127,10 @@ class _SelectWeightScreenState extends State<SelectWeightScreen> {
                           ),
                           Container(
                             height: 64.h,
-                            width: 100.h,
-                            color: Colors.white,
+                            width: 97.h,
+                            decoration: BoxDecoration(
+                                color: cColor,
+                                borderRadius: BorderRadius.circular(10.r)),
                             child: TextField(
                               keyboardType: TextInputType.number,
                               inputFormatters: [
@@ -140,8 +146,9 @@ class _SelectWeightScreenState extends State<SelectWeightScreen> {
                               style: TextStyle(
                                   fontSize: 30.sp,
                                   fontWeight: FontWeight.bold,
+                                  color: tColor,
                                   fontFamily: 'Inter'),
-                              cursorColor: Colors.black,
+                              cursorColor: tColor,
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10.0.r),
@@ -149,8 +156,8 @@ class _SelectWeightScreenState extends State<SelectWeightScreen> {
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10.r),
                                   borderSide: BorderSide(
-                                    color: Color.fromRGBO(211, 234, 240,
-                                        1), // Border color when not focused
+                                    color: cColor,
+                                    // Border color when not focused
                                   ),
                                 ),
                                 focusedBorder: OutlineInputBorder(
@@ -179,9 +186,11 @@ class _SelectWeightScreenState extends State<SelectWeightScreen> {
                             width: 100.w,
                           ),
                           Container(
-                            color: Colors.white,
+                            decoration: BoxDecoration(
+                                color: cColor,
+                                borderRadius: BorderRadius.circular(10.r)),
                             height: 64.h,
-                            width: 100.h,
+                            width: 97.h,
                             child: TextField(
                               keyboardType: TextInputType.number,
                               inputFormatters: [
@@ -196,9 +205,10 @@ class _SelectWeightScreenState extends State<SelectWeightScreen> {
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontSize: 30.sp,
+                                  color: tColor,
                                   fontWeight: FontWeight.bold,
                                   fontFamily: 'Inter'),
-                              cursorColor: Colors.black,
+                              cursorColor: tColor,
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10.0.r),
@@ -206,8 +216,8 @@ class _SelectWeightScreenState extends State<SelectWeightScreen> {
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10.r),
                                   borderSide: BorderSide(
-                                    color: Color.fromRGBO(211, 234, 240,
-                                        1), // Border color when not focused
+                                    color:
+                                        cColor, // Border color when not focused
                                   ),
                                 ),
                                 focusedBorder: OutlineInputBorder(

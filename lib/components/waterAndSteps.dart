@@ -49,42 +49,45 @@ class StepsWalked extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Stack(
-          alignment: Alignment.center,
-          children: [
-            Container(
-              height: 80.h,
-              width: 80.h,
-              child: CircularProgressIndicator(
-                value: value / max,
-                strokeCap: StrokeCap.round,
-                backgroundColor: Color.fromRGBO(204, 204, 204, 1),
-                color: Color.fromRGBO(21, 109, 149, 1),
-                strokeWidth: 12,
+    return Padding(
+      padding: EdgeInsets.all(7.0.w.h),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              Container(
+                height: 80.h,
+                width: 80.h,
+                child: CircularProgressIndicator(
+                  value: value / max,
+                  strokeCap: StrokeCap.round,
+                  backgroundColor: Color.fromRGBO(204, 204, 204, 1),
+                  color: Color.fromRGBO(21, 109, 149, 1),
+                  strokeWidth: 12,
+                ),
               ),
-            ),
-            Text(
-              '$value',
-              style: TextStyle(
-                  fontSize: 20.sp,
-                  fontWeight: FontWeight.w600,
-                  fontFamily: 'Inter'),
-            ),
-          ],
-        ),
-        SizedBox(height: 8.h),
-        Text(" "),
-        Text(
-          'Steps Walked',
-          style: TextStyle(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w600,
-              fontFamily: 'Inter'),
-        ),
-      ],
+              Text(
+                '$value',
+                style: TextStyle(
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w600,
+                    fontFamily: 'Inter'),
+              ),
+            ],
+          ),
+          SizedBox(height: 14.h),
+          // Text(" "),
+          Text(
+            'Steps Walked',
+            style: TextStyle(
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w500,
+                fontFamily: 'Inter'),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -140,56 +143,90 @@ class _HealthTrackerComponentState extends State<HealthTrackerComponent> {
 
   @override
   Widget build(BuildContext context) {
+    Brightness brightness = Theme.of(context).brightness;
+    List<Color> pColor = brightness == Brightness.dark
+        ? [
+            Color.fromRGBO(120, 108, 255, 0.17),
+            Color.fromRGBO(90, 200, 250, 0.13)
+          ]
+        : [
+            Colors.white,
+            Colors.white,
+          ];
     return Container(
       child: Column(
         children: [
           Row(
             children: [
-              Column(
-                children: [
-                  Row(
+              Container(
+                width: 160.w,
+                height: 138.h,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12.r),
+                    gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: pColor)),
+                child: Padding(
+                  padding: EdgeInsets.all(7.w.h),
+                  child: Column(
                     children: [
-                      CustomSubIcon(
-                        onPressed: decrementWater,
-                      ),
-                      SizedBox(
-                        width: 15.w,
-                      ),
-                      Column(
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          WaterIntake(value: waterIntake),
+                          CustomSubIcon(
+                            onPressed: decrementWater,
+                          ),
+                          SizedBox(
+                            width: 15.w,
+                          ),
+                          Column(
+                            children: [
+                              WaterIntake(value: waterIntake),
+                            ],
+                          ),
+                          SizedBox(
+                            width: 15.w,
+                          ),
+                          CustomIconButton(
+                            onPressed: incrementWater,
+                          ),
                         ],
                       ),
-                      SizedBox(
-                        width: 15.w,
+                      Text(
+                        '${waterIntake * 8} oz',
+                        style: TextStyle(
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Inter'),
                       ),
-                      CustomIconButton(
-                        onPressed: incrementWater,
+                      Text(
+                        "Daily Water Intake",
+                        style: TextStyle(
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'Inter'),
                       ),
                     ],
                   ),
-                  Text(
-                    '${waterIntake * 8} oz',
-                    style: TextStyle(
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w500,
-                        fontFamily: 'Inter'),
-                  ),
-                  Text(
-                    "Daily Water Intake",
-                    style: TextStyle(
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: 'Inter'),
-                  ),
-                ],
+                ),
               ),
               SizedBox(
-                  width: 60
+                  width: 20
                       .w), // Increased space between water and steps indicators
               Column(
                 children: [
-                  StepsWalked(value: stepsWalked),
+                  Container(
+                      height: 138.h,
+                      width: 140.w,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12.r),
+                          gradient: LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                              colors: pColor)),
+                      child: StepsWalked(value: stepsWalked)),
                 ],
               ),
             ],

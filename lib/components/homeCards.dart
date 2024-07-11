@@ -22,6 +22,14 @@ class HomeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Brightness brightness = Theme.of(context).brightness;
+    List<Color> pColor = brightness == Brightness.dark
+        ? [
+            Color.fromRGBO(120, 108, 255, 0.17),
+            Color.fromRGBO(90, 200, 250, 0.13)
+          ]
+        : [Color.fromRGBO(211, 234, 240, 1), Color.fromRGBO(255, 255, 255, 1)];
+    Color tColor = brightness == Brightness.dark ? Colors.white : Colors.black;
     bool hasImages = cardData['details'] != null &&
         cardData['details'].isNotEmpty &&
         cardData['details'][0]['image'] != null;
@@ -32,13 +40,11 @@ class HomeCard extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 5),
       padding: EdgeInsets.all(8.w),
       decoration: BoxDecoration(
-        gradient: const LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color.fromRGBO(211, 234, 240, 1),
-              Color.fromRGBO(255, 255, 255, 1)
-            ]),
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: pColor,
+        ),
         color: Colors.white,
         borderRadius: BorderRadius.circular(19.r),
       ),
@@ -50,7 +56,7 @@ class HomeCard extends StatelessWidget {
             style: TextStyle(
               fontSize: 22.sp,
               fontWeight: FontWeight.w700,
-              color: Colors.black,
+              color: tColor,
               fontFamily: 'Inter',
             ),
           ),
@@ -59,7 +65,7 @@ class HomeCard extends StatelessWidget {
             cardData['subHeading'] ?? '',
             style: TextStyle(
               fontSize: 12.sp,
-              color: Colors.black,
+              color: tColor,
               fontFamily: 'Inter',
             ),
           ),
@@ -74,6 +80,8 @@ class HomeCard extends StatelessWidget {
   }
 
   Widget buildWithImages(BuildContext context) {
+    Brightness brightness = Theme.of(context).brightness;
+    Color tColor = brightness == Brightness.dark ? Colors.white : Colors.black;
     int goal = cardData['details'][0]['value'];
     int food = cardData['details'][1]['value'];
     int exercise = cardData['details'][2]['value'];
@@ -103,7 +111,7 @@ class HomeCard extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 22.sp,
                       fontWeight: FontWeight.w700,
-                      color: Colors.black,
+                      color: tColor,
                       fontFamily: 'Inter',
                     ),
                   ),
@@ -113,7 +121,7 @@ class HomeCard extends StatelessWidget {
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w700,
                       fontFamily: 'Inter',
-                      color: Colors.black,
+                      color: tColor,
                     ),
                   ),
                 ],
@@ -146,7 +154,7 @@ class HomeCard extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 12.sp,
                                 fontFamily: 'Inter',
-                                color: Colors.black,
+                                color: tColor,
                               ),
                             ),
                           ],
@@ -157,11 +165,10 @@ class HomeCard extends StatelessWidget {
                             Text(
                               ' ${detail['value']}',
                               style: TextStyle(
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Inter',
-                                color: Colors.black,
-                              ),
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w700,
+                                  fontFamily: 'Inter',
+                                  color: tColor),
                             ),
                           ],
                         ),
@@ -178,6 +185,8 @@ class HomeCard extends StatelessWidget {
   }
 
   Widget buildWithoutImages(BuildContext context) {
+    Brightness brightness = Theme.of(context).brightness;
+    Color tColor = brightness == Brightness.dark ? Colors.white : Colors.black;
     List<Color> colors = [
       const Color.fromRGBO(20, 108, 148, 1),
       const Color.fromRGBO(250, 155, 49, 1),
@@ -216,6 +225,7 @@ class HomeCard extends StatelessWidget {
                           '${progress['value']}',
                           style: TextStyle(
                               fontSize: 18.sp,
+                              color: tColor,
                               fontWeight: FontWeight.w700,
                               fontFamily: 'Inter'),
                         ),
@@ -223,6 +233,7 @@ class HomeCard extends StatelessWidget {
                           units[index],
                           style: TextStyle(
                               fontSize: 18.sp,
+                              color: tColor,
                               fontWeight: FontWeight.w700,
                               fontFamily: 'Inter'),
                         ),
@@ -256,6 +267,7 @@ class HomeCard extends StatelessWidget {
                           '${progress['value']}${units[index]}',
                           style: TextStyle(
                               fontSize: 13.sp,
+                              color: tColor,
                               fontWeight: FontWeight.w600,
                               fontFamily: 'Inter'),
                         ),

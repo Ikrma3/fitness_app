@@ -55,7 +55,7 @@ class _MyPlansState extends State<MyPlans> {
                 width: double.infinity,
                 child: Image.asset(
                   plansData!['titleImage'],
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fill,
                 ),
               ),
               // Transparent AppBar
@@ -107,7 +107,8 @@ class _MyPlansState extends State<MyPlans> {
                       style: TextStyle(
                           fontSize: 19.sp,
                           fontWeight: FontWeight.w700,
-                          fontFamily: 'Inter')),
+                          fontFamily: 'Inter',
+                          color: Colors.black)),
                 ),
                 buildPlanList(
                     plansData!['activatedPlans'], activatedPlansSelected),
@@ -120,7 +121,8 @@ class _MyPlansState extends State<MyPlans> {
                       style: TextStyle(
                           fontSize: 19.sp,
                           fontWeight: FontWeight.w700,
-                          fontFamily: 'Inter')),
+                          fontFamily: 'Inter',
+                          color: Colors.black)),
                 ),
                 buildPlanList(plansData!['recentPlans'], recentPlansSelected),
               ],

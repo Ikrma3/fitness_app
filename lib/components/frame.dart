@@ -60,30 +60,35 @@ class _FrameState extends State<Frame> {
     Color darkBorderColorUnchecked = Color.fromRGBO(45, 52, 80, 1);
     List<Color> darkBorderColorCheckedGradient = [
       Color.fromRGBO(90, 200, 250, 0.4),
-      Color.fromRGBO(120, 108, 255, 0.5)
+      Color.fromRGBO(120, 108, 255, 0.5),
     ];
 
     Brightness brightness = Theme.of(context).brightness;
     bool isDark = brightness == Brightness.dark;
-
+    Color cColor = brightness == Brightness.dark
+        ? Color.fromRGBO(45, 52, 80, 1)
+        : Colors.white;
     BoxDecoration decoration;
 
     if (isDark) {
       if (isChecked) {
         decoration = BoxDecoration(
+          color: cColor,
           border: Border.all(
             color: Colors.transparent,
             width: 2.0.w,
           ),
           gradient: LinearGradient(
             colors: darkBorderColorCheckedGradient,
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+            begin: Alignment.topCenter,
+            end: Alignment.bottomLeft,
+            //stops: [0.5, 0.5],
           ),
           borderRadius: BorderRadius.circular(10.0.r),
         );
       } else {
         decoration = BoxDecoration(
+          color: cColor,
           border: Border.all(
             color: darkBorderColorUnchecked,
             width: 1.0.w,
@@ -93,7 +98,7 @@ class _FrameState extends State<Frame> {
       }
     } else {
       decoration = BoxDecoration(
-        color: Colors.white,
+        color: cColor,
         border: Border.all(
           color:
               isChecked ? lightBorderColorChecked : lightBorderColorUnchecked,
@@ -140,12 +145,15 @@ class _FrameState extends State<Frame> {
               if (widget.image != null)
                 Padding(
                   padding: EdgeInsets.only(left: 12.w),
-                  child: Container(
-                    height: 62.h,
-                    width: 60.w,
-                    child: Image.asset(
-                      widget.image!,
-                      // Ensure the image fits the container
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10.r),
+                    child: Container(
+                      height: 56.h,
+                      width: 56.w,
+                      child: Image.asset(
+                        widget.image!,
+                        fit: BoxFit.fill,
+                      ),
                     ),
                   ),
                 ),
