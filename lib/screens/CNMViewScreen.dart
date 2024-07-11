@@ -40,11 +40,14 @@ class _CNMViewScreenState extends State<CNMViewScreen> {
           'Calories ',
           style: TextStyle(
               fontSize: 16.sp,
-              fontWeight: FontWeight.w700,
+              fontWeight: FontWeight.bold,
               fontFamily: 'Inter'),
         ),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: Icon(
+            Icons.arrow_back,
+            size: 20.w.h,
+          ),
           onPressed: () {
             Navigator.pop(context);
           },

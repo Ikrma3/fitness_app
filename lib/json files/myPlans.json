@@ -9,7 +9,7 @@
           "2024-07-04": {
             "Breakfast": [
               {
-                "image": "images/frenchToast.png",
+                "image": "images/highProtien.png",
                 "text": "French Toast",
                "calories": 401,
                 "protein": 26.5,
@@ -110,7 +110,7 @@
           "2024-07-03": {
             "Breakfast": [
               {
-                "image": "images/indian.png",
+                "image": "images/highProtien.png",
                 "text": "French Toast",
                 "calories": 401,
                 "protein": 26.2,

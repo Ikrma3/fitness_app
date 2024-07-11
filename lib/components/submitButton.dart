@@ -20,13 +20,13 @@ class CustomButton extends StatelessWidget {
         height: 50.h,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [
-              Color.fromRGBO(124, 196, 230, 1),
-              Color.fromRGBO(20, 108, 148, 1)
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
+              colors: [
+                Color.fromRGBO(124, 196, 230, 1),
+                Color.fromRGBO(20, 108, 148, 1)
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              stops: [0.2, 1.0]),
           borderRadius: BorderRadius.circular(30.0.r),
           boxShadow: [
             BoxShadow(

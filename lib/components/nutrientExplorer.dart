@@ -58,7 +58,7 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
 
     List<Color> progressColors = [
       Color.fromRGBO(108, 13, 143, 1),
-      Color.fromRGBO(255, 83, 176, 1),
+      Color.fromRGBO(153, 153, 153, 1),
       Color.fromRGBO(250, 155, 49, 1),
       Color.fromRGBO(0, 102, 238, 1),
       Color.fromRGBO(44, 185, 176, 1),
@@ -78,7 +78,10 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButton(
-                    icon: Icon(Icons.arrow_back),
+                    icon: Icon(
+                      Icons.arrow_back_ios,
+                      color: Color.fromRGBO(204, 204, 204, 1),
+                    ),
                     onPressed: _prevDate,
                   ),
                   Column(
@@ -96,7 +99,10 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
                     ],
                   ),
                   IconButton(
-                    icon: Icon(Icons.arrow_forward),
+                    icon: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Color.fromRGBO(204, 204, 204, 1),
+                    ),
                     onPressed: _nextDate,
                   ),
                 ],
@@ -111,14 +117,14 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
                 ),
                 color: Color.fromRGBO(21, 109, 149, 1),
               ),
-              padding: EdgeInsets.all(8.0.w.h),
+              padding: EdgeInsets.all(4.0.w.h),
               child: Row(
                 children: [
                   // Adjust the `flex` value here to increase or decrease space after 'Nutrient'
                   Expanded(
                     flex:
                         10, // Increase this value to add more space after 'Nutrient'
-                    child: Text('Nutrient',
+                    child: Text('Nutrients',
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 16.sp,
@@ -136,7 +142,7 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
                         )),
                   ),
                   Expanded(
-                    flex: 3, // Adjust this value if needed
+                    flex: 2, // Adjust this value if needed
                     child: Text('Goal',
                         style: TextStyle(
                           color: Colors.white,
@@ -145,7 +151,7 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
                         )),
                   ),
                   Expanded(
-                    flex: 3, // Adjust this value if needed
+                    flex: 2, // Adjust this value if needed
                     child: Text('Left',
                         style: TextStyle(
                           color: Colors.white,
@@ -196,7 +202,7 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
                               ),
                               Expanded(
                                 flex:
-                                    3, // Adjust this value to match the header spacing
+                                    2, // Adjust this value to match the header spacing
                                 child: Text('${nutrient['goal']}',
                                     style: TextStyle(
                                       color: Color.fromRGBO(59, 59, 59, 1),
@@ -206,7 +212,7 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
                               ),
                               Expanded(
                                 flex:
-                                    3, // Adjust this value to match the header spacing
+                                    2, // Adjust this value to match the header spacing
                                 child: Text(
                                     '${nutrient['goal'] - nutrient['total']}',
                                     style: TextStyle(

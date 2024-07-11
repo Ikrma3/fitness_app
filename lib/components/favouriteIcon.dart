@@ -37,7 +37,7 @@ class HeartPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final Paint paint = Paint()
-      ..strokeWidth = 2.0.w
+      ..strokeWidth = 1.0.w
       ..style = PaintingStyle.stroke
       ..color = Color.fromRGBO(211, 234, 240, 1); // Border color
 

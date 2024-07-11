@@ -73,7 +73,10 @@ class _MacroExplorerState extends State<MacroExplorer> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(
-                      icon: Icon(Icons.arrow_back),
+                      icon: Icon(
+                        Icons.arrow_back_ios,
+                        color: Color.fromRGBO(204, 204, 204, 1),
+                      ),
                       onPressed: _prevDate,
                     ),
                     Column(
@@ -91,7 +94,10 @@ class _MacroExplorerState extends State<MacroExplorer> {
                       ],
                     ),
                     IconButton(
-                      icon: Icon(Icons.arrow_forward),
+                      icon: Icon(
+                        Icons.arrow_forward_ios,
+                        color: Color.fromRGBO(204, 204, 204, 1),
+                      ),
                       onPressed: _nextDate,
                     ),
                   ],
@@ -194,20 +200,39 @@ class _MacroExplorerState extends State<MacroExplorer> {
       int current, int goal, String label, Color col) {
     double percentage = (current / goal).clamp(0.0, 1.0);
     return CircularPercentIndicator(
-      radius: 37.79.r,
-      lineWidth: 13.0.w,
+      radius: 40.r,
+      lineWidth: 11.0.w,
       circularStrokeCap: CircularStrokeCap.round,
       percent: percentage,
-      center: Text(
-        "${current}g",
-        style: TextStyle(
-            fontSize: 20.sp, fontWeight: FontWeight.w700, fontFamily: 'Inter'),
+      center: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "${current}",
+            style: TextStyle(
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w700,
+                fontFamily: 'Inter'),
+          ),
+          Text(
+            'g',
+            style: TextStyle(
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w700,
+                fontFamily: 'Inter'),
+          )
+        ],
       ),
       progressColor: col,
       backgroundColor: Color.fromRGBO(211, 234, 240, 1),
       footer: Padding(
         padding: EdgeInsets.only(top: 8.0.h),
-        child: Text(label, style: TextStyle(fontWeight: FontWeight.bold)),
+        child: Text(label,
+            style: TextStyle(
+                fontWeight: FontWeight.w400,
+                fontSize: 12.sp,
+                fontFamily: 'Inter',
+                color: Colors.black)),
       ),
     );
   }

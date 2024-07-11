@@ -78,13 +78,14 @@ class _PlanScreenState extends State<PlanScreen> {
       return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+            backgroundColor: Colors.white,
             title: Text(
-          "Plans",
-          style: TextStyle(
-              fontSize: 19.sp,
-              fontWeight: FontWeight.w500,
-              fontFamily: 'Inter'),
-        )),
+              "Plans",
+              style: TextStyle(
+                  fontSize: 19.sp,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Inter'),
+            )),
         body: Center(child: CircularProgressIndicator()),
       );
     }
@@ -92,7 +93,7 @@ class _PlanScreenState extends State<PlanScreen> {
     return Scaffold(
         backgroundColor: Color.fromRGBO(245, 250, 255, 1),
         appBar: AppBar(
-          backgroundColor: Color.fromRGBO(245, 250, 255, 1),
+          backgroundColor: Colors.white,
           title: Text(
             "Plans",
             style: TextStyle(
@@ -107,15 +108,9 @@ class _PlanScreenState extends State<PlanScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text(
-                    jsonData!['heading'],
-                    style: TextStyle(
-                        fontSize: 24.sp,
-                        fontWeight: FontWeight.w700,
-                        fontFamily: 'Inter'),
-                  ),
                   PlanButton(
                     onTap: () {
                       Navigator.push(
@@ -131,12 +126,24 @@ class _PlanScreenState extends State<PlanScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 8.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    jsonData!['heading'],
+                    style: TextStyle(
+                        fontSize: 19.sp,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: 'Inter'),
+                  ),
+                ],
+              ),
+              SizedBox(height: 4.h),
               Text(
                 jsonData!['subHeading'],
                 style: TextStyle(fontSize: 14.sp, fontFamily: 'Inter'),
               ),
-              SizedBox(height: 16.h),
+              SizedBox(height: 12.h),
               Text(
                 "Filter by:",
                 style: TextStyle(
@@ -164,7 +171,7 @@ class _PlanScreenState extends State<PlanScreen> {
                         });
                       },
                       child: Container(
-                        height: 10.h,
+                        height: 8.h,
                         padding: EdgeInsets.symmetric(
                             horizontal: 16.w, vertical: 2.h),
                         margin: EdgeInsets.only(right: 8.w),
@@ -176,7 +183,7 @@ class _PlanScreenState extends State<PlanScreen> {
                           border: Border.all(
                             color: Color.fromRGBO(211, 234, 240,
                                 1), // Specify your border color here
-                            width: 2.w, // Specify the border width
+                            width: 1.w, // Specify the border width
                           ),
                         ),
                         child: Center(

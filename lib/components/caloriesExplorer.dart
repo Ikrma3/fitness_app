@@ -70,7 +70,7 @@ class _CaloriesExplorerState extends State<CaloriesExplorer> {
     return Scaffold(
       backgroundColor: Color.fromRGBO(245, 250, 255, 1),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(10.w.h),
+        padding: EdgeInsets.all(5.w.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -80,7 +80,10 @@ class _CaloriesExplorerState extends State<CaloriesExplorer> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButton(
-                    icon: Icon(Icons.arrow_back),
+                    icon: Icon(
+                      Icons.arrow_back_ios,
+                      color: Color.fromRGBO(204, 204, 204, 1),
+                    ),
                     onPressed: () => _navigateDate(1),
                   ),
                   Column(
@@ -101,7 +104,10 @@ class _CaloriesExplorerState extends State<CaloriesExplorer> {
                     ],
                   ),
                   IconButton(
-                    icon: Icon(Icons.arrow_forward),
+                    icon: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Color.fromRGBO(204, 204, 204, 1),
+                    ),
                     onPressed: () => _navigateDate(-1),
                   ),
                 ],
@@ -115,6 +121,9 @@ class _CaloriesExplorerState extends State<CaloriesExplorer> {
               ),
               child: Column(
                 children: [
+                  SizedBox(
+                    height: 10.h,
+                  ),
                   CircularSegmentProgressIndicator(
                     segments: indicatorSegments,
                     radius: 67.5.r,
@@ -124,7 +133,7 @@ class _CaloriesExplorerState extends State<CaloriesExplorer> {
                   SizedBox(height: 16.h),
                   // Dividing meals into two rows with two columns each
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Expanded(
                         child: Column(
@@ -160,6 +169,9 @@ class _CaloriesExplorerState extends State<CaloriesExplorer> {
                               fontFamily: 'Inter')),
                     ],
                   ),
+                  SizedBox(
+                    height: 5.h,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -174,6 +186,9 @@ class _CaloriesExplorerState extends State<CaloriesExplorer> {
                               color: Color.fromRGBO(102, 102, 102, 1),
                               fontFamily: 'Inter')),
                     ],
+                  ),
+                  SizedBox(
+                    height: 5.h,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -263,12 +278,13 @@ class _CaloriesExplorerState extends State<CaloriesExplorer> {
           children: [
             Text("${meal['name']}",
                 style: TextStyle(
-                    fontSize: 15.sp,
+                    fontSize: 16.sp,
                     fontFamily: 'Inter',
-                    fontWeight: FontWeight.w600)),
+                    fontWeight: FontWeight.w500)),
             Text("${meal['percentage']}% (${meal['calories']} cal)",
                 style: TextStyle(
                     fontSize: 12.sp,
+                    fontWeight: FontWeight.w400,
                     fontFamily: 'Inter',
                     color: Color.fromRGBO(102, 102, 102, 1))),
           ],

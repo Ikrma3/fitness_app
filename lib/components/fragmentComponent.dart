@@ -34,7 +34,7 @@ class _FragmentComponentState extends State<FragmentComponent> {
   Widget build(BuildContext context) {
     Brightness brightness = Theme.of(context).brightness;
     Color boxColor = brightness == Brightness.dark
-        ? Color.fromARGB(255, 53, 69, 158)
+        ? Color.fromRGBO(45, 52, 80, 1)
         : Color.fromRGBO(211, 234, 240, 1);
 
     // Determine the width based on the presence of the third option
@@ -75,10 +75,10 @@ class _FragmentComponentState extends State<FragmentComponent> {
         ? Color.fromARGB(255, 255, 255, 255)
         : Colors.black;
     Color selectedColor = brightness == Brightness.dark
-        ? Color.fromARGB(255, 101, 117, 207)
+        ? Color.fromRGBO(93, 166, 199, 1)
         : Colors.white;
     Color notSelectedColor = brightness == Brightness.dark
-        ? Color.fromARGB(255, 53, 69, 158)
+        ? Color.fromRGBO(45, 52, 80, 1)
         : Color.fromRGBO(211, 234, 240, 1);
     bool isSelected = selectedOption == option;
 

@@ -16,6 +16,14 @@ class MealFrame extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Brightness brightness = Theme.of(context).brightness;
+    List<Color> pColor = brightness == Brightness.dark
+        ? [Color.fromRGBO(45, 52, 80, 1), Color.fromRGBO(128, 128, 128, 0)]
+        : [
+            Color.fromRGBO(235, 235, 235, 1),
+            Color.fromRGBO(128, 128, 128, 0),
+          ];
+    Color tColor = brightness == Brightness.dark ? Colors.white : Colors.black;
     return Container(
       margin: EdgeInsets.symmetric(
         vertical: 2.h,
@@ -43,10 +51,8 @@ class MealFrame extends StatelessWidget {
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  colors: [
-                    Color.fromRGBO(235, 235, 235, 1),
-                    Color.fromRGBO(128, 128, 128, 0),
-                  ],
+                  stops: [0.1, 0.8],
+                  colors: pColor,
                 ),
                 borderRadius: BorderRadius.circular(15),
               ),
@@ -70,14 +76,14 @@ class MealFrame extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 16.sp,
                             fontWeight: FontWeight.w600,
-                            color: Colors.black,
+                            color: tColor,
                             fontFamily: 'Inter'),
                       ),
                       Text(
                         subtitle,
                         style: TextStyle(
                             fontSize: 10.sp,
-                            color: Colors.black,
+                            color: tColor,
                             fontWeight: FontWeight.w400,
                             fontFamily: 'Inter'),
                       ),

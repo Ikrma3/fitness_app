@@ -8,9 +8,9 @@
             {"name": "Saturated Fats", "total": 49, "goal": 103},
             {"name": "Unsaturated Fats", "total": 49, "goal": 103},
             {"name": "Sodium", "total": 49, "goal": 103},
-            {"name": "Cholesterol", "total": 49, "goal": 103},
             {"name": "Unsaturated Fats", "total": 49, "goal": 103},
-            {"name": "Sodium", "total": 49, "goal": 103}
+            {"name": "Sodium", "total": 49, "goal": 103},
+            {"name": "Cholesterol", "total": 100, "goal": 103}
         ]
     },
     {

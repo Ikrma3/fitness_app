@@ -53,10 +53,14 @@ class _DairyScreenState extends State<DairyScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Brightness brightness = Theme.of(context).brightness;
+    Color bColor = brightness == Brightness.dark
+        ? Color.fromRGBO(34, 35, 50, 1)
+        : Color.fromRGBO(235, 244, 247, 1);
     return Scaffold(
-      backgroundColor: Color.fromRGBO(235, 244, 247, 1),
+      backgroundColor: bColor,
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(235, 244, 247, 1),
+        backgroundColor: bColor,
         title: Text(
           'Dairy ',
           style: TextStyle(
@@ -89,7 +93,7 @@ class _DairyScreenState extends State<DairyScreen> {
                   ),
                   SizedBox(height: 5.h),
                   Container(
-                    height: 140.h,
+                    height: 105.h,
                     child: FutureBuilder<Map<String, dynamic>>(
                       future: loadCaloriesLeftData(),
                       builder: (context, snapshot) {

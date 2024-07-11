@@ -38,7 +38,7 @@ class PlansCardComponent extends StatelessWidget {
         width: 320.w,
         height: 200.h,
         child: Card(
-          elevation: 3,
+          elevation: 1,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [

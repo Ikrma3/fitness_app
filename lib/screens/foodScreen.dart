@@ -44,7 +44,7 @@ class FoodScreen extends StatelessWidget {
                 width: double.infinity,
                 child: Image.asset(
                   image,
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fill,
                 ),
               ),
               // Transparent AppBar
@@ -123,7 +123,7 @@ class FoodScreen extends StatelessWidget {
                                 'Meal:',
                                 style: TextStyle(
                                     fontSize: 14.sp,
-                                    fontWeight: FontWeight.w700,
+                                    fontWeight: FontWeight.w800,
                                     fontFamily: 'Inter'),
                               ),
                               Spacer(),
@@ -146,7 +146,7 @@ class FoodScreen extends StatelessWidget {
                                 'Number of Servings:',
                                 style: TextStyle(
                                     fontSize: 14.sp,
-                                    fontWeight: FontWeight.w700,
+                                    fontWeight: FontWeight.w800,
                                     fontFamily: 'Inter'),
                               ),
                               Spacer(),
@@ -169,7 +169,7 @@ class FoodScreen extends StatelessWidget {
                                 'Size',
                                 style: TextStyle(
                                     fontSize: 14.sp,
-                                    fontWeight: FontWeight.w700,
+                                    fontWeight: FontWeight.w800,
                                     fontFamily: 'Inter'),
                               ),
                               Spacer(),
@@ -192,7 +192,7 @@ class FoodScreen extends StatelessWidget {
                                 'Time:',
                                 style: TextStyle(
                                     fontSize: 14.sp,
-                                    fontWeight: FontWeight.w700,
+                                    fontWeight: FontWeight.w800,
                                     fontFamily: 'Inter'),
                               ),
                               Spacer(),
@@ -211,13 +211,12 @@ class FoodScreen extends StatelessWidget {
                         ],
                       ),
                       SizedBox(height: 16.0.h),
-                      Divider(),
                       SizedBox(height: 16.0.h),
                       Text(
                         'Percentage of Your Daily Goals',
                         style: TextStyle(
                             fontSize: 15.sp,
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w800,
                             fontFamily: 'Inter'),
                       ),
                       SizedBox(height: 18.0.h),
@@ -259,7 +258,7 @@ class FoodScreen extends StatelessWidget {
         Text('${value.toStringAsFixed(1)}g',
             style: TextStyle(
                 fontSize: 16.sp,
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w600,
                 fontFamily: 'Inter')),
         Text(label,
             style: TextStyle(
@@ -277,12 +276,14 @@ class FoodScreen extends StatelessWidget {
 
     return Expanded(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 4.0.w),
+        padding: EdgeInsets.symmetric(horizontal: 2.0.w),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
+                SizedBox(
+                  width: 10.w,
+                ),
                 Text(
                   label,
                   style: TextStyle(
@@ -294,33 +295,33 @@ class FoodScreen extends StatelessWidget {
             ),
             SizedBox(height: 4.0.h),
             LinearPercentIndicator(
-              lineHeight: 4.w,
+              lineHeight: 4.h,
               percent: percent,
               backgroundColor: Colors.grey[300],
               linearGradient: gradient,
             ),
             SizedBox(height: 6.0.h),
-            Align(
-              alignment: Alignment.centerRight,
-              child: Row(
-                children: [
-                  Text(
-                    '${(percent * 100).toStringAsFixed(0)}%',
-                    style: TextStyle(
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w400,
-                        fontFamily: 'Inter'),
-                  ),
-                  Spacer(),
-                  Text(
-                    '${total.toStringAsFixed(1)}',
-                    style: TextStyle(
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w400,
-                        fontFamily: 'Inter'),
-                  ),
-                ],
-              ),
+            Row(
+              children: [
+                SizedBox(
+                  width: 10.w,
+                ),
+                Text(
+                  '${(percent * 100).toStringAsFixed(0)}%',
+                  style: TextStyle(
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'Inter'),
+                ),
+                Spacer(),
+                Text(
+                  '${total.toInt()}',
+                  style: TextStyle(
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'Inter'),
+                ),
+              ],
             ),
           ],
         ),

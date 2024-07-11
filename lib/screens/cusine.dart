@@ -109,8 +109,11 @@ class _CusineState extends State<Cusine> {
     Brightness brightness = Theme.of(context).brightness;
     Color pColor = brightness == Brightness.dark ? Colors.white : Colors.black;
     Color bColor = brightness == Brightness.dark
-        ? Color.fromRGBO(30, 34, 53, 1)
+        ? Color.fromRGBO(34, 35, 50, 1)
         : Color.fromRGBO(245, 250, 255, 1);
+    Color sColor = brightness == Brightness.dark
+        ? Colors.white
+        : Color.fromRGBO(21, 109, 149, 1);
 
     if (questions.isEmpty) {
       return Scaffold(
@@ -131,7 +134,7 @@ class _CusineState extends State<Cusine> {
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w500,
                 fontFamily: 'Inter',
-                color: Color.fromRGBO(21, 109, 149, 1)),
+                color: sColor),
           ),
         ),
         actions: [

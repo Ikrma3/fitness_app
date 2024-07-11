@@ -82,6 +82,7 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
     Color cColor = brightness == Brightness.dark
         ? Color.fromRGBO(45, 52, 80, 1)
         : Colors.white;
+    Color tColor = brightness == Brightness.dark ? Colors.white : Colors.black;
     return Scaffold(
       backgroundColor: bColor,
       appBar: AppBar(
@@ -134,7 +135,9 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                               Container(
                                 height: 64.h,
                                 width: 97.w,
-                                color: cColor,
+                                decoration: BoxDecoration(
+                                    color: cColor,
+                                    borderRadius: BorderRadius.circular(10.r)),
                                 child: TextField(
                                   keyboardType: TextInputType.number,
                                   inputFormatters: [
@@ -149,10 +152,10 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                                   style: TextStyle(
                                     fontSize: 30.sp,
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.black,
+                                    color: tColor,
                                     fontFamily: 'Inter',
                                   ),
-                                  cursorColor: Colors.black,
+                                  cursorColor: tColor,
                                   decoration: InputDecoration(
                                     border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10.r),
@@ -160,7 +163,7 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                                     enabledBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10.r),
                                       borderSide: BorderSide(
-                                        color: Color.fromRGBO(211, 234, 240, 1),
+                                        color: cColor,
                                       ),
                                     ),
                                     focusedBorder: OutlineInputBorder(
@@ -182,7 +185,9 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                               Container(
                                 height: 64.h,
                                 width: 97.w,
-                                color: cColor,
+                                decoration: BoxDecoration(
+                                    color: cColor,
+                                    borderRadius: BorderRadius.circular(10.r)),
                                 child: TextField(
                                   keyboardType: TextInputType.number,
                                   inputFormatters: [
@@ -196,11 +201,11 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontSize: 30.sp,
-                                    color: Colors.black,
+                                    color: tColor,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: 'Inter',
                                   ),
-                                  cursorColor: Colors.black,
+                                  cursorColor: tColor,
                                   decoration: InputDecoration(
                                     border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10.r),
@@ -208,7 +213,7 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                                     enabledBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10.r),
                                       borderSide: BorderSide(
-                                        color: Color.fromRGBO(211, 234, 240, 1),
+                                        color: cColor,
                                       ),
                                     ),
                                     focusedBorder: OutlineInputBorder(
@@ -235,9 +240,11 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                         children: [
                           SizedBox(width: 102.w),
                           Container(
-                            color: cColor,
+                            decoration: BoxDecoration(
+                                color: cColor,
+                                borderRadius: BorderRadius.circular(10.r)),
                             height: 60.h,
-                            width: 80.h,
+                            width: 97.w,
                             child: TextField(
                               keyboardType: TextInputType.number,
                               inputFormatters: [
@@ -251,11 +258,11 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontSize: 30.sp,
-                                color: Colors.black,
+                                color: tColor,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Inter',
                               ),
-                              cursorColor: Colors.black,
+                              cursorColor: tColor,
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10.r),
@@ -263,7 +270,7 @@ class _SelectHeightScreenState extends State<SelectHeightScreen> {
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10.r),
                                   borderSide: BorderSide(
-                                    color: Color.fromRGBO(211, 234, 240, 1),
+                                    color: cColor,
                                   ),
                                 ),
                                 focusedBorder: OutlineInputBorder(

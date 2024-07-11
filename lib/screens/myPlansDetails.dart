@@ -27,11 +27,12 @@ class _PlanDetailsState extends State<PlanDetails> {
     return Scaffold(
       backgroundColor: Color.fromRGBO(245, 250, 255, 1),
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: Text(
           widget.selectedPlan['name'],
           style: TextStyle(
             fontSize: 19.sp,
-            fontWeight: FontWeight.w500,
+            fontWeight: FontWeight.w600,
             fontFamily: 'Inter',
           ),
         ),
@@ -55,7 +56,7 @@ class _PlanDetailsState extends State<PlanDetails> {
                   value,
                   style: TextStyle(
                     fontSize: 19.sp,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w600,
                     fontFamily: 'Inter',
                   ),
                 ),

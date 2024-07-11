@@ -18,6 +18,19 @@ class CaloriesLeftIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Brightness brightness = Theme.of(context).brightness;
+    List<Color> pColor = brightness == Brightness.dark
+        ? [
+            Color.fromRGBO(120, 108, 255, 0.17),
+            Color.fromRGBO(90, 200, 250, 0.13)
+          ]
+        : [Colors.white, Colors.white];
+    Color tColor = brightness == Brightness.dark
+        ? Colors.white
+        : Color.fromRGBO(77, 77, 77, 1);
+    Color lineColor = brightness == Brightness.dark
+        ? Color.fromRGBO(34, 35, 50, 1)
+        : Color.fromRGBO(211, 234, 240, 1);
     var remaining = goal - food + exercise;
     var percentage = percent / 100;
 
@@ -26,7 +39,7 @@ class CaloriesLeftIndicator extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(5.w.h),
         decoration: BoxDecoration(
-          color: Colors.white,
+          gradient: LinearGradient(colors: pColor),
           borderRadius: BorderRadius.circular(12.r),
         ),
         child: Column(
@@ -62,7 +75,7 @@ class CaloriesLeftIndicator extends StatelessWidget {
                     Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10.r),
-                        color: const Color.fromRGBO(211, 234, 240, 1),
+                        color: lineColor,
                       ),
                     ),
                     LayoutBuilder(
@@ -85,53 +98,51 @@ class CaloriesLeftIndicator extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  '$goal',
-                  style: TextStyle(
+                Text('$goal',
+                    style: TextStyle(
                       fontSize: 12.sp,
                       fontFamily: 'Inter',
-                      color: Colors.black),
-                ),
+                    )),
                 SizedBox(width: 15.w),
                 Text('-',
                     style: TextStyle(
-                        fontSize: 13.sp,
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w400,
-                        color: Colors.black)),
+                      fontSize: 13.sp,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w400,
+                    )),
                 SizedBox(width: 22.w),
                 Text(
                   '$food',
                   style: TextStyle(
-                      fontSize: 12.sp,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black),
+                    fontSize: 12.sp,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
                 SizedBox(width: 30.w),
                 Text('+',
                     style: TextStyle(
-                        fontSize: 12.sp,
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w400,
-                        color: Colors.black)),
+                      fontSize: 12.sp,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w400,
+                    )),
                 SizedBox(width: 35.w),
                 Text(
                   '$exercise',
                   style: TextStyle(
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w400,
-                      fontFamily: 'Inter',
-                      color: Colors.black),
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Inter',
+                  ),
                 ),
                 SizedBox(width: 50.w),
                 Text(
                   '$remaining',
                   style: TextStyle(
-                      fontSize: 12.sp,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black),
+                    fontSize: 12.sp,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
               ],
             ),
@@ -143,7 +154,7 @@ class CaloriesLeftIndicator extends StatelessWidget {
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w400,
                       fontFamily: 'Inter',
-                      color: const Color.fromRGBO(77, 77, 77, 1)),
+                      color: tColor),
                 ),
                 SizedBox(width: 46.w),
                 Text('Food',
@@ -151,21 +162,21 @@ class CaloriesLeftIndicator extends StatelessWidget {
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w400,
                         fontFamily: 'Inter',
-                        color: const Color.fromRGBO(77, 77, 77, 1))),
+                        color: tColor)),
                 SizedBox(width: 60.w),
                 Text('Exercise',
                     style: TextStyle(
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w400,
                         fontFamily: 'Inter',
-                        color: const Color.fromRGBO(77, 77, 77, 1))),
+                        color: tColor)),
                 SizedBox(width: 15.w),
                 Text('Remaining',
                     style: TextStyle(
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w400,
                         fontFamily: 'Inter',
-                        color: const Color.fromRGBO(77, 77, 77, 1))),
+                        color: tColor)),
               ],
             ),
           ],

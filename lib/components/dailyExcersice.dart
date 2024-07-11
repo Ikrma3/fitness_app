@@ -29,6 +29,14 @@ class _DailyExerciseState extends State<DailyExercise> {
 
   @override
   Widget build(BuildContext context) {
+    Brightness brightness = Theme.of(context).brightness;
+    List<Color> pColor = brightness == Brightness.dark
+        ? [
+            Color.fromRGBO(120, 108, 255, 0.17),
+            Color.fromRGBO(90, 200, 250, 0.13)
+          ]
+        : [Color.fromRGBO(183, 207, 218, 1), Color.fromRGBO(255, 255, 255, 1)];
+    Color tColor = brightness == Brightness.dark ? Colors.white : Colors.black;
     if (data == null) {
       return Center(child: CircularProgressIndicator());
     }
@@ -39,10 +47,7 @@ class _DailyExerciseState extends State<DailyExercise> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(14.r),
         gradient: LinearGradient(
-          colors: [
-            Color.fromRGBO(183, 207, 218, 1),
-            Color.fromRGBO(255, 255, 255, 1)
-          ],
+          colors: pColor,
           begin: Alignment.topLeft,
           end: Alignment.center,
         ),
@@ -59,7 +64,7 @@ class _DailyExerciseState extends State<DailyExercise> {
                     style: TextStyle(
                         fontSize: 20.sp,
                         fontWeight: FontWeight.w700,
-                        color: Color.fromRGBO(59, 59, 59, 1),
+                        color: tColor,
                         fontFamily: 'Inter'),
                   ),
                   SizedBox(

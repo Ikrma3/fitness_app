@@ -18,7 +18,7 @@ class StepIndicator extends StatelessWidget {
       style: TextStyle(
           fontSize: 16.sp,
           color: stepColor,
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w500,
           fontFamily: 'Inter'),
     );
   }

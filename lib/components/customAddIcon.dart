@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomIconButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -10,8 +11,8 @@ class CustomIconButton extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        width: 22, // Adjust the width and height as needed
-        height: 25,
+        width: 26.w, // Adjust the width and height as needed
+        height: 26.h,
         decoration: BoxDecoration(
           color: Color.fromRGBO(21, 109, 149, 1), // Set the background color
           shape: BoxShape.circle, // Make it circular
