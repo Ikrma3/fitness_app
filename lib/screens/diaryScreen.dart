@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:myfitness/components/caloriesLeftIndicator.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myfitness/components/dairyCards.dart';
+import 'package:myfitness/components/smallSubmitButton.dart';
 import 'package:myfitness/components/submitButton.dart';
 import 'package:myfitness/screens/breakFastScreen.dart';
 
@@ -145,7 +146,7 @@ class _DairyScreenState extends State<DairyScreen> {
             bottom: 20.h,
             left: 20.w,
             right: 20.w,
-            child: CustomButton(
+            child: SmallCustomButton(
               onTap: () {},
               text: "Nutrition",
               image: Image.asset('images/nutritionButton.png'),

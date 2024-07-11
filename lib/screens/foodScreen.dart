@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfitness/components/smallSubmitButton.dart';
 import 'package:myfitness/components/submitButton.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:myfitness/components/foodIndicator.dart';
@@ -233,7 +234,7 @@ class FoodScreen extends StatelessWidget {
                   bottom: 20.h,
                   left: 20.w,
                   right: 20.w,
-                  child: CustomButton(
+                  child: SmallCustomButton(
                       text: 'Add',
                       image: Image.asset('images/plus.png'),
                       onTap: () {}))
