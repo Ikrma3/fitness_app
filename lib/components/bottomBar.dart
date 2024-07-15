@@ -5,89 +5,98 @@ class BottomBar extends StatefulWidget {
   final int currentIndex;
   final Function(int) onTap;
 
-  const BottomBar({
-    Key? key,
-    required this.currentIndex,
-    required this.onTap,
-  }) : super(key: key);
+  BottomBar({required this.currentIndex, required this.onTap});
 
   @override
-  State<BottomBar> createState() => _BottomBarState();
+  _BottomBarState createState() => _BottomBarState();
 }
 
 class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      backgroundColor: Colors.white,
       currentIndex: widget.currentIndex,
       onTap: widget.onTap,
       items: [
         BottomNavigationBarItem(
-          icon: Icon(
-            Icons.home,
-            color: widget.currentIndex == 0
-                ? Color.fromRGBO(21, 109, 149, 1)
-                : Color.fromRGBO(183, 198, 202, 1),
-            size: 25.sp,
+          icon: Padding(
+            padding: EdgeInsets.all(0),
+            child: Icon(
+              Icons.home,
+              color: widget.currentIndex == 0
+                  ? const Color.fromRGBO(21, 109, 149, 1)
+                  : const Color.fromRGBO(183, 198, 202, 1),
+              size: widget.currentIndex == 0 ? 29.sp : 25.sp,
+            ),
           ),
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: Icon(
-            Icons.book,
-            color: widget.currentIndex == 1
-                ? Color.fromRGBO(21, 109, 149, 1)
-                : Color.fromRGBO(183, 198, 202, 1),
-            size: 25.sp,
+          icon: Padding(
+            padding: EdgeInsets.all(0),
+            child: Icon(
+              Icons.book,
+              color: widget.currentIndex == 1
+                  ? const Color.fromRGBO(21, 109, 149, 1)
+                  : const Color.fromRGBO(183, 198, 202, 1),
+              size: widget.currentIndex == 1 ? 29.sp : 25.sp,
+            ),
           ),
-          label: 'Dairy',
+          label: 'Diary',
         ),
         BottomNavigationBarItem(
           icon: Container(
-            padding: EdgeInsets.all(8.0),
+            margin: EdgeInsets.all(0),
             decoration: BoxDecoration(
-              color: Color.fromRGBO(21, 109, 149, 1),
+              color: const Color.fromRGBO(21, 109, 149, 1),
               shape: BoxShape.rectangle,
               borderRadius: BorderRadius.circular(12),
             ),
             child: Icon(
               Icons.add,
               color: Colors.white,
-              size: 28.sp,
+              size: 39.sp, // Always larger size
             ),
           ),
           label: '',
         ),
         BottomNavigationBarItem(
-          icon: CustomIcon(
-            selected: widget.currentIndex == 3,
-            size: 25.sp,
+          icon: Padding(
+            padding: EdgeInsets.all(0),
+            child: CustomIcon(
+              selected: widget.currentIndex == 3,
+              size: widget.currentIndex == 3 ? 29.sp : 25.sp,
+            ),
           ),
           label: 'Plans',
         ),
         BottomNavigationBarItem(
-          icon: CustomMoreIcon(
-            selected: widget.currentIndex == 4,
-            size: 25.sp,
+          icon: Padding(
+            padding: EdgeInsets.all(0),
+            child: CustomMoreIcon(
+              selected: widget.currentIndex == 4,
+              size: widget.currentIndex == 4 ? 29.sp : 25.sp,
+            ),
           ),
           label: 'More',
         ),
       ],
-      selectedItemColor: Color.fromRGBO(21, 109, 149, 1),
-      unselectedItemColor: Color.fromRGBO(183, 198, 202, 1),
       showSelectedLabels: true,
       showUnselectedLabels: true,
-      type: BottomNavigationBarType.fixed,
+      selectedItemColor: const Color.fromRGBO(21, 109, 149, 1),
+      unselectedItemColor: const Color.fromRGBO(183, 198, 202, 1),
       selectedFontSize: 14.0.sp,
       unselectedFontSize: 14.0.sp,
-      selectedLabelStyle: TextStyle(
+      selectedLabelStyle: const TextStyle(
         fontWeight: FontWeight.normal,
         fontFamily: 'Inter',
       ),
-      unselectedLabelStyle: TextStyle(
+      unselectedLabelStyle: const TextStyle(
         fontWeight: FontWeight.normal,
         fontFamily: 'Inter',
       ),
+      type: BottomNavigationBarType.fixed,
     );
   }
 }
@@ -104,8 +113,8 @@ class CustomIcon extends StatelessWidget {
       size: Size(size, size),
       painter: ClipboardIconPainter(
         color: selected
-            ? Color.fromRGBO(21, 109, 149, 1)
-            : Color.fromRGBO(183, 198, 202, 1),
+            ? const Color.fromRGBO(21, 109, 149, 1)
+            : const Color.fromRGBO(183, 198, 202, 1),
       ),
     );
   }
@@ -123,8 +132,8 @@ class CustomMoreIcon extends StatelessWidget {
       size: Size(size, size),
       painter: MoreIconPainter(
         color: selected
-            ? Color.fromRGBO(21, 109, 149, 1)
-            : Color.fromRGBO(183, 198, 202, 1),
+            ? const Color.fromRGBO(21, 109, 149, 1)
+            : const Color.fromRGBO(183, 198, 202, 1),
       ),
     );
   }
@@ -145,7 +154,7 @@ class ClipboardIconPainter extends CustomPainter {
     final clipboardBase = RRect.fromRectAndRadius(
       Rect.fromLTWH(size.width * 0.2, size.height * 0.3, size.width * 0.6,
           size.height * 0.7),
-      Radius.circular(4.0),
+      const Radius.circular(4.0),
     );
     canvas.drawRRect(clipboardBase, paint);
 
@@ -153,7 +162,7 @@ class ClipboardIconPainter extends CustomPainter {
     final clipboardTop = RRect.fromRectAndRadius(
       Rect.fromLTWH(size.width * 0.35, size.height * 0.1, size.width * 0.3,
           size.height * 0.1),
-      Radius.circular(2.0),
+      const Radius.circular(2.0),
     );
     canvas.drawRRect(clipboardTop, paint);
 

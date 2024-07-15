@@ -207,8 +207,8 @@ class HomeCard extends StatelessWidget {
                   alignment: Alignment.center,
                   children: [
                     SizedBox(
-                      height: 70.h,
-                      width: 75.w,
+                      height: 60.h,
+                      width: 67.w,
                       child: CircularProgressIndicator(
                         value: progress['value'] / 300.0,
                         strokeWidth: 8.w,

@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myfitness/components/caloriesExplorer.dart';
+import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/fragmentComponent.dart';
 import 'package:myfitness/components/macrosExplorer.dart';
 import 'package:myfitness/components/nutrientExplorer.dart'; // Ensure correct import path
@@ -33,10 +34,10 @@ class _CNMViewScreenState extends State<CNMViewScreen> {
     }
 
     return Scaffold(
-      backgroundColor: Color.fromRGBO(245, 250, 255, 1),
+      backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(245, 250, 255, 1),
-        surfaceTintColor: Color.fromRGBO(245, 250, 255, 1),
+        backgroundColor: AppColors.backgroundColor,
+        surfaceTintColor: AppColors.backgroundColor,
         title: Text(
           'Calories ',
           style: TextStyle(

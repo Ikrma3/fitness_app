@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:myfitness/components/bottomBar.dart';
+import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/dailyExcersice.dart';
 import 'package:myfitness/components/exploreScreen.dart';
 import 'package:myfitness/components/homeCards.dart';
@@ -86,11 +87,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     Brightness brightness = Theme.of(context).brightness;
     Color pColor = brightness == Brightness.dark ? Colors.white : Colors.black;
-    Color bColor = brightness == Brightness.dark
-        ? const Color.fromRGBO(30, 34, 53, 1)
-        : const Color(0xffF8FAFC);
     return Scaffold(
-        backgroundColor: bColor,
+        backgroundColor: AppColors.backgroundColor,
         appBar: AppBar(
           backgroundColor: Colors.white,
           surfaceTintColor: Colors.white,

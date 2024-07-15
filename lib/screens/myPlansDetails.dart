@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:myfitness/components/checkBox.dart';
+import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/frame.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myfitness/screens/foodScreen.dart';
@@ -25,7 +26,7 @@ class _PlanDetailsState extends State<PlanDetails> {
     List<DateTime> currentWeekDates = getDatesOfSelectedWeek();
 
     return Scaffold(
-      backgroundColor: Color.fromRGBO(245, 250, 255, 1),
+      backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,

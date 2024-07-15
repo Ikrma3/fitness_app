@@ -179,6 +179,9 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
                         children: [
                           Row(
                             children: [
+                              SizedBox(
+                                width: 10.w,
+                              ),
                               // Adjust the `flex` value here to match the header
                               Expanded(
                                 flex:

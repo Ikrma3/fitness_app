@@ -55,7 +55,7 @@ class _CircularSegmentPainter extends CustomPainter {
     final defaultPaint = Paint()
       ..color = Color.fromRGBO(211, 234, 240, 1)
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 20.w;
+      ..strokeWidth = 15.w;
     canvas.drawArc(
       Rect.fromCircle(center: center, radius: radius),
       -math.pi / 2,
@@ -76,7 +76,7 @@ class _CircularSegmentPainter extends CustomPainter {
         ..color = segment.color ??
             Color.fromRGBO(211, 234, 240, 1) // Use grey as default color
         ..style = PaintingStyle.stroke
-        ..strokeWidth = 20.w;
+        ..strokeWidth = 15.w;
 
       canvas.drawArc(
         Rect.fromCircle(center: center, radius: radius),

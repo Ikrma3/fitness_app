@@ -19,7 +19,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
 
   Future<void> loadRecipes() async {
     final String response = await DefaultAssetBundle.of(context)
-        .loadString('lib/json files/recipies.json');
+        .loadString('lib/json files/recipes.json');
     final data = await json.decode(response);
     setState(() {
       sections = data['sections'];
@@ -31,6 +31,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
         title: Text(
           'Recipes',
           style: TextStyle(

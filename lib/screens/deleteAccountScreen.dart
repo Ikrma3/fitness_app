@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myfitness/components/bottomBar.dart';
+import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/screens/CNMViewScreen.dart';
 import 'package:myfitness/screens/diaryScreen.dart';
 import 'package:myfitness/screens/plansScreen.dart';
@@ -63,9 +64,10 @@ class _DeleteAccountScreenState extends State<DeleteAccountScreen> {
     return GestureDetector(
       onTap: _hideKeyboard,
       child: Scaffold(
-          backgroundColor: Color.fromRGBO(245, 250, 255, 1),
+          backgroundColor: AppColors.backgroundColor,
           appBar: AppBar(
             backgroundColor: Colors.white,
+            surfaceTintColor: Colors.white,
             title: Text(
               'Delete Account',
               style: TextStyle(

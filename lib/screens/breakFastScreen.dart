@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/customAddIcon.dart';
 import 'package:myfitness/components/foodLogCard.dart';
 
@@ -14,7 +15,7 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
   int _selectedIndex = 0;
   List<dynamic> _cardsData = [
     {"heading": "Scan a Meal", "subheading": "", "image": "images/camera.png"},
-    {"heading": "Recipes", "subheading": "", "image": "images/recipes.png"},
+    {"heading": "Recipes", "subheading": "", "image": "images/res.png"},
   ];
   List<Map<String, String>> _suggestions = [];
 
@@ -43,10 +44,10 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(235, 244, 247, 1),
+      backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(235, 244, 247, 1),
-        surfaceTintColor: Color.fromRGBO(235, 244, 247, 1),
+        backgroundColor: AppColors.backgroundColor,
+        surfaceTintColor: AppColors.backgroundColor,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -54,7 +55,7 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
               child: Row(
                 children: [
                   SizedBox(
-                    width: 40.w,
+                    width: 60.w,
                   ),
                   Text(
                     'Breakfast',

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomSubIcon extends StatelessWidget {
   final VoidCallback onPressed;
@@ -10,8 +11,8 @@ class CustomSubIcon extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        width: 32, // Adjust the width and height as needed
-        height: 32,
+        width: 25.w, // Adjust the width and height as needed
+        height: 25.h,
         decoration: BoxDecoration(
           color: Color.fromRGBO(183, 198, 202, 1), // Set the background color
           shape: BoxShape.circle, // Make it circular

@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' as rootBundle;
+import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/frame.dart';
 import 'package:myfitness/screens/myPlansDetails.dart'; // Updated import
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -44,7 +45,7 @@ class _MyPlansState extends State<MyPlans> {
     }
 
     return Scaffold(
-      backgroundColor: Color.fromRGBO(245, 250, 255, 1),
+      backgroundColor: AppColors.backgroundColor,
       body: Column(
         children: [
           Stack(

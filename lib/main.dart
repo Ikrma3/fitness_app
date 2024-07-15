@@ -18,6 +18,7 @@ import 'package:myfitness/screens/plansScreen.dart';
 import 'package:myfitness/screens/profile.dart';
 import 'package:myfitness/screens/progress.dart';
 import 'package:myfitness/screens/questionsScreen.dart';
+import 'package:myfitness/screens/recipiesScreen.dart';
 import 'package:myfitness/screens/reminder.dart';
 import 'package:myfitness/screens/settings.dart';
 import 'package:myfitness/screens/signin.dart';

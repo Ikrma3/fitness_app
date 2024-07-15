@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/oldNotificationsCard.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -30,8 +31,10 @@ class _OldNotificationsState extends State<OldNotifications> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(245, 250, 255, 1),
+      backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
         title: Text(
           'Notifications',
           style: TextStyle(
@@ -39,7 +42,6 @@ class _OldNotificationsState extends State<OldNotifications> {
               fontWeight: FontWeight.w500,
               fontFamily: 'Inter'),
         ),
-        backgroundColor: Color.fromRGBO(245, 250, 255, 1),
       ),
       body: ListView.builder(
         itemCount: notifications.keys.length,

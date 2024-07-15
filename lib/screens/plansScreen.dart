@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:myfitness/components/bottomBar.dart';
+import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/customPlansButton.dart';
 import 'package:myfitness/components/plansCard.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -92,7 +93,7 @@ class _PlanScreenState extends State<PlanScreen> {
     }
 
     return Scaffold(
-        backgroundColor: Color.fromRGBO(245, 250, 255, 1),
+        backgroundColor: AppColors.backgroundColor,
         appBar: AppBar(
           backgroundColor: Colors.white,
           surfaceTintColor: Colors.white,

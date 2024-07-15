@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myfitness/components/bottomBar.dart';
+import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/screens/CNMViewScreen.dart';
 import 'package:myfitness/screens/diaryScreen.dart';
 import 'package:myfitness/screens/home.dart';
@@ -62,6 +63,7 @@ class _PlanDetailsScreenState extends State<PlanDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: AppColors.backgroundColor,
         body: Column(
           children: [
             // Use Stack to overlay AppBar on top of Image
@@ -125,6 +127,7 @@ class _PlanDetailsScreenState extends State<PlanDetailsScreen> {
             ),
             // Toggle buttons (Overview / Schedule)
             Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 GestureDetector(
@@ -134,19 +137,23 @@ class _PlanDetailsScreenState extends State<PlanDetailsScreen> {
                     });
                   },
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           SizedBox(
-                            width: 70.w,
+                            width: 50.w,
                           ),
                           Text(
                             'Overview',
                             style:
-                                TextStyle(fontSize: 15.sp, fontFamily: 'Inter'),
+                                TextStyle(fontSize: 14.sp, fontFamily: 'Inter'),
                           ),
                           SizedBox(
-                            width: 65.w,
+                            width: 75.w,
                           ),
                         ],
                       ),
@@ -168,14 +175,22 @@ class _PlanDetailsScreenState extends State<PlanDetailsScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Schedule',
-                        style: TextStyle(fontSize: 15.sp, fontFamily: 'Inter'),
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: 30.w,
+                          ),
+                          Text(
+                            'Schedule',
+                            style:
+                                TextStyle(fontSize: 14.sp, fontFamily: 'Inter'),
+                          ),
+                        ],
                       ),
                       if (!isOverviewSelected)
                         Container(
                           height: 1.h,
-                          width: 155.w,
+                          width: 162.w,
                           color: Color.fromRGBO(21, 109, 149, 1),
                         ),
                     ],

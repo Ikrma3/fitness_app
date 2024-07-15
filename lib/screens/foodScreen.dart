@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/smallSubmitButton.dart';
 import 'package:myfitness/components/submitButton.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
@@ -34,7 +35,7 @@ class FoodScreen extends StatelessWidget {
         (dailyGoals['totalFat']! * 9);
 
     return Scaffold(
-      backgroundColor: Color.fromRGBO(245, 250, 255, 1),
+      backgroundColor: AppColors.backgroundColor,
       body: Column(
         children: [
           Stack(

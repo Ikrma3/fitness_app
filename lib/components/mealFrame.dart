@@ -90,10 +90,17 @@ class MealFrame extends StatelessWidget {
                     ],
                   ),
                 ),
-                CustomIconButton(
-                  onPressed: () {
-                    // Add your onPressed code here
-                  },
+                Column(
+                  children: [
+                    SizedBox(
+                      height: 12.h,
+                    ),
+                    CustomIconButton(
+                      onPressed: () {
+                        // Add your onPressed code here
+                      },
+                    ),
+                  ],
                 ),
                 SizedBox(
                   width: 10.w,

@@ -159,7 +159,7 @@ class _HealthTrackerComponentState extends State<HealthTrackerComponent> {
           Row(
             children: [
               Container(
-                width: 160.w,
+                width: 145.w,
                 height: 138.h,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12.r),
@@ -168,7 +168,7 @@ class _HealthTrackerComponentState extends State<HealthTrackerComponent> {
                         end: Alignment.bottomRight,
                         colors: pColor)),
                 child: Padding(
-                  padding: EdgeInsets.all(7.w.h),
+                  padding: EdgeInsets.symmetric(horizontal: 1.w, vertical: 7.h),
                   child: Column(
                     children: [
                       Row(
@@ -213,13 +213,13 @@ class _HealthTrackerComponentState extends State<HealthTrackerComponent> {
                 ),
               ),
               SizedBox(
-                  width: 20
+                  width: 25
                       .w), // Increased space between water and steps indicators
               Column(
                 children: [
                   Container(
+                      width: 145.w,
                       height: 138.h,
-                      width: 140.w,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12.r),
                           gradient: LinearGradient(

@@ -126,7 +126,7 @@ class _CaloriesExplorerState extends State<CaloriesExplorer> {
                   ),
                   CircularSegmentProgressIndicator(
                     segments: indicatorSegments,
-                    radius: 67.5.r,
+                    radius: 65.5.r,
                     lineWidth: 13.0.w,
                     animation: true,
                   ),
@@ -223,6 +223,9 @@ class _CaloriesExplorerState extends State<CaloriesExplorer> {
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w700,
                           fontFamily: 'Inter')),
+                  Divider(
+                    color: Color.fromRGBO(211, 234, 240, 1),
+                  ),
                   SizedBox(height: 8.h),
                   ...foods.map<Widget>((food) {
                     return Padding(

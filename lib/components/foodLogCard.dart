@@ -49,10 +49,6 @@ class FoodLogCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(35.r),
-                      color: Color.fromRGBO(217, 237, 245, 1),
-                    ),
                     child: Image.asset(
                       cardsData[index]['image'],
                       height: 40.h,

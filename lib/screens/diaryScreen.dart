@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:myfitness/components/caloriesLeftIndicator.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/dairyCards.dart';
 import 'package:myfitness/components/smallSubmitButton.dart';
 import 'package:myfitness/components/submitButton.dart';
@@ -54,15 +55,11 @@ class _DairyScreenState extends State<DairyScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Brightness brightness = Theme.of(context).brightness;
-    Color bColor = brightness == Brightness.dark
-        ? Color.fromRGBO(34, 35, 50, 1)
-        : Color.fromRGBO(235, 244, 247, 1);
     return Scaffold(
-      backgroundColor: bColor,
+      backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
-        backgroundColor: bColor,
-        surfaceTintColor: bColor,
+        backgroundColor: AppColors.backgroundColor,
+        surfaceTintColor: AppColors.backgroundColor,
         title: Text(
           'Dairy ',
           style: TextStyle(

@@ -94,6 +94,9 @@ flutter:
      - images/plus.png
      - images/profile.png
      - images/RMF.png
+     - images/fruit.png
+     - images/wrap.png
+     - images/almondMouses.png
      - images/progress.png
      - images/report.png
      - images/work.png
@@ -134,6 +137,7 @@ flutter:
      - images/workout.png
      - images/sync.png
      - images/burger.png
+     - images/res.png
      - images/logos_fb.png
      - images/logos_google.png
      - images/goals.svg
@@ -186,6 +190,7 @@ flutter:
      - lib/json files/myPlans.json
      - lib/json files/profile.json
      - lib/json files/goal.json
+     - lib/json files/recipes.json
      - lib/json files/progress.json
      - lib/json files/oldNotifications.json
 
