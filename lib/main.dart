@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myfitness/screens/CNMViewScreen.dart';
 import 'package:myfitness/screens/breakFastScreen.dart';
@@ -25,6 +26,9 @@ import 'package:myfitness/screens/subscriptionScreen.dart';
 import 'package:myfitness/screens/weight.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: Colors.white,
+  ));
   runApp(MyApp());
 }
 
@@ -41,7 +45,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData.light(), // Default light theme
             darkTheme: ThemeData.dark(), // Default dark theme
             themeMode: ThemeMode.system,
-            home: OnBoardingScreen());
+            home: HomeScreen());
       },
       // Use the system theme
     );

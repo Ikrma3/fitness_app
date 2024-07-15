@@ -28,6 +28,7 @@ class _PlanDetailsState extends State<PlanDetails> {
       backgroundColor: Color.fromRGBO(245, 250, 255, 1),
       appBar: AppBar(
         backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
         title: Text(
           widget.selectedPlan['name'],
           style: TextStyle(

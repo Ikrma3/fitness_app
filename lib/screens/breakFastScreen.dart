@@ -45,12 +45,17 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
     return Scaffold(
       backgroundColor: Color.fromRGBO(235, 244, 247, 1),
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(235, 244, 247, 1),
+        surfaceTintColor: Color.fromRGBO(235, 244, 247, 1),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             PopupMenuButton<String>(
               child: Row(
                 children: [
+                  SizedBox(
+                    width: 40.w,
+                  ),
                   Text(
                     'Breakfast',
                     style: TextStyle(

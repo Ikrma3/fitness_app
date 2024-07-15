@@ -79,6 +79,7 @@ class _PlanScreenState extends State<PlanScreen> {
         backgroundColor: Colors.white,
         appBar: AppBar(
             backgroundColor: Colors.white,
+            surfaceTintColor: Colors.white,
             title: Text(
               "Plans",
               style: TextStyle(
@@ -94,6 +95,7 @@ class _PlanScreenState extends State<PlanScreen> {
         backgroundColor: Color.fromRGBO(245, 250, 255, 1),
         appBar: AppBar(
           backgroundColor: Colors.white,
+          surfaceTintColor: Colors.white,
           title: Text(
             "Plans",
             style: TextStyle(
@@ -204,7 +206,7 @@ class _PlanScreenState extends State<PlanScreen> {
               ),
               SizedBox(height: 10.h),
               Divider(
-                color: Colors.grey,
+                color: Color.fromRGBO(211, 234, 240, 1),
                 thickness: 1,
                 indent: 0,
                 endIndent: 0,

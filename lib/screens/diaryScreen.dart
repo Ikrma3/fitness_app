@@ -61,6 +61,7 @@ class _DairyScreenState extends State<DairyScreen> {
       backgroundColor: bColor,
       appBar: AppBar(
         backgroundColor: bColor,
+        surfaceTintColor: bColor,
         title: Text(
           'Dairy ',
           style: TextStyle(
