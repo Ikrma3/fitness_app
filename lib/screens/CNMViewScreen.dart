@@ -36,6 +36,7 @@ class _CNMViewScreenState extends State<CNMViewScreen> {
       backgroundColor: Color.fromRGBO(245, 250, 255, 1),
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(245, 250, 255, 1),
+        surfaceTintColor: Color.fromRGBO(245, 250, 255, 1),
         title: Text(
           'Calories ',
           style: TextStyle(

@@ -166,6 +166,7 @@ class _PlanDetailsScreenState extends State<PlanDetailsScreen> {
                     });
                   },
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         'Schedule',

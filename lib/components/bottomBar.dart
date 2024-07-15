@@ -5,10 +5,14 @@ class BottomBar extends StatefulWidget {
   final int currentIndex;
   final Function(int) onTap;
 
-  BottomBar({required this.currentIndex, required this.onTap});
+  const BottomBar({
+    Key? key,
+    required this.currentIndex,
+    required this.onTap,
+  }) : super(key: key);
 
   @override
-  _BottomBarState createState() => _BottomBarState();
+  State<BottomBar> createState() => _BottomBarState();
 }
 
 class _BottomBarState extends State<BottomBar> {
@@ -36,7 +40,7 @@ class _BottomBarState extends State<BottomBar> {
                 : Color.fromRGBO(183, 198, 202, 1),
             size: 25.sp,
           ),
-          label: 'Diary',
+          label: 'Dairy',
         ),
         BottomNavigationBarItem(
           icon: Container(
@@ -69,10 +73,11 @@ class _BottomBarState extends State<BottomBar> {
           label: 'More',
         ),
       ],
-      showSelectedLabels: true,
-      showUnselectedLabels: true,
       selectedItemColor: Color.fromRGBO(21, 109, 149, 1),
       unselectedItemColor: Color.fromRGBO(183, 198, 202, 1),
+      showSelectedLabels: true,
+      showUnselectedLabels: true,
+      type: BottomNavigationBarType.fixed,
       selectedFontSize: 14.0.sp,
       unselectedFontSize: 14.0.sp,
       selectedLabelStyle: TextStyle(

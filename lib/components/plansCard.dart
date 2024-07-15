@@ -39,6 +39,8 @@ class PlansCardComponent extends StatelessWidget {
         height: 200.h,
         child: Card(
           elevation: 1,
+          shadowColor: Color.fromRGBO(223, 234, 237, 0.25),
+          color: Colors.white,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
