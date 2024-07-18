@@ -1,0 +1,23 @@
+{
+    "days": [
+      { "date": "2024-07-15", "caloriesBurned": 500, "weight": 53.2, "steps": 2000 },
+      { "date": "2024-07-16", "caloriesBurned": 600, "weight": 53, "steps": 2500 },
+      { "date": "2024-07-17", "caloriesBurned": 400, "weight": 52.6, "steps":3500 },
+      { "date": "2024-07-18", "caloriesBurned": 850, "weight": 52.8, "steps": 4000 }
+    ],
+    "weeks": [
+      { "week": 1, "caloriesBurned": 3500, "weight": 70, "steps": 70000 },
+      { "week": 2, "caloriesBurned": 4600, "weight": 70.2, "steps": 50000 },
+      { "week": 3, "caloriesBurned": 3600, "weight": 68, "steps": 75000 },
+      { "week": 4, "caloriesBurned": 4800, "weight": 69, "steps": 80000 }
+    
+    ],
+    "months": [
+      { "month": "Jan", "caloriesBurned": 14000, "weight": 70, "steps": 280000 },
+      { "month": "Feb", "caloriesBurned": 24000, "weight": 69, "steps": 270000 },
+      { "month": "Mar", "caloriesBurned": 35000, "weight": 66, "steps": 290000 },
+      { "month": "Apr", "caloriesBurned": 22000, "weight": 72, "steps": 300000 }
+     
+    ]
+  }
+  

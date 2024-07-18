@@ -39,6 +39,7 @@ dependencies:
   intl: ^0.19.0
   flutter_staggered_grid_view: ^0.7.0
   percent_indicator: ^4.2.3
+  syncfusion_flutter_charts: ^26.1.42
 
 dev_dependencies:
   flutter_test:
@@ -193,6 +194,7 @@ flutter:
      - lib/json files/recipes.json
      - lib/json files/progress.json
      - lib/json files/oldNotifications.json
+     - lib/json files/report.json
 
      
 

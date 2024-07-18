@@ -17,6 +17,7 @@ import 'package:myfitness/screens/onBoard.dart';
 import 'package:myfitness/screens/plansScreen.dart';
 import 'package:myfitness/screens/profile.dart';
 import 'package:myfitness/screens/progress.dart';
+import 'package:myfitness/screens/progressReport.dart';
 import 'package:myfitness/screens/questionsScreen.dart';
 import 'package:myfitness/screens/recipiesScreen.dart';
 import 'package:myfitness/screens/reminder.dart';
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData.light(), // Default light theme
             darkTheme: ThemeData.dark(), // Default dark theme
             themeMode: ThemeMode.system,
-            home: HomeScreen());
+            home: WeeklyReportScreen());
       },
       // Use the system theme
     );
