@@ -8,6 +8,9 @@ import 'package:myfitness/components/dairyCards.dart';
 import 'package:myfitness/components/smallSubmitButton.dart';
 import 'package:myfitness/components/submitButton.dart';
 import 'package:myfitness/screens/breakFastScreen.dart';
+import 'package:myfitness/screens/dinnerScreen.dart';
+import 'package:myfitness/screens/lunchScreen.dart';
+import 'package:myfitness/screens/snackScreen.dart';
 
 class DairyScreen extends StatefulWidget {
   @override
@@ -45,6 +48,21 @@ class _DairyScreenState extends State<DairyScreen> {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => BreakFastScreen()),
+      );
+    } else if ('${heading}' == 'Lunch') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => LunchScreen()),
+      );
+    } else if ('${heading}' == 'Snack') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => SnackScreen()),
+      );
+    } else if ('${heading}' == 'Dinner') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => DinnerScreen()),
       );
     }
   }

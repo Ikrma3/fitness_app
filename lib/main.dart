@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myfitness/screens/CNMViewScreen.dart';
+import 'package:myfitness/screens/appDevices.dart';
 import 'package:myfitness/screens/breakFastScreen.dart';
 import 'package:myfitness/screens/changePassword.dart';
 import 'package:myfitness/screens/deleteAccountScreen.dart';
@@ -24,6 +25,7 @@ import 'package:myfitness/screens/reminder.dart';
 import 'package:myfitness/screens/settings.dart';
 import 'package:myfitness/screens/signin.dart';
 import 'package:myfitness/screens/signup.dart';
+import 'package:myfitness/screens/steps.dart';
 import 'package:myfitness/screens/subscriptionScreen.dart';
 import 'package:myfitness/screens/weight.dart';
 
@@ -47,7 +49,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData.light(), // Default light theme
             darkTheme: ThemeData.dark(), // Default dark theme
             themeMode: ThemeMode.system,
-            home: WeeklyReportScreen());
+            home: HomeScreen());
       },
       // Use the system theme
     );

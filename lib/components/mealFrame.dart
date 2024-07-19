@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myfitness/components/customAddIcon.dart';
+import 'package:myfitness/screens/breakFastScreen.dart';
+import 'package:myfitness/screens/dinnerScreen.dart';
+import 'package:myfitness/screens/lunchScreen.dart';
+import 'package:myfitness/screens/snackScreen.dart';
 
-class MealFrame extends StatelessWidget {
+class MealFrame extends StatefulWidget {
   final String imagePath;
   final String title;
   final String subtitle;
@@ -13,6 +17,36 @@ class MealFrame extends StatelessWidget {
     required this.title,
     required this.subtitle,
   });
+
+  @override
+  State<MealFrame> createState() => _MealFrameState();
+}
+
+class _MealFrameState extends State<MealFrame> {
+  void handleAddPressed(String heading) {
+    print("Add pressed for: $heading");
+    if ('${heading}' == 'Breakfast') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => BreakFastScreen()),
+      );
+    } else if ('${heading}' == 'Lunch') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => LunchScreen()),
+      );
+    } else if ('${heading}' == 'Snack') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => SnackScreen()),
+      );
+    } else if ('${heading}' == 'Dinner') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => DinnerScreen()),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +71,7 @@ class MealFrame extends StatelessWidget {
           children: [
             // Background SVG Image
             Image.asset(
-              imagePath,
+              widget.imagePath,
               width: double.infinity,
               height: 56.h, // Set a fixed height
               fit: BoxFit.fill,
@@ -72,7 +106,7 @@ class MealFrame extends StatelessWidget {
                         height: 10.h,
                       ),
                       Text(
-                        title,
+                        widget.title,
                         style: TextStyle(
                             fontSize: 16.sp,
                             fontWeight: FontWeight.w600,
@@ -80,7 +114,7 @@ class MealFrame extends StatelessWidget {
                             fontFamily: 'Inter'),
                       ),
                       Text(
-                        subtitle,
+                        widget.subtitle,
                         style: TextStyle(
                             fontSize: 10.sp,
                             color: tColor,
@@ -97,6 +131,7 @@ class MealFrame extends StatelessWidget {
                     ),
                     CustomIconButton(
                       onPressed: () {
+                        handleAddPressed(widget.title);
                         // Add your onPressed code here
                       },
                     ),

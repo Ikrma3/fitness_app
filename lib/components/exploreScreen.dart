@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myfitness/components/giftCards.dart';
+import 'package:myfitness/screens/appDevices.dart';
+import 'package:myfitness/screens/recipiesScreen.dart';
 
 class ExploreScreen extends StatefulWidget {
   @override
@@ -39,15 +41,16 @@ class _ExploreScreenState extends State<ExploreScreen> {
     // Navigate to specific screen based on the selected card heading
     if (selectedCardHeading == 'Recipes') {
       print("Rec");
-      // Navigator.push(
-      //   context,
-      //   MaterialPageRoute(builder: (context) => Screen1()),
-      // );
-    } else if (selectedCardHeading == 'Heading2') {
-      // Navigator.push(
-      //   context,
-      //   MaterialPageRoute(builder: (context) => Screen2()),
-      // );
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => RecipesScreen()),
+      );
+    } else if (selectedCardHeading == 'Sync up!') {
+      print("Sync");
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => AppDevices()),
+      );
     }
     // Add more conditions as needed for other headings
   }

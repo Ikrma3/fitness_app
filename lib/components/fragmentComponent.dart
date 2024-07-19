@@ -39,7 +39,7 @@ class _FragmentComponentState extends State<FragmentComponent> {
 
     // Determine the width based on the presence of the third option
     double containerWidth = widget.thirdOption != null ? 355.w : 270.w;
-    double containerHeight = widget.thirdOption != null ? 28.h : 40.h;
+    double containerHeight = widget.thirdOption != null ? 30.h : 40.h;
     return Container(
       height: containerHeight,
       width: containerWidth,

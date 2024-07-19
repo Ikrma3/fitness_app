@@ -165,11 +165,32 @@ class DairyCard extends StatelessWidget {
                                   fontFamily: 'Inter',
                                   color: tColor),
                             ), // <- Additional text widget
-                            IconButton(
+                            PopupMenuButton<String>(
+                              color: Colors.white,
                               icon: Icon(Icons.more_vert),
-                              onPressed: () {
-                                onDetailPressed(heading, detail);
+                              onSelected: (String result) {
+                                switch (result) {
+                                  case 'Edit':
+                                    // Handle edit action
+                                    onEditPressed(heading, detail);
+                                    break;
+                                  case 'Delete':
+                                    // Handle delete action
+                                    onDeletePressed(heading, detail);
+                                    break;
+                                }
                               },
+                              itemBuilder: (BuildContext context) =>
+                                  <PopupMenuEntry<String>>[
+                                const PopupMenuItem<String>(
+                                  value: 'Edit',
+                                  child: Text('Edit'),
+                                ),
+                                const PopupMenuItem<String>(
+                                  value: 'Delete',
+                                  child: Text('Delete'),
+                                ),
+                              ],
                             ),
                           ],
                         ),
@@ -185,4 +206,8 @@ class DairyCard extends StatelessWidget {
       ),
     );
   }
+
+  void onDeletePressed(String heading, String detail) {}
+
+  void onEditPressed(String heading, String detail) {}
 }

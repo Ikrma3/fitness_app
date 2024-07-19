@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart'; // Import intl package for date formatting
 
 class NutrientExplorer extends StatefulWidget {
   @override
@@ -11,6 +12,7 @@ class NutrientExplorer extends StatefulWidget {
 class _NutrientExplorerState extends State<NutrientExplorer> {
   List<dynamic> nutrientData = [];
   int currentIndex = 0;
+  DateTime _selectedDate = DateTime.now();
 
   @override
   void initState() {
@@ -23,19 +25,57 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
         await rootBundle.loadString('lib/json files/nutrientExplorer.json');
     setState(() {
       nutrientData = json.decode(data);
+      _updateIndexByDate(_selectedDate); // Update index based on initial date
     });
   }
 
-  void _nextDate() {
+  void _updateIndexByDate(DateTime date) {
+    String formattedDate = DateFormat('yyyy-MM-dd').format(date);
+    for (int i = 0; i < nutrientData.length; i++) {
+      if (nutrientData[i]['date'] == formattedDate) {
+        setState(() {
+          currentIndex = i;
+        });
+        break;
+      }
+    }
+  }
+
+  bool _isToday(String date) {
+    DateTime today = DateTime.now();
+    DateTime parsedDate =
+        DateTime.parse(date); // Assuming date is in ISO 8601 format
+
+    return today.year == parsedDate.year &&
+        today.month == parsedDate.month &&
+        today.day == parsedDate.day;
+  }
+
+  void _navigateDate(int direction) {
     setState(() {
-      if (currentIndex > 0) currentIndex--;
+      currentIndex += direction;
+      if (currentIndex < 0) {
+        currentIndex = 0;
+      } else if (currentIndex >= nutrientData.length) {
+        currentIndex = nutrientData.length - 1;
+      }
+      _selectedDate = DateTime.parse(nutrientData[currentIndex]['date']);
     });
   }
 
-  void _prevDate() {
-    setState(() {
-      if (currentIndex < nutrientData.length - 1) currentIndex++;
-    });
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: _selectedDate,
+      firstDate: DateTime(2020, 1),
+      lastDate: DateTime(2030, 12),
+    );
+    if (picked != null && picked != _selectedDate) {
+      setState(() {
+        _selectedDate = picked;
+        _updateIndexByDate(_selectedDate);
+      });
+    }
   }
 
   @override
@@ -50,11 +90,9 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
 
     var currentData = nutrientData[currentIndex];
     DateTime currentDate = DateTime.parse(currentData['date']);
-    String displayDate = (currentDate.day == DateTime.now().day &&
-            currentDate.month == DateTime.now().month &&
-            currentDate.year == DateTime.now().year)
+    String displayDate = _isToday(currentData['date'])
         ? 'Today'
-        : "${currentDate.day}/${currentDate.month}/${currentDate.year}";
+        : DateFormat('dd/MM/yyyy').format(currentDate);
 
     List<Color> progressColors = [
       Color.fromRGBO(108, 13, 143, 1),
@@ -82,20 +120,27 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
                       Icons.arrow_back_ios,
                       color: Color.fromRGBO(204, 204, 204, 1),
                     ),
-                    onPressed: _prevDate,
+                    onPressed: () => _navigateDate(1),
                   ),
                   Column(
                     children: [
-                      Text('Day View',
-                          style: TextStyle(
-                              fontSize: 12.sp,
-                              color: Color.fromRGBO(102, 102, 102, 1),
-                              fontFamily: 'Inter')),
-                      Text(displayDate,
-                          style: TextStyle(
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w600,
-                              fontFamily: 'Inter')),
+                      GestureDetector(
+                        onTap: () => _selectDate(context),
+                        child: Column(
+                          children: [
+                            Text('Day View',
+                                style: TextStyle(
+                                    fontSize: 12.sp,
+                                    color: Color.fromRGBO(102, 102, 102, 1),
+                                    fontFamily: 'Inter')),
+                            Text(displayDate,
+                                style: TextStyle(
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'Inter')),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                   IconButton(
@@ -103,7 +148,7 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
                       Icons.arrow_forward_ios,
                       color: Color.fromRGBO(204, 204, 204, 1),
                     ),
-                    onPressed: _nextDate,
+                    onPressed: () => _navigateDate(-1),
                   ),
                 ],
               ),
@@ -120,10 +165,8 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
               padding: EdgeInsets.all(4.0.w.h),
               child: Row(
                 children: [
-                  // Adjust the `flex` value here to increase or decrease space after 'Nutrient'
                   Expanded(
-                    flex:
-                        10, // Increase this value to add more space after 'Nutrient'
+                    flex: 10,
                     child: Text('Nutrients',
                         style: TextStyle(
                             color: Colors.white,
@@ -131,9 +174,8 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
                             fontFamily: 'Inter',
                             fontWeight: FontWeight.w600)),
                   ),
-                  // Adjust the `flex` value here to position 'Total', 'Goal', and 'Left' closer together or farther apart
                   Expanded(
-                    flex: 3, // Adjust this value if needed
+                    flex: 3,
                     child: Text('Total',
                         style: TextStyle(
                           color: Colors.white,
@@ -142,7 +184,7 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
                         )),
                   ),
                   Expanded(
-                    flex: 2, // Adjust this value if needed
+                    flex: 2,
                     child: Text('Goal',
                         style: TextStyle(
                           color: Colors.white,
@@ -151,7 +193,7 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
                         )),
                   ),
                   Expanded(
-                    flex: 2, // Adjust this value if needed
+                    flex: 2,
                     child: Text('Left',
                         style: TextStyle(
                           color: Colors.white,
@@ -182,10 +224,8 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
                               SizedBox(
                                 width: 10.w,
                               ),
-                              // Adjust the `flex` value here to match the header
                               Expanded(
-                                flex:
-                                    10, // Adjust this value to match the header spacing
+                                flex: 10,
                                 child: Text(nutrient['name'],
                                     style: TextStyle(
                                       color: Color.fromRGBO(59, 59, 59, 1),
@@ -194,8 +234,7 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
                                     )),
                               ),
                               Expanded(
-                                flex:
-                                    3, // Adjust this value to match the header spacing
+                                flex: 3,
                                 child: Text('${nutrient['total']} mg',
                                     style: TextStyle(
                                       color: Color.fromRGBO(59, 59, 59, 1),
@@ -204,8 +243,7 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
                                     )),
                               ),
                               Expanded(
-                                flex:
-                                    2, // Adjust this value to match the header spacing
+                                flex: 2,
                                 child: Text('${nutrient['goal']}',
                                     style: TextStyle(
                                       color: Color.fromRGBO(59, 59, 59, 1),
@@ -214,8 +252,7 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
                                     )),
                               ),
                               Expanded(
-                                flex:
-                                    2, // Adjust this value to match the header spacing
+                                flex: 2,
                                 child: Text(
                                     '${nutrient['goal'] - nutrient['total']}',
                                     style: TextStyle(
@@ -230,8 +267,7 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
                             padding: EdgeInsets.symmetric(
                                 horizontal: 8.0.w, vertical: 2.0.h),
                             child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20
-                                  .r), // Adjust this value to make ends more or less rounded
+                              borderRadius: BorderRadius.circular(20.r),
                               child: Container(
                                 height: 3.h,
                                 child: Stack(
@@ -249,8 +285,8 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
                                           MediaQuery.of(context).size.width,
                                       child: Container(
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(20
-                                              .r), // Rounded corners on both ends
+                                          borderRadius:
+                                              BorderRadius.circular(20.r),
                                           color: progressColors[
                                               index % progressColors.length],
                                         ),

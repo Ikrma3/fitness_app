@@ -13,6 +13,7 @@ import 'package:myfitness/components/weightStepIndicator.dart';
 import 'package:myfitness/screens/CNMViewScreen.dart';
 import 'package:myfitness/screens/diaryScreen.dart';
 import 'package:myfitness/screens/plansScreen.dart';
+import 'package:myfitness/screens/settings.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -52,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
       } else if (index == 4) {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => CNMViewScreen()),
+          MaterialPageRoute(builder: (context) => SettingsScreen()),
         );
         _currentIndex = 0;
       }
@@ -156,7 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
             : SingleChildScrollView(
                 child: Padding(
                   padding:
-                      EdgeInsets.symmetric(vertical: 5.h, horizontal: 20.w),
+                      EdgeInsets.symmetric(vertical: 5.h, horizontal: 15.w),
                   child: Column(
                     children: [
                       SizedBox(
@@ -173,11 +174,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             });
                           },
                           itemBuilder: (context, index) {
-                            return HomeCard(
-                              cardData: cardsData[index],
-                              isActive: index == currentPage,
-                              height: 240.h,
-                              width: 320.w,
+                            return Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 5.w),
+                              child: HomeCard(
+                                cardData: cardsData[index],
+                                isActive: index == currentPage,
+                                height: 240.h,
+                                width: 320.w,
+                              ),
                             );
                           },
                         ),
@@ -246,19 +250,22 @@ class _HomeScreenState extends State<HomeScreen> {
                                     : '',
                               ),
                             ),
-                            Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12.r),
-                                color: Colors.white,
-                              ),
-                              child: CustomGraph(
-                                heading: stepsData['heading'] ?? '',
-                                subHeading: stepsData['subHeading'] ?? '',
-                                value: stepsData['value'] ?? 0,
-                                date: (stepsData['dates'] != null &&
-                                        stepsData['dates'].isNotEmpty)
-                                    ? (stepsData['dates'].last as String)
-                                    : '',
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 5.w),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(12.r),
+                                  color: Colors.white,
+                                ),
+                                child: CustomGraph(
+                                  heading: stepsData['heading'] ?? '',
+                                  subHeading: stepsData['subHeading'] ?? '',
+                                  value: stepsData['value'] ?? 0,
+                                  date: (stepsData['dates'] != null &&
+                                          stepsData['dates'].isNotEmpty)
+                                      ? (stepsData['dates'].last as String)
+                                      : '',
+                                ),
                               ),
                             ),
                           ],

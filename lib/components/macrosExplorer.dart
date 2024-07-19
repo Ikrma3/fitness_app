@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 
 class MacroExplorer extends StatefulWidget {
   @override
@@ -12,6 +13,7 @@ class MacroExplorer extends StatefulWidget {
 class _MacroExplorerState extends State<MacroExplorer> {
   List<dynamic> nutrientData = [];
   int currentIndex = 0;
+  DateTime _selectedDate = DateTime.now();
 
   Color proteinColor = Color.fromRGBO(21, 109, 149, 1);
   Color carbsColor = Color.fromRGBO(244, 66, 55, 1);
@@ -28,19 +30,56 @@ class _MacroExplorerState extends State<MacroExplorer> {
         await rootBundle.loadString('lib/json files/macrosExplorer.json');
     setState(() {
       nutrientData = json.decode(data);
+      _updateIndexByDate(_selectedDate); // Update index based on initial date
     });
   }
 
-  void _prevDate() {
+  void _updateIndexByDate(DateTime date) {
+    String formattedDate = DateFormat('yyyy-MM-dd').format(date);
+    for (int i = 0; i < nutrientData.length; i++) {
+      if (nutrientData[i]['date'] == formattedDate) {
+        setState(() {
+          currentIndex = i;
+        });
+        break;
+      }
+    }
+  }
+
+  bool _isToday(String date) {
+    DateTime today = DateTime.now();
+    DateTime parsedDate = DateTime.parse(date);
+
+    return today.year == parsedDate.year &&
+        today.month == parsedDate.month &&
+        today.day == parsedDate.day;
+  }
+
+  void _navigateDate(int direction) {
     setState(() {
-      if (currentIndex < nutrientData.length - 1) currentIndex++;
+      currentIndex += direction;
+      if (currentIndex < 0) {
+        currentIndex = 0;
+      } else if (currentIndex >= nutrientData.length) {
+        currentIndex = nutrientData.length - 1;
+      }
+      _selectedDate = DateTime.parse(nutrientData[currentIndex]['date']);
     });
   }
 
-  void _nextDate() {
-    setState(() {
-      if (currentIndex > 0) currentIndex--;
-    });
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: _selectedDate,
+      firstDate: DateTime(2020, 1),
+      lastDate: DateTime(2030, 12),
+    );
+    if (picked != null && picked != _selectedDate) {
+      setState(() {
+        _selectedDate = picked;
+        _updateIndexByDate(_selectedDate);
+      });
+    }
   }
 
   @override
@@ -54,11 +93,9 @@ class _MacroExplorerState extends State<MacroExplorer> {
 
     var currentData = nutrientData[currentIndex];
     DateTime currentDate = DateTime.parse(currentData['date']);
-    String displayDate = (currentDate.day == DateTime.now().day &&
-            currentDate.month == DateTime.now().month &&
-            currentDate.year == DateTime.now().year)
+    String displayDate = _isToday(currentData['date'])
         ? 'Today'
-        : "${currentDate.day}/${currentDate.month}/${currentDate.year}";
+        : DateFormat('dd/MM/yyyy').format(currentDate);
 
     return Scaffold(
       backgroundColor: Color.fromRGBO(245, 250, 255, 1),
@@ -77,20 +114,27 @@ class _MacroExplorerState extends State<MacroExplorer> {
                         Icons.arrow_back_ios,
                         color: Color.fromRGBO(204, 204, 204, 1),
                       ),
-                      onPressed: _prevDate,
+                      onPressed: () => _navigateDate(1),
                     ),
                     Column(
                       children: [
-                        Text('Day View',
-                            style: TextStyle(
-                                fontSize: 12.sp,
-                                color: Color.fromRGBO(102, 102, 102, 1),
-                                fontFamily: 'Inter')),
-                        Text(displayDate,
-                            style: TextStyle(
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w600,
-                                fontFamily: 'Inter')),
+                        GestureDetector(
+                          onTap: () => _selectDate(context),
+                          child: Column(
+                            children: [
+                              Text('Day View',
+                                  style: TextStyle(
+                                      fontSize: 12.sp,
+                                      color: Color.fromRGBO(102, 102, 102, 1),
+                                      fontFamily: 'Inter')),
+                              Text(displayDate,
+                                  style: TextStyle(
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.w600,
+                                      fontFamily: 'Inter')),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                     IconButton(
@@ -98,7 +142,7 @@ class _MacroExplorerState extends State<MacroExplorer> {
                         Icons.arrow_forward_ios,
                         color: Color.fromRGBO(204, 204, 204, 1),
                       ),
-                      onPressed: _nextDate,
+                      onPressed: () => _navigateDate(-1),
                     ),
                   ],
                 ),

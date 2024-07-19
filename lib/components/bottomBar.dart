@@ -1,5 +1,26 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: const Center(child: Text('Home Page')),
+        // Placeholder for your home page
+        bottomNavigationBar: BottomBar(
+          currentIndex: 2,
+          onTap: (index) {
+            // Handle bottom bar tap
+          },
+        ),
+      ),
+    );
+  }
+}
 
 class BottomBar extends StatefulWidget {
   final int currentIndex;
@@ -21,7 +42,7 @@ class _BottomBarState extends State<BottomBar> {
       items: [
         BottomNavigationBarItem(
           icon: Padding(
-            padding: EdgeInsets.all(0),
+            padding: const EdgeInsets.all(0),
             child: Icon(
               Icons.home,
               color: widget.currentIndex == 0
@@ -34,7 +55,7 @@ class _BottomBarState extends State<BottomBar> {
         ),
         BottomNavigationBarItem(
           icon: Padding(
-            padding: EdgeInsets.all(0),
+            padding: const EdgeInsets.all(0),
             child: Icon(
               Icons.book,
               color: widget.currentIndex == 1
@@ -47,36 +68,33 @@ class _BottomBarState extends State<BottomBar> {
         ),
         BottomNavigationBarItem(
           icon: Container(
-            margin: EdgeInsets.all(0),
-            decoration: BoxDecoration(
-              color: const Color.fromRGBO(21, 109, 149, 1),
-              shape: BoxShape.rectangle,
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Icon(
-              Icons.add,
-              color: Colors.white,
-              size: 39.sp, // Always larger size
-            ),
+            height: 40.h,
+            width: 60.w,
+
+            child: AnimatedImageButton(), // Use AnimatedImageButton here
           ),
           label: '',
         ),
         BottomNavigationBarItem(
           icon: Padding(
-            padding: EdgeInsets.all(0),
-            child: CustomIcon(
-              selected: widget.currentIndex == 3,
-              size: widget.currentIndex == 3 ? 29.sp : 25.sp,
-            ),
+            padding: const EdgeInsets.all(0),
+            child: Icon(
+              CupertinoIcons.square_list_fill,color: widget.currentIndex == 3
+                ? const Color.fromRGBO(21, 109, 149, 1)
+                : const Color.fromRGBO(183, 198, 202, 1),
+              size: widget.currentIndex == 3 ? 29.sp : 25.sp)
           ),
           label: 'Plans',
         ),
         BottomNavigationBarItem(
           icon: Padding(
-            padding: EdgeInsets.all(0),
-            child: CustomMoreIcon(
-              selected: widget.currentIndex == 4,
-              size: widget.currentIndex == 4 ? 29.sp : 25.sp,
+            padding: const EdgeInsets.all(0),
+            child: Icon(
+              Icons.menu,
+              color: widget.currentIndex == 4
+                  ? const Color.fromRGBO(21, 109, 149, 1)
+                  : const Color.fromRGBO(183, 198, 202, 1),
+              size: widget.currentIndex == 4? 29.sp : 25.sp,
             ),
           ),
           label: 'More',
@@ -101,43 +119,96 @@ class _BottomBarState extends State<BottomBar> {
   }
 }
 
-class CustomIcon extends StatelessWidget {
-  final bool selected;
-  final double size;
+class AnimatedImageButton extends StatefulWidget {
+  @override
+  _AnimatedImageButtonState createState() => _AnimatedImageButtonState();
+}
 
-  CustomIcon({required this.selected, required this.size});
+class _AnimatedImageButtonState extends State<AnimatedImageButton>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  bool _isFirstIcon = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 300),
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  void _onPressed() {
+    setState(() {
+      if (_controller.isCompleted || _controller.isDismissed) {
+        _controller.forward(from: 0.0);
+      }
+      _isFirstIcon = !_isFirstIcon;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(
-      size: Size(size, size),
-      painter: ClipboardIconPainter(
-        color: selected
-            ? const Color.fromRGBO(21, 109, 149, 1)
-            : const Color.fromRGBO(183, 198, 202, 1),
-      ),
+    return AnimatedBuilder(
+      animation: _controller,
+      builder: (context, child) {
+        return RotationTransition(
+          turns: Tween(begin: 0.0, end: 1.0).animate(_controller),
+          child: IconButton(
+            icon: Icon(_isFirstIcon
+                ? Icons.add_box_rounded
+                : CupertinoIcons.multiply_square_fill,color: const Color.fromRGBO(21, 109, 149, 1), size:  40.sp ),
+            onPressed: _onPressed,
+          ),
+        );
+      },
     );
   }
 }
-
-class CustomMoreIcon extends StatelessWidget {
-  final bool selected;
-  final double size;
-
-  CustomMoreIcon({required this.selected, required this.size});
-
-  @override
-  Widget build(BuildContext context) {
-    return CustomPaint(
-      size: Size(size, size),
-      painter: MoreIconPainter(
-        color: selected
-            ? const Color.fromRGBO(21, 109, 149, 1)
-            : const Color.fromRGBO(183, 198, 202, 1),
-      ),
-    );
-  }
-}
+//
+// class CustomIcon extends StatelessWidget {
+//   final bool selected;
+//   final double size;
+//
+//   CustomIcon({required this.selected, required this.size});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return CustomPaint(
+//       size: Size(size, size),
+//       painter: ClipboardIconPainter(
+//         color: selected
+//             ? const Color.fromRGBO(21, 109, 149, 1)
+//             : const Color.fromRGBO(183, 198, 202, 1),
+//       ),
+//     );
+//   }
+// }
+//
+// class CustomMoreIcon extends StatelessWidget {
+//   final bool selected;
+//   final double size;
+//
+//   CustomMoreIcon({required this.selected, required this.size});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return CustomPaint(
+//       size: Size(size, size),
+//       painter: MoreIconPainter(
+//         color: selected
+//             ? const Color.fromRGBO(21, 109, 149, 1)
+//             : const Color.fromRGBO(183, 198, 202, 1),
+//       ),
+//     );
+//   }
+// }
 
 class ClipboardIconPainter extends CustomPainter {
   final Color color;

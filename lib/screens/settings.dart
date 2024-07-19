@@ -3,6 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:myfitness/components/settingsComponent.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:myfitness/screens/appDevices.dart';
+import 'package:myfitness/screens/changePassword.dart';
+import 'package:myfitness/screens/deleteAccountScreen.dart';
+import 'package:myfitness/screens/goalScreen.dart';
+import 'package:myfitness/screens/notifications.dart';
+import 'package:myfitness/screens/oldNotifications.dart';
+import 'package:myfitness/screens/profile.dart';
+import 'package:myfitness/screens/progress.dart';
+import 'package:myfitness/screens/progressReport.dart';
+import 'package:myfitness/screens/recipiesScreen.dart';
+import 'package:myfitness/screens/reminder.dart';
+import 'package:myfitness/screens/steps.dart';
 
 // Import other screens here
 
@@ -34,6 +46,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
+      ),
       backgroundColor: Color.fromRGBO(245, 250, 255, 1),
       body: SingleChildScrollView(
         child: Column(
@@ -89,10 +105,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       iconPath: 'images/RMF.png',
                       title: "Recipe's, Meals & Food",
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => RecipesScreen()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => RecipesScreen()),
+                        );
                       },
                     ),
 
@@ -100,10 +117,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       iconPath: 'images/progress.png',
                       title: "Progress",
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => ProgressScreen()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ProgressScreen()),
+                        );
                       },
                     ),
 
@@ -111,10 +129,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       iconPath: 'images/report.png',
                       title: "Weekly report",
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => ReportScreen()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => WeeklyReportScreen()),
+                        );
                       },
                     ),
                     SettingsComponent(
@@ -131,10 +150,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       iconPath: 'images/goal.png',
                       title: "Goals",
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => ReportScreen()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => GoalScreen()),
+                        );
                       },
                     ),
                     SettingsComponent(
@@ -151,40 +170,44 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       iconPath: 'images/appDevices.png',
                       title: "App & Devices",
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => ReportScreen()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => AppDevices()),
+                        );
                       },
                     ),
                     SettingsComponent(
                       iconPath: 'images/steps.png',
                       title: "Steps",
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => ReportScreen()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => StepsScreen()),
+                        );
                       },
                     ),
                     SettingsComponent(
                       iconPath: 'images/reminder.png',
                       title: "Reminder",
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => ReportScreen()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ReminderScreen()),
+                        );
                       },
                     ),
+
                     SettingsComponent(
                       iconPath: 'images/notification.png',
-                      title: "Notifications",
+                      title: "Notification",
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => ReportScreen()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => OldNotifications()),
+                        );
                       },
                     ),
                     // Add more SettingsComponent widgets here for each menu item
@@ -219,10 +242,22 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       iconPath: 'images/editProfile.png',
                       title: "Edit Profile",
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => RecipesScreen()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ProfilePage()),
+                        );
+                      },
+                    ),
+                    SettingsComponent(
+                      iconPath: 'images/notification.png',
+                      title: "Notification ",
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => NotificationScreen()),
+                        );
                       },
                     ),
                     SettingsComponent(
@@ -239,20 +274,22 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       iconPath: 'images/delete.png',
                       title: "Delete Account",
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => ReportScreen()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DeleteAccountScreen()),
+                        );
                       },
                     ),
                     SettingsComponent(
                       iconPath: 'images/password.png',
                       title: "Change Password",
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => ReportScreen()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => PasswordScreen()),
+                        );
                       },
                     ),
                     SettingsComponent(

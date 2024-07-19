@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myfitness/components/bottomBar.dart';
+import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/screens/diaryScreen.dart';
 import 'package:myfitness/screens/plansScreen.dart';
 import 'package:myfitness/screens/settings.dart';
@@ -73,9 +74,10 @@ class _GoalScreenState extends State<GoalScreen> {
       );
     } else {
       return Scaffold(
-        backgroundColor: Color.fromRGBO(245, 250, 255, 1),
+        backgroundColor: AppColors.backgroundColor,
         appBar: AppBar(
           backgroundColor: Colors.white,
+          surfaceTintColor: Colors.white,
           title: Text(
             "Goals",
             style: TextStyle(

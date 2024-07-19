@@ -51,22 +51,27 @@ class HomeCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            cardData['heading'] ?? '',
-            style: TextStyle(
-              fontSize: 22.sp,
-              fontWeight: FontWeight.w700,
-              color: tColor,
-              fontFamily: 'Inter',
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8.w),
+            child: Text(
+              cardData['heading'] ?? '',
+              style: TextStyle(
+                fontSize: 22.sp,
+                fontWeight: FontWeight.w700,
+                color: tColor,
+                fontFamily: 'Inter',
+              ),
             ),
           ),
-          SizedBox(height: 8.h),
-          Text(
-            cardData['subHeading'] ?? '',
-            style: TextStyle(
-              fontSize: 12.sp,
-              color: tColor,
-              fontFamily: 'Inter',
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8.w),
+            child: Text(
+              cardData['subHeading'] ?? '',
+              style: TextStyle(
+                fontSize: 12.sp,
+                color: tColor,
+                fontFamily: 'Inter',
+              ),
             ),
           ),
           SizedBox(height: 16.h),

@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:myfitness/components/customProgressIndicator.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart'; // Import intl package for date formatting
 
 class CaloriesExplorer extends StatefulWidget {
   @override
@@ -12,6 +13,7 @@ class CaloriesExplorer extends StatefulWidget {
 class _CaloriesExplorerState extends State<CaloriesExplorer> {
   Map<String, dynamic> _data = {};
   int _currentIndex = 0;
+  DateTime _selectedDate = DateTime.now();
 
   @override
   void initState() {
@@ -25,7 +27,20 @@ class _CaloriesExplorerState extends State<CaloriesExplorer> {
     final data = await json.decode(response);
     setState(() {
       _data = data;
+      _updateIndexByDate(_selectedDate); // Update index based on initial date
     });
+  }
+
+  void _updateIndexByDate(DateTime date) {
+    String formattedDate = DateFormat('yyyy-MM-dd').format(date);
+    for (int i = 0; i < _data['dates'].length; i++) {
+      if (_data['dates'][i]['date'] == formattedDate) {
+        setState(() {
+          _currentIndex = i;
+        });
+        break;
+      }
+    }
   }
 
   bool _isToday(String date) {
@@ -46,7 +61,23 @@ class _CaloriesExplorerState extends State<CaloriesExplorer> {
       } else if (_currentIndex >= _data['dates'].length) {
         _currentIndex = _data['dates'].length - 1;
       }
+      _selectedDate = DateTime.parse(_data['dates'][_currentIndex]['date']);
     });
+  }
+
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: _selectedDate,
+      firstDate: DateTime(2020, 1),
+      lastDate: DateTime(2030, 12),
+    );
+    if (picked != null && picked != _selectedDate) {
+      setState(() {
+        _selectedDate = picked;
+        _updateIndexByDate(_selectedDate);
+      });
+    }
   }
 
   @override
@@ -88,19 +119,27 @@ class _CaloriesExplorerState extends State<CaloriesExplorer> {
                   ),
                   Column(
                     children: [
-                      Text('Day View',
-                          style: TextStyle(
-                              fontSize: 12.sp,
-                              color: Color.fromRGBO(102, 102, 102, 1),
-                              fontFamily: 'Inter')),
-                      Text(
-                          _isToday(dateData['date'])
-                              ? 'Today'
-                              : dateData['date'],
-                          style: TextStyle(
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w600,
-                              fontFamily: 'Inter')),
+                      GestureDetector(
+                        onTap: () => _selectDate(context),
+                        child: Column(
+                          children: [
+                            Text('Day View',
+                                style: TextStyle(
+                                    fontSize: 12.sp,
+                                    color: Color.fromRGBO(102, 102, 102, 1),
+                                    fontFamily: 'Inter')),
+                            Text(
+                              _isToday(dateData['date'])
+                                  ? 'Today'
+                                  : dateData['date'],
+                              style: TextStyle(
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w600,
+                                  fontFamily: 'Inter'),
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                   IconButton(
@@ -133,23 +172,19 @@ class _CaloriesExplorerState extends State<CaloriesExplorer> {
                   SizedBox(height: 16.h),
                   // Dividing meals into two rows with two columns each
                   Row(
-                    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Expanded(
-                        child: Column(
-                          children: [
-                            _buildMealItem(meals[0]),
-                            _buildMealItem(meals[1]),
-                          ],
-                        ),
+                      Column(
+                        children: [
+                          _buildMealItem(meals[0]),
+                          _buildMealItem(meals[1]),
+                        ],
                       ),
-                      Expanded(
-                        child: Column(
-                          children: [
-                            _buildMealItem(meals[2]),
-                            _buildMealItem(meals[3]),
-                          ],
-                        ),
+                      Spacer(),
+                      Column(
+                        children: [
+                          _buildMealItem(meals[2]),
+                          _buildMealItem(meals[3]),
+                        ],
                       ),
                     ],
                   ),

@@ -47,6 +47,8 @@ dev_dependencies:
   flutter_screenutil: ^5.9.3
   flutter_svg: ^2.0.10+1
   fl_chart: ^0.68.0
+  ionicons: ^0.2.2
+  cupertino_icons: ^1.0.8
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -195,6 +197,8 @@ flutter:
      - lib/json files/progress.json
      - lib/json files/oldNotifications.json
      - lib/json files/report.json
+     - lib/json files/appDevices.json
+     - lib/json files/deviceSteps.json
 
      
 

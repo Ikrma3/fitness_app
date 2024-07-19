@@ -75,12 +75,6 @@ class _DeleteAccountScreenState extends State<DeleteAccountScreen> {
                   fontWeight: FontWeight.w500,
                   fontFamily: 'Inter'),
             ),
-            leading: IconButton(
-              icon: Icon(Icons.arrow_back),
-              onPressed: () {
-                // Handle back button press
-              },
-            ),
           ),
           body: SingleChildScrollView(
             child: Column(

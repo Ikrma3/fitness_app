@@ -43,7 +43,7 @@ class OldNotificationCard extends StatelessWidget {
                         title,
                         style: TextStyle(
                             fontSize: 16.sp,
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w400,
                             fontFamily: 'Poppin'),
                       ),
                       Container(

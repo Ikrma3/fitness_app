@@ -96,10 +96,32 @@ class CustomGraph extends StatelessWidget {
   }
 
   List<String> generateXAxisDates(String latestDate) {
+    // Debug print to check the input date string
+    print('Latest date: $latestDate');
+
+    // Check if the latestDate is not empty and contains a '/'
+    if (latestDate.isEmpty || !latestDate.contains('/')) {
+      print('Invalid date format: $latestDate');
+      return [];
+    }
+
     // Split the date string into day and month parts
     List<String> parts = latestDate.split('/');
-    int day = int.parse(parts[0]);
-    int month = int.parse(parts[1]);
+    if (parts.length != 2) {
+      print('Invalid date format after split: $parts');
+      return [];
+    }
+
+    // Parse day and month parts
+    int day;
+    int month;
+    try {
+      day = int.parse(parts[0]);
+      month = int.parse(parts[1]);
+    } catch (e) {
+      print('Error parsing date parts: $e');
+      return [];
+    }
 
     // Generate past three months' dates
     List<String> dates = [];
