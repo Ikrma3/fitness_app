@@ -5,9 +5,9 @@ import 'package:myfitness/components/caloriesBurnedChart.dart';
 import 'package:myfitness/components/checkBox.dart';
 import 'package:myfitness/components/reportFragment.dart';
 import 'dart:convert'; // Add this import
-import 'package:flutter/services.dart' show rootBundle; // Add this import
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:myfitness/components/stepsReportChart.dart';
-import 'package:myfitness/components/weightTrackingChart.dart';
+import 'package:myfitness/components/weightTrackingChart.dart'; // Add this import
 
 class WeeklyReportScreen extends StatefulWidget {
   @override
@@ -195,10 +195,8 @@ class _WeeklyReportScreenState extends State<WeeklyReportScreen> {
               child: Container(
                 height: 304.h,
                 width: 320.w,
-                child: Expanded(
-                  child: CaloriesBurnedChart(
-                      data: filteredData, view: _selectedView),
-                ),
+                child: CaloriesBurnedChart(
+                    data: filteredData, view: _selectedView),
               ),
             ),
             SizedBox(height: 20.h),
@@ -208,23 +206,20 @@ class _WeeklyReportScreenState extends State<WeeklyReportScreen> {
               child: Container(
                 height: 304.h,
                 width: 320.w,
-                child: Expanded(
-                  child: WeightTrackingChart(
-                      data: filteredData, view: _selectedView),
-                ),
+                child: WeightTrackingChart(
+                    data: filteredData, view: _selectedView),
               ),
             ),
+
             SizedBox(height: 20.h),
-            // Display chart based on selected view and filtered data
+            //      Display chart based on selected view and filtered data
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Container(
                 height: 304.h,
                 width: 320.w,
-                child: Expanded(
-                  child:
-                      StepsReportChart(data: filteredData, view: _selectedView),
-                ),
+                child:
+                    StepsReportChart(data: filteredData, view: _selectedView),
               ),
             ),
             SizedBox(height: 20.h),

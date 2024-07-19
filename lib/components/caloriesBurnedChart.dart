@@ -19,94 +19,87 @@ class CaloriesBurnedChart extends StatelessWidget {
         borderRadius: BorderRadius.circular(16.r),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: EdgeInsets.only(bottom: 8.0.h),
-            child: Row(
-              children: [
-                Text(
-                  'Calories burned',
-                  style: TextStyle(
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w500,
-                      fontFamily: 'Poppin'),
-                ),
-              ],
+            child: Text(
+              'Calories burned',
+              style: TextStyle(
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Poppin'),
             ),
           ),
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 28.h),
-              child: BarChart(
-                BarChartData(
-                  barGroups: _generateBarGroups(data),
-                  borderData: FlBorderData(
-                    show: false,
-                  ),
-                  titlesData: FlTitlesData(
-                    leftTitles: AxisTitles(
-                      sideTitles: SideTitles(
-                        showTitles: true,
-                        getTitlesWidget: (value, meta) {
-                          return Padding(
-                            padding: EdgeInsets.only(bottom: 8.0.h),
-                            child: Text(
-                              value.toInt().toString(),
-                              style: TextStyle(
-                                  color: Color.fromRGBO(64, 75, 82, 1)),
-                            ),
-                          );
-                        },
-                        reservedSize: 50,
-                        interval: (yRange[1] - yRange[0]) /
-                            2, // Dynamic interval for 5 lines
-                      ),
-                    ),
-                    bottomTitles: AxisTitles(
-                      sideTitles: SideTitles(
-                        showTitles: true,
-                        getTitlesWidget: (value, meta) {
-                          if (view == 'Day') {
-                            return Text(
-                              _getDayInitial(value.toInt()),
-                              style: TextStyle(color: Colors.black),
-                            );
-                          } else if (view == 'Week') {
-                            return Text(
-                              (value + 1).toString(),
-                              style: TextStyle(color: Colors.black),
-                            );
-                          } else {
-                            return Text(
-                              _getMonthShort(value.toInt()),
-                              style: TextStyle(color: Colors.black),
-                            );
-                          }
-                        },
-                      ),
-                    ),
-                    rightTitles: AxisTitles(
-                      sideTitles: SideTitles(showTitles: false),
-                    ),
-                    topTitles: AxisTitles(
-                      sideTitles: SideTitles(showTitles: false),
-                    ),
-                  ),
-                  gridData: FlGridData(
-                    show: true,
-                    drawVerticalLine: false,
-                    horizontalInterval: (yRange[1] - yRange[0]) /
-                        2, // Dynamic interval for 5 lines
-                    getDrawingHorizontalLine: (value) {
-                      return FlLine(
-                        color: Color.fromRGBO(211, 234, 240, 1),
-                        strokeWidth: 1,
-                      );
-                    },
-                  ),
-                  minY: yRange[0],
-                  maxY: yRange[1],
+          SizedBox(
+            height: 200.h, // Adjust height as needed
+            child: BarChart(
+              BarChartData(
+                barGroups: _generateBarGroups(data),
+                borderData: FlBorderData(
+                  show: false,
                 ),
+                titlesData: FlTitlesData(
+                  leftTitles: AxisTitles(
+                    sideTitles: SideTitles(
+                      showTitles: true,
+                      getTitlesWidget: (value, meta) {
+                        return Padding(
+                          padding: EdgeInsets.only(bottom: 8.0.h),
+                          child: Text(
+                            value.toInt().toString(),
+                            style:
+                                TextStyle(color: Color.fromRGBO(64, 75, 82, 1)),
+                          ),
+                        );
+                      },
+                      reservedSize: 50,
+                      interval: (yRange[1] - yRange[0]) / 2,
+                    ),
+                  ),
+                  bottomTitles: AxisTitles(
+                    sideTitles: SideTitles(
+                      showTitles: true,
+                      getTitlesWidget: (value, meta) {
+                        if (view == 'Day') {
+                          return Text(
+                            _getDayInitial(value.toInt()),
+                            style: TextStyle(color: Colors.black),
+                          );
+                        } else if (view == 'Week') {
+                          return Text(
+                            (value + 1).toString(),
+                            style: TextStyle(color: Colors.black),
+                          );
+                        } else {
+                          return Text(
+                            _getMonthShort(value.toInt()),
+                            style: TextStyle(color: Colors.black),
+                          );
+                        }
+                      },
+                    ),
+                  ),
+                  rightTitles: AxisTitles(
+                    sideTitles: SideTitles(showTitles: false),
+                  ),
+                  topTitles: AxisTitles(
+                    sideTitles: SideTitles(showTitles: false),
+                  ),
+                ),
+                gridData: FlGridData(
+                  show: true,
+                  drawVerticalLine: false,
+                  horizontalInterval: (yRange[1] - yRange[0]) / 2,
+                  getDrawingHorizontalLine: (value) {
+                    return FlLine(
+                      color: Color.fromRGBO(211, 234, 240, 1),
+                      strokeWidth: 1,
+                    );
+                  },
+                ),
+                minY: yRange[0],
+                maxY: yRange[1],
               ),
             ),
           ),
