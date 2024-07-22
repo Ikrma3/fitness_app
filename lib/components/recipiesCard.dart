@@ -39,11 +39,14 @@ class _RecipeCardState extends State<RecipeCard> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.asset(
-                  widget.recipe['image'],
-                  height: 144.h,
-                  width: 134.w,
-                  fit: BoxFit.fill,
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10.r),
+                  child: Image.asset(
+                    widget.recipe['image'],
+                    height: 144.h,
+                    width: 134.w,
+                    fit: BoxFit.cover,
+                  ),
                 ),
                 SizedBox(
                   height: 5.h,

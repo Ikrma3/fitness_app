@@ -139,6 +139,7 @@ flutter:
      - images/sleep.png
      - images/workout.png
      - images/sync.png
+     - images/startTraining.png
      - images/burger.png
      - images/res.png
      - images/logos_fb.png
@@ -167,6 +168,20 @@ flutter:
      - images/weightIcon.png
      - images/date.png
      - images/oldNotification.png
+     - images/rapidLower.png
+     - images/bodyWeight.png
+     - images/plank.png
+     - images/armCircle.png
+     - images/squat.png
+     - images/frontBack.png
+     - images/yoga2.png
+     - images/stretch2.png
+     - images/gym.png
+     - images/coreControl.png
+     - images/fullBody.png
+     - images/tabata.png
+     - images/abs.png
+     - images/pilates.png
      - lib/json files/onBoard.json
      - lib/json files/subscription.json
      - lib/json files/questions.json
@@ -199,6 +214,11 @@ flutter:
      - lib/json files/report.json
      - lib/json files/appDevices.json
      - lib/json files/deviceSteps.json
+     - lib/json files/category.json
+     - lib/json files/startTraining.json
+     - lib/json files/popularTraining.json
+     - lib/json files/workoutExcercise.json
+     - lib/json files/training.json
 
      
 

@@ -15,6 +15,7 @@ import 'package:myfitness/screens/progressReport.dart';
 import 'package:myfitness/screens/recipiesScreen.dart';
 import 'package:myfitness/screens/reminder.dart';
 import 'package:myfitness/screens/steps.dart';
+import 'package:myfitness/screens/workout.dart';
 
 // Import other screens here
 
@@ -55,7 +56,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            SizedBox(height: 40.h), // For top spacing
+            // SizedBox(height: 10.h), // For top spacing
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.0.w),
               child: Text('Settings',
@@ -140,10 +141,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       iconPath: 'images/work.png',
                       title: "Workouts",
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => ReportScreen()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => WorkoutScreen()),
+                        );
                       },
                     ),
                     SettingsComponent(

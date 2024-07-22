@@ -40,6 +40,7 @@ class _PlanDetailsState extends State<PlanDetails> {
         ),
         actions: [
           DropdownButton<String>(
+            dropdownColor: Colors.white,
             value: selectedWeek,
             icon: Icon(Icons.arrow_drop_down),
             onChanged: (String? newValue) {
@@ -57,7 +58,7 @@ class _PlanDetailsState extends State<PlanDetails> {
                 child: Text(
                   value,
                   style: TextStyle(
-                    fontSize: 19.sp,
+                    fontSize: 14.sp,
                     fontWeight: FontWeight.w600,
                     fontFamily: 'Inter',
                   ),

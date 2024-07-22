@@ -1,0 +1,22 @@
+[
+    {
+        "image": "images/frontBack.png",
+        "title": "Front and Back Lunge",
+        "time": "0:30"
+    },
+    {
+        "image": "images/plank.png",
+        "title": "Side Plank",
+        "time": "0:30"
+    },
+    {
+        "image": "images/armCircle.png",
+        "title": "Arm Circles",
+        "time": "0:30"
+    },
+    {
+        "image": "images/squat.png",
+        "title": "Sumo Squat",
+        "time": "0:30"
+    }
+]

@@ -99,6 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               PopupMenuButton<String>(
+                color: Colors.white,
                 child: Row(
                   children: [
                     Text(

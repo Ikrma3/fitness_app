@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myfitness/components/giftCards.dart';
 import 'package:myfitness/screens/appDevices.dart';
 import 'package:myfitness/screens/recipiesScreen.dart';
+import 'package:myfitness/screens/workout.dart';
 
 class ExploreScreen extends StatefulWidget {
   @override
@@ -50,6 +51,12 @@ class _ExploreScreenState extends State<ExploreScreen> {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => AppDevices()),
+      );
+    } else if (selectedCardHeading == 'Workouts') {
+      print("Sync");
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => WorkoutScreen()),
       );
     }
     // Add more conditions as needed for other headings

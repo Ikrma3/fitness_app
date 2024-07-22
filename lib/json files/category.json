@@ -1,0 +1,18 @@
+[
+    {
+        "image": "images/cardio.png",
+        "text": "Cardio"
+    },
+    {
+        "image": "images/yoga2.png",
+        "text": "Yoga"
+    },
+    {
+        "image": "images/stretch2.png",
+        "text": "Stretch"
+    },
+    {
+        "image": "images/gym.png",
+        "text": "Gym"
+    }
+]
