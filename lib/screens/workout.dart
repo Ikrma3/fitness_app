@@ -7,6 +7,7 @@ import 'package:myfitness/components/excerciseFrame.dart';
 import 'package:myfitness/components/startTraining.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myfitness/screens/diaryScreen.dart';
+import 'package:myfitness/screens/exerciseDetailScreen.dart';
 import 'package:myfitness/screens/plansScreen.dart';
 import 'package:myfitness/screens/settings.dart';
 
@@ -47,9 +48,6 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
         _currentIndex = 0;
       }
     });
-    // Handle navigation to different screens here based on index
-    // For now, we just print the index to console.
-    print('Tab $index selected');
   }
 
   @override
@@ -85,6 +83,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
     final String response =
         await rootBundle.loadString('lib/json files/workoutExcercise.json');
     final data = await json.decode(response);
+
     setState(() {
       exercises = data;
     });
@@ -98,189 +97,201 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
     });
   }
 
-  void onExerciseTap(String title) {
-    print(title);
+  void onExerciseTap(Map<String, dynamic> exercise) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true, // Allows full screen height
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (context) {
+        return ExerciseDetailScreen(
+          title: exercise['title'] as String,
+          image: exercise['image'] as String,
+          description: exercise['description'] as String,
+          time: exercise['time'] as String,
+          equipment: (exercise['equipment'] as List<dynamic>)
+              .map((e) => Map<String, String>.from(e as Map<dynamic, dynamic>))
+              .toList(),
+          techniques: exercise['techniques'] as String,
+        );
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: AppColors.backgroundColor,
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          surfaceTintColor: Colors.white,
-          title: Text('Workouts Routine'),
-        ),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.all(16.0.w.h),
-            child: Column(
-              children: [
-                TextField(
-                  cursorColor: Colors.black,
-                  style: const TextStyle(color: Color(0xff404B52)),
-                  decoration: InputDecoration(
-                    hintText: "Search Something",
-                    hintStyle:
-                        TextStyle(fontSize: 14.sp, fontFamily: 'OpenSans'),
-                    prefixIcon: Icon(
-                      Icons.search,
-                      color: Color.fromRGBO(21, 109, 149, 1),
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0.r),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                      borderSide: BorderSide(
-                        color: Colors.white,
-                        width: 1.w,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                      borderSide: BorderSide(
-                        color: Colors.white,
-                        width: 1.w,
-                      ),
-                    ),
-                    fillColor: Color.fromRGBO(217, 237, 245, 1),
-                    filled: true,
+      backgroundColor: AppColors.backgroundColor,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
+        title: Text('Workouts Routine'),
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(16.0.w.h),
+          child: Column(
+            children: [
+              TextField(
+                cursorColor: Colors.black,
+                style: const TextStyle(color: Color(0xff404B52)),
+                decoration: InputDecoration(
+                  hintText: "Search Something",
+                  hintStyle: TextStyle(fontSize: 14.sp, fontFamily: 'OpenSans'),
+                  prefixIcon: Icon(
+                    Icons.search,
+                    color: Color.fromRGBO(21, 109, 149, 1),
                   ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0.r),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.r),
+                    borderSide: BorderSide(
+                      color: Colors.white,
+                      width: 1.w,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.r),
+                    borderSide: BorderSide(
+                      color: Colors.white,
+                      width: 1.w,
+                    ),
+                  ),
+                  fillColor: Color.fromRGBO(217, 237, 245, 1),
+                  filled: true,
                 ),
-                SizedBox(height: 10.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('Category',
-                        style: TextStyle(
-                            fontSize: 20.sp,
-                            fontFamily: 'Poppin',
-                            fontWeight: FontWeight.w400)),
-                    TextButton(
-                      onPressed: () {
-                        setState(() {
-                          viewAll = !viewAll;
-                        });
-                      },
-                      child: Text(
-                        'View All',
-                        style: TextStyle(
-                          fontSize: 15.sp,
+              ),
+              SizedBox(height: 10.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Category',
+                      style: TextStyle(
+                          fontSize: 20.sp,
                           fontFamily: 'Poppin',
-                          fontWeight: FontWeight.w400,
-                          color: viewAll
-                              ? Color.fromRGBO(20, 108, 148, 1)
-                              : Color.fromRGBO(146, 153, 163, 1),
-                        ),
+                          fontWeight: FontWeight.w400)),
+                  TextButton(
+                    onPressed: () {
+                      setState(() {
+                        viewAll = !viewAll;
+                      });
+                    },
+                    child: Text(
+                      'View All',
+                      style: TextStyle(
+                        fontSize: 15.sp,
+                        fontFamily: 'Poppin',
+                        fontWeight: FontWeight.w400,
+                        color: viewAll
+                            ? Color.fromRGBO(20, 108, 148, 1)
+                            : Color.fromRGBO(146, 153, 163, 1),
                       ),
                     ),
-                  ],
-                ),
-                viewAll ? buildListView() : buildHorizontalListView(),
-                SizedBox(height: 26.h),
-                StartTraining(),
-                SizedBox(height: 20.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Popular Workouts',
-                            style: TextStyle(
-                                fontSize: 20.sp,
-                                fontFamily: 'Poppin',
-                                fontWeight: FontWeight.w400)),
-                        Text("Workouts: 80",
-                            style: TextStyle(
-                                fontSize: 12.sp,
-                                fontFamily: 'Poppin',
-                                fontWeight: FontWeight.w400,
-                                color: Color.fromRGBO(64, 75, 82, 1)))
-                      ],
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        setState(() {
-                          pViewAll = !pViewAll;
-                        });
-                      },
-                      child: Text(
-                        'View All',
-                        style: TextStyle(
-                          fontSize: 15.sp,
-                          fontFamily: 'Poppin',
-                          fontWeight: FontWeight.w400,
-                          color: pViewAll
-                              ? Color.fromRGBO(20, 108, 148, 1)
-                              : Color.fromRGBO(146, 153, 163, 1),
-                        ),
+                  ),
+                ],
+              ),
+              viewAll ? buildListView() : buildHorizontalListView(),
+              SizedBox(height: 26.h),
+              StartTraining(),
+              SizedBox(height: 20.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Popular Workouts',
+                          style: TextStyle(
+                              fontSize: 20.sp,
+                              fontFamily: 'Poppin',
+                              fontWeight: FontWeight.w400)),
+                      Text("Workouts: 80",
+                          style: TextStyle(
+                              fontSize: 12.sp,
+                              fontFamily: 'Poppin',
+                              fontWeight: FontWeight.w400,
+                              color: Color.fromRGBO(64, 75, 82, 1)))
+                    ],
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      setState(() {
+                        pViewAll = !pViewAll;
+                      });
+                    },
+                    child: Text(
+                      'View All',
+                      style: TextStyle(
+                        fontSize: 15.sp,
+                        fontFamily: 'Poppin',
+                        fontWeight: FontWeight.w400,
+                        color: pViewAll
+                            ? Color.fromRGBO(20, 108, 148, 1)
+                            : Color.fromRGBO(146, 153, 163, 1),
                       ),
                     ),
-                  ],
-                ),
-                SizedBox(
-                  height: 10.h,
-                ),
-                pViewAll
-                    ? buildPopularWorkoutsListView()
-                    : buildPopularWorkoutsHorizontalListView(),
-                SizedBox(height: 20.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Exercises',
-                            style: TextStyle(
-                                fontSize: 20.sp,
-                                fontFamily: 'Poppin',
-                                fontWeight: FontWeight.w400)),
-                        Text("Exercises: 210",
-                            style: TextStyle(
-                                fontSize: 12.sp,
-                                fontFamily: 'Poppin',
-                                fontWeight: FontWeight.w400,
-                                color: Color.fromRGBO(64, 75, 82, 1)))
-                      ],
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        setState(() {
-                          eViewAll = !eViewAll;
-                        });
-                      },
-                      child: Text(
-                        'View All',
-                        style: TextStyle(
-                          fontSize: 15.sp,
-                          fontFamily: 'Poppin',
-                          fontWeight: FontWeight.w400,
-                          color: eViewAll
-                              ? Color.fromRGBO(20, 108, 148, 1)
-                              : Color.fromRGBO(146, 153, 163, 1),
-                        ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10.h),
+              pViewAll
+                  ? buildPopularWorkoutsListView()
+                  : buildPopularWorkoutsHorizontalListView(),
+              SizedBox(height: 20.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Exercises',
+                          style: TextStyle(
+                              fontSize: 20.sp,
+                              fontFamily: 'Poppin',
+                              fontWeight: FontWeight.w400)),
+                      Text("Exercises: 210",
+                          style: TextStyle(
+                              fontSize: 12.sp,
+                              fontFamily: 'Poppin',
+                              fontWeight: FontWeight.w400,
+                              color: Color.fromRGBO(64, 75, 82, 1))),
+                    ],
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      setState(() {
+                        eViewAll = !eViewAll;
+                      });
+                    },
+                    child: Text(
+                      'View All',
+                      style: TextStyle(
+                        fontSize: 15.sp,
+                        fontFamily: 'Poppin',
+                        fontWeight: FontWeight.w400,
+                        color: eViewAll
+                            ? Color.fromRGBO(20, 108, 148, 1)
+                            : Color.fromRGBO(146, 153, 163, 1),
                       ),
                     ),
-                  ],
-                ),
-                SizedBox(
-                  height: 10.h,
-                ),
-                eViewAll ? buildExercisesListView() : buildExercisesListView(),
-                SizedBox(
-                  height: 100.h,
-                ),
-              ],
-            ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10.h),
+              eViewAll ? buildExercisesListView() : buildExercisesListView(),
+              SizedBox(height: 100.h),
+            ],
           ),
         ),
-        bottomNavigationBar: BottomBar(
-          currentIndex: _currentIndex,
-          onTap: onTabTapped,
-        ));
+      ),
+      bottomNavigationBar: BottomBar(
+        currentIndex: _currentIndex,
+        onTap: onTabTapped,
+      ),
+    );
   }
 
   Widget buildHorizontalListView() {
@@ -302,57 +313,45 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
       physics: NeverScrollableScrollPhysics(),
       itemCount: categories.length,
       itemBuilder: (context, index) {
-        return Column(
-          children: [
-            buildCategoryCard(categories[index]),
-            SizedBox(
-              height: 20.h,
-            )
-          ],
-        );
+        return buildCategoryCard(categories[index]);
       },
     );
   }
 
-  Widget buildCategoryCard(category) {
-    return GestureDetector(
-      onTap: () {
-        print(category['text']);
-      },
-      child: Container(
-        margin:
-            EdgeInsets.symmetric(horizontal: 10.w), // Adjust margin for spacing
-        padding: EdgeInsets.all(6.0.w.h),
-        width: 90.w, // Adjust width to fit multiple items
-        decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(color: Color.fromRGBO(218, 224, 232, 1)),
-          borderRadius: BorderRadius.circular(8.0.r),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(category['image'], width: 24.w, height: 24.h),
-            SizedBox(height: 8.0),
-            Text(category['text'],
-                style: TextStyle(
-                    fontSize: 14.sp,
-                    fontFamily: 'Poppin',
-                    color: Colors.black)), // Adjust font size
-          ],
-        ),
+  Widget buildCategoryCard(dynamic category) {
+    return Container(
+      width: 90.w,
+      margin: EdgeInsets.only(right: 10.w),
+      child: Column(
+        children: [
+          Image.asset(
+            category['image'],
+            height: 40.h,
+            width: 40.w,
+          ),
+          SizedBox(height: 5.h),
+          Text(
+            category['text'],
+            style: TextStyle(
+              fontSize: 12.sp,
+              fontFamily: 'Poppin',
+              fontWeight: FontWeight.w400,
+            ),
+            textAlign: TextAlign.center,
+          ),
+        ],
       ),
     );
   }
 
   Widget buildPopularWorkoutsHorizontalListView() {
     return Container(
-      height: 216.h,
+      height: 150.h,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: popularWorkouts.length,
         itemBuilder: (context, index) {
-          return buildPopularWorkoutCard(popularWorkouts[index], index);
+          return buildPopularWorkoutCard(index);
         },
       ),
     );
@@ -364,94 +363,51 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
       physics: NeverScrollableScrollPhysics(),
       itemCount: popularWorkouts.length,
       itemBuilder: (context, index) {
-        return Column(
-          children: [
-            buildPopularWorkoutCard(popularWorkouts[index], index),
-            SizedBox(
-              height: 20.h,
-            )
-          ],
-        );
+        return buildPopularWorkoutCard(index);
       },
     );
   }
 
-  Widget buildPopularWorkoutCard(workout, int index) {
+  Widget buildPopularWorkoutCard(int index) {
+    final workout = popularWorkouts[index];
     return GestureDetector(
       onTap: () {
-        print(workout['title']);
+        toggleFavorite(index);
       },
       child: Container(
-        margin:
-            EdgeInsets.symmetric(horizontal: 10.w), // Adjust margin for spacing
-        width: 240.w, // Adjust width as needed
-        decoration: BoxDecoration(
-          color: AppColors.backgroundColor,
-          borderRadius: BorderRadius.circular(29.0.r),
-        ),
-        child: Stack(
+        width: 130.w,
+        margin: EdgeInsets.only(right: 10.w),
+        child: Column(
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            Stack(
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(10.r),
-                  child: Container(
-                    child: Image.asset(workout['image'],
-                        width: 240.w, height: 160.h, fit: BoxFit.cover),
-                  ),
+                Image.asset(
+                  workout['image'],
+                  height: 100.h,
+                  width: 130.w,
+                  fit: BoxFit.cover,
                 ),
-                SizedBox(height: 8.0.h),
-                Text(workout['title'],
-                    style: TextStyle(
-                        fontSize: 16.sp,
-                        fontFamily: 'Poppin',
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black)),
-                SizedBox(height: 4.0.h),
-                Row(
-                  children: [
-                    Text(workout['level'],
-                        style: TextStyle(
-                            fontSize: 12.sp,
-                            fontFamily: 'Poppin',
-                            fontWeight: FontWeight.w500,
-                            color: Color.fromRGBO(21, 109, 149, 1))),
-                    SizedBox(
-                      width: 5.w,
-                    ),
-                    Icon(
-                      Icons.circle_rounded,
-                      size: 4.w.h,
-                      color: Color.fromRGBO(64, 75, 82, 1),
-                    ),
-                    SizedBox(
-                      width: 5.w,
-                    ),
-                    Text(workout['time'],
-                        style: TextStyle(
-                            fontSize: 12.sp,
-                            fontFamily: 'Poppin',
-                            fontWeight: FontWeight.w400,
-                            color: Color.fromRGBO(64, 75, 82, 1))),
-                  ],
+                Positioned(
+                  top: 8.h,
+                  right: 8.w,
+                  child: Icon(
+                    workout['isFavorite']
+                        ? Icons.favorite
+                        : Icons.favorite_border,
+                    color: workout['isFavorite'] ? Colors.red : Colors.grey,
+                  ),
                 ),
               ],
             ),
-            Positioned(
-              top: 6.0.h,
-              right: 6.0.w,
-              child: IconButton(
-                icon: Icon(
-                  workout['isFavorite']
-                      ? Icons.favorite
-                      : Icons.favorite_border,
-                  color: workout['isFavorite']
-                      ? Colors.white
-                      : Color.fromRGBO(218, 224, 232, 1),
-                ),
-                onPressed: () => toggleFavorite(index),
+            SizedBox(height: 5.h),
+            Text(
+              workout['title'],
+              style: TextStyle(
+                fontSize: 12.sp,
+                fontFamily: 'Poppin',
+                fontWeight: FontWeight.w400,
               ),
+              textAlign: TextAlign.center,
             ),
           ],
         ),
@@ -465,11 +421,17 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
       physics: NeverScrollableScrollPhysics(),
       itemCount: exercises.length,
       itemBuilder: (context, index) {
-        return ExerciseFrame(
-          image: exercises[index]['image'],
-          title: exercises[index]['title'],
-          time: exercises[index]['time'],
-          onTap: () => onExerciseTap(exercises[index]['title']),
+        final exercise = exercises[index];
+        return GestureDetector(
+          onTap: () => onExerciseTap(exercise),
+          child: ExerciseFrame(
+            title: exercise['title'],
+            image: exercise['image'],
+            time: exercise['time'],
+            onTap: () {
+              onExerciseTap(exercise);
+            },
+          ),
         );
       },
     );

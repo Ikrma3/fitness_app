@@ -1,0 +1,129 @@
+{
+    "coverImage": "images/upperBody.png",
+    "title": "Upper Body Workout",
+    "description": "Resistance training, also known as strength training, is an essential component of any fitness routine, especially for your upper body.",
+    "details": [
+        {
+            "image": "images/time.png",
+            "text": "30 min"
+        },
+        {
+            "image": "images/fire.png",
+            "text": "340 Kcal"
+        },
+        {
+            "image": "images/thunder.png",
+            "text": "Beginner"
+        }
+    ],
+    "equipment": [
+        {
+            "image": "images/dumbells.png",
+            "text": "2 Dumbbells"
+        },
+        {
+            "image": "images/mat.png",
+            "text": "Mat"
+        }
+    ],
+    "exercises": {
+        "Warm-up": {
+            "exerciseCount": 3,
+            "totalTime": "2 Minutes",
+            "exercisesList": [
+                {
+                    "title": "Cobra Stretch",
+                    "image": "images/cobraStretch.png",
+                    "time": "0:40",
+                    "description": "A gentle backbend that stretches the spine, chest, and shoulders.",
+                    "taskEquipments": [],
+                    "technique": "Lie on your stomach, place your hands under your shoulders, and slowly lift your chest off the ground."
+                },
+                {
+                    "title": "Plank Ups",
+                    "image": "images/plank.png",
+                    "time": "0:30",
+                    "description": "An exercise that targets the core, shoulders, and arms.",
+                    "taskEquipments": [],
+                    "technique": "Start in a forearm plank position, press up to a high plank, and then return to the forearm plank."
+                },
+                {
+                    "title": "Rest",
+                    "image": "images/rest.png",
+                    "time": "0:30",
+                    "description": "A short break to catch your breath.",
+                    "taskEquipments": [],
+                    "technique": "Relax and prepare for the next exercise."
+                }
+            ]
+        },
+        "Workout": {
+            "exerciseCount": 4,
+            "totalTime": "5 Minutes",
+            "exercisesList": [
+                {
+                    "title": "Double Heel Tabs",
+                    "image": "images/heelTab.png",
+                    "time": "x 20",
+                    "description": "An exercise to strengthen the lower body and improve balance.",
+                    "taskEquipments": [],
+                    "technique": "Stand with feet hip-width apart, lift your heels, and tap them together."
+                },
+                {
+                    "title": "Lung Jumps Alternated",
+                    "image": "images/jump.png",
+                    "time": "x 20",
+                    "description": "A plyometric exercise that targets the legs and glutes.",
+                    "taskEquipments": [],
+                    "technique": "Start in a lunge position, jump up, and switch legs mid-air."
+                },
+                {
+                    "title": "Squat jump",
+                    "image": "images/sumoSquat.png",
+                    "time": "x 20",
+                    "description": "A high-intensity exercise that works the legs and core.",
+                    "taskEquipments": [],
+                    "technique": "Start in a squat position, jump up explosively, and land softly back into a squat."
+                },
+                {
+                    "title": "Rest",
+                    "image": "images/rest.png",
+                    "time": "0:30",
+                    "description": "A short break to catch your breath.",
+                    "taskEquipments": [],
+                    "technique": "Relax and prepare for the next exercise."
+                }
+            ]
+        },
+        "Stretching": {
+            "exerciseCount": 3,
+            "totalTime": "3 Minutes",
+            "exercisesList": [
+                {
+                    "title": "Boxer Shuffle",
+                    "image": "images/boxer.png",
+                    "time": "x 20",
+                    "description": "An exercise to strengthen the lower body and improve balance.",
+                    "taskEquipments": [],
+                    "technique": "Stand with feet hip-width apart, lift your heels, and tap them together."
+                },
+                {
+                    "title": "Plank Reaches",
+                    "image": "images/plankReaches.png",
+                    "time": "x 20",
+                    "description": "A plyometric exercise that targets the legs and glutes.",
+                    "taskEquipments": [],
+                    "technique": "Start in a lunge position, jump up, and switch legs mid-air."
+                },
+                {
+                    "title": "Rest",
+                    "image": "images/rest.png",
+                    "time": "0:30",
+                    "description": "A short break to catch your breath.",
+                    "taskEquipments": [],
+                    "technique": "Relax and prepare for the next exercise."
+                }
+            ]
+        }
+    }
+}

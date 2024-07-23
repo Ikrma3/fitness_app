@@ -16,6 +16,7 @@ class ExerciseFrame extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double imageSize = title == "Rest" ? 40.0 : 64.0;
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -27,17 +28,28 @@ class ExerciseFrame extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Image.asset(image, width: 64.w, height: 64.h, fit: BoxFit.cover),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(12.r),
+              child: Container(
+                  height: 64.h,
+                  child: Image.asset(image,
+                      width: imageSize.w,
+                      height: imageSize.h,
+                      fit: BoxFit.contain)),
+            ),
             SizedBox(width: 12.w),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  title,
-                  style: TextStyle(
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w500,
-                      fontFamily: 'Poppin'),
+                Container(
+                  // width: 186.w,
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'Poppin'),
+                  ),
                 ),
                 Text(
                   time,
@@ -53,7 +65,7 @@ class ExerciseFrame extends StatelessWidget {
             IconButton(
               icon: Icon(
                 Icons.info_outline,
-                size: 22.w.h,
+                size: 20.w.h,
                 color: Color.fromRGBO(202, 208, 216, 1),
               ),
               onPressed: () {

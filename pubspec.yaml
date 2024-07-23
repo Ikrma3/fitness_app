@@ -182,6 +182,19 @@ flutter:
      - images/tabata.png
      - images/abs.png
      - images/pilates.png
+     - images/upperBody.png
+     - images/time.png
+     - images/thunder.png
+     - images/dumbells.png
+     - images/mat.png
+     - images/cobraStretch.png
+     - images/rest.png
+     - images/heelTab.png
+     - images/jump.png
+     - images/squatJump.png
+     - images/boxer.png
+     - images/plankReaches.png
+     - images/sumoSquat.png
      - lib/json files/onBoard.json
      - lib/json files/subscription.json
      - lib/json files/questions.json
@@ -219,6 +232,7 @@ flutter:
      - lib/json files/popularTraining.json
      - lib/json files/workoutExcercise.json
      - lib/json files/training.json
+     - lib/json files/workoutDetails.json
 
      
 

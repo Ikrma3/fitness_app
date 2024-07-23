@@ -30,6 +30,7 @@ import 'package:myfitness/screens/subscriptionScreen.dart';
 import 'package:myfitness/screens/trainingScreen.dart';
 import 'package:myfitness/screens/weight.dart';
 import 'package:myfitness/screens/workout.dart';
+import 'package:myfitness/screens/workoutDetails.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -51,7 +52,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData.light(), // Default light theme
             darkTheme: ThemeData.dark(), // Default dark theme
             themeMode: ThemeMode.system,
-            home: HomeScreen());
+            home: WorkoutScreen());
       },
       // Use the system theme
     );
