@@ -42,7 +42,7 @@ class ExerciseFrame extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  // width: 186.w,
+                  width: 176.w,
                   child: Text(
                     title,
                     style: TextStyle(

@@ -27,6 +27,7 @@ import 'package:myfitness/screens/signin.dart';
 import 'package:myfitness/screens/signup.dart';
 import 'package:myfitness/screens/steps.dart';
 import 'package:myfitness/screens/subscriptionScreen.dart';
+import 'package:myfitness/screens/summary.dart';
 import 'package:myfitness/screens/trainingScreen.dart';
 import 'package:myfitness/screens/weight.dart';
 import 'package:myfitness/screens/workout.dart';
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData.light(), // Default light theme
             darkTheme: ThemeData.dark(), // Default dark theme
             themeMode: ThemeMode.system,
-            home: WorkoutScreen());
+            home: WorkoutDetails());
       },
       // Use the system theme
     );

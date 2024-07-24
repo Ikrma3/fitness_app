@@ -40,6 +40,7 @@ dependencies:
   flutter_staggered_grid_view: ^0.7.0
   percent_indicator: ^4.2.3
   syncfusion_flutter_charts: ^26.1.42
+  video_player: ^2.9.1
 
 dev_dependencies:
   flutter_test:
@@ -195,6 +196,9 @@ flutter:
      - images/boxer.png
      - images/plankReaches.png
      - images/sumoSquat.png
+     - videos/plank.mp4
+     - videos/rest.mp4
+     - videos/squat.mp4
      - lib/json files/onBoard.json
      - lib/json files/subscription.json
      - lib/json files/questions.json
@@ -233,6 +237,7 @@ flutter:
      - lib/json files/workoutExcercise.json
      - lib/json files/training.json
      - lib/json files/workoutDetails.json
+     - lib/json files/summary.json
 
      
 

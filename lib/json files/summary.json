@@ -1,0 +1,20 @@
+{
+  "workout": {
+    "image": "images/oldNotification.png", 
+    "title": "Bodyweight Stretch",
+    "time": "08:30 - 09:15",
+    "totalTime": "00:45:15",
+    "avgHeartRate": 164,
+    "activeCalories": 617,
+    "totalCalories": 640,
+    "caloriesBurned": {
+      "S": 0,
+      "M": 250,
+      "T": 500,
+      "W": 700,
+      "T": 300,
+      "F": 450,
+      "S": 300
+    }
+  }
+}

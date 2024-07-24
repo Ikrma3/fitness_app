@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myfitness/components/colours.dart';
-import 'package:myfitness/components/equipmentComponent.dart'; // Assuming this is the correct path
+import 'package:myfitness/components/equipmentComponent.dart';
 import 'package:myfitness/components/excerciseFrame.dart';
-import 'package:myfitness/components/smallSubmitButton.dart'; // Assuming this is the correct path
+import 'package:myfitness/components/smallSubmitButton.dart';
+import 'package:myfitness/screens/startTrainingScreen.dart';
 
 class WorkoutDetails extends StatefulWidget {
   @override
@@ -28,6 +29,29 @@ class _WorkoutDetailsState extends State<WorkoutDetails> {
     setState(() {
       workoutData = data;
     });
+  }
+
+  void startWorkout() {
+    List<Map<String, dynamic>> exercises = [];
+    workoutData!['exercises'].forEach((sectionTitle, sectionData) {
+      sectionData['exercisesList'].forEach((exercise) {
+        exercises.add(exercise);
+      });
+    });
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (context) => StartTraining(
+        exercises: exercises,
+        totalExercises: exercises.length,
+        totalTime: exercises.fold(0, (sum, exercise) {
+          final time = exercise['time'];
+          if (time != null && time.contains(':')) {
+            final timeParts = time.split(':');
+            return sum + int.parse(timeParts[0]) * 60 + int.parse(timeParts[1]);
+          }
+          return sum;
+        }),
+      ),
+    ));
   }
 
   @override
@@ -178,7 +202,7 @@ class _WorkoutDetailsState extends State<WorkoutDetails> {
             left: 20.w,
             right: 20.w,
             child: SmallCustomButton(
-              onTap: () {},
+              onTap: startWorkout,
               text: "Start Workout",
             ),
           ),
@@ -222,22 +246,8 @@ class _WorkoutDetailsState extends State<WorkoutDetails> {
         sections.add(ExerciseFrame(
           image: exercise['image'],
           title: exercise['title'],
-          time: exercise['time'],
-          onTap: () {
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(
-            //     builder: (context) => ExerciseDetailScreen(
-            //       title: exercise['title'],
-            //       image: exercise['image'],
-            //       description: exercise['description'],
-            //       time: exercise['time'],
-            //       taskEquipments: exercise['taskEquipments'],
-            //       technique: exercise['technique'],
-            //     ),
-            //   ),
-            // );
-          },
+          time: exercise['time'] != null ? exercise['time'] : exercise['count'],
+          onTap: () {},
         ));
       });
       sections.add(SizedBox(height: 20.h)); // Add some space after each section
