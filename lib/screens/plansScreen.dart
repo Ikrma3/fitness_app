@@ -10,6 +10,7 @@ import 'package:myfitness/screens/CNMViewScreen.dart';
 import 'package:myfitness/screens/diaryScreen.dart';
 import 'package:myfitness/screens/home.dart';
 import 'package:myfitness/screens/myPlans.dart';
+import 'package:myfitness/screens/settings.dart';
 
 class PlanScreen extends StatefulWidget {
   @override
@@ -51,7 +52,7 @@ class _PlanScreenState extends State<PlanScreen> {
       } else if (index == 4) {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => CNMViewScreen()),
+          MaterialPageRoute(builder: (context) => SettingsScreen()),
         );
         _currentIndex = 3;
       }

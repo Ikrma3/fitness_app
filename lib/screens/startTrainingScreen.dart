@@ -2,25 +2,26 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/excerciseFrame.dart';
+import 'package:myfitness/screens/summary.dart';
 import 'package:video_player/video_player.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class StartTraining extends StatefulWidget {
+class StartTrainingScreen extends StatefulWidget {
   final List<Map<String, dynamic>> exercises;
   final int totalExercises;
   final int totalTime;
 
-  StartTraining({
+  StartTrainingScreen({
     required this.exercises,
     required this.totalExercises,
     required this.totalTime,
   });
 
   @override
-  _StartTrainingState createState() => _StartTrainingState();
+  _StartTrainingScreenState createState() => _StartTrainingScreenState();
 }
 
-class _StartTrainingState extends State<StartTraining> {
+class _StartTrainingScreenState extends State<StartTrainingScreen> {
   VideoPlayerController? _controller;
   int _currentExerciseIndex = 0;
   int _remainingTime = 0;
@@ -48,7 +49,10 @@ class _StartTrainingState extends State<StartTraining> {
 
   void startNextExercise() async {
     if (_currentExerciseIndex >= widget.exercises.length) {
-      Navigator.of(context).pop();
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => SummaryScreen()),
+      );
       return;
     }
 
@@ -343,7 +347,11 @@ class _StartTrainingState extends State<StartTraining> {
                               _currentExerciseIndex++;
                               if (_currentExerciseIndex >=
                                   widget.exercises.length) {
-                                Navigator.of(context).pop();
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SummaryScreen()),
+                                );
                               } else {
                                 startNextExercise();
                               }

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/summaryChart.dart';
+import 'package:myfitness/screens/workoutDetails.dart';
 
 class SummaryScreen extends StatefulWidget {
   @override
@@ -45,6 +46,14 @@ class _SummaryScreenState extends State<SummaryScreen> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
+        leading: IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => WorkoutDetails()),
+              );
+            },
+            icon: Icon(Icons.arrow_back)),
         title: Text(
           'Summary',
           style: TextStyle(

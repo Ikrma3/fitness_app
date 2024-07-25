@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:myfitness/components/settingsComponent.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:myfitness/screens/CNMViewScreen.dart';
 import 'package:myfitness/screens/appDevices.dart';
 import 'package:myfitness/screens/changePassword.dart';
 import 'package:myfitness/screens/deleteAccountScreen.dart';
@@ -162,10 +163,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       iconPath: 'images/nutri.png',
                       title: "Nutrition",
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => ReportScreen()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CNMViewScreen()),
+                        );
                       },
                     ),
                     SettingsComponent(

@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData.light(), // Default light theme
             darkTheme: ThemeData.dark(), // Default dark theme
             themeMode: ThemeMode.system,
-            home: WorkoutDetails());
+            home: HomeScreen());
       },
       // Use the system theme
     );

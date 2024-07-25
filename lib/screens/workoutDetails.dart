@@ -39,7 +39,7 @@ class _WorkoutDetailsState extends State<WorkoutDetails> {
       });
     });
     Navigator.of(context).push(MaterialPageRoute(
-      builder: (context) => StartTraining(
+      builder: (context) => StartTrainingScreen(
         exercises: exercises,
         totalExercises: exercises.length,
         totalTime: exercises.fold(0, (sum, exercise) {

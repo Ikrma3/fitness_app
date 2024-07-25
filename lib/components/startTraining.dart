@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myfitness/components/trainingButton.dart';
+import 'package:myfitness/screens/workoutDetails.dart';
 
 class StartTraining extends StatefulWidget {
   @override
@@ -99,7 +100,8 @@ class _StartTrainingState extends State<StartTraining> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => NextScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => WorkoutDetails()),
                       );
                     },
                   ),
@@ -108,20 +110,6 @@ class _StartTrainingState extends State<StartTraining> {
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class NextScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Next Screen'),
-      ),
-      body: Center(
-        child: Text('This is the next screen'),
       ),
     );
   }
