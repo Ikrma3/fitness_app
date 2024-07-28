@@ -177,60 +177,57 @@ class _StartTrainingScreenState extends State<StartTrainingScreen> {
                   ),
                 ),
                 if (exercise['count'] != null)
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8.0.h),
-                    child: Column(
-                      children: [
-                        Text(
-                          exercise['count']!,
-                          style: TextStyle(
-                              fontSize: 36.sp,
-                              fontWeight: FontWeight.w600,
-                              fontFamily: 'Poppin'),
-                        ),
-                        Text(
-                          exercise['title'] ?? '',
-                          style: TextStyle(
-                              fontSize: 20.sp,
-                              fontWeight: FontWeight.w500,
-                              fontFamily: 'Poppin'),
-                        ),
-                        SizedBox(height: 8.0.h),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Next Exercise",
+                  Column(
+                    children: [
+                      Text(
+                        exercise['count']!,
+                        style: TextStyle(
+                            fontSize: 36.sp,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'Poppin'),
+                      ),
+                      Text(
+                        exercise['title'] ?? '',
+                        style: TextStyle(
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'Poppin'),
+                      ),
+                      SizedBox(height: 4.0.h),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Next Exercise",
+                            style: TextStyle(
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: 'Poppin',
+                                color: Color.fromRGBO(64, 75, 82, 1)),
+                          ),
+                        ],
+                      ),
+                      hasNextExercise
+                          ? ExerciseFrame(
+                              image: nextExercise!['image'],
+                              title: nextExercise['title'],
+                              time: nextExercise['time'] != null
+                                  ? nextExercise['time']
+                                  : nextExercise['count'],
+                              onTap: () {},
+                            )
+                          : Text(
+                              "Congratulations It's Last",
                               style: TextStyle(
-                                  fontSize: 14.sp,
+                                  fontSize: 24.sp,
                                   fontWeight: FontWeight.w500,
-                                  fontFamily: 'Poppin',
-                                  color: Color.fromRGBO(64, 75, 82, 1)),
+                                  fontFamily: 'Poppin'),
                             ),
-                          ],
-                        ),
-                        hasNextExercise
-                            ? ExerciseFrame(
-                                image: nextExercise!['image'],
-                                title: nextExercise['title'],
-                                time: nextExercise['time'] != null
-                                    ? nextExercise['time']
-                                    : nextExercise['count'],
-                                onTap: () {},
-                              )
-                            : Text(
-                                "Congratulations It's Last",
-                                style: TextStyle(
-                                    fontSize: 24.sp,
-                                    fontWeight: FontWeight.w500,
-                                    fontFamily: 'Poppin'),
-                              ),
-                      ],
-                    ),
+                    ],
                   )
                 else if (exercise['time'] != null)
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 16.h),
+                    padding: EdgeInsets.symmetric(vertical: 10.h),
                     child: Column(
                       children: [
                         Text(
@@ -345,16 +342,7 @@ class _StartTrainingScreenState extends State<StartTrainingScreen> {
                             setState(() {
                               _controller?.pause();
                               _currentExerciseIndex++;
-                              if (_currentExerciseIndex >=
-                                  widget.exercises.length) {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => SummaryScreen()),
-                                );
-                              } else {
-                                startNextExercise();
-                              }
+                              startNextExercise();
                             });
                           },
                           style: ElevatedButton.styleFrom(

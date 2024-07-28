@@ -39,7 +39,7 @@ class _CNMViewScreenState extends State<CNMViewScreen> {
         backgroundColor: AppColors.backgroundColor,
         surfaceTintColor: AppColors.backgroundColor,
         title: Text(
-          'Calories ',
+          _selectedOption,
           style: TextStyle(
               fontSize: 16.sp,
               fontWeight: FontWeight.bold,

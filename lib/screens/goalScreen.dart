@@ -163,16 +163,19 @@ class _GoalScreenState extends State<GoalScreen> {
                 margin: EdgeInsets.only(top: 20.0.h),
                 color: Colors.white,
                 padding:
-                    EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 20.0.h),
+                    EdgeInsets.symmetric(vertical: 20.0.h, horizontal: 10.w),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "Nutrition Goals",
-                      style: TextStyle(
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w700,
-                        fontFamily: 'Inter',
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 12.w),
+                      child: Text(
+                        "Nutrition Goals",
+                        style: TextStyle(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w700,
+                          fontFamily: 'Inter',
+                        ),
                       ),
                     ),
                     ListTile(
@@ -277,34 +280,30 @@ class _GoalScreenState extends State<GoalScreen> {
                       ),
                     ),
                     SizedBox(height: 10.h),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16.0.w),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Workout/Week",
-                            style: TextStyle(
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w500,
-                              fontFamily: 'Inter',
-                            ),
+                    Row(
+                      children: [
+                        Text(
+                          "Workout/Week",
+                          style: TextStyle(
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'Inter',
                           ),
-                          Spacer(),
-                          Text(
-                            goalsData['workout/week'].toString(),
-                            style: TextStyle(
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w500,
-                              fontFamily: 'Inter',
-                            ),
+                        ),
+                        Spacer(),
+                        Text(
+                          goalsData['workout/week'].toString(),
+                          style: TextStyle(
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'Inter',
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                     Divider(color: Color.fromRGBO(211, 234, 240, 1)),
                     Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                      padding: EdgeInsets.symmetric(vertical: 8.h),
                       child: Row(
                         children: [
                           Text(
@@ -328,27 +327,27 @@ class _GoalScreenState extends State<GoalScreen> {
                       ),
                     ),
                     Divider(color: Color.fromRGBO(211, 234, 240, 1)),
-                    ListTile(
-                      title: Text(
-                        "Exercise Calories",
-                        style: TextStyle(
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'Inter',
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Exercise Calories",
+                          style: TextStyle(
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'Inter',
+                          ),
                         ),
-                      ),
-                      subtitle: Text(
-                        "Decide whether to adjust daily goals when you exercise",
-                        style: TextStyle(
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.grey,
-                          fontFamily: 'Inter',
+                        Text(
+                          "Decide whether to adjust daily goals when you exercise",
+                          style: TextStyle(
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.grey,
+                            fontFamily: 'Inter',
+                          ),
                         ),
-                      ),
-                      onTap: () {
-                        // Handle navigation or action here
-                      },
+                      ],
                     ),
                   ],
                 ),
@@ -383,9 +382,9 @@ class EditableRow extends StatelessWidget {
         Text(
           label,
           style: TextStyle(
-            fontSize: 12.sp,
+            fontSize: 13.sp,
             fontFamily: 'Inter',
-            fontWeight: FontWeight.w500,
+            fontWeight: FontWeight.w600,
           ),
         ),
         Spacer(),
@@ -394,7 +393,7 @@ class EditableRow extends StatelessWidget {
           child: TextFormField(
             initialValue: value,
             style: TextStyle(
-              fontSize: 12.sp,
+              fontSize: 13.sp,
               fontWeight: FontWeight.w500,
               fontFamily: 'Inter',
               color: Color.fromRGBO(21, 109, 149, 1),

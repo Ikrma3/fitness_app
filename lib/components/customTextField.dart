@@ -50,14 +50,14 @@ class CustomTextFormField extends StatelessWidget {
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(40.r),
             borderSide: BorderSide(
-              color: Colors.white,
+              color: Color.fromRGBO(217, 237, 245, 1),
               width: 1.w,
             ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(40.r),
             borderSide: BorderSide(
-              color: Colors.white,
+              color: Color.fromRGBO(217, 237, 245, 1),
               width: 1.w,
             ),
           ),
@@ -75,7 +75,7 @@ class CustomTextFormField extends StatelessWidget {
               width: 1.w,
             ),
           ),
-          fillColor: Colors.white,
+          fillColor: Color.fromRGBO(217, 237, 245, 1),
           filled: true,
           errorText: errorText != null ? '' : null,
           errorStyle: const TextStyle(height: 0),

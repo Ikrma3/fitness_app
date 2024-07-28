@@ -150,9 +150,8 @@ class _WorkoutDetailsState extends State<WorkoutDetails> {
                         }).toList(),
                       ),
                     ),
-                    SizedBox(height: 20.h),
                     Padding(
-                      padding: EdgeInsets.all(16.0.w.h),
+                      padding: EdgeInsets.symmetric(horizontal: 16.0.w),
                       child: Text(
                         'Equipment',
                         style: TextStyle(
@@ -161,9 +160,8 @@ class _WorkoutDetailsState extends State<WorkoutDetails> {
                             fontFamily: 'Poppin'),
                       ),
                     ),
-                    SizedBox(height: 10.h),
                     Padding(
-                      padding: EdgeInsets.all(16.0.w.h),
+                      padding: EdgeInsets.symmetric(horizontal: 16.0.w),
                       child: Container(
                         height: 122.h,
                         child: ListView(
@@ -186,7 +184,23 @@ class _WorkoutDetailsState extends State<WorkoutDetails> {
                       color: AppColors.backgroundColor,
                       child: Padding(
                         padding: EdgeInsets.all(10.0.w.h),
-                        child: _buildExerciseSections(),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: 15.h,
+                            ),
+                            Text("Exercises",
+                                style: TextStyle(
+                                    fontSize: 20.sp,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: 'Poppin')),
+                            SizedBox(
+                              height: 15.h,
+                            ),
+                            _buildExerciseSections(),
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(

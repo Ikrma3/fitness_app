@@ -31,6 +31,7 @@ class CaloriesBurnedChart extends StatelessWidget {
                   fontFamily: 'Poppin'),
             ),
           ),
+          SizedBox(height: 20.h),
           SizedBox(
             height: 200.h, // Adjust height as needed
             child: BarChart(

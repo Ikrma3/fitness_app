@@ -1,4 +1,17 @@
 [
+  {
+    "image": "images/sumoSquat.png",
+    "title": "Sumo Squat",
+    "time": "0:30",
+    "description": "To further challenge yourself, try widening your stance to perform a sumo squat instead. This variation can add variety to your lower body strength training routine.",
+    "equipment": [
+      {
+        "image": "images/dumbells.png",
+        "name": "2 Dumbbell"
+      }
+    ],
+    "techniques": "1. Inhale while pushing your hips back and lowering into a squat position. Keep your core tight, back straight, and knees forward during this movement.\n 2. Exhale while returning to the starting position. Focus on keeping your weight evenly distributed throughout your heel and midfoot."
+  },
     {
       "image": "images/frontBack.png",
       "title": "Back Lunge",
@@ -33,19 +46,7 @@
       "description": "A simple exercise to warm up your shoulders and arms.",
       "equipment": [],
       "techniques": "1. Stand with your feet shoulder-width apart. 2. Extend your arms out to the sides and rotate them in small circles."
-    },
-    {
-      "image": "images/sumoSquat.png",
-      "title": "Sumo Squat",
-      "time": "0:30",
-      "description": "To further challenge yourself, try widening your stance to perform a sumo squat instead. This variation can add variety to your lower body strength training routine.",
-      "equipment": [
-        {
-          "image": "images/dumbells.png",
-          "name": "2 Dumbbell"
-        }
-      ],
-      "techniques": "1. Inhale while pushing your hips back and lowering into a squat position. Keep your core tight, back straight, and knees forward during this movement.\n 2. Exhale while returning to the starting position. Focus on keeping your weight evenly distributed throughout your heel and midfoot."
     }
+   
   ]
   

@@ -207,101 +207,100 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
             SizedBox(
               height: 5.h,
             ),
-            Expanded(
-              child: Container(
-                color: Colors.white,
-                child: ListView.builder(
-                  itemCount: currentData['nutrients'].length,
-                  itemBuilder: (context, index) {
-                    var nutrient = currentData['nutrients'][index];
-                    double progress = nutrient['total'] / nutrient['goal'];
-                    return Padding(
-                      padding: EdgeInsets.symmetric(vertical: 2.0.h),
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              SizedBox(
-                                width: 10.w,
-                              ),
-                              Expanded(
-                                flex: 10,
-                                child: Text(nutrient['name'],
-                                    style: TextStyle(
-                                      color: Color.fromRGBO(59, 59, 59, 1),
-                                      fontSize: 14.sp,
-                                      fontFamily: 'Inter',
-                                    )),
-                              ),
-                              Expanded(
-                                flex: 3,
-                                child: Text('${nutrient['total']} mg',
-                                    style: TextStyle(
-                                      color: Color.fromRGBO(59, 59, 59, 1),
-                                      fontSize: 13.sp,
-                                      fontFamily: 'Inter',
-                                    )),
-                              ),
-                              Expanded(
-                                flex: 2,
-                                child: Text('${nutrient['goal']}',
-                                    style: TextStyle(
-                                      color: Color.fromRGBO(59, 59, 59, 1),
-                                      fontSize: 13.sp,
-                                      fontFamily: 'Inter',
-                                    )),
-                              ),
-                              Expanded(
-                                flex: 2,
-                                child: Text(
-                                    '${nutrient['goal'] - nutrient['total']}',
-                                    style: TextStyle(
-                                      color: Color.fromRGBO(59, 59, 59, 1),
-                                      fontSize: 13.sp,
-                                      fontFamily: 'Inter',
-                                    )),
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 8.0.w, vertical: 2.0.h),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20.r),
-                              child: Container(
-                                height: 3.h,
-                                child: Stack(
-                                  children: [
-                                    Positioned.fill(
-                                      child: Container(
-                                        color: Color.fromRGBO(211, 234, 240, 1),
+            Container(
+              height: 330.h,
+              color: Colors.white,
+              child: ListView.builder(
+                itemCount: currentData['nutrients'].length,
+                itemBuilder: (context, index) {
+                  var nutrient = currentData['nutrients'][index];
+                  double progress = nutrient['total'] / nutrient['goal'];
+                  return Padding(
+                    padding: EdgeInsets.symmetric(vertical: 2.0.h),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: 10.w,
+                            ),
+                            Expanded(
+                              flex: 10,
+                              child: Text(nutrient['name'],
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(59, 59, 59, 1),
+                                    fontSize: 14.sp,
+                                    fontFamily: 'Inter',
+                                  )),
+                            ),
+                            Expanded(
+                              flex: 3,
+                              child: Text('${nutrient['total']} mg',
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(59, 59, 59, 1),
+                                    fontSize: 13.sp,
+                                    fontFamily: 'Inter',
+                                  )),
+                            ),
+                            Expanded(
+                              flex: 2,
+                              child: Text('${nutrient['goal']}',
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(59, 59, 59, 1),
+                                    fontSize: 13.sp,
+                                    fontFamily: 'Inter',
+                                  )),
+                            ),
+                            Expanded(
+                              flex: 2,
+                              child: Text(
+                                  '${nutrient['goal'] - nutrient['total']}',
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(59, 59, 59, 1),
+                                    fontSize: 13.sp,
+                                    fontFamily: 'Inter',
+                                  )),
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 8.0.w, vertical: 2.0.h),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20.r),
+                            child: Container(
+                              height: 3.h,
+                              child: Stack(
+                                children: [
+                                  Positioned.fill(
+                                    child: Container(
+                                      color: Color.fromRGBO(211, 234, 240, 1),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    left: 0,
+                                    top: 0,
+                                    bottom: 0,
+                                    width: progress *
+                                        MediaQuery.of(context).size.width,
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(20.r),
+                                        color: progressColors[
+                                            index % progressColors.length],
                                       ),
                                     ),
-                                    Positioned(
-                                      left: 0,
-                                      top: 0,
-                                      bottom: 0,
-                                      width: progress *
-                                          MediaQuery.of(context).size.width,
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(20.r),
-                                          color: progressColors[
-                                              index % progressColors.length],
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
-                        ],
-                      ),
-                    );
-                  },
-                ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
               ),
             ),
           ],

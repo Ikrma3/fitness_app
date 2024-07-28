@@ -177,9 +177,17 @@ class _DeleteAccountScreenState extends State<DeleteAccountScreen> {
                           obscureText: true,
                           cursorColor: Colors.black,
                           decoration: InputDecoration(
-                            labelText: 'Password',
+                            hintText: 'Password',
                             labelStyle:
                                 TextStyle(fontSize: 14.sp, fontFamily: 'Inter'),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Color.fromRGBO(21, 109, 149, 1)),
+                            ),
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Color.fromRGBO(21, 109, 149, 1)),
+                            ),
                           ),
                           onEditingComplete: deleteAccount,
                         ),

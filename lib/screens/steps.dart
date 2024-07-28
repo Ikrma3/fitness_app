@@ -90,9 +90,12 @@ class _StepsScreenState extends State<StepsScreen> {
             : Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  SizedBox(
+                    height: 10.h,
+                  ),
                   Padding(
                     padding:
-                        EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+                        EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
                     child: Text(
                       "Additional Information",
                       style: TextStyle(
@@ -100,9 +103,6 @@ class _StepsScreenState extends State<StepsScreen> {
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w600),
                     ),
-                  ),
-                  SizedBox(
-                    height: 10.h,
                   ),
                   Container(
                     height: 88.h,
@@ -118,16 +118,17 @@ class _StepsScreenState extends State<StepsScreen> {
                           children: [
                             Image.asset(imageUrl, width: 56.w, height: 56.h),
                             SizedBox(width: 10.w),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(title,
-                                      style: TextStyle(
-                                          fontSize: 16.sp,
-                                          fontWeight: FontWeight.w500,
-                                          fontFamily: 'Inter')),
-                                  Text(subtitle,
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(title,
+                                    style: TextStyle(
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.w500,
+                                        fontFamily: 'Inter')),
+                                Container(
+                                  width: 210.w,
+                                  child: Text(subtitle,
                                       style: TextStyle(
                                           fontSize: 10.sp,
                                           fontWeight: FontWeight.w300,
@@ -136,9 +137,10 @@ class _StepsScreenState extends State<StepsScreen> {
                                               Color.fromRGBO(102, 102, 102, 1)),
                                       maxLines: 2,
                                       overflow: TextOverflow.ellipsis),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
+                            Spacer(),
                             Checkbox(
                               value: true,
                               activeColor: Color.fromRGBO(21, 109, 149, 1),

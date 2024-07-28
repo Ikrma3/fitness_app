@@ -100,6 +100,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
   void onExerciseTap(Map<String, dynamic> exercise) {
     showModalBottomSheet(
       context: context,
+      backgroundColor: Colors.white,
       isScrollControlled: true, // Allows full screen height
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
@@ -321,8 +322,14 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
   Widget buildCategoryCard(dynamic category) {
     return Container(
       width: 90.w,
+      decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10.r),
+          border:
+              Border.all(color: Color.fromRGBO(218, 224, 232, 1), width: 1.w)),
       margin: EdgeInsets.only(right: 10.w),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(
             category['image'],
@@ -346,7 +353,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
 
   Widget buildPopularWorkoutsHorizontalListView() {
     return Container(
-      height: 150.h,
+      height: 220.h,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: popularWorkouts.length,
@@ -375,16 +382,18 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
         toggleFavorite(index);
       },
       child: Container(
-        width: 130.w,
+        width: 240.w,
+        height: 216.h,
         margin: EdgeInsets.only(right: 10.w),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
               children: [
                 Image.asset(
                   workout['image'],
-                  height: 100.h,
-                  width: 130.w,
+                  height: 160.h,
+                  width: 240.w,
                   fit: BoxFit.cover,
                 ),
                 Positioned(
@@ -403,12 +412,42 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
             Text(
               workout['title'],
               style: TextStyle(
-                fontSize: 12.sp,
+                fontSize: 16.sp,
                 fontFamily: 'Poppin',
-                fontWeight: FontWeight.w400,
+                fontWeight: FontWeight.w500,
               ),
-              textAlign: TextAlign.center,
             ),
+            Row(
+              children: [
+                Text(
+                  workout['level'],
+                  style: TextStyle(
+                      fontSize: 12.sp,
+                      fontFamily: 'Poppin',
+                      fontWeight: FontWeight.w500,
+                      color: Color.fromRGBO(21, 109, 149, 1)),
+                ),
+                SizedBox(
+                  width: 5.w,
+                ),
+                Icon(
+                  Icons.circle,
+                  size: 4.w.h,
+                  color: Color.fromRGBO(64, 75, 82, 1),
+                ),
+                SizedBox(
+                  width: 5.w,
+                ),
+                Text(
+                  workout['time'],
+                  style: TextStyle(
+                    fontSize: 12.sp,
+                    fontFamily: 'Poppin',
+                    fontWeight: FontWeight.w500,
+                  ),
+                )
+              ],
+            )
           ],
         ),
       ),

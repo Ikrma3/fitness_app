@@ -61,7 +61,7 @@ class ExerciseDetailScreen extends StatelessWidget {
                     'Equipment',
                     style: TextStyle(
                         fontSize: 20.sp,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                         fontFamily: 'Poppin'),
                   ),
                   SizedBox(height: 8.0),
@@ -85,7 +85,7 @@ class ExerciseDetailScreen extends StatelessWidget {
                     'Exercise technique',
                     style: TextStyle(
                         fontSize: 20.sp,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                         fontFamily: 'Poppin'),
                   ),
                   SizedBox(height: 8.0),

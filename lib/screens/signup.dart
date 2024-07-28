@@ -68,12 +68,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
       backgroundColor: bColor,
       body: Center(
         child: Padding(
-          padding: EdgeInsets.all(20.0.w),
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                SizedBox(height: 75.h),
+                SizedBox(height: 70.h),
                 Text(
                   'Sign Up',
                   style: TextStyle(
@@ -128,7 +128,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     validateSignup();
                   },
                 ),
-                SizedBox(height: 45.h),
+                SizedBox(height: 40.h),
                 Text(
                   'Sign Up With',
                   style: TextStyle(
@@ -139,7 +139,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 SizedBox(height: 10.h),
                 const SocialMediaButtons(),
-                SizedBox(height: 42.h),
+                SizedBox(height: 40.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
