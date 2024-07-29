@@ -81,6 +81,13 @@ class _PasswordScreenState extends State<PasswordScreen> {
                         borderSide:
                             BorderSide(color: Color.fromRGBO(183, 198, 202, 1)),
                       ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.r),
+                        borderSide: BorderSide(
+                          color: Color.fromRGBO(183, 198, 202, 1),
+                          width: 1.w,
+                        ),
+                      ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0.r),
                         borderSide: BorderSide(
@@ -152,6 +159,13 @@ class _PasswordScreenState extends State<PasswordScreen> {
                         borderRadius: BorderRadius.circular(10.0),
                         borderSide: BorderSide(
                           color: Color.fromRGBO(183, 198, 202, 1),
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.r),
+                        borderSide: BorderSide(
+                          color: Color.fromRGBO(183, 198, 202, 1),
+                          width: 1.w,
                         ),
                       ),
                       focusedBorder: OutlineInputBorder(

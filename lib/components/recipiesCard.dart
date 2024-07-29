@@ -40,7 +40,9 @@ class _RecipeCardState extends State<RecipeCard> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(10.r),
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(12.r),
+                      topRight: Radius.circular(12.r)),
                   child: Image.asset(
                     widget.recipe['image'],
                     height: 144.h,

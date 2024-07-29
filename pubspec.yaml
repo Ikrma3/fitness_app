@@ -41,6 +41,7 @@ dependencies:
   percent_indicator: ^4.2.3
   syncfusion_flutter_charts: ^26.1.42
   video_player: ^2.9.1
+  image_picker: ^1.1.2
 
 dev_dependencies:
   flutter_test:
@@ -238,6 +239,7 @@ flutter:
      - lib/json files/training.json
      - lib/json files/workoutDetails.json
      - lib/json files/summary.json
+     - lib/json files/sleep.json
 
      
 

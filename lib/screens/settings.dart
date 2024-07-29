@@ -18,8 +18,6 @@ import 'package:myfitness/screens/reminder.dart';
 import 'package:myfitness/screens/steps.dart';
 import 'package:myfitness/screens/workout.dart';
 
-// Import other screens here
-
 class SettingsScreen extends StatefulWidget {
   @override
   _SettingsScreenState createState() => _SettingsScreenState();
@@ -45,6 +43,43 @@ class _SettingsScreenState extends State<SettingsScreen> {
     });
   }
 
+  void _showLogoutDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Logout"),
+          content: Text("Are you sure you want to logout?"),
+          actions: <Widget>[
+            TextButton(
+              child: Text(
+                "Cancel",
+                style: TextStyle(color: Color.fromRGBO(20, 108, 148, 1)),
+              ),
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+              },
+            ),
+            TextButton(
+              child: Text("Logout",
+                  style: TextStyle(color: Color.fromRGBO(20, 108, 148, 1))),
+              onPressed: () {
+                // Call your logout function here
+                _logout();
+                Navigator.of(context).pop(); // Close the dialog
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _logout() {
+    // Your logout logic here
+    print("User logged out");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +92,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            // SizedBox(height: 10.h), // For top spacing
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.0.w),
               child: Text('Settings',
@@ -114,7 +148,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         );
                       },
                     ),
-
                     SettingsComponent(
                       iconPath: 'images/progress.png',
                       title: "Progress",
@@ -126,7 +159,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         );
                       },
                     ),
-
                     SettingsComponent(
                       iconPath: 'images/report.png',
                       title: "Weekly report",
@@ -202,7 +234,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         );
                       },
                     ),
-
                     SettingsComponent(
                       iconPath: 'images/notification.png',
                       title: "Notification",
@@ -320,10 +351,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       iconPath: 'images/logout.png',
                       title: "Logout",
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => ReportScreen()),
-                        // );
+                        _showLogoutDialog(context);
                       },
                     ),
                   ],

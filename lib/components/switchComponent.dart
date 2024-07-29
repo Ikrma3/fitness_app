@@ -25,7 +25,7 @@ class _SwitchComponentState extends State<SwitchComponent> {
       child: AnimatedContainer(
         duration: Duration(milliseconds: 200),
         width: 40.0.w,
-        height: 15.0.h,
+        height: 18.h,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.0.r),
           color: widget.value
@@ -56,19 +56,19 @@ class _SwitchComponentState extends State<SwitchComponent> {
                 child: widget.value
                     ? Container(
                         width: 19.0.w,
-                        height: 12.0.h,
+                        height: 14.0.h,
                         decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.white,
-                        ),
+                            shape: BoxShape.circle,
+                            gradient: LinearGradient(colors: [
+                              Color.fromRGBO(255, 255, 255, 1),
+                              Color.fromRGBO(232, 234, 234, 1)
+                            ])),
                       )
                     : Container(
-                        width: 19.0.w,
-                        height: 12.0.h,
+                        width: 22.0.w,
+                        height: 14.0.h,
                         decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.white,
-                        ),
+                            shape: BoxShape.circle, color: Colors.white),
                       ),
               ),
             ),

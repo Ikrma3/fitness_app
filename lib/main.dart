@@ -25,6 +25,7 @@ import 'package:myfitness/screens/reminder.dart';
 import 'package:myfitness/screens/settings.dart';
 import 'package:myfitness/screens/signin.dart';
 import 'package:myfitness/screens/signup.dart';
+import 'package:myfitness/screens/sleepScreen.dart';
 import 'package:myfitness/screens/steps.dart';
 import 'package:myfitness/screens/subscriptionScreen.dart';
 import 'package:myfitness/screens/summary.dart';

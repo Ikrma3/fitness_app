@@ -1,0 +1,36 @@
+{
+    "dates": [
+      {
+        "date": "2024-07-25",
+        "awake": 30,
+        "rem": 60,
+        "light": 210,
+        "deep": 120,
+        "total_sleep": "6h 30min",
+        "Food":[
+        {
+            "title":"Dinner",
+            "subtitile":"Carbs 25kg . Fat 23g . Proteins 27g"
+        },
+        {
+            "title":"Mango",
+            "subtitile":"0.5 cup, pieces"
+        },
+        {
+            "title":"Milk, whole",
+            "subtitile":"1.0 cup"
+        }
+        ]
+
+      },
+      {
+        "date": "2024-07-26",
+        "awake": 20,
+        "rem": 80,
+        "light": 220,
+        "deep": 140,
+        "total_sleep": "7h 00min"
+      }
+    ]
+  }
+  

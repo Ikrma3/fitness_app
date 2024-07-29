@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myfitness/components/giftCards.dart';
 import 'package:myfitness/screens/appDevices.dart';
 import 'package:myfitness/screens/recipiesScreen.dart';
+import 'package:myfitness/screens/sleepScreen.dart';
 import 'package:myfitness/screens/workout.dart';
 
 class ExploreScreen extends StatefulWidget {
@@ -45,6 +46,12 @@ class _ExploreScreenState extends State<ExploreScreen> {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => RecipesScreen()),
+      );
+    } else if (selectedCardHeading == 'Sleep') {
+      print("Sync");
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => SleepScreen()),
       );
     } else if (selectedCardHeading == 'Sync up!') {
       print("Sync");

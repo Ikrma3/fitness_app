@@ -15,6 +15,8 @@ class WorkoutDetails extends StatefulWidget {
 
 class _WorkoutDetailsState extends State<WorkoutDetails> {
   Map<String, dynamic>? workoutData;
+  ScrollController _scrollController = ScrollController();
+  double _containerHeight = 263.h;
 
   @override
   void initState() {
@@ -61,166 +63,178 @@ class _WorkoutDetailsState extends State<WorkoutDetails> {
     }
 
     return Scaffold(
-      body: Stack(
-        children: [
-          // Cover Image
-          Image.asset(
-            workoutData!['coverImage'],
-            fit: BoxFit.cover,
-            height: 289.h, // Adjust height as needed
-            width: double.infinity,
-          ),
-          // AppBar
-          AppBar(
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-          ),
-          // Content
-          Positioned(
-            top: 263.h, // Adjust top position as needed
-            left: 0,
-            right: 0,
-            child: Container(
-              height: MediaQuery.of(context).size.height - 263.h,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30.0.r),
-                  topRight: Radius.circular(30.0.r),
+      body: NotificationListener<ScrollNotification>(
+        onNotification: (scrollNotification) {
+          if (scrollNotification is ScrollUpdateNotification) {
+            setState(() {
+              _containerHeight =
+                  (263.h - _scrollController.offset).clamp(0, 263.h);
+            });
+          }
+          return true;
+        },
+        child: Stack(
+          children: [
+            // Cover Image
+            Image.asset(
+              workoutData!['coverImage'],
+              fit: BoxFit.cover,
+              height: 289.h, // Adjust height as needed
+              width: double.infinity,
+            ),
+            // AppBar
+            AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+            ),
+            // Content
+            Positioned(
+              top: _containerHeight,
+              left: 0,
+              right: 0,
+              child: Container(
+                height: MediaQuery.of(context).size.height - _containerHeight,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30.0.r),
+                    topRight: Radius.circular(30.0.r),
+                  ),
                 ),
-              ),
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(16.0.w.h),
-                      child: Text(
-                        workoutData!['title'],
-                        style: TextStyle(
-                            fontSize: 27.sp,
-                            fontWeight: FontWeight.w600,
-                            fontFamily: 'Poppin'),
+                child: SingleChildScrollView(
+                  controller: _scrollController,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.all(16.0.w.h),
+                        child: Text(
+                          workoutData!['title'],
+                          style: TextStyle(
+                              fontSize: 27.sp,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'Poppin'),
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 10.h,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(16.0.w.h),
-                      child: Text(
-                        workoutData!['description'],
-                        style: TextStyle(
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: 'OpenSans'),
+                      SizedBox(
+                        height: 10.h,
                       ),
-                    ),
-                    SizedBox(height: 10.h),
-                    Padding(
-                      padding: EdgeInsets.all(16.0.w.h),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: workoutData!['details'].map<Widget>((detail) {
-                          return Container(
-                            //color: Colors.white,
-                            width: 96.w,
-                            height: 72.h,
-
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12.r),
-                                border: Border.all(
-                                  color: Color.fromRGBO(229, 233, 239, 1),
-                                  width: 1.w,
-                                )),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset(detail['image'],
-                                    width: 24.w, height: 24.w),
-                                SizedBox(height: 5),
-                                Text(
-                                  detail['text'],
-                                  style: TextStyle(
-                                      fontSize: 12.sp, fontFamily: 'Poppin'),
-                                ),
-                              ],
-                            ),
-                          );
-                        }).toList(),
+                      Padding(
+                        padding: EdgeInsets.all(16.0.w.h),
+                        child: Text(
+                          workoutData!['description'],
+                          style: TextStyle(
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w400,
+                              fontFamily: 'OpenSans'),
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16.0.w),
-                      child: Text(
-                        'Equipment',
-                        style: TextStyle(
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'Poppin'),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16.0.w),
-                      child: Container(
-                        height: 122.h,
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
-                          children: workoutData!['equipment']
-                              .map<Widget>((equipment) {
-                            return Padding(
-                              padding: EdgeInsets.all(8.0.w.h),
-                              child: Equipment(
-                                imageUrl: equipment['image'],
-                                text: equipment['text'],
+                      SizedBox(height: 10.h),
+                      Padding(
+                        padding: EdgeInsets.all(16.0.w.h),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children:
+                              workoutData!['details'].map<Widget>((detail) {
+                            return Container(
+                              //color: Colors.white,
+                              width: 96.w,
+                              height: 72.h,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(12.r),
+                                  border: Border.all(
+                                    color: Color.fromRGBO(229, 233, 239, 1),
+                                    width: 1.w,
+                                  )),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset(detail['image'],
+                                      width: 24.w, height: 24.w),
+                                  SizedBox(height: 5),
+                                  Text(
+                                    detail['text'],
+                                    style: TextStyle(
+                                        fontSize: 12.sp, fontFamily: 'Poppin'),
+                                  ),
+                                ],
                               ),
                             );
                           }).toList(),
                         ),
                       ),
-                    ),
-                    SizedBox(height: 20.h),
-                    Container(
-                      color: AppColors.backgroundColor,
-                      child: Padding(
-                        padding: EdgeInsets.all(10.0.w.h),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              height: 15.h,
-                            ),
-                            Text("Exercises",
-                                style: TextStyle(
-                                    fontSize: 20.sp,
-                                    fontWeight: FontWeight.w500,
-                                    fontFamily: 'Poppin')),
-                            SizedBox(
-                              height: 15.h,
-                            ),
-                            _buildExerciseSections(),
-                          ],
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+                        child: Text(
+                          'Equipment',
+                          style: TextStyle(
+                              fontSize: 20.sp,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: 'Poppin'),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 20.h,
-                    )
-                  ],
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+                        child: Container(
+                          height: 122.h,
+                          child: ListView(
+                            scrollDirection: Axis.horizontal,
+                            children: workoutData!['equipment']
+                                .map<Widget>((equipment) {
+                              return Padding(
+                                padding: EdgeInsets.all(8.0.w.h),
+                                child: Equipment(
+                                  imageUrl: equipment['image'],
+                                  text: equipment['text'],
+                                ),
+                              );
+                            }).toList(),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 20.h),
+                      Container(
+                        color: AppColors.backgroundColor,
+                        child: Padding(
+                          padding: EdgeInsets.all(10.0.w.h),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                height: 15.h,
+                              ),
+                              Text("Exercises",
+                                  style: TextStyle(
+                                      fontSize: 20.sp,
+                                      fontWeight: FontWeight.w500,
+                                      fontFamily: 'Poppin')),
+                              SizedBox(
+                                height: 15.h,
+                              ),
+                              _buildExerciseSections(),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20.h,
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-          Positioned(
-            bottom: 20.h,
-            left: 20.w,
-            right: 20.w,
-            child: SmallCustomButton(
-              onTap: startWorkout,
-              text: "Start Workout",
+            Positioned(
+              bottom: 20.h,
+              left: 20.w,
+              right: 20.w,
+              child: SmallCustomButton(
+                onTap: startWorkout,
+                text: "Start Workout",
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
