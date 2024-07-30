@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData.light(), // Default light theme
             darkTheme: ThemeData.dark(), // Default dark theme
             themeMode: ThemeMode.system,
-            home: HomeScreen());
+            home: OnBoardingScreen());
       },
       // Use the system theme
     );

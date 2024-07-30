@@ -137,7 +137,7 @@ class _StartTrainingScreenState extends State<StartTrainingScreen> {
         hasNextExercise ? widget.exercises[nextExerciseIndex] : null;
 
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: AppColors.getBackgroundColor(context),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -157,10 +157,11 @@ class _StartTrainingScreenState extends State<StartTrainingScreen> {
                               fontFamily: 'Poppin')),
                       Text(formatTime(_totalTime),
                           style: TextStyle(
-                              fontSize: 27,
-                              fontWeight: FontWeight.w600,
-                              fontFamily: 'Poppin',
-                              color: Color.fromRGBO(64, 75, 82, 1))),
+                            fontSize: 27,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'Poppin',
+                            color: AppColors.getSubtitleColor(context),
+                          )),
                     ],
                   ),
                 ),
@@ -200,10 +201,11 @@ class _StartTrainingScreenState extends State<StartTrainingScreen> {
                           Text(
                             "Next Exercise",
                             style: TextStyle(
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w500,
-                                fontFamily: 'Poppin',
-                                color: Color.fromRGBO(64, 75, 82, 1)),
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: 'Poppin',
+                              color: AppColors.getSubtitleColor(context),
+                            ),
                           ),
                         ],
                       ),
@@ -300,8 +302,8 @@ class _StartTrainingScreenState extends State<StartTrainingScreen> {
                           child: Text(
                             _isPaused ? 'Resume' : 'Pause',
                             style: TextStyle(
-                                color: Color.fromRGBO(
-                                    21, 109, 149, 1), // Text color
+                                color: AppColors.getButtonTextColor(
+                                    context), // Text color
                                 fontSize: 17.sp,
                                 fontFamily: 'Poppin' // Text size
                                 ),
@@ -309,8 +311,8 @@ class _StartTrainingScreenState extends State<StartTrainingScreen> {
                           style: ElevatedButton.styleFrom(
                             foregroundColor: Color.fromRGBO(21, 109, 149, 1),
 
-                            backgroundColor:
-                                Colors.white, // Text color on the button
+                            backgroundColor: AppColors.getButtonColor(
+                                context), // Text color on the button
                             side: BorderSide(
                                 color: Color.fromRGBO(21, 109, 149, 1),
                                 width: 1), // Border color and width

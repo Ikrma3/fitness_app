@@ -74,10 +74,10 @@ class _GoalScreenState extends State<GoalScreen> {
       );
     } else {
       return Scaffold(
-        backgroundColor: AppColors.backgroundColor,
+        backgroundColor: AppColors.getBackgroundColor(context),
         appBar: AppBar(
-          backgroundColor: Colors.white,
-          surfaceTintColor: Colors.white,
+          backgroundColor: AppColors.getAppbarColor(context),
+          surfaceTintColor: AppColors.getAppbarColor(context),
           title: Text(
             "Goals",
             style: TextStyle(
@@ -91,7 +91,7 @@ class _GoalScreenState extends State<GoalScreen> {
           child: Column(
             children: [
               Container(
-                color: Colors.white,
+                color: AppColors.getAppbarColor(context),
                 padding:
                     EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 20.0.h),
                 child: Column(
@@ -161,7 +161,7 @@ class _GoalScreenState extends State<GoalScreen> {
               ),
               Container(
                 margin: EdgeInsets.only(top: 20.0.h),
-                color: Colors.white,
+                color: AppColors.getAppbarColor(context),
                 padding:
                     EdgeInsets.symmetric(vertical: 20.0.h, horizontal: 10.w),
                 child: Column(
@@ -192,7 +192,7 @@ class _GoalScreenState extends State<GoalScreen> {
                         style: TextStyle(
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w500,
-                          color: Colors.grey,
+                          color: AppColors.getSubtitleColor(context),
                           fontFamily: 'Inter',
                         ),
                       ),
@@ -215,7 +215,7 @@ class _GoalScreenState extends State<GoalScreen> {
                         style: TextStyle(
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w500,
-                          color: Colors.grey,
+                          color: AppColors.getSubtitleColor(context),
                           fontFamily: 'Inter',
                         ),
                       ),
@@ -238,7 +238,7 @@ class _GoalScreenState extends State<GoalScreen> {
                         style: TextStyle(
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w500,
-                          color: Colors.grey,
+                          color: AppColors.getSubtitleColor(context),
                           fontFamily: 'Inter',
                         ),
                       ),
@@ -265,7 +265,7 @@ class _GoalScreenState extends State<GoalScreen> {
               ),
               Container(
                 margin: EdgeInsets.only(top: 20.0.h),
-                color: Colors.white,
+                color: AppColors.getAppbarColor(context),
                 padding:
                     EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 20.0.h),
                 child: Column(
@@ -343,7 +343,7 @@ class _GoalScreenState extends State<GoalScreen> {
                           style: TextStyle(
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w500,
-                            color: Colors.grey,
+                            color: AppColors.getSubtitleColor(context),
                             fontFamily: 'Inter',
                           ),
                         ),

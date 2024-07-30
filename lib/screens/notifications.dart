@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/switchComponent.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -20,9 +21,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(245, 250, 255, 1),
+      backgroundColor: AppColors.getBackgroundColor(context),
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.getAppbarColor(context),
         title: Text(
           'Notification',
           style: TextStyle(

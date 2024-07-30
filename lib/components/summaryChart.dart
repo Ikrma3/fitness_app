@@ -1,6 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:myfitness/components/colours.dart';
 
 class SummaryChart extends StatelessWidget {
   final List<int> caloriesBurned;
@@ -12,7 +13,7 @@ class SummaryChart extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(20.w.h),
       decoration: BoxDecoration(
-        color: Colors.white,
+        gradient: AppColors.getGradient(context),
         borderRadius: BorderRadius.circular(16.r),
       ),
       child: Column(
@@ -48,8 +49,8 @@ class SummaryChart extends StatelessWidget {
                           padding: EdgeInsets.only(right: 8.0.w),
                           child: Text(
                             value.toInt().toString(),
-                            style:
-                                TextStyle(color: Color.fromRGBO(64, 75, 82, 1)),
+                            style: TextStyle(
+                                color: AppColors.getSummaryText(context)),
                           ),
                         );
                       },
@@ -63,7 +64,6 @@ class SummaryChart extends StatelessWidget {
                       getTitlesWidget: (value, meta) {
                         return Text(
                           _getDayInitial(value.toInt()),
-                          style: TextStyle(color: Colors.black),
                         );
                       },
                     ),

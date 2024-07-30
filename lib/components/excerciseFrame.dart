@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:myfitness/components/colours.dart';
 
 class ExerciseFrame extends StatelessWidget {
   final String image;
@@ -23,7 +24,7 @@ class ExerciseFrame extends StatelessWidget {
         margin: EdgeInsets.symmetric(vertical: 8.h),
         padding: EdgeInsets.all(10.w.h),
         decoration: BoxDecoration(
-          color: Colors.white,
+          gradient: AppColors.getFrameGradient(context),
           borderRadius: BorderRadius.circular(10.r),
         ),
         child: Row(
@@ -56,7 +57,7 @@ class ExerciseFrame extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 14.sp,
                     fontFamily: 'OpenSans',
-                    color: Color.fromRGBO(64, 75, 82, 1),
+                    color: AppColors.getSubtitleColor(context),
                   ),
                 ),
               ],

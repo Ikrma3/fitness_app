@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/recipiesCard.dart';
 
 class RecipesScreen extends StatefulWidget {
@@ -30,8 +31,8 @@ class _RecipesScreenState extends State<RecipesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        surfaceTintColor: Colors.white,
+        backgroundColor: AppColors.getAppbarColor(context),
+        surfaceTintColor: AppColors.getAppbarColor(context),
         title: Text(
           'Recipes',
           style: TextStyle(
@@ -49,7 +50,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
         ],
       ),
       body: Container(
-        color: Color.fromRGBO(245, 250, 255, 1),
+        color: AppColors.getBackgroundColor(context),
         child: ListView.builder(
           itemCount: sections.length,
           itemBuilder: (context, index) {
@@ -93,14 +94,14 @@ class _RecipesScreenState extends State<RecipesScreen> {
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w500,
                         fontFamily: 'Inter',
-                        color: Colors.black,
+                        color: AppColors.getTextColor(context),
                       ),
                     ),
                     SizedBox(width: 4.w),
                     Icon(
                       Icons.arrow_forward_ios,
                       size: 16.sp,
-                      color: Colors.black,
+                      color: AppColors.getTextColor(context),
                     ),
                   ],
                 ),

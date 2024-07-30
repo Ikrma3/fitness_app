@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:myfitness/components/colours.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
@@ -98,14 +99,14 @@ class _MacroExplorerState extends State<MacroExplorer> {
         : DateFormat('dd/MM/yyyy').format(currentDate);
 
     return Scaffold(
-      backgroundColor: Color.fromRGBO(245, 250, 255, 1),
+      backgroundColor: AppColors.getBackgroundColor(context),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(8.0.w.h),
           child: Column(
             children: [
               Container(
-                color: Color.fromRGBO(245, 250, 255, 1),
+                color: AppColors.getBackgroundColor(context),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -125,7 +126,8 @@ class _MacroExplorerState extends State<MacroExplorer> {
                               Text('Day View',
                                   style: TextStyle(
                                       fontSize: 12.sp,
-                                      color: Color.fromRGBO(102, 102, 102, 1),
+                                      color:
+                                          AppColors.getSubtitleColor(context),
                                       fontFamily: 'Inter')),
                               Text(displayDate,
                                   style: TextStyle(
@@ -150,7 +152,7 @@ class _MacroExplorerState extends State<MacroExplorer> {
               SizedBox(height: 20.h),
               Container(
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    gradient: AppColors.getGradient(context),
                     borderRadius: BorderRadius.circular(10.r)),
                 child: Padding(
                   padding: EdgeInsets.all(8.0.w.h),
@@ -173,7 +175,7 @@ class _MacroExplorerState extends State<MacroExplorer> {
               ),
               Container(
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    gradient: AppColors.getGradient(context),
                     borderRadius: BorderRadius.circular(10.r)),
                 child: Padding(
                   padding: EdgeInsets.all(8.0.w.h),
@@ -186,7 +188,7 @@ class _MacroExplorerState extends State<MacroExplorer> {
               ),
               Container(
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    gradient: AppColors.getGradient(context),
                     borderRadius: BorderRadius.circular(10.r)),
                 child: Padding(
                   padding: EdgeInsets.all(8.0.w.h),
@@ -199,7 +201,7 @@ class _MacroExplorerState extends State<MacroExplorer> {
               ),
               Container(
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    gradient: AppColors.getGradient(context),
                     borderRadius: BorderRadius.circular(10.r)),
                 child: Padding(
                   padding: EdgeInsets.all(8.0.w.h),
@@ -273,10 +275,10 @@ class _MacroExplorerState extends State<MacroExplorer> {
         padding: EdgeInsets.only(top: 8.0.h),
         child: Text(label,
             style: TextStyle(
-                fontWeight: FontWeight.w400,
-                fontSize: 12.sp,
-                fontFamily: 'Inter',
-                color: Colors.black)),
+              fontWeight: FontWeight.w400,
+              fontSize: 12.sp,
+              fontFamily: 'Inter',
+            )),
       ),
     );
   }
@@ -351,7 +353,6 @@ class _MacroExplorerState extends State<MacroExplorer> {
         Container(
           padding: EdgeInsets.all(8.0.w.h),
           decoration: BoxDecoration(
-            color: Colors.white,
             borderRadius: BorderRadius.circular(8.0.r),
           ),
           child: Column(

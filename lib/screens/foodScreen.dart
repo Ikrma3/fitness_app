@@ -35,7 +35,7 @@ class FoodScreen extends StatelessWidget {
         (dailyGoals['totalFat']! * 9);
 
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: AppColors.getBackgroundColor(context),
       body: Column(
         children: [
           Stack(

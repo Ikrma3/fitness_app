@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
+import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/customProgressIndicator.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart'; // Import intl package for date formatting
@@ -99,7 +100,7 @@ class _CaloriesExplorerState extends State<CaloriesExplorer> {
     }).toList();
 
     return Scaffold(
-      backgroundColor: Color.fromRGBO(245, 250, 255, 1),
+      backgroundColor: AppColors.getAppbarColor(context),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(5.w.h),
         child: Column(
@@ -126,7 +127,7 @@ class _CaloriesExplorerState extends State<CaloriesExplorer> {
                             Text('Day View',
                                 style: TextStyle(
                                     fontSize: 12.sp,
-                                    color: Color.fromRGBO(102, 102, 102, 1),
+                                    color: AppColors.getSubtitleColor(context),
                                     fontFamily: 'Inter')),
                             Text(
                               _isToday(dateData['date'])
@@ -155,7 +156,7 @@ class _CaloriesExplorerState extends State<CaloriesExplorer> {
             Container(
               padding: EdgeInsets.all(12.w.h),
               decoration: BoxDecoration(
-                color: Colors.white,
+                gradient: AppColors.getGradient(context),
                 borderRadius: BorderRadius.circular(12.r),
               ),
               child: Column(
@@ -195,12 +196,12 @@ class _CaloriesExplorerState extends State<CaloriesExplorer> {
                       Text("Total Calories",
                           style: TextStyle(
                               fontSize: 14.sp,
-                              color: Color.fromRGBO(102, 102, 102, 1),
+                              color: AppColors.getSubtitleColor(context),
                               fontFamily: 'Inter')),
                       Text("${summary['total_calories']}",
                           style: TextStyle(
                               fontSize: 14.sp,
-                              color: Color.fromRGBO(102, 102, 102, 1),
+                              color: AppColors.getSubtitleColor(context),
                               fontFamily: 'Inter')),
                     ],
                   ),
@@ -213,12 +214,12 @@ class _CaloriesExplorerState extends State<CaloriesExplorer> {
                       Text("Consumed",
                           style: TextStyle(
                               fontSize: 14.sp,
-                              color: Color.fromRGBO(102, 102, 102, 1),
+                              color: AppColors.getSubtitleColor(context),
                               fontFamily: 'Inter')),
                       Text("${summary['consumed']}",
                           style: TextStyle(
                               fontSize: 14.sp,
-                              color: Color.fromRGBO(102, 102, 102, 1),
+                              color: AppColors.getSubtitleColor(context),
                               fontFamily: 'Inter')),
                     ],
                   ),
@@ -231,12 +232,12 @@ class _CaloriesExplorerState extends State<CaloriesExplorer> {
                       Text("Burned",
                           style: TextStyle(
                               fontSize: 14.sp,
-                              color: Color.fromRGBO(102, 102, 102, 1),
+                              color: AppColors.getSubtitleColor(context),
                               fontFamily: 'Inter')),
                       Text("${summary['burned']}",
                           style: TextStyle(
                               fontSize: 14.sp,
-                              color: Color.fromRGBO(102, 102, 102, 1),
+                              color: AppColors.getSubtitleColor(context),
                               fontFamily: 'Inter')),
                     ],
                   ),
@@ -247,7 +248,7 @@ class _CaloriesExplorerState extends State<CaloriesExplorer> {
             Container(
               padding: EdgeInsets.all(16.w.h),
               decoration: BoxDecoration(
-                color: Colors.white,
+                gradient: AppColors.getGradient(context),
                 borderRadius: BorderRadius.circular(12.r),
               ),
               child: Column(
@@ -321,10 +322,11 @@ class _CaloriesExplorerState extends State<CaloriesExplorer> {
                     fontWeight: FontWeight.w500)),
             Text("${meal['percentage']}% (${meal['calories']} cal)",
                 style: TextStyle(
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w400,
-                    fontFamily: 'Inter',
-                    color: Color.fromRGBO(102, 102, 102, 1))),
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w400,
+                  fontFamily: 'Inter',
+                  color: AppColors.getSubtitleColor(context),
+                )),
           ],
         ),
         SizedBox(

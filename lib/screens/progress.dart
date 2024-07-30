@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/weightStepIndicator.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -40,7 +41,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(235, 244, 247, 1),
+      backgroundColor: AppColors.getBackgroundColor(context),
       appBar: AppBar(
         title: Text(
           'Progress',
@@ -50,7 +51,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
               fontWeight: FontWeight.w500),
         ),
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.add))],
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.getAppbarColor(context),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -66,10 +67,10 @@ class _ProgressScreenState extends State<ProgressScreen> {
                 width: double.infinity,
                 height: 52.h,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  gradient: AppColors.getGradient(context),
                   boxShadow: [
                     BoxShadow(
-                      color: Color.fromRGBO(223, 234, 237, 1),
+                      color: AppColors.getShadowColor(context),
                       spreadRadius: 0,
                       blurRadius: 4,
                       offset: Offset(0, 4),
@@ -148,7 +149,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
               child: Container(
                 height: 250.h,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  gradient: AppColors.ChartgetGradient(context),
                   borderRadius: BorderRadius.circular(16.r),
                 ),
                 child: Padding(

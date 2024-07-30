@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/customSleepIndicator.dart';
+import 'package:myfitness/screens/sleepOverviewScreen.dart';
 import 'package:myfitness/screens/sleepScreenFood.dart';
 
 class SleepScreen extends StatefulWidget {
@@ -105,10 +106,10 @@ class _SleepScreenState extends State<SleepScreen> {
     ];
 
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: AppColors.getBackgroundColor(context),
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        surfaceTintColor: Colors.white,
+        backgroundColor: AppColors.getAppbarColor(context),
+        surfaceTintColor: AppColors.getAppbarColor(context),
         title: Text('Sleep'),
       ),
       body: Column(
@@ -130,8 +131,9 @@ class _SleepScreenState extends State<SleepScreen> {
                     children: [
                       Text('Day View',
                           style: TextStyle(
-                              fontSize: 12.sp,
-                              color: Color.fromRGBO(102, 102, 102, 1))),
+                            fontSize: 12.sp,
+                            color: AppColors.getSubtitleColor(context),
+                          )),
                       Text(
                           _isToday(dateData['date'])
                               ? 'Today'
@@ -186,7 +188,28 @@ class _SleepScreenState extends State<SleepScreen> {
                                     color: Color.fromRGBO(202, 208, 216, 1),
                                   ),
                                   onPressed: () {
-                                    // Handle info button press
+                                    showModalBottomSheet(
+                                      context: context,
+                                      isScrollControlled: true,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.vertical(
+                                          top: Radius.circular(20),
+                                        ),
+                                      ),
+                                      builder: (context) =>
+                                          DraggableScrollableSheet(
+                                        initialChildSize: 0.82,
+                                        maxChildSize: 0.82,
+                                        minChildSize: 0.5,
+                                        expand: false,
+                                        builder: (context, scrollController) {
+                                          return SingleChildScrollView(
+                                            controller: scrollController,
+                                            child: SleepOverviewScreen(),
+                                          );
+                                        },
+                                      ),
+                                    );
                                   },
                                 ),
                               ],
@@ -219,11 +242,11 @@ class _SleepScreenState extends State<SleepScreen> {
           ),
           Container(
             decoration: BoxDecoration(
-              color: Colors.white,
+              gradient: AppColors.getGradient(context),
               boxShadow: [
                 BoxShadow(
-                  color: Color.fromRGBO(
-                      93, 166, 199, 0.4), // Shadow color with opacity
+                  color: AppColors.getShadowColor(
+                      context), // Shadow color with opacity
                   spreadRadius: 0, // Spread radius
                   blurRadius: 40, // Blur radius
                   offset: Offset(0, 15), // Offset in the x and y direction
@@ -290,8 +313,8 @@ class _SleepScreenState extends State<SleepScreen> {
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Color.fromRGBO(21, 109, 149, 1),
 
-                        backgroundColor:
-                            Colors.white, // Text color on the button
+                        backgroundColor: AppColors.getButtonColor(
+                            context), // Text color on the button
                         side: BorderSide(
                             color: Color.fromRGBO(21, 109, 149, 1),
                             width: 1), // Border color and width

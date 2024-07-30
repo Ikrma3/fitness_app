@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:myfitness/components/colours.dart';
 
 void main() => runApp(MyApp());
 
@@ -36,7 +37,7 @@ class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.getBackgroundColor(context),
       currentIndex: widget.currentIndex,
       onTap: widget.onTap,
       items: [
@@ -77,13 +78,12 @@ class _BottomBarState extends State<BottomBar> {
         ),
         BottomNavigationBarItem(
           icon: Padding(
-            padding: const EdgeInsets.all(0),
-            child: Icon(
-              CupertinoIcons.square_list_fill,color: widget.currentIndex == 3
-                ? const Color.fromRGBO(21, 109, 149, 1)
-                : const Color.fromRGBO(183, 198, 202, 1),
-              size: widget.currentIndex == 3 ? 29.sp : 25.sp)
-          ),
+              padding: const EdgeInsets.all(0),
+              child: Icon(CupertinoIcons.square_list_fill,
+                  color: widget.currentIndex == 3
+                      ? const Color.fromRGBO(21, 109, 149, 1)
+                      : const Color.fromRGBO(183, 198, 202, 1),
+                  size: widget.currentIndex == 3 ? 29.sp : 25.sp)),
           label: 'Plans',
         ),
         BottomNavigationBarItem(
@@ -94,7 +94,7 @@ class _BottomBarState extends State<BottomBar> {
               color: widget.currentIndex == 4
                   ? const Color.fromRGBO(21, 109, 149, 1)
                   : const Color.fromRGBO(183, 198, 202, 1),
-              size: widget.currentIndex == 4? 29.sp : 25.sp,
+              size: widget.currentIndex == 4 ? 29.sp : 25.sp,
             ),
           ),
           label: 'More',
@@ -161,9 +161,12 @@ class _AnimatedImageButtonState extends State<AnimatedImageButton>
         return RotationTransition(
           turns: Tween(begin: 0.0, end: 1.0).animate(_controller),
           child: IconButton(
-            icon: Icon(_isFirstIcon
-                ? Icons.add_box_rounded
-                : CupertinoIcons.multiply_square_fill,color: const Color.fromRGBO(21, 109, 149, 1), size:  40.sp ),
+            icon: Icon(
+                _isFirstIcon
+                    ? Icons.add_box_rounded
+                    : CupertinoIcons.multiply_square_fill,
+                color: const Color.fromRGBO(21, 109, 149, 1),
+                size: 40.sp),
             onPressed: _onPressed,
           ),
         );

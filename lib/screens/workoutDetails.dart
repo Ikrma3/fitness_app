@@ -7,6 +7,7 @@ import 'package:myfitness/components/equipmentComponent.dart';
 import 'package:myfitness/components/excerciseFrame.dart';
 import 'package:myfitness/components/smallSubmitButton.dart';
 import 'package:myfitness/screens/startTrainingScreen.dart';
+import 'package:myfitness/screens/workout.dart';
 
 class WorkoutDetails extends StatefulWidget {
   @override
@@ -86,6 +87,15 @@ class _WorkoutDetailsState extends State<WorkoutDetails> {
             AppBar(
               backgroundColor: Colors.transparent,
               elevation: 0,
+              leading: IconButton(
+                icon: Icon(Icons.arrow_back),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => WorkoutScreen()),
+                  );
+                },
+              ),
             ),
             // Content
             Positioned(
@@ -95,7 +105,7 @@ class _WorkoutDetailsState extends State<WorkoutDetails> {
               child: Container(
                 height: MediaQuery.of(context).size.height - _containerHeight,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: AppColors.getAppbarColor(context),
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30.0.r),
                     topRight: Radius.circular(30.0.r),
@@ -141,9 +151,10 @@ class _WorkoutDetailsState extends State<WorkoutDetails> {
                               width: 96.w,
                               height: 72.h,
                               decoration: BoxDecoration(
+                                  gradient: AppColors.getGradient(context),
                                   borderRadius: BorderRadius.circular(12.r),
                                   border: Border.all(
-                                    color: Color.fromRGBO(229, 233, 239, 1),
+                                    color: AppColors.getBorderColor(context),
                                     width: 1.w,
                                   )),
                               child: Column(
@@ -194,7 +205,7 @@ class _WorkoutDetailsState extends State<WorkoutDetails> {
                       ),
                       SizedBox(height: 20.h),
                       Container(
-                        color: AppColors.backgroundColor,
+                        color: AppColors.getBackgroundColor(context),
                         child: Padding(
                           padding: EdgeInsets.all(10.0.w.h),
                           child: Column(

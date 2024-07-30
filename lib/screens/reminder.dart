@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myfitness/components/bottomBar.dart';
+import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/switchComponent.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myfitness/screens/diaryScreen.dart';
@@ -49,9 +50,9 @@ class _ReminderScreenState extends State<ReminderScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromRGBO(245, 250, 255, 1),
+        backgroundColor: AppColors.getBackgroundColor(context),
         appBar: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: AppColors.getAppbarColor(context),
           title: Text(
             'Reminder',
             style: TextStyle(

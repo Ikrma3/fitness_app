@@ -26,10 +26,10 @@ class _PlanDetailsState extends State<PlanDetails> {
     List<DateTime> currentWeekDates = getDatesOfSelectedWeek();
 
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: AppColors.getBackgroundColor(context),
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        surfaceTintColor: Colors.white,
+        backgroundColor: AppColors.getAppbarColor(context),
+        surfaceTintColor: AppColors.getAppbarColor(context),
         title: Text(
           widget.selectedPlan['name'],
           style: TextStyle(

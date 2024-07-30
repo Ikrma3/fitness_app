@@ -34,10 +34,10 @@ class _CNMViewScreenState extends State<CNMViewScreen> {
     }
 
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: AppColors.getBackgroundColor(context),
       appBar: AppBar(
-        backgroundColor: AppColors.backgroundColor,
-        surfaceTintColor: AppColors.backgroundColor,
+        backgroundColor: AppColors.getBackgroundColor(context),
+        surfaceTintColor: AppColors.getBackgroundColor(context),
         title: Text(
           _selectedOption,
           style: TextStyle(

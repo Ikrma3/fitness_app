@@ -64,10 +64,10 @@ class _DeleteAccountScreenState extends State<DeleteAccountScreen> {
     return GestureDetector(
       onTap: _hideKeyboard,
       child: Scaffold(
-          backgroundColor: AppColors.backgroundColor,
+          backgroundColor: AppColors.getBackgroundColor(context),
           appBar: AppBar(
-            backgroundColor: Colors.white,
-            surfaceTintColor: Colors.white,
+            backgroundColor: AppColors.getAppbarColor(context),
+            surfaceTintColor: AppColors.getAppbarColor(context),
             title: Text(
               'Delete Account',
               style: TextStyle(
@@ -81,7 +81,7 @@ class _DeleteAccountScreenState extends State<DeleteAccountScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  color: Colors.white,
+                  color: AppColors.getAppbarColor(context),
                   height: 253.h,
                   child: Padding(
                     padding:
@@ -107,7 +107,7 @@ class _DeleteAccountScreenState extends State<DeleteAccountScreen> {
                   ),
                 ),
                 Container(
-                  color: Colors.white,
+                  color: AppColors.getAppbarColor(context),
                   width: 360.w,
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10.w),
@@ -159,7 +159,7 @@ class _DeleteAccountScreenState extends State<DeleteAccountScreen> {
                   ),
                 ),
                 Container(
-                  color: Colors.white,
+                  color: AppColors.getAppbarColor(context),
                   height: 200.h,
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20.w),

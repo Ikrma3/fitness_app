@@ -89,10 +89,10 @@ class _HomeScreenState extends State<HomeScreen> {
     Brightness brightness = Theme.of(context).brightness;
     Color pColor = brightness == Brightness.dark ? Colors.white : Colors.black;
     return Scaffold(
-        backgroundColor: AppColors.backgroundColor,
+        backgroundColor: AppColors.getBackgroundColor(context),
         appBar: AppBar(
-          backgroundColor: Colors.white,
-          surfaceTintColor: Colors.white,
+          backgroundColor: AppColors.getAppbarColor(context),
+          surfaceTintColor: AppColors.getAppbarColor(context),
           automaticallyImplyLeading: false,
           //    backgroundColor: bColor,
           title: Row(
@@ -134,13 +134,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   ];
                 },
               ),
-              SizedBox(width: 82.w), // Adjust width as needed
-              Text(
-                'Logo',
-                style: TextStyle(
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w700,
-                    fontFamily: 'Inter'),
+              SizedBox(width: 48.w),
+              Image.asset(
+                'images/appLogo.png',
+                width: 97.w,
+                height: 32.h,
               ),
             ],
           ),
@@ -239,7 +237,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Container(
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(12.r),
-                                color: Colors.white,
+                                color: AppColors.getBackgroundColor(context),
                               ),
                               child: CustomGraph(
                                 heading: weightData['heading'] ?? '',
@@ -256,7 +254,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12.r),
-                                  color: Colors.white,
+                                  color: AppColors.getBackgroundColor(context),
                                 ),
                                 child: CustomGraph(
                                   heading: stepsData['heading'] ?? '',

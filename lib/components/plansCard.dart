@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/screens/planDetailsScreen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart'; // Replace with actual import path
 
@@ -34,17 +35,20 @@ class PlansCardComponent extends StatelessWidget {
           ),
         );
       },
-      child: SizedBox(
+      child: Container(
         width: 320.w,
         height: 200.h,
         child: Card(
-          elevation: 1,
+          color: Colors.transparent,
+          elevation: 0,
           shadowColor: Color.fromRGBO(223, 234, 237, 0.25),
-          color: Colors.white,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              SizedBox(
+              Container(
+                decoration: BoxDecoration(
+                  gradient: AppColors.getGradient(context),
+                ),
                 width: 320.w,
                 height: 134.h,
                 child: ClipRRect(
@@ -59,7 +63,9 @@ class PlansCardComponent extends StatelessWidget {
                 ),
               ),
               Container(
-                color: Colors.white,
+                decoration: BoxDecoration(
+                  gradient: AppColors.getGradient(context),
+                ),
                 child: Padding(
                   padding: EdgeInsets.all(8.0.w.h),
                   child: Column(

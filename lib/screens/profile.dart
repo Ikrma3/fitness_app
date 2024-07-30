@@ -5,6 +5,7 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
+import 'package:myfitness/components/colours.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -117,9 +118,9 @@ class _ProfilePageState extends State<ProfilePage> {
     }
 
     return Scaffold(
-      backgroundColor: Color.fromRGBO(245, 250, 255, 1),
+      backgroundColor: AppColors.getBackgroundColor(context),
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.getAppbarColor(context),
         title: Text(
           'Profile',
           style: TextStyle(
@@ -190,7 +191,9 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ),
             Container(
-              color: Color.fromRGBO(211, 234, 240, 1),
+              decoration: BoxDecoration(
+                gradient: AppColors.ContainergetGradient(context),
+              ),
               width: double.infinity,
               padding: EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 6.h),
               child: Text('Profile',
@@ -201,7 +204,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       fontFamily: 'Inter')),
             ),
             Container(
-              color: Colors.white,
+              color: AppColors.getBackgroundColor(context),
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.0.w),
                 child: Column(
@@ -320,7 +323,9 @@ class ProfileItem extends StatelessWidget {
       width: 96.w,
       height: 76.h,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12.r), color: Colors.white),
+        borderRadius: BorderRadius.circular(12.r),
+        gradient: AppColors.getGradient(context),
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[

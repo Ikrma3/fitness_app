@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:myfitness/components/caloriesBurnedChart.dart';
 import 'package:myfitness/components/checkBox.dart';
+import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/reportFragment.dart';
 import 'dart:convert'; // Add this import
 import 'package:flutter/services.dart' show rootBundle;
@@ -62,11 +63,11 @@ class _WeeklyReportScreenState extends State<WeeklyReportScreen> {
 
     if (isLoading) {
       return Scaffold(
-        backgroundColor: Color.fromRGBO(241, 244, 248, 1),
+        backgroundColor: AppColors.getBackgroundColor(context),
         appBar: AppBar(
           title: Text('Report'),
-          backgroundColor: Colors.white,
-          surfaceTintColor: Colors.white,
+          backgroundColor: AppColors.getAppbarColor(context),
+          surfaceTintColor: AppColors.getAppbarColor(context),
         ),
         body: Center(
             child:
@@ -88,11 +89,11 @@ class _WeeklyReportScreenState extends State<WeeklyReportScreen> {
     }
 
     return Scaffold(
-      backgroundColor: Color.fromRGBO(241, 244, 248, 1),
+      backgroundColor: AppColors.getBackgroundColor(context),
       appBar: AppBar(
         title: Text('Report'),
-        backgroundColor: Colors.white,
-        surfaceTintColor: Colors.white,
+        backgroundColor: AppColors.getAppbarColor(context),
+        surfaceTintColor: AppColors.getAppbarColor(context),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -104,10 +105,10 @@ class _WeeklyReportScreenState extends State<WeeklyReportScreen> {
               child: Text(
                 "History",
                 style: TextStyle(
-                    fontSize: 17.sp,
-                    fontWeight: FontWeight.w500,
-                    fontFamily: 'Poppin',
-                    color: Colors.black),
+                  fontSize: 17.sp,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Poppin',
+                ),
               ),
             ),
             if (_selectedView == 'Day')
@@ -230,7 +231,7 @@ class _WeeklyReportScreenState extends State<WeeklyReportScreen> {
                 width: 320.w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12.r),
-                  color: Colors.white,
+                  gradient: AppColors.getGradient(context),
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -241,7 +242,7 @@ class _WeeklyReportScreenState extends State<WeeklyReportScreen> {
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(12.r),
                             topRight: Radius.circular(12.r)),
-                        color: Color.fromRGBO(245, 250, 255, 1),
+                        gradient: AppColors.subContainergetGradient(context),
                       ),
                       child: Padding(
                         padding: EdgeInsets.all(18.0.w.h),

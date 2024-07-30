@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/settingsComponent.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myfitness/screens/CNMViewScreen.dart';
@@ -48,6 +49,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
+          backgroundColor: AppColors.getAppbarColor(context),
           title: Text("Logout"),
           content: Text("Are you sure you want to logout?"),
           actions: <Widget>[
@@ -84,10 +86,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        surfaceTintColor: Colors.white,
+        backgroundColor: AppColors.getAppbarColor(context),
+        surfaceTintColor: AppColors.getAppbarColor(context),
       ),
-      backgroundColor: Color.fromRGBO(245, 250, 255, 1),
+      backgroundColor: AppColors.getBackgroundColor(context),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -119,7 +121,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
             SizedBox(height: 20.h),
             Container(
-              color: Color.fromRGBO(211, 234, 240, 1),
+              decoration: BoxDecoration(
+                gradient: AppColors.ContainergetGradient(context),
+              ),
               width: double.infinity,
               padding: EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 6.h),
               child: Text('Profile',
@@ -130,7 +134,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       fontFamily: 'Inter')),
             ),
             Container(
-              color: Colors.white,
+              color: AppColors.getBackgroundColor(context),
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 5.0.w),
                 child: ListView(
@@ -255,7 +259,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
               height: 20,
             ),
             Container(
-              color: Color.fromRGBO(211, 234, 240, 1),
+              decoration: BoxDecoration(
+                gradient: AppColors.ContainergetGradient(context),
+              ),
               width: double.infinity,
               padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
               child: Text('Settings',
@@ -266,7 +272,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       fontFamily: 'Inter')),
             ),
             Container(
-              color: Colors.white,
+              color: AppColors.getBackgroundColor(context),
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8.0),
                 child: ListView(

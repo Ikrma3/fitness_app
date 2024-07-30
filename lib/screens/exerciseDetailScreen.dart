@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/equipmentComponent.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -28,7 +29,7 @@ class ExerciseDetailScreen extends StatelessWidget {
           SingleChildScrollView(
             padding: EdgeInsets.all(20.0.w.h),
             child: Container(
-              color: Colors.white,
+              color: AppColors.getBackgroundColor(context),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -109,28 +110,35 @@ class ExerciseDetailScreen extends StatelessWidget {
             right: 0,
             child: Padding(
                 padding: EdgeInsets.all(20.w.h),
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: Text(
-                    'Close',
-                    style: TextStyle(
-                        color: Color.fromRGBO(21, 109, 149, 1), // Text color
-                        fontSize: 17.sp,
-                        fontFamily: 'Poppin' // Text size
-                        ),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    foregroundColor: Color.fromRGBO(21, 109, 149, 1),
-                    backgroundColor: Colors.white, // Text color on the button
-                    side: BorderSide(
-                        color: Color.fromRGBO(21, 109, 149, 1),
-                        width: 1), // Border color and width
-                    padding: EdgeInsets.symmetric(
-                        horizontal: 2.w, vertical: 12.h), // Button padding
-                    textStyle: TextStyle(
-                      fontSize: 17.sp, // Text size
+                child: Container(
+                  decoration: BoxDecoration(
+                      gradient: AppColors.SelectedGradient(context),
+                      borderRadius: BorderRadius.circular(24.r)),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text(
+                      'Close',
+                      style: TextStyle(
+                          color: AppColors.getButtonTextColor(
+                              context), // Text color
+                          fontSize: 17.sp,
+                          fontFamily: 'Poppin' // Text size
+                          ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Color.fromRGBO(21, 109, 149, 1),
+                      backgroundColor:
+                          Colors.transparent, // Text color on the button
+                      side: BorderSide(
+                          color: Color.fromRGBO(21, 109, 149, 1),
+                          width: 1), // Border color and width
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 2.w, vertical: 12.h), // Button padding
+                      textStyle: TextStyle(
+                        fontSize: 17.sp, // Text size
+                      ),
                     ),
                   ),
                 )),

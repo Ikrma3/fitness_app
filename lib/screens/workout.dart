@@ -8,6 +8,7 @@ import 'package:myfitness/components/startTraining.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myfitness/screens/diaryScreen.dart';
 import 'package:myfitness/screens/exerciseDetailScreen.dart';
+import 'package:myfitness/screens/home.dart';
 import 'package:myfitness/screens/plansScreen.dart';
 import 'package:myfitness/screens/settings.dart';
 
@@ -32,6 +33,13 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => DairyScreen()),
+        );
+
+        _currentIndex = 0;
+      } else if (_currentIndex == 0) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => HomeScreen()),
         );
         _currentIndex = 0;
       } else if (_currentIndex == 3) {
@@ -100,7 +108,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
   void onExerciseTap(Map<String, dynamic> exercise) {
     showModalBottomSheet(
       context: context,
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.getAppbarColor(context),
       isScrollControlled: true, // Allows full screen height
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
@@ -123,11 +131,20 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: AppColors.getBackgroundColor(context),
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        surfaceTintColor: Colors.white,
+        backgroundColor: AppColors.getAppbarColor(context),
+        surfaceTintColor: AppColors.getAppbarColor(context),
         title: Text('Workouts Routine'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SettingsScreen()),
+            );
+          },
+        ),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -136,7 +153,9 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
             children: [
               TextField(
                 cursorColor: Colors.black,
-                style: const TextStyle(color: Color(0xff404B52)),
+                style: TextStyle(
+                  color: AppColors.getSubtitleColor(context),
+                ),
                 decoration: InputDecoration(
                   hintText: "Search Something",
                   hintStyle: TextStyle(fontSize: 14.sp, fontFamily: 'OpenSans'),
@@ -150,18 +169,18 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.r),
                     borderSide: BorderSide(
-                      color: Colors.white,
+                      color: AppColors.SearchBarColor(context),
                       width: 1.w,
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.r),
                     borderSide: BorderSide(
-                      color: Colors.white,
+                      color: AppColors.SearchBarColor(context),
                       width: 1.w,
                     ),
                   ),
-                  fillColor: Color.fromRGBO(217, 237, 245, 1),
+                  fillColor: AppColors.SearchBarColor(context),
                   filled: true,
                 ),
               ),
@@ -188,7 +207,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
                         fontWeight: FontWeight.w400,
                         color: viewAll
                             ? Color.fromRGBO(20, 108, 148, 1)
-                            : Color.fromRGBO(146, 153, 163, 1),
+                            : AppColors.getSubtitleColor(context),
                       ),
                     ),
                   ),
@@ -211,10 +230,11 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
                               fontWeight: FontWeight.w400)),
                       Text("Workouts: 80",
                           style: TextStyle(
-                              fontSize: 12.sp,
-                              fontFamily: 'Poppin',
-                              fontWeight: FontWeight.w400,
-                              color: Color.fromRGBO(64, 75, 82, 1)))
+                            fontSize: 12.sp,
+                            fontFamily: 'Poppin',
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.getSubtitleColor(context),
+                          ))
                     ],
                   ),
                   TextButton(
@@ -231,7 +251,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
                         fontWeight: FontWeight.w400,
                         color: pViewAll
                             ? Color.fromRGBO(20, 108, 148, 1)
-                            : Color.fromRGBO(146, 153, 163, 1),
+                            : AppColors.getSubtitleColor(context),
                       ),
                     ),
                   ),
@@ -255,10 +275,11 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
                               fontWeight: FontWeight.w400)),
                       Text("Exercises: 210",
                           style: TextStyle(
-                              fontSize: 12.sp,
-                              fontFamily: 'Poppin',
-                              fontWeight: FontWeight.w400,
-                              color: Color.fromRGBO(64, 75, 82, 1))),
+                            fontSize: 12.sp,
+                            fontFamily: 'Poppin',
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.getSubtitleColor(context),
+                          )),
                     ],
                   ),
                   TextButton(
@@ -275,7 +296,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
                         fontWeight: FontWeight.w400,
                         color: eViewAll
                             ? Color.fromRGBO(20, 108, 148, 1)
-                            : Color.fromRGBO(146, 153, 163, 1),
+                            : AppColors.getSubtitleColor(context),
                       ),
                     ),
                   ),
@@ -323,10 +344,10 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
     return Container(
       width: 90.w,
       decoration: BoxDecoration(
-          color: Colors.white,
+          gradient: AppColors.getGradient(context),
           borderRadius: BorderRadius.circular(10.r),
           border:
-              Border.all(color: Color.fromRGBO(218, 224, 232, 1), width: 1.w)),
+              Border.all(color: AppColors.getBorderColor(context), width: 1.w)),
       margin: EdgeInsets.only(right: 10.w),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

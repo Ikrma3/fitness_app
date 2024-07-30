@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/pageView.dart';
 import 'package:myfitness/screens/gender.dart';
 import 'package:myfitness/screens/questionsScreen.dart';
@@ -120,9 +121,8 @@ class _OTPScreenState extends State<OTPScreen> {
                           style: TextStyle(
                             fontSize: 16.sp,
                             fontFamily: 'Inter',
-                            fontWeight: FontWeight.w400,
-                            color: Colors
-                                .black, // Default color for other text parts
+                            fontWeight: FontWeight
+                                .w400, // Default color for other text parts
                           ),
                           children: [
                             TextSpan(
@@ -150,7 +150,7 @@ class _OTPScreenState extends State<OTPScreen> {
                       children: List.generate(4, (index) {
                         return Container(
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            gradient: AppColors.getGradient(context),
                             borderRadius: BorderRadius.circular(
                                 5), // Adjust the value as needed
                           ),

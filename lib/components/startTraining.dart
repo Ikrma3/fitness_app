@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/trainingButton.dart';
 import 'package:myfitness/screens/workoutDetails.dart';
 
@@ -40,10 +41,7 @@ class _StartTrainingState extends State<StartTraining> {
       padding: EdgeInsets.symmetric(horizontal: 16.0.w),
       height: 202.h,
       decoration: BoxDecoration(
-        gradient: LinearGradient(colors: [
-          Color.fromRGBO(120, 108, 255, 0.17),
-          Color.fromRGBO(90, 200, 250, 0.13)
-        ]),
+        gradient: AppColors.getTrainingGradient(context),
         borderRadius: BorderRadius.circular(8.0.r),
       ),
       child: Stack(
@@ -75,10 +73,10 @@ class _StartTrainingState extends State<StartTraining> {
                         startTrainingData['text'],
                         maxLines: 2,
                         style: TextStyle(
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'Poppin',
-                            color: Colors.black),
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: 'Poppin',
+                        ),
                       ),
                     ),
                   if (startTrainingData.containsKey('description') &&
@@ -89,10 +87,10 @@ class _StartTrainingState extends State<StartTraining> {
                         startTrainingData['description'],
                         maxLines: 2,
                         style: TextStyle(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: 'OpenSans',
-                            color: Colors.black),
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: 'OpenSans',
+                        ),
                       ),
                     ),
                   TrainingButton(

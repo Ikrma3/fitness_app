@@ -45,7 +45,7 @@ class _MyPlansState extends State<MyPlans> {
     }
 
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: AppColors.getBackgroundColor(context),
       body: Column(
         children: [
           Stack(
@@ -106,10 +106,10 @@ class _MyPlansState extends State<MyPlans> {
                   padding: EdgeInsets.symmetric(horizontal: 20.w),
                   child: Text('Activated plans',
                       style: TextStyle(
-                          fontSize: 19.sp,
-                          fontWeight: FontWeight.w700,
-                          fontFamily: 'Inter',
-                          color: Colors.black)),
+                        fontSize: 19.sp,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: 'Inter',
+                      )),
                 ),
                 buildPlanList(
                     plansData!['activatedPlans'], activatedPlansSelected),
@@ -120,10 +120,10 @@ class _MyPlansState extends State<MyPlans> {
                   padding: EdgeInsets.symmetric(horizontal: 20.w),
                   child: Text('Recent plans',
                       style: TextStyle(
-                          fontSize: 19.sp,
-                          fontWeight: FontWeight.w700,
-                          fontFamily: 'Inter',
-                          color: Colors.black)),
+                        fontSize: 19.sp,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: 'Inter',
+                      )),
                 ),
                 buildPlanList(plansData!['recentPlans'], recentPlansSelected),
               ],

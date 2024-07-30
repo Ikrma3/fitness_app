@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:myfitness/components/colours.dart';
 
 class SwitchComponent extends StatefulWidget {
   final bool value;
@@ -30,10 +31,10 @@ class _SwitchComponentState extends State<SwitchComponent> {
           borderRadius: BorderRadius.circular(20.0.r),
           color: widget.value
               ? Color.fromRGBO(21, 109, 149, 1)
-              : Color.fromRGBO(211, 234, 240, 1),
+              : AppColors.SwitchColor(context),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.4),
+              color: AppColors.getShadowColor(context),
               spreadRadius: 1.r,
               blurRadius: 3.r,
               offset: Offset(0, 1),

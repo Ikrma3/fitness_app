@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:myfitness/components/colours.dart';
 
 class ReportFragmentComponent extends StatefulWidget {
   final String firstOption;
@@ -40,7 +41,7 @@ class _ReportFragmentComponentState extends State<ReportFragmentComponent> {
       height: containerHeight,
       width: containerWidth,
       decoration: BoxDecoration(
-        color: Colors.white,
+        gradient: AppColors.ChartgetGradient(context),
         borderRadius: BorderRadius.circular(20.0.r),
       ),
       child: Column(
@@ -52,13 +53,6 @@ class _ReportFragmentComponentState extends State<ReportFragmentComponent> {
               children: [
                 _buildOption(widget.firstOption, widget.thirdOption != null),
                 _buildOption(widget.secondOption, widget.thirdOption != null),
-                VerticalDivider(
-                  color: Color.fromRGBO(211, 234, 240, 1),
-                  width: 1,
-                  thickness: 2,
-                  indent: 10,
-                  endIndent: 10,
-                ),
                 _buildOption(widget.thirdOption!, true),
               ],
             ),
@@ -86,14 +80,9 @@ class _ReportFragmentComponentState extends State<ReportFragmentComponent> {
           width: 90.w,
           height: 32.w,
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: isSelected
-                  ? [
-                      Color.fromRGBO(93, 166, 199, 1),
-                      Color.fromRGBO(20, 108, 148, 1)
-                    ]
-                  : [Colors.white, Colors.white],
-            ),
+            gradient: isSelected
+                ? AppColors.SelectedGradient(context)
+                : AppColors.ChartgetGradient(context),
             borderRadius: BorderRadius.circular(20.0.r),
           ),
           child: Center(
@@ -101,8 +90,9 @@ class _ReportFragmentComponentState extends State<ReportFragmentComponent> {
               option,
               textAlign: TextAlign.center,
               style: TextStyle(
-                  color:
-                      isSelected ? Colors.white : Color.fromRGBO(64, 75, 82, 1),
+                  color: isSelected
+                      ? Colors.white
+                      : AppColors.getTextColor(context),
                   fontSize: fSize,
                   fontFamily: 'Poppin',
                   fontWeight: FontWeight.w500),

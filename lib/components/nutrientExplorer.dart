@@ -2,7 +2,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:intl/intl.dart'; // Import intl package for date formatting
+import 'package:intl/intl.dart';
+import 'package:myfitness/components/colours.dart'; // Import intl package for date formatting
 
 class NutrientExplorer extends StatefulWidget {
   @override
@@ -105,13 +106,13 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
     ];
 
     return Scaffold(
-      backgroundColor: Color.fromRGBO(245, 250, 255, 1),
+      backgroundColor: AppColors.getBackgroundColor(context),
       body: Padding(
         padding: EdgeInsets.all(6.0.w.h),
         child: Column(
           children: [
             Container(
-              color: Color.fromRGBO(245, 250, 255, 1),
+              color: AppColors.getBackgroundColor(context),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -131,7 +132,7 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
                             Text('Day View',
                                 style: TextStyle(
                                     fontSize: 12.sp,
-                                    color: Color.fromRGBO(102, 102, 102, 1),
+                                    color: AppColors.getSubtitleColor(context),
                                     fontFamily: 'Inter')),
                             Text(displayDate,
                                 style: TextStyle(
@@ -209,7 +210,9 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
             ),
             Container(
               height: 330.h,
-              color: Colors.white,
+              decoration: BoxDecoration(
+                gradient: AppColors.getGradient(context),
+              ),
               child: ListView.builder(
                 itemCount: currentData['nutrients'].length,
                 itemBuilder: (context, index) {
@@ -228,7 +231,8 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
                               flex: 10,
                               child: Text(nutrient['name'],
                                   style: TextStyle(
-                                    color: Color.fromRGBO(59, 59, 59, 1),
+                                    color:
+                                        AppColors.getNutrientTextColor(context),
                                     fontSize: 14.sp,
                                     fontFamily: 'Inter',
                                   )),
@@ -237,7 +241,8 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
                               flex: 3,
                               child: Text('${nutrient['total']} mg',
                                   style: TextStyle(
-                                    color: Color.fromRGBO(59, 59, 59, 1),
+                                    color:
+                                        AppColors.getNutrientTextColor(context),
                                     fontSize: 13.sp,
                                     fontFamily: 'Inter',
                                   )),
@@ -246,7 +251,8 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
                               flex: 2,
                               child: Text('${nutrient['goal']}',
                                   style: TextStyle(
-                                    color: Color.fromRGBO(59, 59, 59, 1),
+                                    color:
+                                        AppColors.getNutrientTextColor(context),
                                     fontSize: 13.sp,
                                     fontFamily: 'Inter',
                                   )),
@@ -256,7 +262,8 @@ class _NutrientExplorerState extends State<NutrientExplorer> {
                               child: Text(
                                   '${nutrient['goal'] - nutrient['total']}',
                                   style: TextStyle(
-                                    color: Color.fromRGBO(59, 59, 59, 1),
+                                    color:
+                                        AppColors.getNutrientTextColor(context),
                                     fontSize: 13.sp,
                                     fontFamily: 'Inter',
                                   )),

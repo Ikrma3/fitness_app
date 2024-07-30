@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/customSleepIndicator.dart';
+import 'package:myfitness/screens/sleepOverviewScreen.dart'; // Import SleepOverviewScreen
 
 class SleepScreenFood extends StatefulWidget {
   @override
@@ -104,10 +105,10 @@ class _SleepScreenFoodState extends State<SleepScreenFood> {
     ];
 
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: AppColors.getBackgroundColor(context),
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        surfaceTintColor: Colors.white,
+        backgroundColor: AppColors.getAppbarColor(context),
+        surfaceTintColor: AppColors.getAppbarColor(context),
         title: Text('Sleep'),
       ),
       body: SingleChildScrollView(
@@ -186,7 +187,28 @@ class _SleepScreenFoodState extends State<SleepScreenFood> {
                                       color: Color.fromRGBO(202, 208, 216, 1),
                                     ),
                                     onPressed: () {
-                                      // Handle info button press
+                                      showModalBottomSheet(
+                                        context: context,
+                                        isScrollControlled: true,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.vertical(
+                                            top: Radius.circular(20),
+                                          ),
+                                        ),
+                                        builder: (context) =>
+                                            DraggableScrollableSheet(
+                                          initialChildSize: 0.82,
+                                          maxChildSize: 0.82,
+                                          minChildSize: 0.5,
+                                          expand: false,
+                                          builder: (context, scrollController) {
+                                            return SingleChildScrollView(
+                                              controller: scrollController,
+                                              child: SleepOverviewScreen(),
+                                            );
+                                          },
+                                        ),
+                                      );
                                     },
                                   ),
                                 ],
@@ -200,7 +222,6 @@ class _SleepScreenFoodState extends State<SleepScreenFood> {
                       width: 20.w,
                     ),
                     Column(
-                      // mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(height: 10.h),
@@ -219,11 +240,11 @@ class _SleepScreenFoodState extends State<SleepScreenFood> {
             ),
             Container(
               decoration: BoxDecoration(
-                color: Colors.white,
+                gradient: AppColors.getGradient(context),
                 boxShadow: [
                   BoxShadow(
-                    color: Color.fromRGBO(
-                        93, 166, 199, 0.4), // Shadow color with opacity
+                    color: AppColors.getShadowColor(
+                        context), // Shadow color with opacity
                     spreadRadius: 0, // Spread radius
                     blurRadius: 40, // Blur radius
                     offset: Offset(0, 15), // Offset in the x and y direction
@@ -282,8 +303,8 @@ class _SleepScreenFoodState extends State<SleepScreenFood> {
                           ),
                           style: ElevatedButton.styleFrom(
                             foregroundColor: Color.fromRGBO(21, 109, 149, 1),
-                            backgroundColor:
-                                Colors.white, // Text color on the button
+                            backgroundColor: AppColors.getButtonColor(
+                                context), // Text color on the button
                             side: BorderSide(
                                 color: Color.fromRGBO(21, 109, 149, 1),
                                 width: 1), // Border color and width
@@ -368,10 +389,11 @@ class _SleepScreenFoodState extends State<SleepScreenFood> {
                 fontWeight: FontWeight.w600)),
         Text(subtitle,
             style: TextStyle(
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w500,
-                fontFamily: 'Inter',
-                color: Color.fromRGBO(102, 102, 102, 1))),
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w500,
+              fontFamily: 'Inter',
+              color: AppColors.getSubtitleColor(context),
+            )),
         SizedBox(height: 10.h),
       ],
     );

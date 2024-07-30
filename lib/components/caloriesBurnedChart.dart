@@ -1,6 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:myfitness/components/colours.dart';
 
 class CaloriesBurnedChart extends StatelessWidget {
   final List<dynamic> data;
@@ -15,7 +16,7 @@ class CaloriesBurnedChart extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(20.w.h),
       decoration: BoxDecoration(
-        color: Colors.white,
+        gradient: AppColors.ChartgetGradient(context),
         borderRadius: BorderRadius.circular(16.r),
       ),
       child: Column(
@@ -49,8 +50,6 @@ class CaloriesBurnedChart extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 8.0.h),
                           child: Text(
                             value.toInt().toString(),
-                            style:
-                                TextStyle(color: Color.fromRGBO(64, 75, 82, 1)),
                           ),
                         );
                       },
@@ -65,17 +64,14 @@ class CaloriesBurnedChart extends StatelessWidget {
                         if (view == 'Day') {
                           return Text(
                             _getDayInitial(value.toInt()),
-                            style: TextStyle(color: Colors.black),
                           );
                         } else if (view == 'Week') {
                           return Text(
                             (value + 1).toString(),
-                            style: TextStyle(color: Colors.black),
                           );
                         } else {
                           return Text(
                             _getMonthShort(value.toInt()),
-                            style: TextStyle(color: Colors.black),
                           );
                         }
                       },

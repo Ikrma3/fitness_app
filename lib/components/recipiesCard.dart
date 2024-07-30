@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:myfitness/components/colours.dart';
 
 class RecipeCard extends StatefulWidget {
   final dynamic recipe;
@@ -20,6 +21,7 @@ class _RecipeCardState extends State<RecipeCard> {
     return GestureDetector(
       onTap: widget.onTap,
       child: Card(
+        color: Colors.transparent,
         margin: EdgeInsets.zero,
         elevation: 0, // Light shadow
         shape: RoundedRectangleBorder(
@@ -34,7 +36,9 @@ class _RecipeCardState extends State<RecipeCard> {
             bottomRight: Radius.circular(16.r),
           ),
           child: Container(
-            color: Colors.white,
+            decoration: BoxDecoration(
+              gradient: AppColors.getGradient(context),
+            ),
             width: 134.w,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

@@ -44,10 +44,10 @@ class _DinnerScreenState extends State<DinnerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: AppColors.getBackgroundColor(context),
       appBar: AppBar(
-        backgroundColor: AppColors.backgroundColor,
-        surfaceTintColor: AppColors.backgroundColor,
+        backgroundColor: AppColors.getBackgroundColor(context),
+        surfaceTintColor: AppColors.getBackgroundColor(context),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -153,7 +153,7 @@ class _DinnerScreenState extends State<DinnerScreen> {
             text,
             style: TextStyle(
               fontSize: 14.sp,
-              color: Colors.black,
+              color: AppColors.getTextColor(context),
               fontWeight: FontWeight.w500,
               fontFamily: 'Inter',
             ),
@@ -206,50 +206,55 @@ class _DinnerScreenState extends State<DinnerScreen> {
 
   Widget _buildSuggestionCardForBreakFast(Map<String, String> item) {
     return Padding(
-      padding: EdgeInsets.only(top: 2.h),
-      child: Card(
-        color: Colors.white,
-        elevation: 0,
-        child: Column(
-          children: [
-            ListTile(
-              title: Text(
-                item['detail'] ?? '',
-                style: TextStyle(
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w600,
-                    fontFamily: 'Inter'),
-              ),
-              subtitle: Text(
-                '${item['quantity'] ?? ''}',
-                style: TextStyle(
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w400,
-                    color: Color.fromRGBO(102, 102, 102, 1),
-                    fontFamily: 'Inter'),
-              ),
-              trailing: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    '${item['calories'] ?? ''}',
-                    style: TextStyle(
+      padding: EdgeInsets.only(top: 10.h),
+      child: Container(
+        height: 64.h,
+        decoration: BoxDecoration(
+            gradient: AppColors.getGradient(context),
+            borderRadius: BorderRadius.circular(12.r)),
+        child: Card(
+          color: Colors.transparent,
+          elevation: 0,
+          child: Column(
+            children: [
+              ListTile(
+                title: Text(
+                  item['detail'] ?? '',
+                  style: TextStyle(
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w600,
-                      fontFamily: 'Inter',
-                      color: Colors.black,
+                      fontFamily: 'Inter'),
+                ),
+                subtitle: Text(
+                  '${item['quantity'] ?? ''}',
+                  style: TextStyle(
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.getSubtitleColor(context),
+                      fontFamily: 'Inter'),
+                ),
+                trailing: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      '${item['calories'] ?? ''}',
+                      style: TextStyle(
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'Inter',
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 30.w,
-                  ), // <- Additional text widget
-                  CustomIconButton(
-                    onPressed: () {},
-                  ),
-                ],
+                    SizedBox(
+                      width: 30.w,
+                    ), // <- Additional text widget
+                    CustomIconButton(
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

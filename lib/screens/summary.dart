@@ -42,10 +42,10 @@ class _SummaryScreenState extends State<SummaryScreen> {
     var caloriesBurned = workout['caloriesBurned'];
 
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: AppColors.getBackgroundColor(context),
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        surfaceTintColor: Colors.white,
+        backgroundColor: AppColors.getAppbarColor(context),
+        surfaceTintColor: AppColors.getAppbarColor(context),
         leading: IconButton(
             onPressed: () {
               Navigator.push(
@@ -95,8 +95,8 @@ class _SummaryScreenState extends State<SummaryScreen> {
       height: 80.h,
       padding: EdgeInsets.all(8.w.h),
       decoration: BoxDecoration(
-        color: Colors.white,
-      ),
+          gradient: AppColors.getFrameGradient(context),
+          borderRadius: BorderRadius.circular(12.r)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -125,7 +125,7 @@ class _SummaryScreenState extends State<SummaryScreen> {
                     workout['time'],
                     style: TextStyle(
                         fontSize: 14.sp,
-                        color: Color.fromRGBO(64, 75, 82, 1),
+                        color: AppColors.getSummaryText(context),
                         fontWeight: FontWeight.w400,
                         fontFamily: 'OpenSans'),
                   ),
@@ -142,7 +142,7 @@ class _SummaryScreenState extends State<SummaryScreen> {
     return Container(
       padding: EdgeInsets.all(16.w.h),
       decoration: BoxDecoration(
-        color: Colors.white,
+        gradient: AppColors.getGradient(context),
         borderRadius: BorderRadius.circular(16.r),
         boxShadow: [],
       ),
@@ -189,18 +189,19 @@ class _SummaryScreenState extends State<SummaryScreen> {
                 TextSpan(
                   text: splitValue[0],
                   style: TextStyle(
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.w400,
-                      fontFamily: 'Poppin',
-                      color: Colors.black),
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Poppin',
+                  ),
                 ),
                 TextSpan(
                   text: splitValue[1],
                   style: TextStyle(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w400,
-                      fontFamily: 'OpenSans',
-                      color: Color.fromRGBO(64, 75, 82, 1)),
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'OpenSans',
+                    color: AppColors.getSummaryText(context),
+                  ),
                 ),
               ],
             ),
@@ -208,7 +209,7 @@ class _SummaryScreenState extends State<SummaryScreen> {
           Text(title,
               style: TextStyle(
                   fontSize: 14.sp,
-                  color: Color.fromRGBO(64, 75, 82, 1),
+                  color: AppColors.getSummaryText(context),
                   fontWeight: FontWeight.w400,
                   fontFamily: 'OpenSans')),
         ],

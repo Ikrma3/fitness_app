@@ -63,7 +63,7 @@ class _PlanDetailsScreenState extends State<PlanDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: AppColors.backgroundColor,
+        backgroundColor: AppColors.getBackgroundColor(context),
         body: Column(
           children: [
             // Use Stack to overlay AppBar on top of Image

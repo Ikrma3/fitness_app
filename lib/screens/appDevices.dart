@@ -67,10 +67,10 @@ class _AppDevicesState extends State<AppDevices> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: AppColors.backgroundColor,
+        backgroundColor: AppColors.getBackgroundColor(context),
         appBar: AppBar(
-          backgroundColor: Colors.white,
-          surfaceTintColor: Colors.white,
+          backgroundColor: AppColors.getAppbarColor(context),
+          surfaceTintColor: AppColors.getAppbarColor(context),
           title: Text(
             'Apps & Devices',
             style: TextStyle(
@@ -103,8 +103,8 @@ class _AppDevicesState extends State<AppDevices> {
                               fontWeight: FontWeight.w500,
                               fontFamily: 'Inter',
                               color: isAllSelected
-                                  ? Colors.black
-                                  : Color.fromRGBO(102, 102, 102, 1),
+                                  ? AppColors.getTextColor(context)
+                                  : AppColors.getSubtitleColor(context),
                             ),
                           )),
                         ),
@@ -138,8 +138,8 @@ class _AppDevicesState extends State<AppDevices> {
                               fontWeight: FontWeight.w500,
                               fontFamily: 'Inter',
                               color: isAllSelected
-                                  ? Color.fromRGBO(102, 102, 102, 1)
-                                  : Colors.black,
+                                  ? AppColors.getSubtitleColor(context)
+                                  : AppColors.getTextColor(context),
                             ),
                           )),
                         ),
@@ -280,7 +280,7 @@ class AppTile extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: 2.0.h),
       padding: EdgeInsets.all(16.0),
       decoration: BoxDecoration(
-        color: Colors.white,
+        gradient: AppColors.getFrameGradient(context),
         borderRadius: BorderRadius.circular(10.0),
       ),
       child: Row(
@@ -297,17 +297,19 @@ class AppTile extends StatelessWidget {
               children: [
                 Text(title,
                     style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16.sp,
-                        fontFamily: 'Inter',
-                        color: Colors.black)),
+                      fontWeight: FontWeight.w500,
+                      fontSize: 16.sp,
+                      fontFamily: 'Inter',
+                      color: AppColors.getTextColor(context),
+                    )),
                 SizedBox(height: 5),
                 Text(description,
                     style: TextStyle(
-                        fontWeight: FontWeight.w300,
-                        fontSize: 10.sp,
-                        fontFamily: 'Inter',
-                        color: Color.fromRGBO(102, 102, 102, 1))),
+                      fontWeight: FontWeight.w300,
+                      fontSize: 10.sp,
+                      fontFamily: 'Inter',
+                      color: AppColors.getSubtitleColor(context),
+                    )),
               ],
             ),
           ),

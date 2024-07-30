@@ -91,7 +91,6 @@ class _CircularSegmentPainter extends CustomPainter {
 
     // Draw percentage text in the center
     final textStyle = TextStyle(
-      color: Colors.black,
       fontSize: radius / 2,
       fontWeight: FontWeight.bold,
     );

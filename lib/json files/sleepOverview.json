@@ -1,0 +1,28 @@
+{
+    "title": "How did you sleep last night?",
+    "description": "Did you get enough rest? How is your energy and mood today? Connecting the dots between sleep quality and the food you eat will help you choose which habits to keep... and which to change for a better night's sleep.",
+    "stages": [
+      {
+        "title": "Awake",
+        "description": "It's normal to wake up briefly several times a night. You may not even remember! But a few minutes here and there can add up to affect your total sleep.",
+        "color": "orange"
+      },
+      {
+        "title": "REM",
+        "description": "Rapid eye movement sleep is essential for memory formation and brain development. This is when you have your most vivid dreams.",
+        "color": "blue"
+      },
+      {
+        "title": "Light",
+        "description": "This 'light sleep' stage is key for storing memories and learning. Muscles relax, breathing slows, and your body temperature drops.",
+        "color": "green"
+      },
+      {
+        "title": "Deep",
+        "description": "Ahh, this is the most restorative (and important) stage of sleep. Vital for muscle repair, cell regeneration, and immunity.",
+        "color": "red"
+      }
+    ],
+    "note": "Do your sleep stages vary? Your device either doesn't track individual sleep stages or does not share this data with Health Connect."
+  }
+  

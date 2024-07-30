@@ -53,7 +53,7 @@ class _TrainingCardState extends State<TrainingCard> {
         height: 168, // By this height not changing
         // Adjust width as needed
         decoration: BoxDecoration(
-          color: AppColors.backgroundColor,
+          color: AppColors.getBackgroundColor(context),
           borderRadius: BorderRadius.circular(29.0.r),
         ),
         child: Stack(

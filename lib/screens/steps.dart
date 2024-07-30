@@ -73,10 +73,10 @@ class _StepsScreenState extends State<StepsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: AppColors.backgroundColor,
+        backgroundColor: AppColors.getBackgroundColor(context),
         appBar: AppBar(
-          backgroundColor: Colors.white,
-          surfaceTintColor: Colors.white,
+          backgroundColor: AppColors.getAppbarColor(context),
+          surfaceTintColor: AppColors.getAppbarColor(context),
           title: Text(
             'Steps',
             style: TextStyle(
@@ -109,7 +109,7 @@ class _StepsScreenState extends State<StepsScreen> {
                     padding:
                         EdgeInsets.symmetric(vertical: 2.h, horizontal: 20.w),
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      gradient: AppColors.getGradient(context),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -130,11 +130,12 @@ class _StepsScreenState extends State<StepsScreen> {
                                   width: 210.w,
                                   child: Text(subtitle,
                                       style: TextStyle(
-                                          fontSize: 10.sp,
-                                          fontWeight: FontWeight.w300,
-                                          fontFamily: 'Inter',
-                                          color:
-                                              Color.fromRGBO(102, 102, 102, 1)),
+                                        fontSize: 10.sp,
+                                        fontWeight: FontWeight.w300,
+                                        fontFamily: 'Inter',
+                                        color:
+                                            AppColors.getSubtitleColor(context),
+                                      ),
                                       maxLines: 2,
                                       overflow: TextOverflow.ellipsis),
                                 ),
@@ -144,6 +145,7 @@ class _StepsScreenState extends State<StepsScreen> {
                             Checkbox(
                               value: true,
                               activeColor: Color.fromRGBO(21, 109, 149, 1),
+                              checkColor: AppColors.getTextColor(context),
                               onChanged: (bool? value) {},
                             ),
                           ],
@@ -157,7 +159,7 @@ class _StepsScreenState extends State<StepsScreen> {
                   Container(
                     padding: EdgeInsets.all(16.0.w.h),
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      gradient: AppColors.getGradient(context),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -183,10 +185,11 @@ class _StepsScreenState extends State<StepsScreen> {
                             Text(
                               "Connect Your step tracker to MyyFitnessPal",
                               style: TextStyle(
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.w300,
-                                  fontFamily: 'Inter',
-                                  color: Color.fromRGBO(102, 102, 102, 1)),
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w300,
+                                fontFamily: 'Inter',
+                                color: AppColors.getSubtitleColor(context),
+                              ),
                             ),
                           ],
                         )
@@ -201,7 +204,7 @@ class _StepsScreenState extends State<StepsScreen> {
                     child: Container(
                       padding: EdgeInsets.all(16.0.w.h),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        gradient: AppColors.getGradient(context),
                       ),
                       child: Row(
                         children: [
@@ -228,25 +231,27 @@ class _StepsScreenState extends State<StepsScreen> {
                       },
                       child: Text('Delete Account',
                           style: TextStyle(
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w600,
-                              fontFamily: 'Inter',
-                              color: Colors.black)),
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'Inter',
+                            color: AppColors.getTextColor(context),
+                          )),
                     ),
                   ),
                   Container(
                     padding: EdgeInsets.all(16.0.w.h),
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      gradient: AppColors.getGradient(context),
                     ),
                     child: Row(
                       children: [
                         Text('Daily Steps Goal $dailyStepsGoal',
                             style: TextStyle(
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w600,
-                                fontFamily: 'Inter',
-                                color: Colors.black)),
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'Inter',
+                              color: AppColors.getTextColor(context),
+                            )),
                         Spacer(),
                         Text('$dailyStepsGoal',
                             style: TextStyle(

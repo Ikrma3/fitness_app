@@ -74,10 +74,10 @@ class _DairyScreenState extends State<DairyScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: AppColors.getBackgroundColor(context),
       appBar: AppBar(
-        backgroundColor: AppColors.backgroundColor,
-        surfaceTintColor: AppColors.backgroundColor,
+        backgroundColor: AppColors.getBackgroundColor(context),
+        surfaceTintColor: AppColors.getBackgroundColor(context),
         title: Text(
           'Dairy ',
           style: TextStyle(

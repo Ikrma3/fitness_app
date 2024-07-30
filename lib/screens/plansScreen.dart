@@ -94,10 +94,10 @@ class _PlanScreenState extends State<PlanScreen> {
     }
 
     return Scaffold(
-        backgroundColor: AppColors.backgroundColor,
+        backgroundColor: AppColors.getBackgroundColor(context),
         appBar: AppBar(
-          backgroundColor: Colors.white,
-          surfaceTintColor: Colors.white,
+          backgroundColor: AppColors.getAppbarColor(context),
+          surfaceTintColor: AppColors.getAppbarColor(context),
           title: Text(
             "Plans",
             style: TextStyle(
@@ -182,7 +182,7 @@ class _PlanScreenState extends State<PlanScreen> {
                         decoration: BoxDecoration(
                           color: selectedFilter == filter
                               ? Color.fromRGBO(21, 109, 149, 1)
-                              : Color.fromRGBO(245, 250, 255, 1),
+                              : AppColors.getBackgroundColor(context),
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(
                             color: Color.fromRGBO(211, 234, 240,
@@ -195,9 +195,6 @@ class _PlanScreenState extends State<PlanScreen> {
                             filter,
                             style: TextStyle(
                               fontSize: 14.sp,
-                              color: selectedFilter == filter
-                                  ? Colors.white
-                                  : Colors.black,
                             ),
                           ),
                         ),
