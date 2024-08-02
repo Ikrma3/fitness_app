@@ -33,16 +33,20 @@ class _RecipesScreenState extends State<RecipesScreen> {
       appBar: AppBar(
         backgroundColor: AppColors.getAppbarColor(context),
         surfaceTintColor: AppColors.getAppbarColor(context),
+        shadowColor: AppColors.getShadowColor(context),
         title: Text(
           'Recipes',
           style: TextStyle(
-              fontSize: 19.sp,
-              fontWeight: FontWeight.w500,
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w600,
               fontFamily: 'Inter'),
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.bookmark_border),
+            icon: Icon(
+              Icons.bookmark_border,
+              size: 20.w.h,
+            ),
             onPressed: () {
               // Navigator.push(context, MaterialPageRoute(builder: (context) => FoodSaved()));
             },
@@ -91,8 +95,8 @@ class _RecipesScreenState extends State<RecipesScreen> {
                     Text(
                       'View More',
                       style: TextStyle(
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w500,
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w600,
                         fontFamily: 'Inter',
                         color: AppColors.getTextColor(context),
                       ),

@@ -1,11 +1,10 @@
+import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myfitness/components/colours.dart';
-import 'package:myfitness/components/pageView.dart';
 import 'package:myfitness/screens/gender.dart';
-import 'package:myfitness/screens/questionsScreen.dart';
 
 class OTPScreen extends StatefulWidget {
   final String initialEmail;
@@ -23,18 +22,46 @@ class _OTPScreenState extends State<OTPScreen> {
   List<TextEditingController> otpControllers =
       List.generate(4, (_) => TextEditingController());
   String? storedOtp;
+  Timer? _timer;
+  int _start = 60;
+  bool _isButtonActive = false;
 
   @override
   void initState() {
     super.initState();
     email = widget.initialEmail;
     _loadOtpData();
+    startTimer();
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
   }
 
   Future<void> _loadOtpData() async {
     String otpJson = await rootBundle.loadString('lib/json files/otp.json');
     final Map<String, dynamic> otpMap = json.decode(otpJson);
     storedOtp = otpMap['otp'];
+  }
+
+  void startTimer() {
+    _isButtonActive = false;
+    _start = 60;
+    _timer?.cancel();
+    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+      if (_start == 0) {
+        setState(() {
+          _isButtonActive = true;
+        });
+        timer.cancel();
+      } else {
+        setState(() {
+          _start--;
+        });
+      }
+    });
   }
 
   bool _isAllOtpFilled() {
@@ -48,7 +75,6 @@ class _OTPScreenState extends State<OTPScreen> {
     Color bColor = brightness == Brightness.dark
         ? const Color.fromRGBO(30, 34, 53, 1)
         : const Color.fromRGBO(245, 250, 255, 1);
-    void onResend() async {}
 
     void _verifyOtp() {
       String enteredOtp =
@@ -121,15 +147,15 @@ class _OTPScreenState extends State<OTPScreen> {
                           style: TextStyle(
                             fontSize: 16.sp,
                             fontFamily: 'Inter',
-                            fontWeight: FontWeight
-                                .w400, // Default color for other text parts
+                            fontWeight: FontWeight.w400,
                           ),
                           children: [
                             TextSpan(
-                              text: email.contains('@')
-                                  ? 'We sent a code to your email \n${_getMaskedInput(email)} '
-                                  : 'We sent a code to your number \n${_getMaskedInput(email)} ',
-                            ),
+                                text: email.contains('@')
+                                    ? 'We sent a code to your email \n${_getMaskedInput(email)} '
+                                    : 'We sent a code to your number \n${_getMaskedInput(email)} ',
+                                style: TextStyle(
+                                    color: AppColors.getTextColor(context))),
                             TextSpan(
                               text: 'Change',
                               style: TextStyle(
@@ -143,7 +169,6 @@ class _OTPScreenState extends State<OTPScreen> {
                         ),
                       ),
                     ),
-
                     SizedBox(height: 32.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -151,15 +176,13 @@ class _OTPScreenState extends State<OTPScreen> {
                         return Container(
                           decoration: BoxDecoration(
                             gradient: AppColors.getGradient(context),
-                            borderRadius: BorderRadius.circular(
-                                5), // Adjust the value as needed
+                            borderRadius: BorderRadius.circular(5),
                           ),
                           height: 55.h,
                           width: 65.w,
                           child: TextField(
                             inputFormatters: [
-                              LengthLimitingTextInputFormatter(
-                                  1), // Limits input to 1 character
+                              LengthLimitingTextInputFormatter(1),
                             ],
                             textInputAction: TextInputAction.next,
                             keyboardType: TextInputType.number,
@@ -177,7 +200,6 @@ class _OTPScreenState extends State<OTPScreen> {
                               focusedBorder: const OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color.fromRGBO(20, 108, 148, 1),
-                                  // Change this to the desired color
                                 ),
                               ),
                             ),
@@ -185,26 +207,46 @@ class _OTPScreenState extends State<OTPScreen> {
                         );
                       }),
                     ),
-                    // SizedBox(height: 20.h),
                     Padding(
                       padding: EdgeInsets.symmetric(
                           horizontal: 27.w, vertical: 20.h),
-                      child: Row(
+                      child: Column(
                         children: [
                           Text(
-                            "Don't receive your code?",
-                            style:
-                                TextStyle(fontSize: 15.sp, fontFamily: 'Inter'),
+                            '$_start',
+                            style: TextStyle(
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Inter'),
                           ),
-                          TextButton(
-                            onPressed: onResend,
-                            child: Text(
-                              'Resend',
-                              style: TextStyle(
-                                  color: const Color.fromRGBO(21, 109, 149, 1),
-                                  fontSize: 15.sp,
-                                  fontFamily: 'Inter'),
-                            ),
+                          SizedBox(height: 10.h),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Didn't receive your code?",
+                                style: TextStyle(
+                                    fontSize: 15.sp, fontFamily: 'Inter'),
+                              ),
+                              TextButton(
+                                onPressed: _isButtonActive
+                                    ? () {
+                                        startTimer();
+                                        // Add resend OTP logic here
+                                      }
+                                    : null,
+                                child: Text(
+                                  'Resend',
+                                  style: TextStyle(
+                                    color: _isButtonActive
+                                        ? Colors.blue
+                                        : AppColors.getTextColor(context),
+                                    fontSize: 15.sp,
+                                    fontFamily: 'Inter',
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),

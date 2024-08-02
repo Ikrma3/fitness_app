@@ -109,22 +109,32 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
     showModalBottomSheet(
       context: context,
       backgroundColor: AppColors.getAppbarColor(context),
+
       isScrollControlled: true, // Allows full screen height
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
-      builder: (context) {
-        return ExerciseDetailScreen(
-          title: exercise['title'] as String,
-          image: exercise['image'] as String,
-          description: exercise['description'] as String,
-          time: exercise['time'] as String,
-          equipment: (exercise['equipment'] as List<dynamic>)
-              .map((e) => Map<String, String>.from(e as Map<dynamic, dynamic>))
-              .toList(),
-          techniques: exercise['techniques'] as String,
-        );
-      },
+      builder: (context) => DraggableScrollableSheet(
+        initialChildSize: 0.82,
+        maxChildSize: 0.82,
+        minChildSize: 0.5,
+        expand: false,
+        builder: (context, scrollController) {
+          return SingleChildScrollView(
+              controller: scrollController,
+              child: ExerciseDetailScreen(
+                title: exercise['title'] as String,
+                image: exercise['image'] as String,
+                description: exercise['description'] as String,
+                time: exercise['time'] as String,
+                equipment: (exercise['equipment'] as List<dynamic>)
+                    .map((e) =>
+                        Map<String, String>.from(e as Map<dynamic, dynamic>))
+                    .toList(),
+                techniques: exercise['techniques'] as String,
+              ));
+        },
+      ),
     );
   }
 
@@ -135,6 +145,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
       appBar: AppBar(
         backgroundColor: AppColors.getAppbarColor(context),
         surfaceTintColor: AppColors.getAppbarColor(context),
+        shadowColor: AppColors.getShadowColor(context),
         title: Text('Workouts Routine'),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
@@ -192,7 +203,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
                       style: TextStyle(
                           fontSize: 20.sp,
                           fontFamily: 'Poppin',
-                          fontWeight: FontWeight.w400)),
+                          fontWeight: FontWeight.w600)),
                   TextButton(
                     onPressed: () {
                       setState(() {
@@ -227,7 +238,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
                           style: TextStyle(
                               fontSize: 20.sp,
                               fontFamily: 'Poppin',
-                              fontWeight: FontWeight.w400)),
+                              fontWeight: FontWeight.w600)),
                       Text("Workouts: 80",
                           style: TextStyle(
                             fontSize: 12.sp,
@@ -411,11 +422,14 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
           children: [
             Stack(
               children: [
-                Image.asset(
-                  workout['image'],
-                  height: 160.h,
-                  width: 240.w,
-                  fit: BoxFit.cover,
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(12.r),
+                  child: Image.asset(
+                    workout['image'],
+                    height: 160.h,
+                    width: 240.w,
+                    fit: BoxFit.cover,
+                  ),
                 ),
                 Positioned(
                   top: 8.h,
@@ -424,7 +438,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
                     workout['isFavorite']
                         ? Icons.favorite
                         : Icons.favorite_border,
-                    color: workout['isFavorite'] ? Colors.red : Colors.grey,
+                    color: workout['isFavorite'] ? Colors.white : Colors.grey,
                   ),
                 ),
               ],

@@ -6,6 +6,7 @@ import 'package:myfitness/screens/CNMViewScreen.dart';
 import 'package:myfitness/screens/diaryScreen.dart';
 import 'package:myfitness/screens/home.dart';
 import 'package:myfitness/screens/plansScreen.dart';
+import 'package:myfitness/screens/settings.dart';
 
 class PlanDetailsScreen extends StatefulWidget {
   final String imagePath;
@@ -51,7 +52,7 @@ class _PlanDetailsScreenState extends State<PlanDetailsScreen> {
       } else if (index == 4) {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => CNMViewScreen()),
+          MaterialPageRoute(builder: (context) => SettingsScreen()),
         );
       }
     });
@@ -371,6 +372,9 @@ class _PlanDetailsScreenState extends State<PlanDetailsScreen> {
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Inter'),
               ),
+            SizedBox(
+              height: 10.h,
+            ),
             if (item.containsKey('text'))
               Text(
                 item['text'],

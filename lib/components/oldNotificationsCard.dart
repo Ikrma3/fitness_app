@@ -20,7 +20,7 @@ class OldNotificationCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 90.h, // Set the desired height here
+        height: 80.h, // Set the desired height here
         margin: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 4.h),
         child: Container(
           decoration: BoxDecoration(
@@ -30,7 +30,9 @@ class OldNotificationCard extends StatelessWidget {
             elevation: 0,
             color: Colors.transparent,
             child: Padding(
-              padding: EdgeInsets.all(5.0.w.h),
+              padding: EdgeInsets.symmetric(
+                horizontal: 2.0.w,
+              ),
               child: Row(
                 children: [
                   Image.asset(
@@ -51,15 +53,18 @@ class OldNotificationCard extends StatelessWidget {
                               fontWeight: FontWeight.w400,
                               fontFamily: 'Poppin'),
                         ),
+                        SizedBox(
+                          height: 4.h,
+                        ),
                         Container(
-                          height: 24.h,
-                          width: 66.w,
+                          height: 22.h,
+                          width: 62.w,
                           decoration: BoxDecoration(
                             gradient: LinearGradient(colors: [
                               Color.fromRGBO(93, 166, 199, 1),
                               Color.fromRGBO(20, 108, 148, 1)
                             ]),
-                            borderRadius: BorderRadius.circular(12.0.r),
+                            borderRadius: BorderRadius.circular(8.r),
                           ),
                           child: Center(
                             child: Text(

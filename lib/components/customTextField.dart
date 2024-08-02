@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:myfitness/components/colours.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final TextEditingController controller;
@@ -35,7 +36,9 @@ class CustomTextFormField extends StatelessWidget {
         decoration: InputDecoration(
           labelText: errorText ?? labelText,
           labelStyle: TextStyle(
-            color: errorText != null ? Colors.red : const Color(0xff404B52),
+            color: errorText != null
+                ? Colors.red
+                : AppColors.getTextFieldTextColor(context),
             fontSize: 15.sp,
           ),
           suffixIcon: onSuffixIconTap != null
@@ -50,14 +53,14 @@ class CustomTextFormField extends StatelessWidget {
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(40.r),
             borderSide: BorderSide(
-              color: Color.fromRGBO(217, 237, 245, 1),
+              color: AppColors.getBorderColor(context),
               width: 1.w,
             ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(40.r),
             borderSide: BorderSide(
-              color: Color.fromRGBO(217, 237, 245, 1),
+              color: AppColors.getBorderColor(context),
               width: 1.w,
             ),
           ),
@@ -75,7 +78,7 @@ class CustomTextFormField extends StatelessWidget {
               width: 1.w,
             ),
           ),
-          fillColor: Color.fromRGBO(217, 237, 245, 1),
+          fillColor: AppColors.getTextFieldColor(context),
           filled: true,
           errorText: errorText != null ? '' : null,
           errorStyle: const TextStyle(height: 0),

@@ -22,17 +22,23 @@ class ExerciseDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height * 0.9, // Increase the height
-      child: Stack(
-        children: [
-          SingleChildScrollView(
-            padding: EdgeInsets.all(20.0.w.h),
-            child: Container(
-              color: AppColors.getBackgroundColor(context),
-              child: Column(
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
+        child: Container(
+          decoration: BoxDecoration(
+            color: AppColors.getAppbarColor(context),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(24.0.r),
+              topRight: Radius.circular(24.0.r),
+            ),
+          ),
+          child: Stack(
+            children: [
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  SizedBox(height: 20.h), // Add space for the top icon
                   ClipRRect(
                     borderRadius: BorderRadius.circular(12.r),
                     child: Image.asset(
@@ -42,6 +48,7 @@ class ExerciseDetailScreen extends StatelessWidget {
                       width: 320.w,
                     ),
                   ),
+                  SizedBox(height: 16.h),
                   Text(
                     title,
                     style: TextStyle(
@@ -49,7 +56,7 @@ class ExerciseDetailScreen extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                         fontFamily: 'Poppin'),
                   ),
-                  SizedBox(height: 16.h),
+                  SizedBox(height: 4.h),
                   Text(
                     description,
                     style: TextStyle(
@@ -65,23 +72,21 @@ class ExerciseDetailScreen extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                         fontFamily: 'Poppin'),
                   ),
-                  SizedBox(height: 8.0),
+                  SizedBox(
+                    height: 2.h,
+                  ),
                   Container(
-                    height: 122.h,
+                    height: 110.h,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: equipment.map((item) {
-                        return Padding(
-                          padding: EdgeInsets.all(8.0.w.h),
-                          child: Equipment(
-                            imageUrl: item['image']!,
-                            text: item['name']!,
-                          ),
+                        return Equipment(
+                          imageUrl: item['image']!,
+                          text: item['name']!,
                         );
                       }).toList(),
                     ),
                   ),
-                  SizedBox(height: 16.h),
                   Text(
                     'Exercise technique',
                     style: TextStyle(
@@ -102,49 +107,76 @@ class ExerciseDetailScreen extends StatelessWidget {
                           100.h), // Add some space at the bottom for the button
                 ],
               ),
-            ),
-          ),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Padding(
-                padding: EdgeInsets.all(20.w.h),
-                child: Container(
-                  decoration: BoxDecoration(
-                      gradient: AppColors.SelectedGradient(context),
-                      borderRadius: BorderRadius.circular(24.r)),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Text(
-                      'Close',
-                      style: TextStyle(
-                          color: AppColors.getButtonTextColor(
-                              context), // Text color
-                          fontSize: 17.sp,
-                          fontFamily: 'Poppin' // Text size
-                          ),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      foregroundColor: Color.fromRGBO(21, 109, 149, 1),
-                      backgroundColor:
-                          Colors.transparent, // Text color on the button
-                      side: BorderSide(
-                          color: Color.fromRGBO(21, 109, 149, 1),
-                          width: 1), // Border color and width
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 2.w, vertical: 12.h), // Button padding
-                      textStyle: TextStyle(
-                        fontSize: 17.sp, // Text size
+              Positioned(
+                bottom: 0,
+                left: 0,
+                right: 0,
+                child: Padding(
+                  padding: EdgeInsets.all(20.w.h),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        gradient: AppColors.CloseGradient(context),
+                        borderRadius: BorderRadius.circular(24.r)),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Text(
+                        'Close',
+                        style: TextStyle(
+                            color: AppColors.getButtonTextColor(
+                                context), // Text color
+                            fontSize: 17.sp,
+                            fontFamily: 'Poppin' // Text size
+                            ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Color.fromRGBO(21, 109, 149, 1),
+                        // Text color on the button
+                        side: BorderSide(
+                            color: Color.fromRGBO(21, 109, 149, 1),
+                            width: 1), // Border color and width
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 2.w, vertical: 12.h), // Button padding
+                        textStyle: TextStyle(
+                          fontSize: 17.sp, // Text size
+                        ),
                       ),
                     ),
                   ),
-                )),
+                ),
+              ),
+              Positioned(
+                top: 8.h, // Position the line icon at the top center
+                left: 0,
+                right: 0,
+                child: Center(
+                  child: Container(
+                    width: 40.w,
+                    height: 5.h,
+                    decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.circular(2.5.r),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
+    );
+  }
+
+  void showExerciseDetailScreen(
+      BuildContext context, ExerciseDetailScreen screen) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (BuildContext context) {
+        return screen;
+      },
     );
   }
 }

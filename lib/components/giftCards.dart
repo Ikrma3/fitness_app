@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:myfitness/components/colours.dart';
 
 class GridCards extends StatelessWidget {
   final List<dynamic> cardsData;
@@ -60,7 +61,7 @@ class GridCards extends StatelessWidget {
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(35.r),
-                      color: Color.fromRGBO(217, 237, 245, 1),
+                      gradient: AppColors.getExploreCardGradient(context),
                     ),
                     child: Image.asset(
                       cardsData[index]['image'],

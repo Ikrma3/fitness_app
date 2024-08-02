@@ -111,6 +111,7 @@ class _ActivityInterestState extends State<ActivityInterest> {
       backgroundColor: bColor,
       appBar: AppBar(
         backgroundColor: bColor,
+        surfaceTintColor: bColor,
         title: Center(
           child: Row(
             children: [

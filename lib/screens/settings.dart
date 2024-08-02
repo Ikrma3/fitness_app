@@ -86,8 +86,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColors.getAppbarColor(context),
-        surfaceTintColor: AppColors.getAppbarColor(context),
+        backgroundColor: AppColors.getBackgroundColor(context),
+        surfaceTintColor: AppColors.getBackgroundColor(context),
       ),
       backgroundColor: AppColors.getBackgroundColor(context),
       body: SingleChildScrollView(

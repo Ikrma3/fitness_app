@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:myfitness/components/colours.dart';
 
 class CustomGraph extends StatelessWidget {
   final String heading;
@@ -16,7 +17,7 @@ class CustomGraph extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<int> yAxisValues = [];
-    Color lineColor = Color.fromRGBO(178, 178, 178, 1);
+    Color lineColor = AppColors.getSubtitleColor(context);
 
     // Determine y-axis values and line color based on heading
     if (heading.toLowerCase() == 'weight') {
@@ -63,11 +64,10 @@ class CustomGraph extends StatelessWidget {
                         textAlign: TextAlign.justify,
                         subHeading,
                         style: TextStyle(
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'Inter',
-                          color: Color.fromRGBO(178, 178, 178, 1),
-                        )),
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'Inter',
+                            color: AppColors.getSubtitleColor(context))),
                   ],
                 ),
               ],
@@ -84,12 +84,12 @@ class CustomGraph extends StatelessWidget {
         CustomPaint(
           size: Size(280.w, 140.h), // Adjust size as needed
           painter: GraphPainter(
-            yAxisValues: yAxisValues,
-            lineColor: lineColor,
-            xAxisDates: xAxisDates,
-            value: value,
-            heading: heading,
-          ),
+              yAxisValues: yAxisValues,
+              lineColor: lineColor,
+              xAxisDates: xAxisDates,
+              value: value,
+              heading: heading,
+              color: AppColors.getSubtitleColor(context)),
         ),
       ],
     );
@@ -146,6 +146,7 @@ class CustomGraph extends StatelessWidget {
 class GraphPainter extends CustomPainter {
   final List<int> yAxisValues;
   final Color lineColor;
+  final Color color;
   final List<String> xAxisDates;
   final int value;
   final String heading;
@@ -153,6 +154,7 @@ class GraphPainter extends CustomPainter {
   GraphPainter({
     required this.yAxisValues,
     required this.lineColor,
+    required this.color,
     required this.xAxisDates,
     required this.value,
     required this.heading,
@@ -162,7 +164,7 @@ class GraphPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     // Drawing horizontal lines based on yAxisValues
     Paint linePaint = Paint()
-      ..color = Color.fromRGBO(178, 178, 178, 1)
+      ..color = color
       ..strokeWidth = 1.0;
 
     double ySpacing = size.height / (yAxisValues.length - 1);
@@ -178,11 +180,7 @@ class GraphPainter extends CustomPainter {
       );
       textPainter.text = TextSpan(
         text: yAxisValues[i].toString(),
-        style: TextStyle(
-          fontSize: 14.sp,
-          fontFamily: 'Inter',
-          color: Color.fromRGBO(178, 178, 178, 1),
-        ),
+        style: TextStyle(fontSize: 14.sp, fontFamily: 'Inter', color: color),
       );
       textPainter.layout();
       textPainter.paint(canvas,
@@ -250,7 +248,7 @@ class GraphPainter extends CustomPainter {
           fontSize: 12.sp,
           color: i == xAxisDates.length - 1
               ? Color.fromRGBO(21, 109, 149, 1)
-              : Color.fromRGBO(178, 178, 178, 1),
+              : color,
         ),
       );
       textPainter.layout();

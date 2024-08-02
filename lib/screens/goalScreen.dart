@@ -93,7 +93,7 @@ class _GoalScreenState extends State<GoalScreen> {
               Container(
                 color: AppColors.getAppbarColor(context),
                 padding:
-                    EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 20.0.h),
+                    EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 5.0.h),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -155,7 +155,7 @@ class _GoalScreenState extends State<GoalScreen> {
                         });
                       },
                     ),
-                    SizedBox(height: 20.h),
+                    SizedBox(height: 10.h),
                   ],
                 ),
               ),
@@ -173,7 +173,7 @@ class _GoalScreenState extends State<GoalScreen> {
                         "Nutrition Goals",
                         style: TextStyle(
                           fontSize: 14.sp,
-                          fontWeight: FontWeight.w700,
+                          fontWeight: FontWeight.w800,
                           fontFamily: 'Inter',
                         ),
                       ),
@@ -183,7 +183,7 @@ class _GoalScreenState extends State<GoalScreen> {
                         "Calories, Carbs, Protein and Fat Goals",
                         style: TextStyle(
                           fontSize: 12.sp,
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w600,
                           fontFamily: 'Inter',
                         ),
                       ),
@@ -206,7 +206,7 @@ class _GoalScreenState extends State<GoalScreen> {
                         "Calories Goals by Meal",
                         style: TextStyle(
                           fontSize: 12.sp,
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w600,
                           fontFamily: 'Inter',
                         ),
                       ),
@@ -229,7 +229,7 @@ class _GoalScreenState extends State<GoalScreen> {
                         "Show Carbs, Protein and Fat by Meal",
                         style: TextStyle(
                           fontSize: 12.sp,
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w600,
                           fontFamily: 'Inter',
                         ),
                       ),
@@ -252,7 +252,7 @@ class _GoalScreenState extends State<GoalScreen> {
                         "Additional Nutrients Goals",
                         style: TextStyle(
                           fontSize: 12.sp,
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w600,
                           fontFamily: 'Inter',
                         ),
                       ),
@@ -275,18 +275,19 @@ class _GoalScreenState extends State<GoalScreen> {
                       "Fitness Goals",
                       style: TextStyle(
                         fontSize: 14.sp,
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w800,
                         fontFamily: 'Inter',
                       ),
                     ),
-                    SizedBox(height: 10.h),
+                    Divider(color: Color.fromRGBO(211, 234, 240, 1)),
+                    SizedBox(height: 6.h),
                     Row(
                       children: [
                         Text(
                           "Workout/Week",
                           style: TextStyle(
                             fontSize: 12.sp,
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.w600,
                             fontFamily: 'Inter',
                           ),
                         ),
@@ -295,7 +296,7 @@ class _GoalScreenState extends State<GoalScreen> {
                           goalsData['workout/week'].toString(),
                           style: TextStyle(
                             fontSize: 12.sp,
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.w600,
                             fontFamily: 'Inter',
                           ),
                         ),
@@ -310,7 +311,7 @@ class _GoalScreenState extends State<GoalScreen> {
                             "Minutes/Workout",
                             style: TextStyle(
                               fontSize: 12.sp,
-                              fontWeight: FontWeight.w500,
+                              fontWeight: FontWeight.w600,
                               fontFamily: 'Inter',
                             ),
                           ),
@@ -319,7 +320,7 @@ class _GoalScreenState extends State<GoalScreen> {
                             goalsData['minutes/workout'].toString(),
                             style: TextStyle(
                               fontSize: 12.sp,
-                              fontWeight: FontWeight.w500,
+                              fontWeight: FontWeight.w600,
                               fontFamily: 'Inter',
                             ),
                           ),
@@ -334,7 +335,7 @@ class _GoalScreenState extends State<GoalScreen> {
                           "Exercise Calories",
                           style: TextStyle(
                             fontSize: 12.sp,
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.w600,
                             fontFamily: 'Inter',
                           ),
                         ),

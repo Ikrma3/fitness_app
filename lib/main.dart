@@ -29,6 +29,7 @@ import 'package:myfitness/screens/sleepScreen.dart';
 import 'package:myfitness/screens/steps.dart';
 import 'package:myfitness/screens/subscriptionScreen.dart';
 import 'package:myfitness/screens/summary.dart';
+import 'package:myfitness/screens/trainingPlanIndicator.dart';
 import 'package:myfitness/screens/trainingScreen.dart';
 import 'package:myfitness/screens/weight.dart';
 import 'package:myfitness/screens/workout.dart';

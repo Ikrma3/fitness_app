@@ -165,11 +165,11 @@ class _CaloriesExplorerState extends State<CaloriesExplorer> {
                     height: 10.h,
                   ),
                   CircularSegmentProgressIndicator(
-                    segments: indicatorSegments,
-                    radius: 65.5.r,
-                    lineWidth: 13.0.w,
-                    animation: true,
-                  ),
+                      segments: indicatorSegments,
+                      radius: 65.5.r,
+                      lineWidth: 13.0.w,
+                      animation: true,
+                      tColor: AppColors.getTextColor(context)),
                   SizedBox(height: 16.h),
                   // Dividing meals into two rows with two columns each
                   Row(

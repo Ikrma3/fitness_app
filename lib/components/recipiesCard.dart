@@ -65,7 +65,7 @@ class _RecipeCardState extends State<RecipeCard> {
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                         fontSize: 13.sp,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                         fontFamily: 'Inter'),
                   ),
                 ),
@@ -85,6 +85,7 @@ class _RecipeCardState extends State<RecipeCard> {
                       IconButton(
                         icon: Icon(
                           isBookmarked ? Icons.bookmark : Icons.bookmark_border,
+                          size: 19.w.h,
                         ),
                         onPressed: () {
                           setState(() {

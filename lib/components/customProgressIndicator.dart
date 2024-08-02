@@ -1,29 +1,40 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:myfitness/components/colours.dart';
 
-class CircularSegmentProgressIndicator extends StatelessWidget {
+class CircularSegmentProgressIndicator extends StatefulWidget {
   final List<Segment> segments;
   final double radius;
   final double lineWidth;
   final bool animation;
+  final Color tColor;
 
   CircularSegmentProgressIndicator({
     required this.segments,
     this.radius = 67.5,
     this.lineWidth = 20.0,
     this.animation = true,
+    required this.tColor,
   });
 
   @override
+  State<CircularSegmentProgressIndicator> createState() =>
+      _CircularSegmentProgressIndicatorState();
+}
+
+class _CircularSegmentProgressIndicatorState
+    extends State<CircularSegmentProgressIndicator> {
+  @override
   Widget build(BuildContext context) {
     return CustomPaint(
-      size: Size.square(radius * 2),
+      size: Size.square(widget.radius * 2),
       painter: _CircularSegmentPainter(
-        segments: segments,
-        radius: radius,
-        lineWidth: lineWidth,
-        animation: animation,
+        segments: widget.segments,
+        radius: widget.radius,
+        lineWidth: widget.lineWidth,
+        animation: widget.animation,
+        tColor: widget.tColor,
       ),
     );
   }
@@ -34,12 +45,14 @@ class _CircularSegmentPainter extends CustomPainter {
   final double radius;
   final double lineWidth;
   final bool animation;
+  final Color tColor;
 
   _CircularSegmentPainter({
     required this.segments,
     required this.radius,
     required this.lineWidth,
     required this.animation,
+    required this.tColor,
   });
 
   @override
@@ -93,6 +106,7 @@ class _CircularSegmentPainter extends CustomPainter {
     final textStyle = TextStyle(
       fontSize: radius / 2,
       fontWeight: FontWeight.bold,
+      color: tColor,
     );
     final percentageText = "${totalPercentage.toStringAsFixed(1)}%";
     final textSpan = TextSpan(text: percentageText, style: textStyle);

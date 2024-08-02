@@ -41,7 +41,26 @@ class _SignUpScreenState extends State<SignUpScreen> {
           ? null
           : 'Name is invalid';
     });
-    if (emailError == null &&
+
+    if (!isPrivacyPolicyAccepted) {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Privacy Policy'),
+            content: Text('Please accept the privacy policy first.'),
+            actions: <Widget>[
+              TextButton(
+                child: Text('OK'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
+    } else if (emailError == null &&
         passwordError == null &&
         phoneError == null &&
         nameError == null) {
@@ -116,9 +135,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   textInputAction: TextInputAction.next,
                 ),
                 SizedBox(height: 15.h),
-                const Row(
+                Row(
                   children: [
-                    CircularCheckbox(),
+                    CircularCheckbox(
+                      onChanged: (bool value) {
+                        setState(() {
+                          isPrivacyPolicyAccepted = value;
+                        });
+                      },
+                    ),
                   ],
                 ),
                 SizedBox(height: 20.h),

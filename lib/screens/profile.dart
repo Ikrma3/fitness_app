@@ -149,12 +149,24 @@ class _ProfilePageState extends State<ProfilePage> {
                             : AssetImage(profileImage),
                       ),
                       Positioned(
-                        bottom: 0,
-                        right: 0,
+                        bottom: 9,
+                        right: 4,
+                        child: Container(
+                          height: 26.w,
+                          width: 26.w,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20.r),
+                              color: Color.fromRGBO(21, 109, 149, 1)),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: -2,
+                        right: -6,
                         child: IconButton(
                           icon: Icon(
-                            Icons.edit,
-                            color: Color.fromRGBO(21, 109, 149, 1),
+                            Icons.edit_outlined,
+                            color: Colors.white,
+                            size: 14.w.h,
                           ),
                           onPressed: _pickImage,
                         ),

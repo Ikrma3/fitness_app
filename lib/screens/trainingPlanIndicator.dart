@@ -9,9 +9,11 @@ class TrainingPlanScreen extends StatefulWidget {
 }
 
 class _TrainingPlanScreenState extends State<TrainingPlanScreen>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
+  late AnimationController _buttonController;
+  late Animation<double> _buttonAnimation;
 
   @override
   void initState() {
@@ -29,12 +31,31 @@ class _TrainingPlanScreenState extends State<TrainingPlanScreen>
       ),
     );
 
+    _buttonController = AnimationController(
+      duration: const Duration(seconds: 1),
+      vsync: this,
+    );
+
+    _buttonAnimation = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(
+        parent: _buttonController,
+        curve: Curves.easeIn,
+      ),
+    );
+
     _controller.forward();
+
+    _controller.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        _buttonController.forward();
+      }
+    });
   }
 
   @override
   void dispose() {
     _controller.dispose();
+    _buttonController.dispose();
     super.dispose();
   }
 
@@ -128,16 +149,19 @@ class _TrainingPlanScreenState extends State<TrainingPlanScreen>
               ),
             ),
             Spacer(),
-            Padding(
-              padding: EdgeInsets.all(20.w),
-              child: CustomButton(
-                text: 'Continue',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SignInScreen()),
-                  );
-                },
+            FadeTransition(
+              opacity: _buttonAnimation,
+              child: Padding(
+                padding: EdgeInsets.all(20.w),
+                child: CustomButton(
+                  text: 'Continue',
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SignInScreen()),
+                    );
+                  },
+                ),
               ),
             ),
           ],

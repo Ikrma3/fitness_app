@@ -111,6 +111,7 @@ class _DiagnosedState extends State<Diagnosed> {
       backgroundColor: bColor,
       appBar: AppBar(
         backgroundColor: bColor,
+        surfaceTintColor: bColor,
         title: Center(
           child: Text(
             "Step 5 0f 11",

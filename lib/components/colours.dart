@@ -55,6 +55,18 @@ class AppColors {
     return brightness == Brightness.dark ? Colors.white : Colors.black;
   }
 
+  static Color getTextFieldTextColor(BuildContext context) {
+    final brightness = Theme.of(context).brightness;
+    return brightness == Brightness.dark ? Colors.white : Color(0xff404B52);
+  }
+
+  static Color getTextFieldColor(BuildContext context) {
+    final brightness = Theme.of(context).brightness;
+    return brightness == Brightness.dark
+        ? Color.fromRGBO(45, 52, 80, 1)
+        : Color.fromRGBO(217, 237, 245, 1);
+  }
+
   static Color getButtonTextColor(BuildContext context) {
     final brightness = Theme.of(context).brightness;
     return brightness == Brightness.dark
@@ -115,6 +127,27 @@ class AppColors {
           );
   }
 
+  static LinearGradient getExploreCardGradient(BuildContext context) {
+    final brightness = Theme.of(context).brightness;
+    return brightness == Brightness.dark
+        ? LinearGradient(
+            colors: [
+              Color.fromRGBO(120, 108, 255, 0.15),
+              Color.fromRGBO(93, 166, 199, 0.12)
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          )
+        : LinearGradient(
+            colors: [
+              Color.fromRGBO(217, 237, 245, 1),
+              Color.fromRGBO(217, 237, 245, 1)
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          );
+  }
+
   static LinearGradient getFrameGradient(BuildContext context) {
     final brightness = Theme.of(context).brightness;
     return brightness == Brightness.dark
@@ -128,6 +161,27 @@ class AppColors {
           )
         : LinearGradient(
             colors: [Colors.white, Colors.white],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          );
+  }
+
+  static LinearGradient getWeightStepGradient(BuildContext context) {
+    final brightness = Theme.of(context).brightness;
+    return brightness == Brightness.dark
+        ? LinearGradient(
+            colors: [
+              Color.fromRGBO(120, 108, 255, 0.17),
+              Color.fromRGBO(90, 200, 250, 0.13)
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          )
+        : LinearGradient(
+            colors: [
+              Color.fromRGBO(245, 250, 255, 1),
+              Color.fromRGBO(245, 250, 255, 1)
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           );
@@ -184,6 +238,27 @@ class AppColors {
             end: Alignment.bottomRight,
           )
         : LinearGradient(
+            colors: [
+              Color.fromRGBO(93, 166, 199, 1),
+              Color.fromRGBO(20, 108, 148, 1)
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          );
+  }
+
+  static LinearGradient CloseGradient(BuildContext context) {
+    final brightness = Theme.of(context).brightness;
+    return brightness == Brightness.dark
+        ? LinearGradient(
+            colors: [
+              Color.fromRGBO(122, 194, 228, 1),
+              Color.fromRGBO(20, 108, 148, 1)
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          )
+        : LinearGradient(
             colors: [Colors.white, Colors.white],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -216,8 +291,8 @@ class AppColors {
     return brightness == Brightness.dark
         ? LinearGradient(
             colors: [
-              Color.fromRGBO(45, 152, 202, 1),
-              Color.fromRGBO(24, 106, 145, 1)
+              Color.fromRGBO(120, 108, 255, 0.17),
+              Color.fromRGBO(90, 200, 250, 0.13)
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,

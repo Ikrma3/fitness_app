@@ -46,9 +46,9 @@ class _ProgressScreenState extends State<ProgressScreen> {
         title: Text(
           'Progress',
           style: TextStyle(
-              fontSize: 19.sp,
+              fontSize: 18.sp,
               fontFamily: 'Inter',
-              fontWeight: FontWeight.w500),
+              fontWeight: FontWeight.w600),
         ),
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.add))],
         backgroundColor: AppColors.getAppbarColor(context),
@@ -97,7 +97,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
                               'Weight',
                               style: TextStyle(
                                   fontSize: 16.sp,
-                                  fontWeight: FontWeight.w500,
+                                  fontWeight: FontWeight.w600,
                                   color: Color.fromRGBO(21, 109, 149, 1),
                                   fontFamily: 'Inter'),
                             ),
@@ -130,7 +130,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
                                   '3 Months',
                                   style: TextStyle(
                                       fontSize: 16.sp,
-                                      fontWeight: FontWeight.w500,
+                                      fontWeight: FontWeight.w600,
                                       color: Color.fromRGBO(21, 109, 149, 1),
                                       fontFamily: 'Inter'),
                                 ),

@@ -86,7 +86,7 @@ class _PlanScreenState extends State<PlanScreen> {
               "Plans",
               style: TextStyle(
                   fontSize: 19.sp,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w600,
                   fontFamily: 'Inter'),
             )),
         body: Center(child: CircularProgressIndicator()),
@@ -101,8 +101,8 @@ class _PlanScreenState extends State<PlanScreen> {
           title: Text(
             "Plans",
             style: TextStyle(
-                fontSize: 19.sp,
-                fontWeight: FontWeight.w500,
+                fontSize: 18.sp,
+                fontWeight: FontWeight.w600,
                 fontFamily: 'Inter'),
           ),
         ),

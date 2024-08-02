@@ -240,7 +240,7 @@ class FeaturedApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 80.0.h,
+      width: 80.0.w,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -254,12 +254,24 @@ class FeaturedApp extends StatelessWidget {
           Row(
             children: [
               SizedBox(
-                width: 5.w,
+                width: 8.w,
               ),
-              Text(title),
+              Text(
+                title,
+                style: TextStyle(fontSize: 10.sp, fontFamily: 'Poppin'),
+              ),
             ],
           ),
-          Text(subtitle)
+
+          Row(
+            children: [
+              SizedBox(
+                width: 2.w,
+              ),
+              Text(subtitle,
+                  style: TextStyle(fontSize: 10.sp, fontFamily: 'Poppin')),
+            ],
+          )
         ],
       ),
     );
@@ -278,10 +290,9 @@ class AppTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 2.0.h),
-      padding: EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(12.w.h),
       decoration: BoxDecoration(
         gradient: AppColors.getFrameGradient(context),
-        borderRadius: BorderRadius.circular(10.0),
       ),
       child: Row(
         children: [

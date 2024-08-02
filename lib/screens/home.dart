@@ -28,6 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int currentPage = 0;
   int currentGraphPage = 0;
   int _currentIndex = 0;
+  String selectedOption = 'Today';
 
   @override
   void initState() {
@@ -94,7 +95,6 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: AppColors.getAppbarColor(context),
           surfaceTintColor: AppColors.getAppbarColor(context),
           automaticallyImplyLeading: false,
-          //    backgroundColor: bColor,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -103,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
                   children: [
                     Text(
-                      'Today',
+                      selectedOption,
                       style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
@@ -114,14 +114,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
                 onSelected: (value) {
-                  // Handle menu item selection
-                  print(value);
+                  setState(() {
+                    selectedOption = value;
+                  });
                 },
                 itemBuilder: (BuildContext context) {
                   return [
                     const PopupMenuItem<String>(
-                      value: 'Option 1',
-                      child: Text('Option 1'),
+                      value: 'Today',
+                      child: Text('Today'),
                     ),
                     const PopupMenuItem<String>(
                       value: 'Option 2',
@@ -237,16 +238,20 @@ class _HomeScreenState extends State<HomeScreen> {
                             Container(
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(12.r),
-                                color: AppColors.getBackgroundColor(context),
+                                gradient:
+                                    AppColors.getWeightStepGradient(context),
                               ),
-                              child: CustomGraph(
-                                heading: weightData['heading'] ?? '',
-                                subHeading: weightData['subHeading'] ?? '',
-                                value: weightData['value'] ?? 0,
-                                date: (weightData['dates'] != null &&
-                                        weightData['dates'].isNotEmpty)
-                                    ? (weightData['dates'].last as String)
-                                    : '',
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(vertical: 10.h),
+                                child: CustomGraph(
+                                  heading: weightData['heading'] ?? '',
+                                  subHeading: weightData['subHeading'] ?? '',
+                                  value: weightData['value'] ?? 0,
+                                  date: (weightData['dates'] != null &&
+                                          weightData['dates'].isNotEmpty)
+                                      ? (weightData['dates'].last as String)
+                                      : '',
+                                ),
                               ),
                             ),
                             Padding(
@@ -254,16 +259,20 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12.r),
-                                  color: AppColors.getBackgroundColor(context),
+                                  gradient:
+                                      AppColors.getWeightStepGradient(context),
                                 ),
-                                child: CustomGraph(
-                                  heading: stepsData['heading'] ?? '',
-                                  subHeading: stepsData['subHeading'] ?? '',
-                                  value: stepsData['value'] ?? 0,
-                                  date: (stepsData['dates'] != null &&
-                                          stepsData['dates'].isNotEmpty)
-                                      ? (stepsData['dates'].last as String)
-                                      : '',
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 10.h),
+                                  child: CustomGraph(
+                                    heading: stepsData['heading'] ?? '',
+                                    subHeading: stepsData['subHeading'] ?? '',
+                                    value: stepsData['value'] ?? 0,
+                                    date: (stepsData['dates'] != null &&
+                                            stepsData['dates'].isNotEmpty)
+                                        ? (stepsData['dates'].last as String)
+                                        : '',
+                                  ),
                                 ),
                               ),
                             ),

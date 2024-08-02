@@ -127,6 +127,7 @@ class _CusineState extends State<Cusine> {
       backgroundColor: bColor,
       appBar: AppBar(
         backgroundColor: bColor,
+        surfaceTintColor: bColor,
         title: Center(
           child: Text(
             "Step 7 0f 11",

@@ -82,7 +82,7 @@ class _StepsScreenState extends State<StepsScreen> {
             style: TextStyle(
                 fontSize: 19.sp,
                 fontFamily: 'Inter',
-                fontWeight: FontWeight.w500),
+                fontWeight: FontWeight.w600),
           ),
         ),
         body: isLoading
@@ -123,8 +123,8 @@ class _StepsScreenState extends State<StepsScreen> {
                               children: [
                                 Text(title,
                                     style: TextStyle(
-                                        fontSize: 16.sp,
-                                        fontWeight: FontWeight.w500,
+                                        fontSize: 15.sp,
+                                        fontWeight: FontWeight.w600,
                                         fontFamily: 'Inter')),
                                 Container(
                                   width: 210.w,
@@ -145,7 +145,7 @@ class _StepsScreenState extends State<StepsScreen> {
                             Checkbox(
                               value: true,
                               activeColor: Color.fromRGBO(21, 109, 149, 1),
-                              checkColor: AppColors.getTextColor(context),
+                              checkColor: Colors.white,
                               onChanged: (bool? value) {},
                             ),
                           ],
@@ -172,10 +172,10 @@ class _StepsScreenState extends State<StepsScreen> {
                               },
                             ),
                             SizedBox(width: 10.w),
-                            Text('Add Device',
+                            Text('Add a Device',
                                 style: TextStyle(
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w500,
+                                    fontSize: 15.sp,
+                                    fontWeight: FontWeight.w600,
                                     fontFamily: 'Inter')),
                           ],
                         ),
@@ -216,8 +216,8 @@ class _StepsScreenState extends State<StepsScreen> {
                           SizedBox(width: 10),
                           Text("Don't Track Steps",
                               style: TextStyle(
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.w500,
+                                  fontSize: 15.sp,
+                                  fontWeight: FontWeight.w600,
                                   fontFamily: 'Inter')),
                         ],
                       ),
@@ -231,7 +231,7 @@ class _StepsScreenState extends State<StepsScreen> {
                       },
                       child: Text('Delete Account',
                           style: TextStyle(
-                            fontSize: 16.sp,
+                            fontSize: 15.sp,
                             fontWeight: FontWeight.w600,
                             fontFamily: 'Inter',
                             color: AppColors.getTextColor(context),
@@ -245,9 +245,9 @@ class _StepsScreenState extends State<StepsScreen> {
                     ),
                     child: Row(
                       children: [
-                        Text('Daily Steps Goal $dailyStepsGoal',
+                        Text('Daily Steps Goal',
                             style: TextStyle(
-                              fontSize: 16.sp,
+                              fontSize: 15.sp,
                               fontWeight: FontWeight.w600,
                               fontFamily: 'Inter',
                               color: AppColors.getTextColor(context),
