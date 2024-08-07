@@ -1,22 +1,22 @@
 {
     "cards": [
       {
-        "image": "images/recipes.png",
+        "image": "assets/icons/icon_recipes.png",
         "heading": "Recipes",
         "subheading": "Cook, eat, log, repeat"
       },
       {
-        "image": "images/sleep.png",
+        "image": "assets/icons/icon_sleep.png",
         "heading": "Sleep",
         "subheading": "Eat right, sleep tight"
       },
       {
-        "image": "images/workout.png",
+        "image": "assets/icons/icon_workout.png",
         "heading": "Workouts",
         "subheading": "Sweating is self-care"
       },
       {
-        "image": "images/sync.png",
+        "image": "assets/icons/icon_sync.png",
         "heading": "Sync up!",
         "subheading": "Health & Fitness"
       }

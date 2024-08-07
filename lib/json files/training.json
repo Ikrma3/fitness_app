@@ -4,42 +4,42 @@
         "title": "Core Control",
         "level": "Beginner",
         "time": "32 min",
-        "image": "images/coreControl.png",
+        "image": "assets/images/coreControl.png",
       "isFavourite":true
       },
       {
         "title": "Full Body Fast",
         "level": "Beginner",
         "time": "32 min",
-        "image": "images/fullBody.png",
+        "image": "assets/images/fullBody.png",
         "isFavourite":false
       },
       {
         "title": "Express Tabata",
         "level": "Intermediate",
         "time": "32 min",
-        "image": "images/tabata.png",
+        "image": "assets/images/tabata.png",
         "isFavourite":false
       },
       {
         "title": "Bodyweight",
         "level": "Medium",
         "time": "32 min",
-        "image": "images/bodyWeight.png",
+        "image": "assets/images/bodyWeight.png",
         "isFavourite":false
       },
       {
         "title": "Glutes & Abs",
         "level": "Advanced",
         "time": "32 min",
-        "image": "images/abs.png",
+        "image": "assets/images/abs.png",
         "isFavourite":false
       },
       {
         "title": "Interval Pilates",
         "level": "Advanced",
         "time": "32 min",
-        "image": "images/pilates.png",
+        "image": "assets/images/pilates.png",
         "isFavourite":false
       }
     ],
@@ -48,7 +48,7 @@
         "title": "Express Tabata",
         "level": "Intermediate",
         "time": "32 min",
-        "image": "images/tabata.png",
+        "image": "assets/images/tabata.png",
         "isFavourite":false
       }
     ],
@@ -57,7 +57,7 @@
         "title": "Bodyweight",
         "level": "Medium",
         "time": "32 min",
-        "image": "images/bodyWeight.png",
+        "image": "assets/images/bodyWeight.png",
         "isFavourite":false
       }
     ],
@@ -66,14 +66,14 @@
         "title": "Glutes & Abs",
         "level": "Advanced",
         "time": "32 min",
-        "image": "images/abs.png",
+        "image": "assets/images/abs.png",
         "isFavourite":false
       },
       {
         "title": "Interval Pilates",
         "level": "Advanced",
         "time": "32 min",
-        "image": "images/pilates.png",
+        "image": "assets/images/pilates.png",
         "isFavourite":false
       }
     ]

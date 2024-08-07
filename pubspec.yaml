@@ -67,141 +67,141 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-     - images/onBoard1.png
-     - images/nutritionButton.png
-     - images/onBoard2.png
-     - images/onBoard3.png
-     - images/onBoard4.png
-     - images/tick.png
-     - images/binary.png
-     - images/male.png
-     - images/female.png
-     - images/arth.png
-     - images/blood.png
-     - images/celiac.png
-     - images/diab.png
-     - images/heart.png
-     - images/none.png 
-     - images/nVeg.png 
-     - images/veg.png 
-     - images/pes.png 
-     - images/eAll.png
-     - images/chinese.png
-     - images/sAVeg.png
-     - images/french.png
-     - images/italian.png
-     - images/greek.png
-     - images/spanish.png
-     - images/japnese.png 
-     - images/lebanese.png
-     - images/turkish.png
-     - images/thai.png
-     - images/frenchToast.png
-     - images/plus.png
-     - images/profile.png
-     - images/RMF.png
-     - images/fruit.png
-     - images/wrap.png
-     - images/almondMouses.png
-     - images/progress.png
-     - images/report.png
-     - images/work.png
-     - images/goal.png
-     - images/nutri.png
-     - images/appDevices.png
-     - images/steps.png
-     - images/reminder.png
-     - images/notification.png
-     - images/editProfile.png
-     - images/subscription.png
-     - images/delete.png  
-     - images/password.png
-     - images/privacy.png
-     - images/about.png
-     - images/logout.png
-     - images/indian.png
-     - images/pakistani.png
-     - images/mexican.png
-     - images/egg.png
-     - images/diary.png
-     - images/bread.png
-     - images/peanut.png
-     - images/nc.png
-     - images/water.png
-     - images/cardio.png
-     - images/power.png
-     - images/stretch.png
-     - images/dancing.png
-     - images/yoga.png
-     - images/highProtien.png
-     - images/lowCarbs.png
-     - images/logos_apple.png
-     - images/recipes.png
-     - images/planIcon.png
-     - images/camera.png
-     - images/sleep.png
-     - images/appLogo.png
-     - images/workout.png
-     - images/sync.png
-     - images/startTraining.png
-     - images/burger.png
-     - images/res.png
-     - images/logos_fb.png
-     - images/logos_google.png
-     - images/goals.svg
-     - images/excersice2.png
-     - images/clock.png
-     - images/fire.png
-     - images/food.svg
-     - images/exercise.svg
-     - images/breakfast.png
-     - images/lunch.png
-     - images/snack.png
-     - images/dinner.png
-     - images/dairyBf.png
-     - images/dairyLunch.png
-     - images/dairyDinner.png
-     - images/dairyExercise.png
-     - images/dairySnacks.png
-     - images/dairyWater.png
-     - images/weight.png
-     - images/person.png
-     - images/cake.png
-     - images/entry1.png
-     - images/entry2.png
-     - images/weightIcon.png
-     - images/date.png
-     - images/oldNotification.png
-     - images/rapidLower.png
-     - images/bodyWeight.png
-     - images/plank.png
-     - images/armCircle.png
-     - images/squat.png
-     - images/frontBack.png
-     - images/yoga2.png
-     - images/stretch2.png
-     - images/gym.png
-     - images/coreControl.png
-     - images/fullBody.png
-     - images/tabata.png
-     - images/abs.png
-     - images/pilates.png
-     - images/upperBody.png
-     - images/time.png
-     - images/thunder.png
-     - images/dumbells.png
-     - images/mat.png
-     - images/cobraStretch.png
-     - images/rest.png
-     - images/heelTab.png
-     - images/jump.png
-     - images/squatJump.png
-     - images/boxer.png
-     - images/plankReaches.png
-     - images/sumoSquat.png
-     - videos/plank.mp4
-     - videos/rest.mp4
-     - videos/squat.mp4
+     - assets/logo/splash1.png
+     - assets/icons/icon_splash2.png
+     - assets/images/onBoard1.png
+     - assets/icons/icon_nutritionButton.png
+     - assets/images/onBoard2.png
+     - assets/images/onBoard3.png
+     - assets/images/onBoard4.png
+     - assets/images/binary.png
+     - assets/images/male.png
+     - assets/images/female.png
+     - assets/images/arth.png
+     - assets/images/blood.png
+     - assets/images/celiac.png
+     - assets/images/diab.png
+     - assets/images/heart.png
+     - assets/images/none.png 
+     - assets/images/nVeg.png 
+     - assets/images/veg.png 
+     - assets/images/pes.png 
+     - assets/images/eAll.png
+     - assets/images/chinese.png
+     - assets/images/sAVeg.png
+     - assets/images/french.png
+     - assets/images/italian.png
+     - assets/images/greek.png
+     - assets/images/spanish.png
+     - assets/images/japnese.png 
+     - assets/images/lebanese.png
+     - assets/images/turkish.png
+     - assets/images/thai.png
+     - assets/images/frenchToast.png
+     - assets/icons/icon_plus.png
+     - assets/images/profile.png
+     - assets/images/fruit.png
+     - assets/images/wrap.png
+     - assets/images/almondMouses.png
+     - assets/icons/icon_Progress.png
+     - assets/icons/icon_report.png
+     - assets/icons/icon_work.png
+     - assets/icons/icon_goal.png
+     - assets/icons/icon_nutri.png
+     - assets/icons/icon_appDevices.png
+     - assets/icons/icon_steps.png
+     - assets/icons/icon_reminder.png
+     - assets/icons/icon_notification.png
+     - assets/icons/icon_editProfile.png
+     - assets/icons/icon_subscription.png
+     - assets/icons/icon_delete.png  
+     - assets/icons/icon_password.png
+     - assets/icons/icon_privacy.png
+     - assets/icons/icon_about.png
+     - assets/icons/icon_logout.png
+     - assets/images/indian.png
+     - assets/images/pakistani.png
+     - assets/images/mexican.png
+     - assets/images/egg.png
+     - assets/images/diary.png
+     - assets/images/bread.png
+     - assets/images/peanut.png
+     - assets/images/nc.png
+     - assets/images/water.png
+     - assets/images/cardio.png
+     - assets/images/power.png
+     - assets/images/stretch.png
+     - assets/images/dancing.png
+     - assets/images/yoga.png
+     - assets/images/highProtien.png
+     - assets/images/lowCarbs.png
+     - assets/icons/icon_apple.png
+     - assets/icons/icon_recipes.png
+     - assets/icons/icon_plan.png
+     - assets/icons/icon_camera.png
+     - assets/icons/icon_sleep.png
+     - assets/logo/appLogo.png
+     - assets/icons/icon_workout.png
+     - assets/icons/icon_sync.png
+     - assets/images/startTraining.png
+     - assets/images/burger.png
+     - assets/icons/icon_res.png
+     - assets/icons/icon_fb.png
+     - assets/icons/icon_google.png
+     - assets/images/goals.svg
+     - assets/images/excersice2.png
+     - assets/icons/icon_clock.png
+     - assets/images/fire.png
+     - assets/images/food.svg
+     - assets/images/exercise.svg
+     - assets/images/breakfast.png
+     - assets/images/lunch.png
+     - assets/images/snack.png
+     - assets/images/dinner.png
+     - assets/icons/icon_dairyBf.png
+     - assets/icons/icon_dairyLunch.png
+     - assets/icons/icon_dairyDinner.png
+     - assets/icons/icon_dairyExercise.png
+     - assets/icons/icon_dairySnacks.png
+     - assets/icons/icon_dairyWater.png
+     - assets/icons/icon_weight.png
+     - assets/icons/icon_person.png
+     - assets/images/cake.png
+     - assets/images/entry1.png
+     - assets/images/entry2.png
+     - assets/icons/icon_weightIcon.png
+     - assets/icons/icon_date.png
+     - assets/images/oldNotification.png
+     - assets/images/rapidLower.png
+     - assets/images/bodyWeight.png
+     - assets/images/plank.png
+     - assets/images/armCircle.png
+     - assets/images/squat.png
+     - assets/images/frontBack.png
+     - assets/images/yoga2.png
+     - assets/images/stretch2.png
+     - assets/images/gym.png
+     - assets/images/coreControl.png
+     - assets/images/fullBody.png
+     - assets/images/tabata.png
+     - assets/images/abs.png
+     - assets/images/pilates.png
+     - assets/images/upperBody.png
+     - assets/icons/icon_time.png
+     - assets/images/thunder.png
+     - assets/images/dumbells.png
+     - assets/images/mat.png
+     - assets/images/cobraStretch.png
+     - assets/icons/icon_rest.png
+     - assets/images/heelTab.png
+     - assets/images/jump.png
+     - assets/images/squatJump.png
+     - assets/images/boxer.png
+     - assets/images/plankReaches.png
+     - assets/images/sumoSquat.png
+     - assets/videos/plank.mp4
+     - assets/videos/rest.mp4
+     - assets/videos/squat.mp4
      - lib/json files/onBoard.json
      - lib/json files/subscription.json
      - lib/json files/questions.json
@@ -260,22 +260,22 @@ flutter:
   fonts:
     - family: Inter
       fonts:
-        - asset: fonts/Inter-Regular.ttf
-        - asset: fonts/Inter-SemiBold.ttf
+        - asset: assets/fonts/Inter-Regular.ttf
+        - asset: assets/fonts/Inter-SemiBold.ttf
     - family: Poppin
       fonts:
-        - asset: fonts/Poppins-Regular.ttf
-        - asset: fonts/Poppins-SemiBold.ttf
-        - asset: fonts/Poppins-Italic.ttf
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+        - asset: assets/fonts/Poppins-Italic.ttf
     - family: Mulish
       fonts:
-        - asset: fonts/Mulish-Regular.ttf
-        - asset: fonts/Mulish-SemiBold.ttf
-        - asset: fonts/Mulish-Italic.ttf
+        - asset: assets/fonts/Mulish-Regular.ttf
+        - asset: assets/fonts/Mulish-SemiBold.ttf
+        - asset: assets/fonts/Mulish-Italic.ttf
     - family: OpenSans
       fonts:
-        - asset: fonts/OpenSans-Regular.ttf
-        - asset: fonts/OpenSans-SemiBold.ttf
+        - asset: assets/fonts/OpenSans-Regular.ttf
+        - asset: assets/fonts/OpenSans-SemiBold.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

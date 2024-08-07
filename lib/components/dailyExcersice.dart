@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:convert';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myfitness/components/customAddIcon.dart';
+import 'package:myfitness/components/icons/customAddIcon.dart';
 
 class DailyExercise extends StatefulWidget {
   @override

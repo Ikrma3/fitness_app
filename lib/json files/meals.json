@@ -2,21 +2,21 @@
     {
         "title": "Breakfast",
         "subtitle": "Fried eggs, Toast",
-        "image": "images/breakfast.png"
+        "image": "assets/images/breakfast.png"
     },
     {
         "title": "Lunch",
         "subtitle": "Grilled Chicken",
-        "image": "images/lunch.png"
+        "image": "assets/images/lunch.png"
     },
     {
         "title": "Snack",
         "subtitle": "Veggies, Humus",
-        "image": "images/snack.png"
+        "image": "assets/images/snack.png"
     },
     {
         "title": "Dinner",
         "subtitle": "Salmon Risotto",
-        "image": "images/dinner.png"
+        "image": "assets/images/dinner.png"
     }
 ]

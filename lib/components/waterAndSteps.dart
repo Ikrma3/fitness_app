@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:myfitness/components/customAddIcon.dart';
-import 'package:myfitness/components/customSubIcon.dart';
+import 'package:myfitness/components/icons/customAddIcon.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:myfitness/components/icons/customSubIcon.dart';
 
 // Method to read JSON from assets
 Future<Map<String, dynamic>> loadJson(String fileName) async {

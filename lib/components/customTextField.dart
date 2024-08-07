@@ -32,7 +32,7 @@ class CustomTextFormField extends StatelessWidget {
         obscureText: obscureText,
         keyboardType: keyboardType,
         textInputAction: textInputAction,
-        style: const TextStyle(color: Color(0xff404B52)),
+        style: TextStyle(color: AppColors.getSubtitleColor(context)),
         decoration: InputDecoration(
           labelText: errorText ?? labelText,
           labelStyle: TextStyle(
@@ -46,7 +46,7 @@ class CustomTextFormField extends StatelessWidget {
                   onTap: onSuffixIconTap,
                   child: Icon(
                     obscureText ? Icons.visibility : Icons.visibility_off,
-                    color: Colors.grey,
+                    color: AppColors.getSubtitleColor(context),
                   ),
                 )
               : null,

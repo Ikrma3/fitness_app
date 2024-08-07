@@ -127,6 +127,45 @@ class AppColors {
           );
   }
 
+  static LinearGradient getSaveGradient(BuildContext context) {
+    final brightness = Theme.of(context).brightness;
+    return brightness == Brightness.dark
+        ? LinearGradient(
+            colors: [
+              Color.fromRGBO(106, 92, 255, 1),
+              Color.fromRGBO(90, 200, 250, 1)
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          )
+        : LinearGradient(
+            colors: [
+              Color.fromRGBO(106, 92, 255, 1),
+              Color.fromRGBO(90, 200, 250, 1)
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          );
+  }
+
+  static LinearGradient getSubcriptionGradient(BuildContext context) {
+    final brightness = Theme.of(context).brightness;
+    return brightness == Brightness.dark
+        ? LinearGradient(
+            colors: [
+              Color.fromRGBO(152, 215, 244, 0.4),
+              Color.fromRGBO(216, 115, 225, 0.5)
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          )
+        : LinearGradient(
+            colors: [Colors.white, Colors.white],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          );
+  }
+
   static LinearGradient getExploreCardGradient(BuildContext context) {
     final brightness = Theme.of(context).brightness;
     return brightness == Brightness.dark

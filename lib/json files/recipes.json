@@ -6,17 +6,17 @@
           {
             "name": "Beef Burger",
             "calories": 238,
-            "image": "images/burger.png"
+            "image": "assets/images/burger.png"
           },
           {
             "name": "Dark Chocolate Almond Mousse",
             "calories": 238,
-            "image": "images/almondMouses.png"
+            "image": "assets/images/almondMouses.png"
           },
           {
             "name": "Chicken Burger",
             "calories": 238,
-            "image": "images/burger.png"
+            "image": "assets/images/burger.png"
           }
         ]
       },
@@ -26,17 +26,17 @@
           {
             "name": "Fruits with Peanut Butter",
             "calories": 238,
-            "image": "images/fruit.png"
+            "image": "assets/images/fruit.png"
           },
           {
             "name": "Buffalo Chicken Wrap",
             "calories": 238,
-            "image": "images/wrap.png"
+            "image": "assets/images/wrap.png"
           },
           {
             "name": "Chicken Wrap",
             "calories": 238,
-            "image": "images/wrap.png"
+            "image": "assets/images/wrap.png"
           }
         ]
       },
@@ -46,7 +46,7 @@
           {
             "name": "Almonds",
             "calories": 238,
-            "image": "images/fruit.png"
+            "image": "assets/images/fruit.png"
           }
         ]
       }

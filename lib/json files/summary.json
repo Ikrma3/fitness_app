@@ -1,6 +1,6 @@
 {
   "workout": {
-    "image": "images/oldNotification.png", 
+    "image": "assets/images/oldNotification.png", 
     "title": "Bodyweight Stretch",
     "time": "08:30 - 09:15",
     "totalTime": "00:45:15",

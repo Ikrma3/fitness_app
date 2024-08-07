@@ -2,23 +2,23 @@
     "featured": [
       {
         "title": "Health",
-        "image": "images/oldNotification.png",
+        "image": "assets/images/oldNotification.png",
         "subTitle":" Connected By"
 
       },
       {
         "title": "Health",
-        "image": "images/oldNotification.png",
+        "image": "assets/images/oldNotification.png",
         "subTitle":" Connected By"
       },
       {
         "title": "Health",
-        "image": "images/oldNotification.png",
+        "image": "assets/images/oldNotification.png",
         "subTitle":" Connected By"
       },
       {
         "title": "Health",
-        "image": "images/oldNotification.png",
+        "image": "assets/images/oldNotification.png",
          "subTitle":" Connected By"
       }
     ],
@@ -26,34 +26,34 @@
       {
         "title": "Samsung Health",
         "description": "Lifestyle companion to track your fitness, weight, diet, food, & sleep.",
-        "image": "images/oldNotification.png"
+        "image": "assets/images/oldNotification.png"
       },
       {
         "title": "Samsung Health",
         "description": "Lifestyle companion to track your fitness, weight, diet, food, & sleep.",
-        "image": "images/oldNotification.png"
+        "image": "assets/images/oldNotification.png"
       },
       {
         "title": "Samsung Health",
         "description": "Lifestyle companion to track your fitness, weight, diet, food, & sleep.",
-        "image": "images/oldNotification.png"
+        "image": "assets/images/oldNotification.png"
       },
       {
         "title": "Samsung Health",
         "description": "Lifestyle companion to track your fitness, weight, diet, food, & sleep.",
-        "image": "images/oldNotification.png"
+        "image": "assets/images/oldNotification.png"
       }
     ],
     "connectedApps": [
         {
           "title": "Connected App 1",
           "description": "Description of connected app 1.",
-          "image": "images/oldNotification.png"
+          "image": "assets/images/oldNotification.png"
         },
         {
           "title": "Connected App 2",
           "description": "Description of connected app 2.",
-          "image": "images/oldNotification.png"
+          "image": "assets/images/oldNotification.png"
         }
       ]
   }

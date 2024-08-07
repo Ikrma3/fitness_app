@@ -1,18 +1,18 @@
 [
     {
-        "image": "images/cardio.png",
+        "image": "assets/images/cardio.png",
         "text": "Cardio"
     },
     {
-        "image": "images/yoga2.png",
+        "image": "assets/images/yoga2.png",
         "text": "Yoga"
     },
     {
-        "image": "images/stretch2.png",
+        "image": "assets/images/stretch2.png",
         "text": "Stretch"
     },
     {
-        "image": "images/gym.png",
+        "image": "assets/images/gym.png",
         "text": "Gym"
     }
 ]

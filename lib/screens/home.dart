@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
-import 'package:myfitness/components/bottomBar.dart';
+import 'package:myfitness/components/cards/homeCards.dart';
+import 'package:myfitness/components/frames/mealFrame.dart';
+import 'package:myfitness/components/indicators/weightStepIndicator.dart';
+import 'package:myfitness/components/tabs/bottomBar.dart';
 import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/dailyExcersice.dart';
 import 'package:myfitness/components/exploreScreen.dart';
-import 'package:myfitness/components/homeCards.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myfitness/components/mealFrame.dart';
 import 'package:myfitness/components/waterAndSteps.dart';
-import 'package:myfitness/components/weightStepIndicator.dart';
-import 'package:myfitness/screens/CNMViewScreen.dart';
 import 'package:myfitness/screens/diaryScreen.dart';
-import 'package:myfitness/screens/plansScreen.dart';
-import 'package:myfitness/screens/settings.dart';
+import 'package:myfitness/screens/food/plansScreen.dart';
+import 'package:myfitness/screens/settings/settings.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -137,7 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               SizedBox(width: 48.w),
               Image.asset(
-                'images/appLogo.png',
+                'assets/logo/appLogo.png',
                 width: 97.w,
                 height: 32.h,
               ),

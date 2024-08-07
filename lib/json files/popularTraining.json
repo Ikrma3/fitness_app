@@ -1,13 +1,13 @@
 [
     {
-        "image": "images/rapidLower.png",
+        "image": "assets/images/rapidLower.png",
         "title": "Rapid Lower Body",
         "level": "Beginner",
         "time": "42 min",
         "isFavorite": "false"
     },
     {
-        "image": "images/bodyWeight.png",
+        "image": "assets/images/bodyWeight.png",
         "title": "Bodyweight Blast",
         "level": "Beginner",
         "time": "25 min",

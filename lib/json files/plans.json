@@ -5,7 +5,7 @@
     "data": {
       "General": [
         {
-          "svgImage": "images/burger.png",
+          "svgImage": "assets/images/burger.png",
           "heading": "High Protien ",
           "subHeading": "7 Days",
          "overview": [
@@ -51,7 +51,7 @@
           ]
         },
         {
-          "svgImage": "images/lowCarbs.png",
+          "svgImage": "assets/images/lowCarbs.png",
           "heading": "Low Carbs",
           "subHeading": "7 Days",
           "overview": [
@@ -102,7 +102,7 @@
       ],
       "Free": [
         {
-            "svgImage": "images/highProtien.png",
+            "svgImage": "assets/images/highProtien.png",
             "heading": "High Protien",
             "subHeading": "7 Days",
             "overview": [

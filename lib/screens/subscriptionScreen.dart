@@ -3,9 +3,11 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' as rootBundle;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myfitness/components/checkBox.dart';
-import 'package:myfitness/components/submitButton.dart';
-import 'package:myfitness/screens/signin.dart';
+import 'package:myfitness/auth/signin.dart';
+import 'package:myfitness/components/checkbox/checkBox.dart';
+import 'package:myfitness/components/colours.dart';
+
+import 'package:myfitness/components/buttons/submitButton.dart';
 
 class SubscriptionScreen extends StatefulWidget {
   @override
@@ -46,8 +48,8 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                   Image.asset(
                     _data!['backgroundImage'],
                     fit: BoxFit.cover,
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height,
+                    width: 360.w,
+                    height: 327.h,
                   ),
                 ],
                 Align(
@@ -192,12 +194,14 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
         width: MediaQuery.of(context).size.width * 0.4,
         padding: EdgeInsets.all(10.w),
         decoration: BoxDecoration(
-          color: cColor,
+          gradient: isSelected
+              ? AppColors.getSubcriptionGradient(context)
+              : AppColors.getGradient(context),
           borderRadius: BorderRadius.circular(10.r),
           border: Border.all(
               color: isSelected
                   ? Color.fromRGBO(93, 166, 199, 1)
-                  : Color.fromRGBO(211, 234, 240, 1),
+                  : AppColors.SwitchColor(context),
               width: 2),
         ),
         child: Column(
@@ -238,17 +242,18 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
       padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15.r),
-          gradient: LinearGradient(colors: [
-            Color.fromRGBO(106, 92, 255, 0.8),
-            Color.fromRGBO(90, 200, 250, 0.8)
-          ])),
-      child: Text(
-        'Save 70%',
-        style: TextStyle(
-            color: Color.fromRGBO(21, 109, 149, 1),
-            fontSize: 8.sp,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'Inter'),
+          gradient: AppColors.getSaveGradient(context)
+          // color: Colors.green
+          ),
+      child: Center(
+        child: Text(
+          'Save 70%',
+          style: TextStyle(
+              color: AppColors.getButtonTextColor(context),
+              fontSize: 8.sp,
+              fontWeight: FontWeight.w600,
+              fontFamily: 'Inter'),
+        ),
       ),
     );
   }

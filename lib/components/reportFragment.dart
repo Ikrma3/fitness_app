@@ -35,7 +35,7 @@ class _ReportFragmentComponentState extends State<ReportFragmentComponent> {
   @override
   Widget build(BuildContext context) {
     // Determine the width based on the presence of the third option
-    double containerWidth = 303.w;
+    double containerWidth = 304.w;
     double containerHeight = 40.h;
     return Container(
       height: containerHeight,
@@ -51,6 +51,9 @@ class _ReportFragmentComponentState extends State<ReportFragmentComponent> {
             height: containerHeight,
             child: Row(
               children: [
+                SizedBox(
+                  width: 1.w,
+                ),
                 _buildOption(widget.firstOption, widget.thirdOption != null),
                 _buildOption(widget.secondOption, widget.thirdOption != null),
                 _buildOption(widget.thirdOption!, true),

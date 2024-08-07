@@ -1,16 +1,17 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:myfitness/components/caloriesLeftIndicator.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:myfitness/components/buttons/smallSubmitButton.dart';
+import 'package:myfitness/components/cards/dairyCards.dart';
 import 'package:myfitness/components/colours.dart';
-import 'package:myfitness/components/dairyCards.dart';
-import 'package:myfitness/components/smallSubmitButton.dart';
-import 'package:myfitness/components/submitButton.dart';
-import 'package:myfitness/screens/breakFastScreen.dart';
-import 'package:myfitness/screens/dinnerScreen.dart';
-import 'package:myfitness/screens/lunchScreen.dart';
-import 'package:myfitness/screens/snackScreen.dart';
+import 'package:myfitness/components/indicators/caloriesLeftIndicator.dart';
+
+import 'package:myfitness/screens/meals/breakFastScreen.dart';
+
+import 'package:myfitness/screens/meals/dinnerScreen.dart';
+import 'package:myfitness/screens/meals/lunchScreen.dart';
+import 'package:myfitness/screens/meals/snackScreen.dart';
 
 class DairyScreen extends StatefulWidget {
   @override
@@ -165,7 +166,7 @@ class _DairyScreenState extends State<DairyScreen> {
             child: SmallCustomButton(
               onTap: () {},
               text: "Nutrition",
-              image: Image.asset('images/nutritionButton.png'),
+              image: Image.asset('assets/icons/icon_nutritionButton.png'),
             ),
           ),
         ],

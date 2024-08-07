@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:myfitness/components/colours.dart';
-import 'package:myfitness/components/customSleepIndicator.dart';
+import 'package:myfitness/components/indicators/customSleepIndicator.dart';
 import 'package:myfitness/screens/sleepOverviewScreen.dart'; // Import SleepOverviewScreen
 
 class SleepScreenFood extends StatefulWidget {
@@ -166,7 +166,7 @@ class _SleepScreenFoodState extends State<SleepScreenFood> {
                           centerWidget: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Image.asset('images/sleep.png',
+                              Image.asset('assets/icons/icon_sleep.png',
                                   height: 46.h, width: 46.w),
                               Text(totalSleep,
                                   style: TextStyle(

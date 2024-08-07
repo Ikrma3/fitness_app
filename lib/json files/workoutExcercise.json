@@ -1,46 +1,46 @@
 [
   {
-    "image": "images/sumoSquat.png",
+    "image": "assets/images/sumoSquat.png",
     "title": "Sumo Squat",
     "time": "0:30",
     "description": "To further challenge yourself, try widening your stance to perform a sumo squat instead. This variation can add variety to your lower body strength training routine.",
     "equipment": [
       {
-        "image": "images/dumbells.png",
+        "image": "assets/images/dumbells.png",
         "name": "2 Dumbbell"
       }
     ],
     "techniques": "1. Inhale while pushing your hips back and lowering into a squat position. Keep your core tight, back straight, and knees forward during this movement.\n 2. Exhale while returning to the starting position. Focus on keeping your weight evenly distributed throughout your heel and midfoot."
   },
     {
-      "image": "images/frontBack.png",
+      "image": "assets/images/frontBack.png",
       "title": "Back Lunge",
       "time": "0:30",
       "description": "A great exercise to work on your balance and strength.",
       "equipment": [
         {
-          "image": "images/dumbells.png",
+          "image": "assets/images/dumbells.png",
           "name": "Dumbbell"
         },
-        {"name": "Mat", "image": "images/mat.png"}
+        {"name": "Mat", "image": "assets/images/mat.png"}
       ],
       "techniques": "1. Step forward with your right leg. 2. Lower your hips until both knees are bent at about a 90-degree angle."
     },
     {
-      "image": "images/plank.png",
+      "image": "assets/images/plank.png",
       "title": "Side Plank",
       "time": "0:30",
       "description": "Side plank is an excellent exercise for core strength.",
       "equipment": [
         {
-            "image": "images/mat.png",
+            "image": "assets/images/mat.png",
             "name": "Mat"
           }
       ],
       "techniques": "1. Lie on your side with your legs straight. 2. Prop yourself up with your elbow."
     },
     {
-      "image": "images/armCircle.png",
+      "image": "assets/images/armCircle.png",
       "title": "Arm Circles",
       "time": "0:30",
       "description": "A simple exercise to warm up your shoulders and arms.",

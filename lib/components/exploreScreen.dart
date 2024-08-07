@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myfitness/components/giftCards.dart';
-import 'package:myfitness/screens/appDevices.dart';
-import 'package:myfitness/screens/recipiesScreen.dart';
-import 'package:myfitness/screens/sleepScreen.dart';
-import 'package:myfitness/screens/workout.dart';
+import 'package:myfitness/components/cards/giftCards.dart';
+import 'package:myfitness/screens/settings/appDevices.dart';
+import 'package:myfitness/screens/settings/recipiesScreen.dart';
+import 'package:myfitness/screens/settings/sleepScreen.dart';
+import 'package:myfitness/screens/workout/workout.dart';
 
 class ExploreScreen extends StatefulWidget {
   @override

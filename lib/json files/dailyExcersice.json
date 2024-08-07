@@ -1,13 +1,13 @@
 {
     "heading": "Exercise",
-    "headingIcon": "images/excersice2.png",
+    "headingIcon": "assets/images/excersice2.png",
     "details": [
       {
-        "icon": "images/clock.png",
+        "icon": "assets/icons/icon_clock.png",
         "text": "30 minutes"
       },
       {
-        "icon": "images/fire.png",
+        "icon": "assets/images/fire.png",
         "text": "350 Cals"
       }
     ]

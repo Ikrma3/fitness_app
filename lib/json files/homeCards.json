@@ -8,17 +8,17 @@
           {
             "title": "Goal",
             "value": 1500,
-            "image": "images/goals.svg"
+            "image": "assets/images/goals.svg"
           },
           {
             "title": "Food",
             "value": 500,
-            "image": "images/food.svg"
+            "image": "assets/images/food.svg"
           },
           {
             "title": "Exercise",
             "value": 2,
-            "image": "images/exercise.svg"
+            "image": "assets/images/exercise.svg"
           }
         ]
       },

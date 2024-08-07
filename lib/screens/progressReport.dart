@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
-import 'package:myfitness/components/caloriesBurnedChart.dart';
-import 'package:myfitness/components/checkBox.dart';
+import 'package:myfitness/components/charts/caloriesBurnedChart.dart';
+import 'package:myfitness/components/charts/stepsReportChart.dart';
+import 'package:myfitness/components/charts/weightTrackingChart.dart';
+import 'package:myfitness/components/checkbox/checkBox.dart';
 import 'package:myfitness/components/colours.dart';
 import 'package:myfitness/components/reportFragment.dart';
 import 'dart:convert'; // Add this import
-import 'package:flutter/services.dart' show rootBundle;
-import 'package:myfitness/components/stepsReportChart.dart';
-import 'package:myfitness/components/weightTrackingChart.dart'; // Add this import
+import 'package:flutter/services.dart' show rootBundle; // Add this import
 
 class WeeklyReportScreen extends StatefulWidget {
   @override

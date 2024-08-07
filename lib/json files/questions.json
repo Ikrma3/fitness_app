@@ -6,15 +6,15 @@
         "answers": [
           {
             "text": "Woman",
-            "image": "images/female.png"
+            "image": "assets/images/female.png"
           },
           {
             "text": "Man",
-            "image": "images/male.png"
+            "image": "assets/images/male.png"
           },
           {
             "text": "Non Binary",
-            "image": "images/binary.png"
+            "image": "assets/images/binary.png"
           }
           
         ]
@@ -39,28 +39,28 @@
         "answers": [
           {
             "text": "High Blood Pressure",
-            "image":"images/blood.png"
+            "image":"assets/images/blood.png"
 
           },
           {
             "text": "Heart Disease",
-            "image":"images/heart.png"
+            "image":"assets/images/heart.png"
           },
           {
             "text": "Diabetes",
-            "image":"images/diab.png"
+            "image":"assets/images/diab.png"
           },
           {
             "text": "Arthritis",
-            "image":"images/arth.png"
+            "image":"assets/images/arth.png"
           },
           {
             "text": "Celiac disease",
-            "image":"images/celiac.png"
+            "image":"assets/images/celiac.png"
           },
           {
             "text": "None",
-            "image":"images/none.png"
+            "image":"assets/images/none.png"
           }
         ]
       },
@@ -70,19 +70,19 @@
         "answers": [
           {
             "text": "Non Vegetarian",
-            "image": "images/nVeg.png"
+            "image": "assets/images/nVeg.png"
           },
           {
             "text": "vegetarian",
-            "image": "images/veg.png"
+            "image": "assets/images/veg.png"
           },
           {
             "text": "Pescetarian",
-            "image": "images/pes.png"
+            "image": "assets/images/pes.png"
           },
           {
             "text": "I eat all",
-            "image": "images/eAll.png"
+            "image": "assets/images/eAll.png"
           }
           
         ]
@@ -93,57 +93,57 @@
         "answers": [
           {
             "text": "Chinese",
-            "image":"images/chinese.png"
+            "image":"assets/images/chinese.png"
 
           },
           {
             "text": "South American Veg",
-            "image":"images/sAVeg.png"
+            "image":"assets/images/sAVeg.png"
           },
           {
             "text": "French",
-            "image":"images/french.png"
+            "image":"assets/images/french.png"
           },
           {
             "text": "Italian",
-            "image":"images/italian.png"
+            "image":"assets/images/italian.png"
           },
           {
             "text": "Greek",
-            "image":"images/greek.png"
+            "image":"assets/images/greek.png"
           },
           {
             "text": "Spanish",
-            "image":"images/spanish.png"
+            "image":"assets/images/spanish.png"
           },
           {
             "text": "Japanese",
-            "image":"images/japnese.png"
+            "image":"assets/images/japnese.png"
 
           },
           {
             "text": "Lebanese",
-            "image":"images/lebanese.png"
+            "image":"assets/images/lebanese.png"
           },
           {
             "text": "Turkish",
-            "image":"images/turkish.png"
+            "image":"assets/images/turkish.png"
           },
           {
             "text": "Thai",
-            "image":"images/thai.png"
+            "image":"assets/images/thai.png"
           },
           {
             "text": "Indian",
-            "image":"images/indian.png"
+            "image":"assets/images/indian.png"
           },
           {
             "text": "Pakistani",
-            "image":"images/pakistani.png"
+            "image":"assets/images/pakistani.png"
           },
           {
             "text": "Mexican",
-            "image":"images/mexican.png"
+            "image":"assets/images/mexican.png"
           }
         ]
       },
@@ -153,19 +153,19 @@
         "answers": [
           {
             "text": "Eggs",
-            "image": "images/egg.png"
+            "image": "assets/images/egg.png"
           },
           {
             "text": "Bread",
-            "image": "images/bread.png"
+            "image": "assets/images/bread.png"
           },
           {
             "text": "Diary",
-            "image": "images/diary.png"
+            "image": "assets/images/diary.png"
           },
           {
             "text": "Peanut",
-            "image": "images/peanut.png"
+            "image": "assets/images/peanut.png"
           }
           
         ]
@@ -176,15 +176,15 @@
         "answers": [
           {
             "text": "More than 8 glasses",
-            "image": "images/water.png"
+            "image": "assets/images/water.png"
           },
           {
             "text": "Less than 8 glasses",
-            "image": "images/water.png"
+            "image": "assets/images/water.png"
           },
           {
             "text": "Never counted",
-            "image": "images/nc.png"
+            "image": "assets/images/nc.png"
           }
         ]
       },
@@ -217,23 +217,23 @@
         "answers": [
           {
             "text": "Cardio",
-            "image": "images/cardio.png"
+            "image": "assets/images/cardio.png"
           },
           {
             "text": "Power training",
-            "image": "images/power.png"
+            "image": "assets/images/power.png"
           },
           {
             "text": "Stretch",
-            "image": "images/stretch.png"
+            "image": "assets/images/stretch.png"
           },
           {
             "text": "Dancing",
-            "image": "images/dancing.png"
+            "image": "assets/images/dancing.png"
           },
           {
             "text": "Yoga",
-            "image": "images/yoga.png"
+            "image": "assets/images/yoga.png"
           }
         ]
       }

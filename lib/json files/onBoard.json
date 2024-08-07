@@ -4,19 +4,19 @@
         "index": 0,
         "heading": "Welcome to \n My Fitness AI",
         "text": "My Fitness AI has workouts on demand that you can find based on how much time you have.",
-        "image": "images/onBoard1.png"
+        "image": "assets/images/onBoard1.png"
       },
       {
         "index": 1,
         "heading": "Diet Plans",
         "text": "My Fitness AI has diet plans according to your mood and health care. 400+ diet plans available..",
-        "image": "images/onBoard2.png"
+        "image": "assets/images/onBoard2.png"
       },
       {
         "index": 2,
         "heading": "Workout Categories",
         "text": "Workout categories will help you gain strength, get in better shape and embrace a healthy lifestyle..",
-        "image": "images/onBoard3.png"
+        "image": "assets/images/onBoard3.png"
       }
       
     ]

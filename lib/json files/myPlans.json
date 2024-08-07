@@ -1,15 +1,15 @@
 {
-    "titleImage": "images/highProtien.png",
+    "titleImage": "assets/images/highProtien.png",
     "activatedPlans": [
       {
         "name": "French",
-        "image":"images/french.png",
+        "image":"assets/images/french.png",
         "subtitle":"Vegetarian",
         "data": {
           "2024-08-02": {
             "Breakfast": [
               {
-                "image": "images/highProtien.png",
+                "image": "assets/images/highProtien.png",
                 "text": "French Toast",
                "calories": 401,
                 "protein": 26.5,
@@ -28,7 +28,7 @@
             ],
             "Lunch": [
               {
-                "image": "images/mexican.png",
+                "image": "assets/images/mexican.png",
                 "text": "Greek Salad",
                 "calories": 356,
                 "protein": 26.2,
@@ -47,7 +47,7 @@
               }
               },
               {
-                "image": "images/thai.png",
+                "image": "assets/images/thai.png",
                 "text": "French Toast",
                "calories": 401,
                 "protein": 26.5,
@@ -66,7 +66,7 @@
             ],
             "Snacks": [
               {
-                "image": "images/turkish.png",
+                "image": "assets/images/turkish.png",
                 "text": "Greek Salad",
                 "calories": 401,
                 "protein": 26.2,
@@ -87,7 +87,7 @@
             ],
             "Dinner": [
               {
-                "image": "images/thai.png",
+                "image": "assets/images/thai.png",
                 "text": "Greek Salad",
                 "calories": 401,
                 "protein": 26.2,
@@ -110,7 +110,7 @@
           "2024-08-03": {
             "Breakfast": [
               {
-                "image": "images/highProtien.png",
+                "image": "assets/images/highProtien.png",
                 "text": "French Toast",
                 "calories": 401,
                 "protein": 26.2,
@@ -131,7 +131,7 @@
             ],
             "Lunch": [
               {
-                "image": "images/lebanese.png",
+                "image": "assets/images/lebanese.png",
                 "text": "Greek Salad",
                 "calories": 401,
               "protein": 26.2,
@@ -149,7 +149,7 @@
               }
               },
               {
-                "image": "images/thai.png",
+                "image": "assets/images/thai.png",
                 "text": "Yougart and Chese",
                 "calories": 401,
               "protein": 26.2,
@@ -169,7 +169,7 @@
             ],
             "Snacks": [
               {
-                "image": "images/spanish.png",
+                "image": "assets/images/spanish.png",
                 "text": "Greek Salad",
                 "calories": 401,
               "protein": 26.2,
@@ -198,13 +198,13 @@
     "recentPlans": [
       {
         "name": "Greek",
-        "image":"images/greek.png",
+        "image":"assets/images/greek.png",
         "subtitle":"Vegetarian",
         "data": {
           "2024-07-01": {
             "Breakfast": [
               {
-                "image": "images/indian.png",
+                "image": "assets/images/indian.png",
                 "text": "Greek Salad",
                 "calories": 401,
               "protein": 26.2,
@@ -227,7 +227,7 @@
             ],
             "Lunch": [
               {
-                "image": "images/egg.png",
+                "image": "assets/images/egg.png",
                 "text": "French Toast",
                 "calories": 401,
               "protein": 26.2,

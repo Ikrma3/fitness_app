@@ -1,28 +1,28 @@
 {
-    "coverImage": "images/upperBody.png",
+    "coverImage": "assets/images/upperBody.png",
     "title": "Upper Body Workout",
     "description": "Resistance training, also known as strength training, is an essential component of any fitness routine, especially for your upper body.",
     "details": [
         {
-            "image": "images/time.png",
+            "image": "assets/icons/icon_time.png",
             "text": "30 min"
         },
         {
-            "image": "images/fire.png",
+            "image": "assets/images/fire.png",
             "text": "340 Kcal"
         },
         {
-            "image": "images/thunder.png",
+            "image": "assets/images/thunder.png",
             "text": "Beginner"
         }
     ],
     "equipment": [
         {
-            "image": "images/dumbells.png",
+            "image": "assets/images/dumbells.png",
             "text": "2 Dumbbells"
         },
         {
-            "image": "images/mat.png",
+            "image": "assets/images/mat.png",
             "text": "Mat"
         }
     ],
@@ -33,19 +33,19 @@
             "exercisesList": [
                 {
                     "title": "Cobra Stretch",
-                    "image": "images/cobraStretch.png",
+                    "image": "assets/images/cobraStretch.png",
                     "time": "0:40",
                     "video": "videos/plank.mp4"
                     },
                 {
                     "title": "Plank Ups",
-                    "image": "images/plank.png",
+                    "image": "assets/images/plank.png",
                     "time": "0:30",
                     "video": "videos/plank.mp4"
                      },
                 {
                     "title": "Rest",
-                    "image": "images/rest.png",
+                    "image": "assets/icons/icon_rest.png",
                     "time": "0:30",
                     "video": "videos/rest.mp4"
                 }
@@ -57,24 +57,24 @@
             "exercisesList": [
                 {
                     "title": "Double Heel Tabs",
-                    "image": "images/heelTab.png",
+                    "image": "assets/images/heelTab.png",
                     "count": "x 20",
                     "video": "videos/squat.mp4"
                 },
                 {
                     "title": "Lung Jumps Alternated",
-                    "image": "images/jump.png",
+                    "image": "assets/images/jump.png",
                     "count": "x 20",
                     "video": "videos/squat.mp4"
                 },
                 {
                     "title": "Squat jump",
-                    "image": "images/sumoSquat.png",
+                    "image": "assets/images/sumoSquat.png",
                     "count": "x 20",
                     "video": "videos/squat.mp4"},
                 {
                     "title": "Rest",
-                    "image": "images/rest.png",
+                    "image": "assets/icons/icon_rest.png",
                     "time": "0:30",
                     "video": "videos/rest.mp4"
                 }
@@ -86,19 +86,19 @@
             "exercisesList": [
                 {
                     "title": "Plank Reaches",
-                    "image": "images/plankReaches.png",
+                    "image": "assets/images/plankReaches.png",
                     "count": "x 20",
                     "video": "videos/plank.mp4"
                 },
                 {
                     "title": "Plank Reaches",
-                    "image": "images/plankReaches.png",
+                    "image": "assets/images/plankReaches.png",
                     "count": "x 20",
                     "video": "videos/plank.mp4"
                 },
                 {
                     "title": "Rest",
-                    "image": "images/rest.png",
+                    "image": "assets/icons/icon_rest.png",
                     "time": "0:30",
                     "video": "videos/rest.mp4"
                 }
